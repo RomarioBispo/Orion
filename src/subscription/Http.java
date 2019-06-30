@@ -11,6 +11,10 @@ package subscription;
 public class Http {
     private String url;
 
+    public Http(String url) {
+        this.url = url;
+    }
+
     public String getUrl() {
         return url;
     }

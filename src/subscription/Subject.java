@@ -13,6 +13,11 @@ import java.util.List;
  */
 public class Subject {
     private List<Entities> entities;
+
+    public Subject(List<Entities> entities) {
+        this.entities = entities;
+    }
+
     public List<Entities> getEntities() {
         return entities;
     }

@@ -29,7 +29,6 @@ public class Orion<T> {
      *
      * @param url An IP address + Port String from where the Orion is running.
      * @param listener An IP address + Port from where the server is listening the changes that was subscribed.
-     * @return  a Orion Object with url and listener defined by user
      */
     public Orion (String url, String listener) {
         this.url = url;
@@ -37,13 +36,12 @@ public class Orion<T> {
     }
 
     /**
-     * Instantiate a Orion object.
+     * Instantiate a Orion object running at localhost:1026 and listener running at http://localhost:4041
      *
-     * @return  a Orion Object running at localhost:1026 and listener running at http://localhost:4041
      */
     public Orion () {
         this.url = "http://localhost:1026";
-        this.listener = "http://localhost:4041";
+        this.listener = "http://172.18.1.1:40041";
     }
 
     /**
@@ -54,6 +52,7 @@ public class Orion<T> {
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void createEntity(Object obj) throws Exception {
+
         String endpoint = "/v2/entities";
         String json = "";
 
@@ -62,11 +61,8 @@ public class Orion<T> {
 
         HttpRequests http = new HttpRequests();
         http.runPostRequest(this.url + endpoint, json);
-        System.out.println(json);
 
     }
-
-
 
     /**
      * Retrieves a list of entities that match different criteria
@@ -250,11 +246,22 @@ public class Orion<T> {
 
     /**
      * this operation returns a list of all the subscriptions present in the system.
-     *
+     * @throws  Exception for http requests.
      * @return a list of all the subscriptions present in the system.
      */
-    public Object listSubscriptions() {
-        return null;
+    public Object listSubscriptions() throws Exception {
+        String json = "";
+        String endpoint = "/v2/subscriptions";
+
+        HttpRequests http = new HttpRequests();
+        json  = http.runGetRequest(this.url + endpoint);
+
+        Gson gson = new Gson();
+
+        Subscription [] subs = gson.fromJson(json, Subscription[].class);
+
+        return subs;
+
     }
 
     /**
@@ -264,13 +271,15 @@ public class Orion<T> {
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void createSubscriptions(Subscription subscription) throws Exception {
+
         String json = "";
+        String endpoint = "/v2/subscriptions";
 
         Gson gson = new Gson();
         json = gson.toJson(subscription);
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url, json);
+        http.runPostRequest(this.url + endpoint, json);
 
     }
 

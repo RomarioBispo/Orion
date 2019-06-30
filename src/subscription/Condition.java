@@ -11,6 +11,10 @@ import java.util.List;
  * @since 1.0
  */
 public class Condition {
+    public Condition(List<String> attrs) {
+        this.attrs = attrs;
+    }
+
     private List<String> attrs;
 
     public List<String> getAttrs() {
