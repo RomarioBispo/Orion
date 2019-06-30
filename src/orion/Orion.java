@@ -1,4 +1,16 @@
 package orion;
+import com.google.gson.Gson;
+import entity.Entity;
+import entityLamp.Lamp;
+import httpRequests.HttpRequests;
+import subscription.Entities;
+import subscription.Subscription;
+
+import java.lang.reflect.Array;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Orion implements all NGSIv2 operations by using objects java.
@@ -12,14 +24,33 @@ public class Orion {
     private String url;
     private String listener;
 
+    public Orion (String url, String listener) {
+        this.url = url;
+        this.listener = listener;
+    }
+
+    public Orion () {
+        this.url = "http://localhost:1026";
+        this.listener = "";
+    }
 
     /**
      * Create a entity on Orion (require a IP + port from Orion Context Broker)
      *
      * @param  obj  An given object representing the entity. The object follows
      * the JSON entity representation format (described in a “JSON Entity Representation” section) on NGSIv2 docs.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void createEntity(Object obj) {
+    public void createEntity(Object obj) throws Exception {
+        String endpoint = "/v2/entities";
+        String json = "";
+
+        Gson gson = new Gson();
+        json = gson.toJson(obj);
+
+        HttpRequests http = new HttpRequests();
+        http.runPostRequest(this.url + endpoint, json);
+        System.out.println(json);
 
     }
 
@@ -28,10 +59,21 @@ public class Orion {
     /**
      * Retrieves a list of entities that match different criteria
      *
-     * @param  criteria  An given object representing the entity. The object follows
+     * @param criteria can be defined by id, type, pattern matching (either id or type).
+     * @return  An Array with all objects (EntityId and type) registered on orion.
      * the JSON entity representation format (described in a “JSON Entity Representation” section) on NGSIv2 docs.
      */
-    public void listEntities(String criteria){
+    public Entity[] listEntities(String criteria) throws Exception {
+
+        String json = "";
+        String endpoint = "/v2/entities/";
+
+        HttpRequests http = new HttpRequests();
+        json  = http.runGetRequest(this.url+endpoint);
+
+        Gson gson = new Gson();
+
+        Entity [] e = gson.fromJson(json, Entity[].class);
 
     }
 
@@ -41,9 +83,22 @@ public class Orion {
      *
      * @param  entityId  an identifier from entity
      * @param  obj the object that represents the entity
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      * @return      a object updated from entity
      */
-    public Object retrieveEntity(String entityId, Object obj) {
+    public Object retrieveEntity(String entityId, Object obj) throws Exception {
+        String json = "";
+        String endpoint = "/v2/entities/"+entityId;
+        HttpRequests http = new HttpRequests();
+        json  = http.runGetRequest(this.url+endpoint);
+
+        Gson gson = new Gson();
+        // i have to see if this way work.
+        // if not, i can use deserialize generics foruns to try another ways.
+        obj = gson.fromJson(json, (Type) Object.class);
+        //System.out.println(json);
+
+
         return obj;
     }
 
@@ -194,9 +249,17 @@ public class Orion {
     /**
      * this operation creates a new subscription on Orion.
      *
-     *
+     * @param subscription
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void createSubscriptions(Object subscription) {
+    public void createSubscriptions(Subscription subscription) throws Exception {
+        String json = "";
+
+        Gson gson = new Gson();
+        json = gson.toJson(subscription);
+
+        HttpRequests http = new HttpRequests();
+        http.runPostRequest(this.url, json);
 
     }
 
@@ -290,6 +353,7 @@ public class Orion {
      */
     public void batchUpdate(Object entities) {
 
+
     }
 
     /**
@@ -312,13 +376,6 @@ public class Orion {
     public Object batchNotify(Object entities) {
         return null;
     }
-
-
-
-
-
-
-
 
 }
 
