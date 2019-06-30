@@ -16,7 +16,11 @@ public class Main {
         Lamp square01 = new Lamp("urn:ngsi-ld:Square:1","Square",name,location,radius);
 
         //orion.createEntity(square01);
-        orion.listEntities("");
+        //orion.listEntities("");
+        Lamp square02 = (Lamp) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
+
+        System.out.println(square02.getId());
+
 
         //orion.createSubscriptions();
 

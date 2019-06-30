@@ -19,19 +19,31 @@ import java.util.List;
  * @since 1.0
  */
 
-public class Orion {
+public class Orion<T> {
 
     private String url;
     private String listener;
 
+    /**
+     * Instantiate a Orion object.
+     *
+     * @param url An IP address + Port String from where the Orion is running.
+     * @param listener An IP address + Port from where the server is listening the changes that was subscribed.
+     * @return  a Orion Object with url and listener defined by user
+     */
     public Orion (String url, String listener) {
         this.url = url;
         this.listener = listener;
     }
 
+    /**
+     * Instantiate a Orion object.
+     *
+     * @return  a Orion Object running at localhost:1026 and listener running at http://localhost:4041
+     */
     public Orion () {
         this.url = "http://localhost:1026";
-        this.listener = "";
+        this.listener = "http://localhost:4041";
     }
 
     /**
@@ -73,7 +85,9 @@ public class Orion {
 
         Gson gson = new Gson();
 
-        Entity [] e = gson.fromJson(json, Entity[].class);
+        Entity [] entities = gson.fromJson(json, Entity[].class);
+
+        return entities;
 
     }
 
@@ -87,19 +101,16 @@ public class Orion {
      * @return      a object updated from entity
      */
     public Object retrieveEntity(String entityId, Object obj) throws Exception {
+
         String json = "";
         String endpoint = "/v2/entities/"+entityId;
+
         HttpRequests http = new HttpRequests();
-        json  = http.runGetRequest(this.url+endpoint);
+        json  = http.runGetRequest(this.url + endpoint);
 
         Gson gson = new Gson();
-        // i have to see if this way work.
-        // if not, i can use deserialize generics foruns to try another ways.
-        obj = gson.fromJson(json, (Type) Object.class);
-        //System.out.println(json);
 
-
-        return obj;
+       return (gson.fromJson(json, obj.getClass()));
     }
 
 
