@@ -1,3 +1,4 @@
+import batchUpdate.BatchUpdate;
 import entityLamp.Attrs;
 import entityLamp.Lamp;
 import orion.Orion;
@@ -19,8 +20,23 @@ public class Main {
         Lamp square01 = new Lamp("urn:ngsi-ld:Square:1","Square",name,location,radius);
         //orion.createEntity(square01);
 
-        orion.listEntities("");
-        //Lamp square02 = (Lamp) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
+        //retrieving a entity from orion
+        Lamp square02 = (Lamp) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
+
+        System.out.println("Before:"+ square02.getRadius().getValue());
+
+        //setting value and sending to orion by batch your update
+        square01.setRadius(new Attrs("50","Float"));
+        List<Lamp> batchEntities = new ArrayList<Lamp>();
+        batchEntities.add(square01);
+        BatchUpdate batchUpdate = new BatchUpdate(batchEntities);
+        orion.batchUpdate(batchUpdate);
+
+        //orion.listEntities("");
+        //retrieving updated entity and print the class update
+        square02 = (Lamp) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
+        System.out.println("After: "+square02.getRadius().getValue());
+
 
         // creating a subscription
 
@@ -46,6 +62,10 @@ public class Main {
         orion.createSubscriptions(sub);
 
         Subscription [] subscriptionslist = (Subscription[]) orion.listSubscriptions();
+
+
+
+
 
 
 

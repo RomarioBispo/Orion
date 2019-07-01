@@ -369,10 +369,20 @@ public class Orion<T> {
      * This operation allows to create, update and/or delete several entities in a single batch operation.
      * Given the entities object that represents the entities
      *
-     * @param entities
+     * @throws Exception to http requests.
+     * @param batchEntities a batch object containing all entities to be updated on orion.
      */
-    public void batchUpdate(Object entities) {
+    public void batchUpdate(Object batchEntities) throws Exception {
 
+        String json = "";
+        String endpoint = "/v2/op/update";
+
+        Gson gson = new Gson();
+        json = gson.toJson(batchEntities);
+        System.out.println(json);
+
+        HttpRequests http = new HttpRequests();
+        http.runPostRequest(this.url+endpoint,json);
 
     }
 
