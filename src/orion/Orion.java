@@ -36,7 +36,7 @@ public class Orion<T> {
     }
 
     /**
-     * Instantiate a Orion object running at localhost:1026 and listener running at http://localhost:4041
+     * Instantiate a Orion object running at localhost:1026 and listener running at 172.18.1.1:4041
      *
      */
     public Orion () {
@@ -114,8 +114,14 @@ public class Orion<T> {
      * Delete the entity given id of the entity.
      *
      * @param  entityId  Id of the entity to be deleted.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void removeEntity(String entityId) {
+    public void removeEntity(String entityId) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId;
+
+        HttpRequests http = new HttpRequests();
+        http.runDeleteRequest(this.url + endpoint);
 
     }
 
@@ -139,7 +145,16 @@ public class Orion<T> {
      * @param  entityId  Id of the entity to be retrieved
      * @param obj object representing the new attributes for the entity.
      */
-    public void replaceAllEntitiesAttributes(String entityId, Object obj) {
+    public void replaceAllEntitiesAttributes(String entityId, Object obj) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId + "/attrs";
+        String json = "";
+
+        Gson gson = new Gson();
+        gson.toJson(obj);
+
+        HttpRequests http = new HttpRequests();
+        http.runPutRequest(this.url + endpoint, json);
 
     }
 
@@ -175,9 +190,20 @@ public class Orion<T> {
      * @param attrName Name of the attribute to be retrieved.
      * @param obj object that represents the attribute
      * @return a object with the attribute data of the attribute.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public Object getAttributeData(String entityId, String attrName, Object obj) {
-        return obj;
+    public Object getAttributeData(String entityId, String attrName, Object obj) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId + "/attrs/" + attrName;
+        String json = "";
+
+        HttpRequests http = new HttpRequests();
+        json = http.runGetRequest(this.url + endpoint);
+
+        Gson gson = new Gson();
+
+        return(gson.fromJson(json, obj.getClass()));
+
     }
 
 
@@ -187,8 +213,18 @@ public class Orion<T> {
      * @param  entityId  Id of the entity to be retrieved
      * @param attrName Name of the attribute to be retrieved.
      * @param obj object that represents the attribute to update.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void updateAttributeData(String entityId, String attrName, Object obj) {
+    public void updateAttributeData(String entityId, String attrName, Object obj) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId + "/attrs/" + attrName;
+        String json;
+
+        Gson gson = new Gson();
+        json = gson.toJson(obj);
+
+        HttpRequests http = new HttpRequests();
+        http.runPutRequest(this.url + endpoint, json);
 
     }
 
@@ -197,8 +233,14 @@ public class Orion<T> {
      *
      * @param  entityId  Id of the entity to be retrieved
      * @param attrName Name of the attribute to be retrieved.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void removeSingleAttribute(String entityId, String attrName) {
+    public void removeSingleAttribute(String entityId, String attrName) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId + "/attrs/" + attrName;
+
+        HttpRequests http = new HttpRequests();
+        http.runDeleteRequest(this.url + endpoint);
 
     }
 
@@ -250,6 +292,7 @@ public class Orion<T> {
      * @return a list of all the subscriptions present in the system.
      */
     public Object listSubscriptions() throws Exception {
+        
         String json = "";
         String endpoint = "/v2/subscriptions";
 
@@ -298,9 +341,16 @@ public class Orion<T> {
     /**
      * this operation cancels subscription given a subscriptionId.
      *
-     * @param subscriptionId
+     * @param subscriptionId When a subscription is created, a message is received on url defined on subscription
+     * This url contains a Location header which holds the subscription ID: a 24 digit hexadecimal number.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void deleteSubscription(String subscriptionId) {
+    public void deleteSubscription(String subscriptionId) throws Exception {
+
+        String endpoint = "/v2/subscriptions" + subscriptionId;
+
+        HttpRequests http = new HttpRequests();
+        http.runDeleteRequest(this.url + endpoint);
 
     }
 
@@ -379,7 +429,6 @@ public class Orion<T> {
 
         Gson gson = new Gson();
         json = gson.toJson(batchEntities);
-        System.out.println(json);
 
         HttpRequests http = new HttpRequests();
         http.runPostRequest(this.url+endpoint,json);

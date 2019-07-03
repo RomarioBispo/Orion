@@ -1,5 +1,6 @@
 package batchUpdate;
 
+import entity.Entity;
 import entityLamp.Lamp;
 import subscription.Entities;
 
@@ -14,9 +15,9 @@ import java.util.List;
  */
 public class BatchUpdate {
     private String actionType;
-    private List<Lamp> entities;
+    private List<Entity> entities;
 
-    public BatchUpdate(List<Lamp> entities) {
+    public BatchUpdate(List<Entity> entities) {
         this.actionType = "append";
         this.entities = entities;
     }
@@ -29,11 +30,11 @@ public class BatchUpdate {
         this.actionType = actionType;
     }
 
-    public List<Lamp> getEntities() {
+    public List<Entity> getEntities() {
         return entities;
     }
 
-    public void setEntities(List<Lamp> entities) {
+    public void setEntities(List<Entity> entities) {
         this.entities = entities;
     }
 

@@ -1,6 +1,8 @@
 import batchUpdate.BatchUpdate;
+import entity.Entity;
 import entityLamp.Attrs;
 import entityLamp.Lamp;
+import myTesteEntity.MyEntity;
 import orion.Orion;
 import subscription.*;
 
@@ -17,25 +19,51 @@ public class Main {
         Attrs name = new Attrs("Praça Oliveira Belo","Text");
         Attrs location = new Attrs("-10.936245,-37.061224","geo:point");
         Attrs radius = new Attrs("45","Float");
-        Lamp square01 = new Lamp("urn:ngsi-ld:Square:1","Square",name,location,radius);
+        Attrs pressure = new Attrs("450","Float");
+        Attrs temperature = new Attrs("22","Float");
+        Entity square01 = new Entity("urn:ngsi-ld:Square:1","Square",name,location,radius);
+
+        MyEntity myEntity01 = new MyEntity("urn:ngsi-ld:Square:2","Square",name,location,radius,pressure,temperature);
+
         //orion.createEntity(square01);
+        //orion.createEntity(myEntity01);
 
         //retrieving a entity from orion
-        Lamp square02 = (Lamp) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
-
-        System.out.println("Before:"+ square02.getRadius().getValue());
+        Entity square02 = (Entity) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
+        MyEntity myEntity02 = (MyEntity) orion.retrieveEntity("urn:ngsi-ld:Square:2", myEntity01);
+        System.out.println("My entity attr4:"+ myEntity02.getAttribute4().getValue());
 
         //setting value and sending to orion by batch your update
-        square01.setRadius(new Attrs("50","Float"));
-        List<Lamp> batchEntities = new ArrayList<Lamp>();
-        batchEntities.add(square01);
+        myEntity02.setAttribute4(new Attrs("50","Float"));
+        List<Entity> batchEntities = new ArrayList<Entity>();
+        batchEntities.add(myEntity02);
         BatchUpdate batchUpdate = new BatchUpdate(batchEntities);
         orion.batchUpdate(batchUpdate);
 
+        orion.removeSingleAttribute(myEntity02.getId(), "attribute5");
+
+        myEntity02.setAttribute5((Attrs) orion.getAttributeData(myEntity02.getId(),"attribute5", myEntity02.getAttribute5()));
+        System.out.println("Get attrs data:"+myEntity02.getAttribute4().getValue());
+        System.out.println("Get attrs data Antes do update:"+myEntity02.getAttribute5().getValue());
+        orion.updateAttributeData(myEntity02.getId(),"attribute5",new Attrs("200","Float"));
+        myEntity02.setAttribute5((Attrs) orion.getAttributeData(myEntity02.getId(),"attribute5", myEntity02.getAttribute5()));
+        System.out.println("Get attrs data depois do update:"+myEntity02.getAttribute5().getValue());
+//        //removing a entity
+//        orion.removeEntity("urn:ngsi-ld:Square:2");
+//        myEntity02 = (MyEntity) orion.retrieveEntity("urn:ngsi-ld:Square:2", myEntity01);
+//        System.out.println("My entity attr4:"+ myEntity02.getAttribute4().getValue());
+
+//        //setting value and sending to orion by batch your update
+//        square01.setAttribute3(new Attrs("50","Float"));
+//        List<Entity> batchEntities = new ArrayList<Entity>();
+//        batchEntities.add(square01);
+//        BatchUpdate batchUpdate = new BatchUpdate(batchEntities);
+//        orion.batchUpdate(batchUpdate);
+
         //orion.listEntities("");
         //retrieving updated entity and print the class update
-        square02 = (Lamp) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
-        System.out.println("After: "+square02.getRadius().getValue());
+        square02 = (Entity) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
+        System.out.println("After: "+square02.getAttribute3().getValue());
 
 
         // creating a subscription
