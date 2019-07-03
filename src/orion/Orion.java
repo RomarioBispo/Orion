@@ -19,19 +19,29 @@ import java.util.List;
  * @since 1.0
  */
 
-public class Orion {
+public class Orion<T> {
 
     private String url;
     private String listener;
 
+    /**
+     * Instantiate a Orion object.
+     *
+     * @param url An IP address + Port String from where the Orion is running.
+     * @param listener An IP address + Port from where the server is listening the changes that was subscribed.
+     */
     public Orion (String url, String listener) {
         this.url = url;
         this.listener = listener;
     }
 
+    /**
+     * Instantiate a Orion object running at localhost:1026 and listener running at 172.18.1.1:4041
+     *
+     */
     public Orion () {
         this.url = "http://localhost:1026";
-        this.listener = "";
+        this.listener = "http://172.18.1.1:40041";
     }
 
     /**
@@ -42,6 +52,7 @@ public class Orion {
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void createEntity(Object obj) throws Exception {
+
         String endpoint = "/v2/entities";
         String json = "";
 
@@ -50,11 +61,8 @@ public class Orion {
 
         HttpRequests http = new HttpRequests();
         http.runPostRequest(this.url + endpoint, json);
-        System.out.println(json);
 
     }
-
-
 
     /**
      * Retrieves a list of entities that match different criteria
@@ -73,7 +81,9 @@ public class Orion {
 
         Gson gson = new Gson();
 
-        Entity [] e = gson.fromJson(json, Entity[].class);
+        Entity [] entities = gson.fromJson(json, Entity[].class);
+
+        return entities;
 
     }
 
@@ -87,19 +97,16 @@ public class Orion {
      * @return      a object updated from entity
      */
     public Object retrieveEntity(String entityId, Object obj) throws Exception {
+
         String json = "";
         String endpoint = "/v2/entities/"+entityId;
+
         HttpRequests http = new HttpRequests();
-        json  = http.runGetRequest(this.url+endpoint);
+        json  = http.runGetRequest(this.url + endpoint);
 
         Gson gson = new Gson();
-        // i have to see if this way work.
-        // if not, i can use deserialize generics foruns to try another ways.
-        obj = gson.fromJson(json, (Type) Object.class);
-        //System.out.println(json);
 
-
-        return obj;
+       return (gson.fromJson(json, obj.getClass()));
     }
 
 
@@ -107,8 +114,14 @@ public class Orion {
      * Delete the entity given id of the entity.
      *
      * @param  entityId  Id of the entity to be deleted.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void removeEntity(String entityId) {
+    public void removeEntity(String entityId) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId;
+
+        HttpRequests http = new HttpRequests();
+        http.runDeleteRequest(this.url + endpoint);
 
     }
 
@@ -132,7 +145,16 @@ public class Orion {
      * @param  entityId  Id of the entity to be retrieved
      * @param obj object representing the new attributes for the entity.
      */
-    public void replaceAllEntitiesAttributes(String entityId, Object obj) {
+    public void replaceAllEntitiesAttributes(String entityId, Object obj) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId + "/attrs";
+        String json = "";
+
+        Gson gson = new Gson();
+        gson.toJson(obj);
+
+        HttpRequests http = new HttpRequests();
+        http.runPutRequest(this.url + endpoint, json);
 
     }
 
@@ -168,9 +190,20 @@ public class Orion {
      * @param attrName Name of the attribute to be retrieved.
      * @param obj object that represents the attribute
      * @return a object with the attribute data of the attribute.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public Object getAttributeData(String entityId, String attrName, Object obj) {
-        return obj;
+    public Object getAttributeData(String entityId, String attrName, Object obj) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId + "/attrs/" + attrName;
+        String json = "";
+
+        HttpRequests http = new HttpRequests();
+        json = http.runGetRequest(this.url + endpoint);
+
+        Gson gson = new Gson();
+
+        return(gson.fromJson(json, obj.getClass()));
+
     }
 
 
@@ -180,8 +213,18 @@ public class Orion {
      * @param  entityId  Id of the entity to be retrieved
      * @param attrName Name of the attribute to be retrieved.
      * @param obj object that represents the attribute to update.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void updateAttributeData(String entityId, String attrName, Object obj) {
+    public void updateAttributeData(String entityId, String attrName, Object obj) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId + "/attrs/" + attrName;
+        String json;
+
+        Gson gson = new Gson();
+        json = gson.toJson(obj);
+
+        HttpRequests http = new HttpRequests();
+        http.runPutRequest(this.url + endpoint, json);
 
     }
 
@@ -190,8 +233,14 @@ public class Orion {
      *
      * @param  entityId  Id of the entity to be retrieved
      * @param attrName Name of the attribute to be retrieved.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void removeSingleAttribute(String entityId, String attrName) {
+    public void removeSingleAttribute(String entityId, String attrName) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId + "/attrs/" + attrName;
+
+        HttpRequests http = new HttpRequests();
+        http.runDeleteRequest(this.url + endpoint);
 
     }
 
@@ -239,11 +288,23 @@ public class Orion {
 
     /**
      * this operation returns a list of all the subscriptions present in the system.
-     *
+     * @throws  Exception for http requests.
      * @return a list of all the subscriptions present in the system.
      */
-    public Object listSubscriptions() {
-        return null;
+    public Object listSubscriptions() throws Exception {
+        
+        String json = "";
+        String endpoint = "/v2/subscriptions";
+
+        HttpRequests http = new HttpRequests();
+        json  = http.runGetRequest(this.url + endpoint);
+
+        Gson gson = new Gson();
+
+        Subscription [] subs = gson.fromJson(json, Subscription[].class);
+
+        return subs;
+
     }
 
     /**
@@ -253,13 +314,15 @@ public class Orion {
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void createSubscriptions(Subscription subscription) throws Exception {
+
         String json = "";
+        String endpoint = "/v2/subscriptions";
 
         Gson gson = new Gson();
         json = gson.toJson(subscription);
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url, json);
+        http.runPostRequest(this.url + endpoint, json);
 
     }
 
@@ -278,9 +341,16 @@ public class Orion {
     /**
      * this operation cancels subscription given a subscriptionId.
      *
-     * @param subscriptionId
+     * @param subscriptionId When a subscription is created, a message is received on url defined on subscription
+     * This url contains a Location header which holds the subscription ID: a 24 digit hexadecimal number.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void deleteSubscription(String subscriptionId) {
+    public void deleteSubscription(String subscriptionId) throws Exception {
+
+        String endpoint = "/v2/subscriptions" + subscriptionId;
+
+        HttpRequests http = new HttpRequests();
+        http.runDeleteRequest(this.url + endpoint);
 
     }
 
@@ -349,10 +419,19 @@ public class Orion {
      * This operation allows to create, update and/or delete several entities in a single batch operation.
      * Given the entities object that represents the entities
      *
-     * @param entities
+     * @throws Exception to http requests.
+     * @param batchEntities a batch object containing all entities to be updated on orion.
      */
-    public void batchUpdate(Object entities) {
+    public void batchUpdate(Object batchEntities) throws Exception {
 
+        String json = "";
+        String endpoint = "/v2/op/update";
+
+        Gson gson = new Gson();
+        json = gson.toJson(batchEntities);
+
+        HttpRequests http = new HttpRequests();
+        http.runPostRequest(this.url+endpoint,json);
 
     }
 

@@ -14,9 +14,18 @@ public class Subscription {
     private Subject subject;
     private Condition condition;
     private Notification notification;
-    private List<String> attrs;
     private String expires;
     private int throttling;
+
+    public Subscription(String description, Subject subject, Condition condition, Notification notification, String expires, int throttling) {
+        this.description = description;
+        this.subject = subject;
+        this.condition = condition;
+        this.notification = notification;
+        this.expires = expires;
+        this.throttling = throttling;
+    }
+
 
     public Condition getCondition() {
         return condition;
@@ -32,14 +41,6 @@ public class Subscription {
 
     public void setNotification(Notification notification) {
         this.notification = notification;
-    }
-
-    public List<String> getAttrs() {
-        return attrs;
-    }
-
-    public void setAttrs(List<String> attrs) {
-        this.attrs = attrs;
     }
 
     public String getExpires() {

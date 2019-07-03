@@ -14,6 +14,11 @@ public class Entities {
     private String idPattern;
     private String type;
 
+    public Entities(String idPattern, String type) {
+        this.idPattern = idPattern;
+        this.type = type;
+    }
+
     public String getIdPattern() {
         return idPattern;
     }

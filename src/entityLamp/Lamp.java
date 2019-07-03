@@ -11,7 +11,6 @@ package entityLamp;
  * @since 1.0
  * @see entity.Entity
  * @see orion.Orion
- * @see Attrs
  */
 public class Lamp {
 
