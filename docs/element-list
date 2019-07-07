@@ -2,6 +2,7 @@ unnamed package
 batchUpdate
 entity
 entityLamp
+entityType
 httpRequests
 myTesteEntity
 orion

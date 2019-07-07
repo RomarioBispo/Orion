@@ -3,8 +3,7 @@ import com.google.gson.Gson;
 import entity.Entity;
 import entityLamp.Lamp;
 import httpRequests.HttpRequests;
-import subscription.Entities;
-import subscription.Subscription;
+import subscription.*;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Type;
@@ -67,8 +66,8 @@ public class Orion<T> {
     /**
      * Retrieves a list of entities that match different criteria
      *
-     * @param criteria can be defined by id, type, pattern matching (either id or type).
-     * @return  An Array with all objects (EntityId and type) registered on orion.
+     * @param criteria can be defined by id, entityType, pattern matching (either id or entityType).
+     * @return  An Array with all objects (EntityId and entityType) registered on orion.
      * the JSON entity representation format (described in a “JSON Entity Representation” section) on NGSIv2 docs.
      */
     public Entity[] listEntities(String criteria) throws Exception {
@@ -130,6 +129,7 @@ public class Orion<T> {
      * similar to retrieve the whole entity. this operation must return only one entity element.
      *
      * @param  entityId  Id of the entity to be retrieved
+     * @param  obj the object that represents the entity
      * @see #retrieveEntity(String, Object)
      * @return a object representing the entity
      */
@@ -140,7 +140,7 @@ public class Orion<T> {
 
     /**
      * Replace attributes for the entity, given your id and object representing the new attributes.
-     * Change id and type for entity is not allowed.
+     * Change id and entityType for entity is not allowed.
      *
      * @param  entityId  Id of the entity to be retrieved
      * @param obj object representing the new attributes for the entity.
@@ -250,10 +250,22 @@ public class Orion<T> {
      *
      * @param  entityId  Id of the entity to be retrieved.
      * @param attrName Name of the attribute to be retrieved.
+     * @param obj object that represents the attribute to update.
      * @return value of the given attribute.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public Object getAttributeValue(String entityId, String attrName) {
-        return null;
+    public Object getAttributeValue(String entityId, String attrName, Object obj) throws Exception {
+
+        String endpoint = "/v2/entities/"+ entityId + "/attrs/" + attrName + "/value";
+        String json = "";
+
+        HttpRequests http = new HttpRequests();
+        json = http.runGetRequest(this.url + endpoint);
+
+        Gson gson = new Gson();
+
+        return (gson.fromJson(json, obj.getClass()));
+
     }
 
 
@@ -262,28 +274,61 @@ public class Orion<T> {
      *
      * @param  entityId  Id of the entity to be retrieved
      * @param attrName Name of the attribute to be retrieved.
+     * @param obj object that represents the attribute to update.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void updateAttributeValue(String entityId, String attrName, Object obj) {
+    public void updateAttributeValue(String entityId, String attrName, Object obj) throws Exception {
+
+        String endpoint = "/v2/entities/"+ entityId + "/attrs/" + attrName + "/value";
+        String json = "";
+
+        Gson gson = new Gson();
+        json = gson.toJson(obj);
+
+        HttpRequests http = new HttpRequests();
+        http.runPutRequest(this.url +  endpoint, json);
 
     }
 
     /**
      * this operation return the entity types from Orion.
      *
-     * @return a list of entity types.
+     * @param obj object that represents the attribute to update.
+     * @return a list of entity types object.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public Object listEntityTypes() {
-        return null;
+    public List<Object> listEntityTypes(Object obj) throws Exception {
+
+        String endpoint = "/v2/types/";
+        String json = "";
+
+        HttpRequests http = new HttpRequests();
+        json = http.runGetRequest(this.url + endpoint);
+
+        Gson gson = new Gson();
+        return (gson.fromJson(json, (Type) obj.getClass()));
+
+
     }
 
     /**
      * this operation return information about entity types from Orion.
      *
-     * @param entitytype
-     * @return information about the given type.
+     * @param entitytype a type for the entity.
+     * @param obj object that represents the attribute to update.
+     * @return information about the given entityType.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public String retrieveEntityType(String entitytype) {
-        return "";
+    public Object retrieveEntityType(String entitytype, Object obj) throws Exception {
+
+        String endpoint = "/v2/types/" + entitytype;
+        String json = "";
+
+        HttpRequests http = new HttpRequests();
+        json = http.runGetRequest(this.url + endpoint);
+
+        Gson gson = new Gson();
+        return (gson.fromJson(json, (Type) obj.getClass()));
     }
 
     /**
@@ -292,7 +337,7 @@ public class Orion<T> {
      * @return a list of all the subscriptions present in the system.
      */
     public Object listSubscriptions() throws Exception {
-        
+
         String json = "";
         String endpoint = "/v2/subscriptions";
 
@@ -310,7 +355,7 @@ public class Orion<T> {
     /**
      * this operation creates a new subscription on Orion.
      *
-     * @param subscription
+     * @param subscription an given subscription object which represents a subscription on JSON format from Orion.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void createSubscriptions(Subscription subscription) throws Exception {
@@ -329,7 +374,7 @@ public class Orion<T> {
     /**
      * this operation returns a subscription given the subscriptionId
      *
-     * @param subscriptionId
+     * @param subscriptionId an given id from subscription.
      * @return a subscription that has the subscriptionId given.
      */
     public Object retrieveSubscription(String subscriptionId) {
@@ -365,6 +410,45 @@ public class Orion<T> {
     }
 
 
+    /**
+     * this operation create a simple subscription on orion.
+     * this subscription expires at 2040-04-05T14:00:00Z.
+     *
+     * @param id an given id from entity. (can be a regex)
+     * @param type an given type from entity.
+     * @param port an given port from where the server is listening the notifications.
+     * @param ip an given ip from where the server is running.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
+     */
+    public void createSimpleSubscription(String id, String type, int port, String ip) throws Exception {
+
+        String json = "";
+        String endpoint = "/v2/subscriptions";
+
+        Entities entities = new Entities(id,type);
+
+        List<Entities> entitiesList = new ArrayList<Entities>();
+        entitiesList.add(entities);
+
+        Subject subject = new Subject(entitiesList);
+
+        List<String> conditions = new ArrayList<String>();
+        Condition condition = new Condition(conditions);
+
+        List<String> attrs = new ArrayList<String>();
+
+        Http http = new Http("http://" + ip + ":" + port);
+        Notification notification = new Notification(http, attrs);
+
+        Subscription sub = new Subscription("A generic subscription",subject, condition,
+                notification, "2040-04-05T14:00:00Z", 1);
+
+        Gson gson = new Gson();
+        json = gson.toJson(sub);
+
+        HttpRequests httpRequest = new HttpRequests();
+        httpRequest.runPostRequest(this.url + endpoint, json);
+    }
     /**
      * this operation lists all the context provider registrations present in the system.
      *
@@ -431,7 +515,7 @@ public class Orion<T> {
         json = gson.toJson(batchEntities);
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url+endpoint,json);
+        http.runPostRequest(this.url + endpoint,json);
 
     }
 

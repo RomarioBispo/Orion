@@ -2,12 +2,14 @@ import batchUpdate.BatchUpdate;
 import entity.Entity;
 import entityLamp.Attrs;
 import entityLamp.Lamp;
+import genericNotification.GenericNotification;
 import myTesteEntity.MyEntity;
 import orion.Orion;
 import subscription.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
 
 public class Main {
 
@@ -16,6 +18,8 @@ public class Main {
         Orion orion = new Orion();
 
         //creating a entity
+        //ATRIBUIR A AUTORIA DA CLASSE DE LAMPADAS A MARIANA
+        // ATRIBUIR A AUTORIA DA CLASSE DE AR-CONDICIONADO A FELIPE
         Attrs name = new Attrs("Praça Oliveira Belo","Text");
         Attrs location = new Attrs("-10.936245,-37.061224","geo:point");
         Attrs radius = new Attrs("45","Float");
@@ -24,9 +28,9 @@ public class Main {
         Entity square01 = new Entity("urn:ngsi-ld:Square:1","Square",name,location,radius);
 
         MyEntity myEntity01 = new MyEntity("urn:ngsi-ld:Square:2","Square",name,location,radius,pressure,temperature);
-
-        //orion.createEntity(square01);
-        //orion.createEntity(myEntity01);
+//
+//        orion.createEntity(square01);
+//        orion.createEntity(myEntity01);
 
         //retrieving a entity from orion
         Entity square02 = (Entity) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
@@ -34,13 +38,13 @@ public class Main {
         System.out.println("My entity attr4:"+ myEntity02.getAttribute4().getValue());
 
         //setting value and sending to orion by batch your update
-        myEntity02.setAttribute4(new Attrs("50","Float"));
+        myEntity02.setAttribute4(new Attrs("55","Float"));
         List<Entity> batchEntities = new ArrayList<Entity>();
         batchEntities.add(myEntity02);
         BatchUpdate batchUpdate = new BatchUpdate(batchEntities);
         orion.batchUpdate(batchUpdate);
 
-        orion.removeSingleAttribute(myEntity02.getId(), "attribute5");
+       // orion.removeSingleAttribute(myEntity02.getId(), "attribute5");
 
         myEntity02.setAttribute5((Attrs) orion.getAttributeData(myEntity02.getId(),"attribute5", myEntity02.getAttribute5()));
         System.out.println("Get attrs data:"+myEntity02.getAttribute4().getValue());
@@ -91,11 +95,33 @@ public class Main {
 
         Subscription [] subscriptionslist = (Subscription[]) orion.listSubscriptions();
 
+        GenericNotification<Entity> GNotify = new GenericNotification<Entity>(batchEntities, "");
 
+        Future<String> f = myEntity01.subscribeAndListen(40041, "172.18.1.1");
 
+        //setting value and sending to orion by batch your update
+            myEntity01.setAttribute4(new Attrs("555", "Float"));
+            batchEntities = new ArrayList<Entity>();
+            batchEntities.add(myEntity01);
+            batchUpdate = new BatchUpdate(batchEntities);
+            orion.batchUpdate(batchUpdate);
+            //setting value and sending to orion by batch your update
+            myEntity01.setAttribute4(new Attrs("300", "Float"));
+            batchEntities = new ArrayList<Entity>();
+            batchEntities.add(myEntity01);
+            batchUpdate = new BatchUpdate(batchEntities);
+            orion.batchUpdate(batchUpdate);
+            //setting value and sending to orion by batch your update
+            myEntity01.setAttribute4(new Attrs("800", "Float"));
+            batchEntities = new ArrayList<Entity>();
+            batchEntities.add(myEntity01);
+            batchUpdate = new BatchUpdate(batchEntities);
+            orion.batchUpdate(batchUpdate);
 
-
+            System.out.println(f.get());
+            System.out.println("oieee");
 
 
     }
+
 }
