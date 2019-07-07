@@ -3,7 +3,7 @@ package entityLamp;
 
 /**
  * This class is used to help to represent a JSON entity (FIWARE format) as object java.
- * Here, to easy the developer's life. We've made a built-in Lamp entity, defined by: id, type, name, location, radius.
+ * Here, to easy the developer's life. We've made a built-in Lamp entity, defined by: id, entityType, name, location, radius.
  * On other hand, the developer can create your own entity java and use orion to send, update etc.
  *
  * @author Romario Bispo
@@ -24,7 +24,7 @@ public class Lamp {
      * Create a Square containing Lamps.
      *
      * @param  id  An given id for the entity.
-     * @param type An given type for the entity.
+     * @param type An given entityType for the entity.
      * @param name An given name for the entity.
      * @param location An given localition for the entity.
      * @param radius An give radius for the entity, means the distance between center and other point.
