@@ -82,6 +82,7 @@ public class Entity{
      * @param port an given port from where the server is listening.
      * @param ip an given IP address from where the server is running.
      * @return a Future<String> value, to retrieve the entity value, you must use this method and call getSubscriptionUpdate method after.
+     * @see #getSubscriptionUpdate
      */
     public Future<String> subscribeAndListen(int port, String ip) throws Exception {
 
@@ -103,6 +104,7 @@ public class Entity{
      * @param f a future object holding the notification payload which came from subscribeAndListen.
      * @param obj a entity object.
      * @return a entity Object filled with informations from notification.
+     * @see #subscribeAndListen
      */
     public Object getSubscriptionUpdate(Future<String> f, Object obj) throws ExecutionException, InterruptedException {
 

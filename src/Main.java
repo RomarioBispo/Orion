@@ -120,9 +120,28 @@ public class Main {
 
             MyEntity myEntity03 = (MyEntity) myEntity01.getSubscriptionUpdate(f, myEntity01);
 
-            System.out.println(myEntity03.getAttribute4().getValue());
+//            System.out.println(myEntity03.getAttribute4().getValue());
 
+            MyEntity myEntity04 = (MyEntity) orion.retrieveEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
+            System.out.println(myEntity04.getAttribute4().getValue());
 
+            myEntity02.setAttribute4(new Attrs("800", "Integer"));
+            orion.replaceAllEntitiesAttributes("urn:ngsi-ld:Square:2", myEntity02);
+
+            myEntity04 = (MyEntity) orion.retrieveEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
+            System.out.println(myEntity04.getAttribute4().getType());
+
+            myEntity02.setAttribute4(new Attrs("800", "Float"));
+            orion.updateOrAppendEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
+            myEntity04 = (MyEntity) orion.retrieveEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
+            System.out.println(myEntity04.getAttribute4().getType());
+
+            //aparentemente o método patch não tá funcionando, tenho que ver isso.
+            //ao substituir o patch request por um post parece que funcionou, vou investigar depois
+            myEntity02.setAttribute3(new Attrs("800", "Integer"));
+            orion.updateExistingEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
+            myEntity04 = (MyEntity) orion.retrieveEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
+            System.out.println(myEntity04.getAttribute3().getType());
 
     }
 

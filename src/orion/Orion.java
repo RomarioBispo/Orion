@@ -1,5 +1,7 @@
 package orion;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import entity.Entity;
 import entityLamp.Lamp;
 import httpRequests.HttpRequests;
@@ -127,14 +129,26 @@ public class Orion<T> {
 
     /**
      * similar to retrieve the whole entity. this operation must return only one entity element.
+     * This operation retrieve only attribute fields from entity, so, id and type not come from the request.
      *
      * @param  entityId  Id of the entity to be retrieved
      * @param  obj the object that represents the entity
      * @see #retrieveEntity(String, Object)
      * @return a object representing the entity
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public Object retrieveEntityAttributes(String entityId, Object obj) {
-        return obj;
+    public Object retrieveEntityAttributes(String entityId, Object obj) throws Exception {
+
+        String endpoint = "/v2/entities/" + entityId + "/attrs";
+        String json;
+
+        HttpRequests http = new HttpRequests();
+        json = http.runGetRequest(this.url + endpoint);
+
+        Gson gson = new Gson();
+        Object response =  gson.fromJson(json, obj.getClass());
+
+        return response;
     }
 
 
@@ -144,14 +158,21 @@ public class Orion<T> {
      *
      * @param  entityId  Id of the entity to be retrieved
      * @param obj object representing the new attributes for the entity.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void replaceAllEntitiesAttributes(String entityId, Object obj) throws Exception {
 
         String endpoint = "/v2/entities/" + entityId + "/attrs";
-        String json = "";
+        String json;
 
         Gson gson = new Gson();
-        gson.toJson(obj);
+        json = gson.toJson(obj);
+
+        JsonObject o = new JsonParser().parse(json).getAsJsonObject();
+        o.remove("id");
+        o.remove("type");
+
+        json = o.toString();
 
         HttpRequests http = new HttpRequests();
         http.runPutRequest(this.url + endpoint, json);
@@ -165,8 +186,23 @@ public class Orion<T> {
      *
      * @param  entityId  Id of the entity to be retrieved
      * @param obj object representing the attributes to append or update
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void updateOrAppendEntityAttributes(String entityId, Object obj) {
+    public void updateOrAppendEntityAttributes(String entityId, Object obj) throws Exception {
+        String endpoint = "/v2/entities/" + entityId + "/attrs";
+        String json;
+
+        Gson gson = new Gson();
+        json = gson.toJson(obj);
+
+        JsonObject o = new JsonParser().parse(json).getAsJsonObject();
+        o.remove("id");
+        o.remove("type");
+
+        json = o.toString();
+
+        HttpRequests http = new HttpRequests();
+        http.runPostRequest(this.url + endpoint, json);
 
     }
 
@@ -174,12 +210,27 @@ public class Orion<T> {
 
     /**
      * The entity attributes are updated with the ones in the object.
+     * The attributes must already exists before send this update.
      *
      * @param  entityId  Id of the entity to be retrieved
      * @param obj an object representing the attributes to update.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void updateExistingEntityAttributes(String entityId, Object obj) {
+    public void updateExistingEntityAttributes(String entityId, Object obj) throws Exception {
+        String endpoint = "/v2/entities/" + entityId + "/attrs";
+        String json;
 
+        Gson gson = new Gson();
+        json = gson.toJson(obj);
+
+        JsonObject o = new JsonParser().parse(json).getAsJsonObject();
+        o.remove("id");
+        o.remove("type");
+
+        json = o.toString();
+
+        HttpRequests http = new HttpRequests();
+        http.runPostRequest(this.url + endpoint, json);
     }
 
 
@@ -412,6 +463,7 @@ public class Orion<T> {
 
     /**
      * this operation create a simple subscription on orion.
+     * this subscription reacts (trigger notifications) to any changes on attributes.
      * this subscription expires at 2040-04-05T14:00:00Z.
      *
      * @param id an given id from entity. (can be a regex)

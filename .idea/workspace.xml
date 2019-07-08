@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="38239a97-e8ef-4abd-8163-8c6ca2d91d9a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Orion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Orion.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses-index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses.html" afterDir="false" />
@@ -12,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/docs/batchUpdate/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/batchUpdate/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/constant-values.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/docs/element-list" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/entity/Entity.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/entity/Entity.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/entity/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/entity/package-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/entity/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/entity/package-tree.html" afterDir="false" />
@@ -23,6 +23,9 @@
       <change beforePath="$PROJECT_DIR$/docs/entityType/EntityType.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/entityType/EntityType.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/entityType/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/entityType/package-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/entityType/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/entityType/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/genericNotification/GenericNotification.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/genericNotification/GenericNotification.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/genericNotification/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/genericNotification/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/genericNotification/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/genericNotification/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/help-doc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/httpRequests/HttpRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/httpRequests/HttpRequests.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/httpRequests/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/httpRequests/package-summary.html" afterDir="false" />
@@ -53,7 +56,6 @@
       <change beforePath="$PROJECT_DIR$/docs/orion/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/orion/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-search-index.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-tree.html" afterDir="false" />
@@ -68,11 +70,11 @@
       <change beforePath="$PROJECT_DIR$/docs/subscription/Subscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/subscription/Subscription.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/subscription/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/subscription/package-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/subscription/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/subscription/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/type-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/docs/type-search-index.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/genericNotification/GenericNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/genericNotification/GenericNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/httpRequests/HttpRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/httpRequests/HttpRequests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/orion/Orion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/orion/Orion.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,20 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="120" column="63" selection-start-line="120" selection-start-column="63" selection-end-line="120" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entity/Entity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+            <state relative-caret-position="1218">
+              <caret line="144" selection-start-line="144" selection-end-line="144" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,8 +100,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/orion/Orion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6553">
-              <caret line="72" column="26" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="26" />
+            <state relative-caret-position="2175">
+              <caret line="145" column="26" lean-forward="true" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/httpRequests/HttpRequests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="114" column="19" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,7 +139,6 @@
       <find>system.out.println</find>
       <find>entity</find>
       <find>replace</find>
-      <find>update</find>
       <find>delete</find>
       <find>list</find>
       <find>retrieve</find>
@@ -152,8 +153,15 @@
       <find>555</find>
       <find>updates</find>
       <find>estabele</find>
-      <find>simple</find>
       <find>listen</find>
+      <find>simple</find>
+      <find>retrieveentity</find>
+      <find>retrieveentityattributes</find>
+      <find>updateor</find>
+      <find>replaceall</find>
+      <find>update</find>
+      <find>setRequestProperty</find>
+      <find>updateexisting</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,15 +184,15 @@
         <option value="$PROJECT_DIR$/src/subscription/Notification.java" />
         <option value="$PROJECT_DIR$/src/batchUpdate/BatchUpdate.java" />
         <option value="$PROJECT_DIR$/src/myTesteEntity/MyEntity.java" />
-        <option value="$PROJECT_DIR$/src/httpRequests/HttpRequests.java" />
         <option value="$PROJECT_DIR$/src/entityType/Type.java" />
         <option value="$PROJECT_DIR$/src/entityType/EntityType.java" />
         <option value="$PROJECT_DIR$/src/subscription/SubscribeEntity.java" />
-        <option value="$PROJECT_DIR$/src/orion/Orion.java" />
         <option value="$PROJECT_DIR$/src/server/TCPServer.java" />
         <option value="$PROJECT_DIR$/src/genericNotification/GenericNotification.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/httpRequests/HttpRequests.java" />
+        <option value="$PROJECT_DIR$/src/orion/Orion.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -202,6 +210,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,14 +227,13 @@
               <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
               <item name="Orion" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="orion" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,7 +241,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562524918657" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562596746166" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../RoomManagement" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -295,9 +303,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17956904" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18276137" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -306,7 +313,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" visible="true" weight="0.20358306" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960095" visible="true" weight="0.20358306" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -380,16 +387,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/subscription/SubscribeEntity.java" />
-    <entry file="file://$PROJECT_DIR$/src/batchUpdate/BatchUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entityLamp/Lamp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -408,16 +405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/httpRequests/HttpRequests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -526,10 +513,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="jar://$PROJECT_DIR$/lib/google-http-client-1.29.2-sources.jar!/com/google/api/client/http/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="120" column="63" selection-start-line="120" selection-start-column="63" selection-end-line="120" selection-end-column="63" />
+        <state relative-caret-position="199">
+          <caret line="870" selection-start-line="870" selection-end-line="870" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/guava-26.0-android-sources.jar!/com/google/common/base/Preconditions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/batchUpdate/BatchUpdate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/httpRequests/HttpRequests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="114" column="19" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -538,8 +549,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        <state relative-caret-position="1020">
+          <caret line="88" column="30" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1218">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -548,8 +569,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/orion/Orion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6553">
-          <caret line="72" column="26" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="26" />
+        <state relative-caret-position="2175">
+          <caret line="145" column="26" lean-forward="true" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -634,7 +655,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>com.google.api-client:google-api-client-jackson2:1.30.0</last-edited>
+          <last-edited>com.google.http-client:google-http-client:1.28.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
