@@ -118,8 +118,10 @@ public class Main {
             batchUpdate = new BatchUpdate(batchEntities);
             orion.batchUpdate(batchUpdate);
 
-            System.out.println(f.get());
-            System.out.println("oieee");
+            MyEntity myEntity03 = (MyEntity) myEntity01.getSubscriptionUpdate(f, myEntity01);
+
+            System.out.println(myEntity03.getAttribute4().getValue());
+
 
 
     }

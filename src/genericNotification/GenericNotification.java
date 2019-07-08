@@ -13,6 +13,10 @@ import java.util.List;
 public class GenericNotification<T> {
 
     private List<T> data;
+
+    public GenericNotification() {
+    }
+
     private String subscriptionId;
 
     public List<T> getData() {

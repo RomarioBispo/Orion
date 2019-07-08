@@ -3,6 +3,7 @@ batchUpdate
 entity
 entityLamp
 entityType
+genericNotification
 httpRequests
 myTesteEntity
 orion

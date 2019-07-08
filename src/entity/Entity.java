@@ -8,6 +8,7 @@ import orion.Orion;
 import server.TCPServer;
 import subscription.*;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -75,17 +76,14 @@ public class Entity{
         this.id = id;
     }
 
-
     /**
      * this operation subscribe yourself on Orion to receive notifications about changed values
      *
      * @param port an given port from where the server is listening.
      * @param ip an given IP address from where the server is running.
-     * @return the entity updated with values from notification.
+     * @return a Future<String> value, to retrieve the entity value, you must use this method and call getSubscriptionUpdate method after.
      */
     public Future<String> subscribeAndListen(int port, String ip) throws Exception {
-
-        //https://www.guj.com.br/t/duvida-com-future-e-callable/138534/4
 
         Orion orion = new Orion();
         orion.createSimpleSubscription(this.id, this.type, port, ip);
@@ -97,6 +95,26 @@ public class Entity{
         executor.shutdown();
 
         return future;
+    }
+
+    /**
+     * this operation receive the Future<String> which came from subscribeAndListen and turn on in a entity Object.
+     *
+     * @param f a future object holding the notification payload which came from subscribeAndListen.
+     * @param obj a entity object.
+     * @return a entity Object filled with informations from notification.
+     */
+    public Object getSubscriptionUpdate(Future<String> f, Object obj) throws ExecutionException, InterruptedException {
+
+        String json = "";
+
+        Gson gson = new Gson();
+        GenericNotification notification = gson.fromJson(f.get(), GenericNotification.class);
+
+        json = gson.toJson(notification.getData().get(0));
+
+        return gson.fromJson(json, obj.getClass());
 
     }
+
 }
