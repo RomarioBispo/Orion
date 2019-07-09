@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"batchUpdate"},{"l":"entity"},{"l":"entityLamp"},{"l":"entityType"},{"l":"httpRequests"},{"l":"myTesteEntity"},{"l":"orion"},{"l":"server"},{"l":"subscription"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"batchUpdate"},{"l":"entity"},{"l":"entityLamp"},{"l":"entityType"},{"l":"genericNotification"},{"l":"httpRequests"},{"l":"myTesteEntity"},{"l":"orion"},{"l":"server"},{"l":"subscription"}]

@@ -6,7 +6,7 @@ package entityLamp;
  * Here, to easy the developer's life. We've made a built-in Lamp entity, defined by: id, entityType, name, location, radius.
  * On other hand, the developer can create your own entity java and use orion to send, update etc.
  *
- * @author Romario Bispo
+ * @author Mariana Martins
  * @version %I%, %G%
  * @since 1.0
  * @see entity.Entity
