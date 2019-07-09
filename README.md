@@ -106,19 +106,15 @@ Following all instruction showed before, you can develop a your own FIWARE app.
 If you wanto to contribute to this project, please contact me. Anyone is welcome to help.
 ## Versioning
 
-We use [Github](https://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [Github](https://github.com/) for versioning.
 
 ## Authors
 
 * **Romário Bispo** - [Romário Bispo](https://github.com/RomarioBispo)
 
-COLOCAR LISTA DE CONTRIBUIDORES DO PROJETO
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is open source project, before contribute, please contact me.
 
 ## Acknowledgments
 
