@@ -15,20 +15,21 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+        //First, you need to make a Orion instance
         Orion orion = new Orion();
-
-        //creating a entity
-        //ATRIBUIR A AUTORIA DA CLASSE DE LAMPADAS A MARIANA
-        // ATRIBUIR A AUTORIA DA CLASSE DE AR-CONDICIONADO A FELIPE
+        // You need to define a class .java which represents a entity, here we defined a class called Myentity with 5 attributes
+        // Before instantiate a entity, we have to instantiate the entities attributes
         Attrs name = new Attrs("Praça Oliveira Belo","Text");
         Attrs location = new Attrs("-10.936245,-37.061224","geo:point");
         Attrs radius = new Attrs("45","Float");
         Attrs pressure = new Attrs("450","Float");
         Attrs temperature = new Attrs("22","Float");
+
         Entity square01 = new Entity("urn:ngsi-ld:Square:1","Square",name,location,radius);
 
+        // After define the attributes, we can make a instance from entity
         MyEntity myEntity01 = new MyEntity("urn:ngsi-ld:Square:2","Square",name,location,radius,pressure,temperature);
-//
+        // And submit to orion using the method createEntity
 //        orion.createEntity(square01);
 //        orion.createEntity(myEntity01);
 

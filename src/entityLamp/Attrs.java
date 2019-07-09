@@ -4,7 +4,7 @@ package entityLamp;
 /**
  * This class is used to help to represent a object java as JSON on a NGSIv2 form.
  *
- * @author Romario Bispo
+ * @author Mariana Martins
  * @version %I%, %G%
  * @since 1.0
  * @see Lamp

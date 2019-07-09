@@ -1,5 +1,5 @@
 # Framework to FIWARE platform
-This framework was developed as a undergraduate thesis at Federal University of Sergipe.
+This framework was developed as a undergraduate thesis at Federal University of Sergipe - UFS.
 
 This project is a framework to FIWARE platform. Your objective is to give a way to develop easier FIWARE applications using the Programming Language java. 
 ## Getting Started
@@ -71,18 +71,15 @@ docker-compose -p fiware up -d
 ```
 
 
-To more information about install Docker, see:
+To more information about installation see [Docker](https://docs.docker.com/install/).
 
-https://docs.docker.com/install/
+To  more information about install compose, see [Docker compose](https://docs.docker.com/compose/install/).
 
-To  more information about install compose, see:
 
- https://docs.docker.com/compose/install/
+To more information about install FIWARE images, you can see this great [tutorial](https://fiware-tutorials.readthedocs.io/en/latest/getting-started/index.html) from FIWARE.
 
-To more information about install FIWARE images, you can see this great tutorial from FIWARE availabe on:
 
-https://fiware-tutorials.readthedocs.io/en/latest/getting-started/index.html
-## Running the tests
+## Using the framework
 
 Let's recapitulate, you've installed docker, docker compose and the images from FIWARE. Now, you can clone the repository.
 
@@ -93,17 +90,12 @@ We need to configure the listener, but if you don't know what is a listener, you
 Give an example
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+### Let's code
+If you want to see some examples to use on your application, check it out our Manual.java file. There is a some examples showing how to use the methods.
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Following all instruction showed before, you can develop a your own FIWARE app.
 
 ## Built With
 
