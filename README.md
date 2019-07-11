@@ -85,7 +85,7 @@ Let's recapitulate, you've installed docker, docker compose and the images from 
 
 ### How to configure the listener:
 
-We need to configure the listener, but if you don't know what is a listener, you must read the documentations available at: SITE FROM JAVADOCS.
+We need to configure the listener, but if you don't know what is a listener, you must read the documentations available at: [docs](https://frameworkdocs.herokuapp.com/index.html).
 ```
 Give an example
 ```
@@ -114,7 +114,7 @@ We use [Github](https://github.com/) for versioning.
 
 ## License
 
-This project is open source project, before contribute, please contact me.
+This project is a open source project, before contribute, please contact me.
 
 ## Acknowledgments
 
