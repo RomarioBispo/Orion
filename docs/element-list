@@ -1,11 +1,12 @@
-unnamed package
-batchUpdate
-entity
-entityLamp
-entityType
-genericNotification
-httpRequests
-myTesteEntity
-orion
-server
-subscription
+br.com.ufs.orionframework.batchupdate
+br.com.ufs.orionframework.entity
+br.com.ufs.orionframework.entitylamp
+br.com.ufs.orionframework.entitytype
+br.com.ufs.orionframework.genericnotification
+br.com.ufs.orionframework.httprequests
+br.com.ufs.orionframework.mytesteentity
+br.com.ufs.orionframework.orion
+br.com.ufs.orionframework.server
+br.com.ufs.orionframework.subscription
+br.com.ufs.orionframework.subscriptor
+br.com.ufs.orionframework.usersguide
