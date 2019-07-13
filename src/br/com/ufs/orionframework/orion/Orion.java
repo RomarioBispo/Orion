@@ -1,4 +1,6 @@
 package br.com.ufs.orionframework.orion;
+import br.com.ufs.orionframework.genericnotification.GenericNotification;
+import br.com.ufs.orionframework.server.TCPServer;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -9,6 +11,10 @@ import br.com.ufs.orionframework.subscription.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  * Orion make all NGSIv2 operations by using objects java.
@@ -357,7 +363,6 @@ public class Orion<T> {
         Gson gson = new Gson();
         return (gson.fromJson(json, (Type) obj.getClass()));
 
-
     }
 
     /**
@@ -458,7 +463,6 @@ public class Orion<T> {
 
     }
 
-
     /**
      * this operation create a simple subscription on orion.
      * this subscription reacts (trigger notifications) to any changes on attributes.
@@ -507,6 +511,51 @@ public class Orion<T> {
         HttpRequests httpRequest = new HttpRequests();
         httpRequest.runPostRequest(this.url + endpoint, json);
     }
+
+    /**
+     * this operation subscribe yourself on Orion to receive notifications about changed values
+     *
+     * @param port an given port from where the server is listening.
+     * @param ip an given IP address from where the server is running.
+     * @return a Future<String> value, to retrieve the entity value, you must use this method and call getSubscriptionUpdate method after.
+     * @see #getSubscriptionUpdate
+     */
+    public Future<String> subscribeAndListen(String id, String type, int port, String ip) throws Exception {
+
+        Orion orion = new Orion();
+        orion.createSimpleSubscription(id, type, port, ip, false);
+
+        ExecutorService executor = Executors.newFixedThreadPool(1);
+
+        Future<String> future = executor.submit( new TCPServer(port, ip));
+
+        executor.shutdown();
+
+        return future;
+    }
+
+    /**
+     * this operation receive the Future<String> which came from subscribeAndListen and turn on in a entity Object.
+     *
+     * @param f a future object holding the notification payload which came from subscribeAndListen.
+     * @param obj a entity object.
+     * @return a entity Object filled with informations from notification.
+     * @see #subscribeAndListen
+     */
+    public Object getSubscriptionUpdate(Future<String> f, Object obj) throws ExecutionException, InterruptedException {
+
+        String json = "";
+
+        Gson gson = new Gson();
+        GenericNotification notification = gson.fromJson(f.get(), GenericNotification.class);
+
+        json = gson.toJson(notification.getData().get(0));
+
+        return gson.fromJson(json, obj.getClass());
+
+    }
+
+
     /**
      * this operation lists all the context provider registrations present in the system.
      *

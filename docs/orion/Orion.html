@@ -216,7 +216,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntity(java.lang.Object)">createEntity</a></span>&#8203;(java.lang.Object&nbsp;obj)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createEntity(java.lang.Object)">createEntity</a></span>&#8203;(java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">Create a br.com.ufs.orionframework.entity on Orion (require a IP + port from Orion Context Broker)</div>
 </td>
@@ -264,7 +264,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>java.lang.Object</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttributeData(java.lang.String,java.lang.String,java.lang.Object)">getAttributeData</a></span>&#8203;(java.lang.String&nbsp;entityId,
                 java.lang.String&nbsp;attrName,
-                java.lang.Object&nbsp;obj)</code></th>
+                java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">Return the object with the attribute data of the attribute.</div>
 </td>
@@ -273,7 +273,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>java.lang.Object</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getAttributeValue(java.lang.String,java.lang.String,java.lang.Object)">getAttributeValue</a></span>&#8203;(java.lang.String&nbsp;entityId,
                  java.lang.String&nbsp;attrName,
-                 java.lang.Object&nbsp;obj)</code></th>
+                 java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">Returns the value property with the value of the attribute.</div>
 </td>
@@ -287,7 +287,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;java.lang.Object&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#listEntityTypes(java.lang.Object)">listEntityTypes</a></span>&#8203;(java.lang.Object&nbsp;obj)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#listEntityTypes(java.lang.Object)">listEntityTypes</a></span>&#8203;(java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">this operation return the br.com.ufs.orionframework.entity types from Orion.</div>
 </td>
@@ -324,7 +324,7 @@ extends java.lang.Object</pre>
 <tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#replaceAllEntitiesAttributes(java.lang.String,java.lang.Object)">replaceAllEntitiesAttributes</a></span>&#8203;(java.lang.String&nbsp;entityId,
-                            java.lang.Object&nbsp;obj)</code></th>
+                            java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">Replace attributes for the br.com.ufs.orionframework.entity, given your id and object representing
     the
@@ -334,7 +334,7 @@ extends java.lang.Object</pre>
 <tr id="i18" class="altColor">
 <td class="colFirst"><code>java.lang.Object</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#retrieveEntity(java.lang.String,java.lang.Object)">retrieveEntity</a></span>&#8203;(java.lang.String&nbsp;entityId,
-              java.lang.Object&nbsp;obj)</code></th>
+              java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">Given an Id and object that represents the br.com.ufs.orionframework.entity required, returns an
     object
@@ -344,7 +344,7 @@ extends java.lang.Object</pre>
 <tr id="i19" class="rowColor">
 <td class="colFirst"><code>java.lang.Object</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#retrieveEntityAttributes(java.lang.String,java.lang.Object)">retrieveEntityAttributes</a></span>&#8203;(java.lang.String&nbsp;entityId,
-                        java.lang.Object&nbsp;obj)</code></th>
+                        java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">similar to retrieve the whole br.com.ufs.orionframework.entity. this operation must return only one
     br.com.ufs.orionframework.entity element.</div>
@@ -353,7 +353,7 @@ extends java.lang.Object</pre>
 <tr id="i20" class="altColor">
 <td class="colFirst"><code>java.lang.Object</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#retrieveEntityType(java.lang.String,java.lang.Object)">retrieveEntityType</a></span>&#8203;(java.lang.String&nbsp;entitytype,
-                  java.lang.Object&nbsp;obj)</code></th>
+                  java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">this operation return information about br.com.ufs.orionframework.entity types from Orion.</div>
 </td>
@@ -376,7 +376,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateAttributeData(java.lang.String,java.lang.String,java.lang.Object)">updateAttributeData</a></span>&#8203;(java.lang.String&nbsp;entityId,
                    java.lang.String&nbsp;attrName,
-                   java.lang.Object&nbsp;obj)</code></th>
+                   java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">Replace previous attribute data by the one in the object.</div>
 </td>
@@ -385,7 +385,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateAttributeValue(java.lang.String,java.lang.String,java.lang.Object)">updateAttributeValue</a></span>&#8203;(java.lang.String&nbsp;entityId,
                     java.lang.String&nbsp;attrName,
-                    java.lang.Object&nbsp;obj)</code></th>
+                    java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">given a object representing a new attribute, this operation turn it a new attribute value.</div>
 </td>
@@ -393,7 +393,7 @@ extends java.lang.Object</pre>
 <tr id="i25" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateExistingEntityAttributes(java.lang.String,java.lang.Object)">updateExistingEntityAttributes</a></span>&#8203;(java.lang.String&nbsp;entityId,
-                              java.lang.Object&nbsp;obj)</code></th>
+                              java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">The br.com.ufs.orionframework.entity attributes are updated with the ones in the object.</div>
 </td>
@@ -401,7 +401,7 @@ extends java.lang.Object</pre>
 <tr id="i26" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#updateOrAppendEntityAttributes(java.lang.String,java.lang.Object)">updateOrAppendEntityAttributes</a></span>&#8203;(java.lang.String&nbsp;entityId,
-                              java.lang.Object&nbsp;obj)</code></th>
+                              java.lang.Object&nbsp;en)</code></th>
 <td class="colLast">
 <div class="block">the br.com.ufs.orionframework.entity attributes are updated (if they previously exist) or appended
     (if they don’t previously exist) with the ones in the payload.</div>
@@ -490,12 +490,12 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>createEntity</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;createEntity&#8203;(java.lang.Object&nbsp;obj)
+<pre class="methodSignature">public&nbsp;void&nbsp;createEntity&#8203;(java.lang.Object&nbsp;en)
                   throws java.lang.Exception</pre>
 <div class="block">Create a br.com.ufs.orionframework.entity on Orion (require a IP + port from Orion Context Broker)</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>obj</code> - An given object representing the br.com.ufs.orionframework.entity. The object follows
+<dd><code>en</code> - An given object representing the br.com.ufs.orionframework.entity. The object follows
  the JSON br.com.ufs.orionframework.entity representation format (described in a “JSON Entity Representation” section) on NGSIv2 docs.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.Exception</code> - for http requests (bad request, forbidden, etc.)</dd>
@@ -532,7 +532,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>retrieveEntity</h4>
 <pre class="methodSignature">public&nbsp;java.lang.Object&nbsp;retrieveEntity&#8203;(java.lang.String&nbsp;entityId,
-                                       java.lang.Object&nbsp;obj)
+                                       java.lang.Object&nbsp;en)
                                 throws java.lang.Exception</pre>
 <div class="block">Given an Id and object that represents the br.com.ufs.orionframework.entity required, returns an
     object
@@ -540,7 +540,7 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityId</code> - an identifier from br.com.ufs.orionframework.entity</dd>
-<dd><code>obj</code> - the object that represents the br.com.ufs.orionframework.entity</dd>
+<dd><code>en</code> - the object that represents the br.com.ufs.orionframework.entity</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a object updated from br.com.ufs.orionframework.entity</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -572,7 +572,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>retrieveEntityAttributes</h4>
 <pre class="methodSignature">public&nbsp;java.lang.Object&nbsp;retrieveEntityAttributes&#8203;(java.lang.String&nbsp;entityId,
-                                                 java.lang.Object&nbsp;obj)
+                                                 java.lang.Object&nbsp;en)
                                           throws java.lang.Exception</pre>
 <div class="block">similar to retrieve the whole br.com.ufs.orionframework.entity. this operation must return only one
     br.com.ufs.orionframework.entity element.
@@ -582,7 +582,7 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityId</code> - Id of the br.com.ufs.orionframework.entity to be retrieved</dd>
-<dd><code>obj</code> - the object that represents the br.com.ufs.orionframework.entity</dd>
+<dd><code>en</code> - the object that represents the br.com.ufs.orionframework.entity</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a object representing the br.com.ufs.orionframework.entity</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -599,7 +599,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>replaceAllEntitiesAttributes</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;replaceAllEntitiesAttributes&#8203;(java.lang.String&nbsp;entityId,
-                                         java.lang.Object&nbsp;obj)
+                                         java.lang.Object&nbsp;en)
                                   throws java.lang.Exception</pre>
 <div class="block">Replace attributes for the br.com.ufs.orionframework.entity, given your id and object representing
     the
@@ -608,7 +608,7 @@ extends java.lang.Object</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityId</code> - Id of the br.com.ufs.orionframework.entity to be retrieved</dd>
-<dd><code>obj</code> - object representing the new attributes for the br.com.ufs.orionframework.entity.</dd>
+<dd><code>en</code> - object representing the new attributes for the br.com.ufs.orionframework.entity.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.Exception</code> - for http requests (bad request, forbidden, etc.)</dd>
 </dl>
@@ -621,14 +621,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>updateOrAppendEntityAttributes</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;updateOrAppendEntityAttributes&#8203;(java.lang.String&nbsp;entityId,
-                                           java.lang.Object&nbsp;obj)
+                                           java.lang.Object&nbsp;en)
                                     throws java.lang.Exception</pre>
 <div class="block">the br.com.ufs.orionframework.entity attributes are updated (if they previously exist) or appended
     (if they don’t previously exist) with the ones in the payload.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityId</code> - Id of the br.com.ufs.orionframework.entity to be retrieved</dd>
-<dd><code>obj</code> - object representing the attributes to append or update</dd>
+<dd><code>en</code> - object representing the attributes to append or update</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.Exception</code> - for http requests (bad request, forbidden, etc.)</dd>
 </dl>
@@ -641,14 +641,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>updateExistingEntityAttributes</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;updateExistingEntityAttributes&#8203;(java.lang.String&nbsp;entityId,
-                                           java.lang.Object&nbsp;obj)
+                                           java.lang.Object&nbsp;en)
                                     throws java.lang.Exception</pre>
 <div class="block">The br.com.ufs.orionframework.entity attributes are updated with the ones in the object.
     The attributes must already exists before send this update.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityId</code> - Id of the br.com.ufs.orionframework.entity to be retrieved</dd>
-<dd><code>obj</code> - an object representing the attributes to update.</dd>
+<dd><code>en</code> - an object representing the attributes to update.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.Exception</code> - for http requests (bad request, forbidden, etc.)</dd>
 </dl>
@@ -662,14 +662,14 @@ extends java.lang.Object</pre>
 <h4>getAttributeData</h4>
 <pre class="methodSignature">public&nbsp;java.lang.Object&nbsp;getAttributeData&#8203;(java.lang.String&nbsp;entityId,
                                          java.lang.String&nbsp;attrName,
-                                         java.lang.Object&nbsp;obj)
+                                         java.lang.Object&nbsp;en)
                                   throws java.lang.Exception</pre>
 <div class="block">Return the object with the attribute data of the attribute.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityId</code> - Id of the br.com.ufs.orionframework.entity to be retrieved</dd>
 <dd><code>attrName</code> - Name of the attribute to be retrieved.</dd>
-<dd><code>obj</code> - object that represents the attribute</dd>
+<dd><code>en</code> - object that represents the attribute</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a object with the attribute data of the attribute.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -685,14 +685,14 @@ extends java.lang.Object</pre>
 <h4>updateAttributeData</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;updateAttributeData&#8203;(java.lang.String&nbsp;entityId,
                                 java.lang.String&nbsp;attrName,
-                                java.lang.Object&nbsp;obj)
+                                java.lang.Object&nbsp;en)
                          throws java.lang.Exception</pre>
 <div class="block">Replace previous attribute data by the one in the object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityId</code> - Id of the br.com.ufs.orionframework.entity to be retrieved</dd>
 <dd><code>attrName</code> - Name of the attribute to be retrieved.</dd>
-<dd><code>obj</code> - object that represents the attribute to update.</dd>
+<dd><code>en</code> - object that represents the attribute to update.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.Exception</code> - for http requests (bad request, forbidden, etc.)</dd>
 </dl>
@@ -725,14 +725,14 @@ extends java.lang.Object</pre>
 <h4>getAttributeValue</h4>
 <pre class="methodSignature">public&nbsp;java.lang.Object&nbsp;getAttributeValue&#8203;(java.lang.String&nbsp;entityId,
                                           java.lang.String&nbsp;attrName,
-                                          java.lang.Object&nbsp;obj)
+                                          java.lang.Object&nbsp;en)
                                    throws java.lang.Exception</pre>
 <div class="block">Returns the value property with the value of the attribute.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityId</code> - Id of the br.com.ufs.orionframework.entity to be retrieved.</dd>
 <dd><code>attrName</code> - Name of the attribute to be retrieved.</dd>
-<dd><code>obj</code> - object that represents the attribute to update.</dd>
+<dd><code>en</code> - object that represents the attribute to update.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>value of the given attribute.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -748,14 +748,14 @@ extends java.lang.Object</pre>
 <h4>updateAttributeValue</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;updateAttributeValue&#8203;(java.lang.String&nbsp;entityId,
                                  java.lang.String&nbsp;attrName,
-                                 java.lang.Object&nbsp;obj)
+                                 java.lang.Object&nbsp;en)
                           throws java.lang.Exception</pre>
 <div class="block">given a object representing a new attribute, this operation turn it a new attribute value.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entityId</code> - Id of the br.com.ufs.orionframework.entity to be retrieved</dd>
 <dd><code>attrName</code> - Name of the attribute to be retrieved.</dd>
-<dd><code>obj</code> - object that represents the attribute to update.</dd>
+<dd><code>en</code> - object that represents the attribute to update.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.Exception</code> - for http requests (bad request, forbidden, etc.)</dd>
 </dl>
@@ -767,12 +767,12 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>listEntityTypes</h4>
-<pre class="methodSignature">public&nbsp;java.util.List&lt;java.lang.Object&gt;&nbsp;listEntityTypes&#8203;(java.lang.Object&nbsp;obj)
+<pre class="methodSignature">public&nbsp;java.util.List&lt;java.lang.Object&gt;&nbsp;listEntityTypes&#8203;(java.lang.Object&nbsp;en)
                                                  throws java.lang.Exception</pre>
 <div class="block">this operation return the br.com.ufs.orionframework.entity types from Orion.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>obj</code> - object that represents the attribute to update.</dd>
+<dd><code>en</code> - object that represents the attribute to update.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>a list of br.com.ufs.orionframework.entity types object.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -787,13 +787,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>retrieveEntityType</h4>
 <pre class="methodSignature">public&nbsp;java.lang.Object&nbsp;retrieveEntityType&#8203;(java.lang.String&nbsp;entitytype,
-                                           java.lang.Object&nbsp;obj)
+                                           java.lang.Object&nbsp;en)
                                     throws java.lang.Exception</pre>
 <div class="block">this operation return information about br.com.ufs.orionframework.entity types from Orion.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>entitytype</code> - a type for the br.com.ufs.orionframework.entity.</dd>
-<dd><code>obj</code> - object that represents the attribute to update.</dd>
+<dd><code>en</code> - object that represents the attribute to update.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>information about the given br.com.ufs.orionframework.entitytype.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>

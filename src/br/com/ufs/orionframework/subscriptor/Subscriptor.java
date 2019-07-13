@@ -1,5 +1,6 @@
 package br.com.ufs.orionframework.subscriptor;
 
+import br.com.ufs.orionframework.entity.Entity;
 import com.google.gson.Gson;
 import br.com.ufs.orionframework.genericnotification.GenericNotification;
 import br.com.ufs.orionframework.orion.Orion;
@@ -10,7 +11,6 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,7 +23,7 @@ public class Subscriptor implements Runnable {
     private Map<String, lambda> subscriptions = new HashMap<>();
     private int port;
     private String ip;
-    private Object obj;
+    private Entity en;
     private String entityId;
     private String type;
     private ServerSocket server;
@@ -44,53 +44,61 @@ public class Subscriptor implements Runnable {
         this.type = type;
     }
 
-    public Object getObj() {
-        return obj;
+    public Object getEn() {
+        return en;
     }
 
-    public void setObj(Object obj) {
-        this.obj = obj;
+    public void setEn(Entity en) {
+        this.en = en;
     }
 
-    public Subscriptor(int port, String ip, String entityId, String type, ServerSocket server) throws IOException {
+    public Subscriptor(int port, String ip, String entityId, String type, ServerSocket server, Entity en) {
         this.port = port;
         this.ip = ip;
         this.entityId = entityId;
         this.type = type;
         this.server = server;
+        this.en = en;
 
     }
 
     /**
+     * Create a subscription on Orion
+     *
+     * @param updateFunction a function which does a update when came a notification.
+     * @throws Exception for http requests (bad request, forbidden, etc.)
+     */
+    public void subscribe(lambda updateFunction, Entity en) throws Exception {
+
+        Orion orion = new Orion();
+
+        if (subscriptions.isEmpty()) {
+            orion.createSimpleSubscription(en.getId(), en.getType(), this.port, this.ip, false);
+            subscriptions.put(en.getId(), updateFunction);
+        }
+        else if (!subscriptions.containsKey(en.getId())) {
+            orion.createSimpleSubscription(en.getId(), en.getType(), this.port, this.ip, false);
+            subscriptions.put(en.getId(), updateFunction);
+        }
+        else { // caso o Id já exista no Map, então tem que colocar as funções em uma lista
+            subscriptions.get(en.getId());
+        }
+    }
+
+
+    /**
      * Create a subscription on Orion and listen to notifications.
+     * When a notification come, a update function associated with entity is applied to entity values.
      *
      * @param updateFunction a function which does a update when came a notification.
      * @param obj the entity object which have to update.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void subscribe(lambda updateFunction, Object obj) throws Exception {
+    public void subscribeAndListen(lambda updateFunction, Entity obj) throws Exception {
 
-        // Essa atribuição tá desconexa, fazer no construtor
-        this.obj = obj;
+        Subscriptor sub = new Subscriptor(this.port, this.ip, this.entityId, this.type, this.server, obj);
+        sub.subscribe(updateFunction, this.en);
 
-        Orion orion = new Orion();
-
-        if (subscriptions.isEmpty()) {
-            orion.createSimpleSubscription(this.entityId, this.type, this.port, this.ip, false);
-            subscriptions.put(entityId, updateFunction);
-        }
-        else if (!subscriptions.containsKey(entityId)) {
-            orion.createSimpleSubscription(this.entityId, this.type, this.port, this.ip, false);
-            subscriptions.put(entityId, updateFunction);
-        }
-        else { // caso o Id já exista no Map, então tem que colocar as funções em uma lista
-            subscriptions.get(entityId);
-        }
-    }
-
-    public void subscribeAndListen(lambda updateFunction, Object obj) throws Exception {
-        Subscriptor sub = new Subscriptor(this.port, this.ip, this.entityId, this.type, this.server);
-        sub.subscribe(updateFunction, obj);
         Thread t = new Thread(sub);
         t.start();
     }
@@ -128,19 +136,27 @@ public class Subscriptor implements Runnable {
             lastLine = data;
         }
 
-        System.out.println(lastLine);
-        notification = gson.fromJson(json, GenericNotification.class);
+        notification = gson.fromJson(lastLine, GenericNotification.class);
 
-        // pegar a entidade como objeto
-        System.out.println(json);
-        this.obj = gson.fromJson(json, this.obj.getClass());
-        // aplicar a função
-        lambda f = subscriptions.get(this.entityId);
-        this.obj = f.lambdaUpdate(obj);
+        for (Object entities: notification.getData()) {
+
+            json = gson.toJson(entities);
+            this.en = gson.fromJson(json, this.en.getClass());
+
+            lambda f = subscriptions.get(this.en.getId());
+            this.en = f.lambdaUpdate(this.en);
+
+        }
     }
-
+    /**
+     * This functional interface represents a lambda expression.
+     * If you want to subscribe and listen, its possible send a function which receive a entity object and returns a entity object
+     * to perform a update.
+     *
+     */
     @FunctionalInterface
-    public interface lambda {
-        Object lambdaUpdate(Object object);
+    public interface lambda{
+        Entity lambdaUpdate(Entity entity);
     }
+
 }

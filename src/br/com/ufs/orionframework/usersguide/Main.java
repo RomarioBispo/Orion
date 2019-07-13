@@ -29,8 +29,6 @@ public class Main {
         Attrs pressure = new Attrs("450","Float");
         Attrs temperature = new Attrs("22","Float");
 
-        Entity square01 = new Entity("urn:ngsi-ld:Square:1","Square",name,location,radius);
-
         // After define the attributes, we can make a instance from entity
         MyEntity myEntity01 = new MyEntity("urn:ngsi-ld:Square:1","Square",name,location,radius,pressure,temperature);
         MyEntity myEntity02 = new MyEntity("urn:ngsi-ld:Square:2","Square",name,location,radius,pressure,temperature);
@@ -39,7 +37,6 @@ public class Main {
 //        orion.createEntity(myEntity02);
 
         //retrieving a entity from orion
-        Entity square02 = (Entity) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
         MyEntity myEntity03 = (MyEntity) orion.retrieveEntity("urn:ngsi-ld:Square:2", myEntity01);
         System.out.println("My entity attr4:"+ myEntity02.getAttribute4().getValue());
 
@@ -72,9 +69,8 @@ public class Main {
 
         //orion.listEntities("");
         //retrieving updated entity and print the class update
-        square02 = (Entity) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
-        System.out.println("After: "+square02.getAttribute3().getValue());
-
+//        square02 = (MyEntity) orion.retrieveEntity("urn:ngsi-ld:Square:1", square01);
+//        System.out.println("After: "+ ((MyEntity) square02).getAttribute3().getValue());
 
         // creating a subscription
 
@@ -128,27 +124,38 @@ public class Main {
 //          System.out.println(myEntity03.getAttribute4().getValue());
 
             // put the update logic on mylambda1 and mylambda2
-            Subscriptor.lambda mylambda1 = (Myentity) -> {
-                if(Integer.parseInt(myEntity01.getAttribute4().getValue()) > 100) {
+            /*
+            Aparentemente não consigo mandar uma função do tipo do usuário, devido ao fato que o outro lado espera outro tipo de função
+            Este, não pode ser alterado, e portanto, tenho que consultar o professor quanto a esse método.
+            * */
+            lambdaf mylambda1 = (en) -> {
+                if(Integer.parseInt(en.getAttribute4().getValue()) > 100) {
                     System.out.println("maior que 100");
-                    System.out.println(myEntity01.getAttribute5().getValue());
+                    System.out.println(en.getAttribute5().getValue());
                 } else {
                     System.out.println("menor que 100");
                 }
+                return en;
+            };
+            lambdaf mylambda2 = (en) -> {
+                if(Integer.parseInt(en.getAttribute4().getValue()) > 100) {
+                    System.out.println("maior que 100");
+                    System.out.println(en.getAttribute5().getValue());
+                } else {
+                    System.out.println("menor que 100");
+                }
+                return en;
+            };
 
-                return Myentity;
-            };
-            Subscriptor.lambda mylambda2 = (object) -> {
-                System.out.println("ola funcao 2");
-                return null;
-            };
+            System.out.println(Entity.class);
+            System.out.println(MyEntity.class);
 
             ServerSocket ss = new ServerSocket(40041, 1, InetAddress.getByName("172.18.1.1"));
-            Subscriptor subscriptor1 = new Subscriptor(40041, "172.18.1.1","urn:ngsi-ld:Square:1", "Square", ss);
-            subscriptor1.subscribeAndListen((Subscriptor.lambda) mylambda1, myEntity01);
+            Subscriptor subscriptor1 = new Subscriptor(40041, "172.18.1.1","urn:ngsi-ld:Square:1", "Square", ss, myEntity01);
+            subscriptor1.subscribeAndListen( en -> updateEntity((MyEntity) en), myEntity01);
             System.out.println("olhaaa");
-            Subscriptor subscriptor2 = new Subscriptor(40041, "172.18.1.1","urn:ngsi-ld:Square:2", "Square", ss);
-            subscriptor2.subscribeAndListen(mylambda2, myEntity02);
+            Subscriptor subscriptor2 = new Subscriptor(40041, "172.18.1.1","urn:ngsi-ld:Square:2", "Square", ss, myEntity02);
+            subscriptor2.subscribeAndListen(en -> updateEntity((MyEntity) en), myEntity02);
 
             MyEntity myEntity04 = (MyEntity) orion.retrieveEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
             System.out.println(myEntity04.getAttribute4().getValue());
@@ -178,8 +185,18 @@ public class Main {
             System.out.println(myEntity04.getAttribute3().getType());
 
     }
-    public interface lambdas {
-        void func();
+    public interface lambdaf{
+        MyEntity lambdaUpdate(MyEntity entity);
+    }
+
+    public static MyEntity updateEntity(MyEntity en) {
+        if (Integer.parseInt(en.getAttribute4().getValue()) > 100) {
+            en.setAttribute5(new Attrs("0", "Float"));
+        }else {
+            System.out.println("preguica");
+        }
+
+        return en;
     }
 
 }
