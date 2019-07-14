@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="38239a97-e8ef-4abd-8163-8c6ca2d91d9a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java" afterDir="false" />
@@ -18,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="994">
-              <caret line="158" selection-start-line="158" selection-end-line="158" />
+            <state relative-caret-position="1455">
+              <caret line="142" column="40" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,23 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1798">
-              <caret line="512" column="5" selection-start-line="512" selection-start-column="5" selection-end-line="512" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/server/TCPServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="38" column="38" selection-start-line="38" selection-end-line="39" />
+            <state relative-caret-position="150">
+              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,8 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>'</find>
-      <find>create</find>
       <find>subscri</find>
       <find>dados</find>
       <find>555</find>
@@ -96,6 +82,8 @@
       <find>subscribe</find>
       <find>subs</find>
       <find>Subscriptions</find>
+      <find>String json = &quot;&quot;</find>
+      <find>endpoint</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,9 +122,10 @@
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Lamp.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" />
       </list>
     </option>
   </component>
@@ -154,7 +143,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,11 +186,31 @@
               <item name="ufs" type="462c0819:PsiDirectoryNode" />
               <item name="orionframework" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Orion" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="br" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ufs" type="462c0819:PsiDirectoryNode" />
+              <item name="orionframework" type="462c0819:PsiDirectoryNode" />
+              <item name="subscriptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Orion" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="br" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ufs" type="462c0819:PsiDirectoryNode" />
+              <item name="orionframework" type="462c0819:PsiDirectoryNode" />
+              <item name="usersguide" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -209,12 +218,13 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563029572449" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563030460145" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../RoomManagement" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -287,16 +297,17 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2529928" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26097366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="SonarLint" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" visible="true" weight="0.2198697" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" weight="0.2198697" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -370,17 +381,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/subscription/SubscribeEntity.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Condition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="39" />
-          <folding>
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Entities.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -468,65 +468,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Lamp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="148" column="9" selection-start-line="148" selection-start-column="9" selection-end-line="148" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="59" lean-forward="true" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+        <state relative-caret-position="-599">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Attrs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="-60">
           <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Lamp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entitytype/EntityType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="75">
+          <caret line="5" column="82" lean-forward="true" selection-start-line="5" selection-start-column="82" selection-end-line="5" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/genericnotification/GenericNotification.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="30">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/httprequests/HttpRequests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1136">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="120">
+          <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -535,18 +515,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-521">
+        <state relative-caret-position="-479">
           <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1798">
-          <caret line="512" column="5" selection-start-line="512" selection-start-column="5" selection-end-line="512" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -555,8 +525,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/server/TCPServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="38" column="38" selection-start-line="38" selection-end-line="39" />
+        <state relative-caret-position="-1530">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Condition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -565,8 +562,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="994">
-          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        <state relative-caret-position="1455">
+          <caret line="142" column="40" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

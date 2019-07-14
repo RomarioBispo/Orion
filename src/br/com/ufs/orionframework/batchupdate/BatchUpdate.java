@@ -5,7 +5,7 @@ import br.com.ufs.orionframework.entity.Entity;
 import java.util.List;
 
 /**
- * This class is used to help to represent a object java as JSON batchupdate on a NGSIv2 form.
+ * This class is used to help to represent a object java as JSON batchupdate payload on a NGSIv2 form.
  *
  * @author Romario Bispo
  * @version %I%, %G%

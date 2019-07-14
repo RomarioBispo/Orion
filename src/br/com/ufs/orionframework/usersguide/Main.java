@@ -147,13 +147,10 @@ public class Main {
                 return en;
             };
 
-            System.out.println(Entity.class);
-            System.out.println(MyEntity.class);
-
             ServerSocket ss = new ServerSocket(40041, 1, InetAddress.getByName("172.18.1.1"));
             Subscriptor subscriptor1 = new Subscriptor(40041, "172.18.1.1","urn:ngsi-ld:Square:1", "Square", ss, myEntity01);
             subscriptor1.subscribeAndListen( en -> updateEntity((MyEntity) en), myEntity01);
-            System.out.println("olhaaa");
+
             Subscriptor subscriptor2 = new Subscriptor(40041, "172.18.1.1","urn:ngsi-ld:Square:2", "Square", ss, myEntity02);
             subscriptor2.subscribeAndListen(en -> updateEntity((MyEntity) en), myEntity02);
 

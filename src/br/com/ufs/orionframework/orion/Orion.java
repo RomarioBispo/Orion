@@ -28,6 +28,12 @@ public class Orion<T> {
 
     private String url;
     private String listener;
+    public static final String ENTITIES_ENDPOINT = "/v2/entities/";
+    public static final String ATTRS_ENDPOINT = "/attrs/";
+    public static final String VALUE_ENDPOINT = "/value";
+    public static final String SUBSCRIPTIONS_ENDPOINT = "/v2/subscriptions/";
+    public static final String TYPES_ENDPOINT = "/v2/types/";
+    public static final String BATCH_ENDPOINT = "/v2/op/update";
 
     /**
      * Instantiate a Orion object.
@@ -58,14 +64,13 @@ public class Orion<T> {
      */
     public void createEntity(Object obj) throws Exception {
 
-        String endpoint = "/v2/entities";
-        String json = "";
+        String json;
 
         Gson gson = new Gson();
         json = gson.toJson(obj);
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + endpoint, json);
+        http.runPostRequest(this.url + ENTITIES_ENDPOINT, json);
 
     }
 
@@ -78,17 +83,14 @@ public class Orion<T> {
      */
     public Entity[] listEntities(String criteria) throws Exception {
 
-        String json = "";
-        String endpoint = "/v2/entities/";
+        String json;
 
         HttpRequests http = new HttpRequests();
-        json  = http.runGetRequest(this.url+endpoint);
+        json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT);
 
         Gson gson = new Gson();
 
-        Entity [] entities = gson.fromJson(json, Entity[].class);
-
-        return entities;
+        return gson.fromJson(json, Entity[].class);
 
     }
 
@@ -103,11 +105,10 @@ public class Orion<T> {
      */
     public Object retrieveEntity(String entityId, Object obj) throws Exception {
 
-        String json = "";
-        String endpoint = "/v2/entities/"+entityId;
+        String json;
 
         HttpRequests http = new HttpRequests();
-        json  = http.runGetRequest(this.url + endpoint);
+        json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId);
 
         Gson gson = new Gson();
 
@@ -123,10 +124,8 @@ public class Orion<T> {
      */
     public void removeEntity(String entityId) throws Exception {
 
-        String endpoint = "/v2/entities/" + entityId;
-
         HttpRequests http = new HttpRequests();
-        http.runDeleteRequest(this.url + endpoint);
+        http.runDeleteRequest(this.url + ENTITIES_ENDPOINT + entityId);
 
     }
 
@@ -143,16 +142,15 @@ public class Orion<T> {
      */
     public Object retrieveEntityAttributes(String entityId, Object obj) throws Exception {
 
-        String endpoint = "/v2/entities/" + entityId + "/attrs";
         String json;
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + endpoint);
+        json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT);
 
         Gson gson = new Gson();
-        Object response =  gson.fromJson(json, obj.getClass());
 
-        return response;
+
+        return (gson.fromJson(json, obj.getClass()));
     }
 
 
@@ -166,7 +164,6 @@ public class Orion<T> {
      */
     public void replaceAllEntitiesAttributes(String entityId, Object obj) throws Exception {
 
-        String endpoint = "/v2/entities/" + entityId + "/attrs";
         String json;
 
         Gson gson = new Gson();
@@ -179,7 +176,7 @@ public class Orion<T> {
         json = o.toString();
 
         HttpRequests http = new HttpRequests();
-        http.runPutRequest(this.url + endpoint, json);
+        http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + "/attrs", json);
 
     }
 
@@ -193,7 +190,7 @@ public class Orion<T> {
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void updateOrAppendEntityAttributes(String entityId, Object obj) throws Exception {
-        String endpoint = "/v2/entities/" + entityId + "/attrs";
+
         String json;
 
         Gson gson = new Gson();
@@ -206,7 +203,7 @@ public class Orion<T> {
         json = o.toString();
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + endpoint, json);
+        http.runPostRequest(this.url + ENTITIES_ENDPOINT + entityId + "/attrs", json);
 
     }
 
@@ -221,7 +218,7 @@ public class Orion<T> {
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void updateExistingEntityAttributes(String entityId, Object obj) throws Exception {
-        String endpoint = "/v2/entities/" + entityId + "/attrs";
+
         String json;
 
         Gson gson = new Gson();
@@ -234,7 +231,7 @@ public class Orion<T> {
         json = o.toString();
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + endpoint, json);
+        http.runPostRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT, json);
     }
 
 
@@ -249,11 +246,10 @@ public class Orion<T> {
      */
     public Object getAttributeData(String entityId, String attrName, Object obj) throws Exception {
 
-        String endpoint = "/v2/entities/" + entityId + "/attrs/" + attrName;
-        String json = "";
+        String json;
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + endpoint);
+        json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName);
 
         Gson gson = new Gson();
 
@@ -272,14 +268,13 @@ public class Orion<T> {
      */
     public void updateAttributeData(String entityId, String attrName, Object obj) throws Exception {
 
-        String endpoint = "/v2/entities/" + entityId + "/attrs/" + attrName;
         String json;
 
         Gson gson = new Gson();
         json = gson.toJson(obj);
 
         HttpRequests http = new HttpRequests();
-        http.runPutRequest(this.url + endpoint, json);
+        http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName, json);
 
     }
 
@@ -292,10 +287,8 @@ public class Orion<T> {
      */
     public void removeSingleAttribute(String entityId, String attrName) throws Exception {
 
-        String endpoint = "/v2/entities/" + entityId + "/attrs/" + attrName;
-
         HttpRequests http = new HttpRequests();
-        http.runDeleteRequest(this.url + endpoint);
+        http.runDeleteRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName);
 
     }
 
@@ -311,11 +304,10 @@ public class Orion<T> {
      */
     public Object getAttributeValue(String entityId, String attrName, Object obj) throws Exception {
 
-        String endpoint = "/v2/entities/"+ entityId + "/attrs/" + attrName + "/value";
-        String json = "";
+        String json;
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + endpoint);
+        json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName + VALUE_ENDPOINT);
 
         Gson gson = new Gson();
 
@@ -334,14 +326,13 @@ public class Orion<T> {
      */
     public void updateAttributeValue(String entityId, String attrName, Object obj) throws Exception {
 
-        String endpoint = "/v2/entities/"+ entityId + "/attrs/" + attrName + "/value";
-        String json = "";
+        String json;
 
         Gson gson = new Gson();
         json = gson.toJson(obj);
 
         HttpRequests http = new HttpRequests();
-        http.runPutRequest(this.url +  endpoint, json);
+        http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName + VALUE_ENDPOINT, json);
 
     }
 
@@ -354,11 +345,10 @@ public class Orion<T> {
      */
     public List<Object> listEntityTypes(Object obj) throws Exception {
 
-        String endpoint = "/v2/types/";
-        String json = "";
+        String json;
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + endpoint);
+        json = http.runGetRequest(this.url + TYPES_ENDPOINT);
 
         Gson gson = new Gson();
         return (gson.fromJson(json, (Type) obj.getClass()));
@@ -375,11 +365,10 @@ public class Orion<T> {
      */
     public Object retrieveEntityType(String entitytype, Object obj) throws Exception {
 
-        String endpoint = "/v2/types/" + entitytype;
-        String json = "";
+        String json;
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + endpoint);
+        json = http.runGetRequest(this.url + TYPES_ENDPOINT + entitytype);
 
         Gson gson = new Gson();
         return (gson.fromJson(json, (Type) obj.getClass()));
@@ -392,11 +381,10 @@ public class Orion<T> {
      */
     public Object listSubscriptions() throws Exception {
 
-        String json = "";
-        String endpoint = "/v2/subscriptions";
+        String json;
 
         HttpRequests http = new HttpRequests();
-        json  = http.runGetRequest(this.url + endpoint);
+        json  = http.runGetRequest(this.url + SUBSCRIPTIONS_ENDPOINT);
 
         Gson gson = new Gson();
 
@@ -414,14 +402,13 @@ public class Orion<T> {
      */
     public void createSubscriptions(Subscription subscription) throws Exception {
 
-        String json = "";
-        String endpoint = "/v2/subscriptions";
+        String json;
 
         Gson gson = new Gson();
         json = gson.toJson(subscription);
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + endpoint, json);
+        http.runPostRequest(this.url + SUBSCRIPTIONS_ENDPOINT, json);
 
     }
 
@@ -446,10 +433,8 @@ public class Orion<T> {
      */
     public void deleteSubscription(String subscriptionId) throws Exception {
 
-        String endpoint = "/v2/subscriptions" + subscriptionId;
-
         HttpRequests http = new HttpRequests();
-        http.runDeleteRequest(this.url + endpoint);
+        http.runDeleteRequest(this.url + SUBSCRIPTIONS_ENDPOINT + subscriptionId);
 
     }
 
@@ -460,7 +445,10 @@ public class Orion<T> {
      * @param subscription
      */
     public void updateSubscription(String subscriptionId, Object subscription) {
-
+        /**
+         * This method is not implemented yet.
+         * This feature will be implemented in the future.
+         */
     }
 
     /**
@@ -478,20 +466,19 @@ public class Orion<T> {
      */
     public void createSimpleSubscription(String id, String type, int port, String ip, Boolean expires) throws Exception {
 
-        String json = "";
-        String endpoint = "/v2/subscriptions";
+        String json;
 
         Entities entities = new Entities(id,type);
 
-        List<Entities> entitiesList = new ArrayList<Entities>();
+        List<Entities> entitiesList = new ArrayList<>();
         entitiesList.add(entities);
 
         Subject subject = new Subject(entitiesList);
 
-        List<String> conditions = new ArrayList<String>();
+        List<String> conditions = new ArrayList<>();
         Condition condition = new Condition(conditions);
 
-        List<String> attrs = new ArrayList<String>();
+        List<String> attrs = new ArrayList<>();
 
         Http http = new Http("http://" + ip + ":" + port);
         Notification notification = new Notification(http, attrs);
@@ -509,7 +496,7 @@ public class Orion<T> {
         }
 
         HttpRequests httpRequest = new HttpRequests();
-        httpRequest.runPostRequest(this.url + endpoint, json);
+        httpRequest.runPostRequest(this.url + SUBSCRIPTIONS_ENDPOINT, json);
     }
 
     /**
@@ -544,7 +531,7 @@ public class Orion<T> {
      */
     public Object getSubscriptionUpdate(Future<String> f, Object obj) throws ExecutionException, InterruptedException {
 
-        String json = "";
+        String json;
 
         Gson gson = new Gson();
         GenericNotification notification = gson.fromJson(f.get(), GenericNotification.class);
@@ -561,7 +548,10 @@ public class Orion<T> {
      *
      */
     public void listRegistrations() {
-
+        /**
+         * This method is not implemented yet.
+         * This feature will be implemented in the future.
+         */
     }
 
 
@@ -573,7 +563,10 @@ public class Orion<T> {
      * @param registration
      */
     public void createRegistration(Object registration) {
-
+        /**
+         * This method is not implemented yet.
+         * This feature will be implemented in the future.
+         */
     }
 
     /**
@@ -583,6 +576,10 @@ public class Orion<T> {
      * @return a registration object
      */
     public Object retrieveRegistration(String registrationId) {
+        /**
+         * This method is not implemented yet.
+         * This feature will be implemented in the future.
+         */
         return null;
     }
 
@@ -593,7 +590,10 @@ public class Orion<T> {
      * @param registrationId
      */
     public void deleteRegistration(String registrationId) {
-
+        /**
+         * This method is not implemented yet.
+         * This feature will be implemented in the future.
+         */
     }
 
     /**
@@ -603,7 +603,10 @@ public class Orion<T> {
      * @param registration
      */
     public void updateRegistration(String registrationId, Object registration) {
-
+        /**
+         * This method is not implemented yet.
+         * This feature will be implemented in the future.
+         */
     }
 
     /**
@@ -615,14 +618,13 @@ public class Orion<T> {
      */
     public void batchUpdate(Object batchEntities) throws Exception {
 
-        String json = "";
-        String endpoint = "/v2/op/update";
+        String json;
 
         Gson gson = new Gson();
         json = gson.toJson(batchEntities);
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + endpoint,json);
+        http.runPostRequest(this.url + BATCH_ENDPOINT,json);
 
     }
 

@@ -20,7 +20,7 @@ import java.util.Map;
  * @since 1.0
  */
 public class Subscriptor implements Runnable {
-    private Map<String, lambda> subscriptions = new HashMap<>();
+    private Map<String, Lambda> subscriptions = new HashMap<>();
     private int port;
     private String ip;
     private Entity en;
@@ -68,15 +68,11 @@ public class Subscriptor implements Runnable {
      * @param updateFunction a function which does a update when came a notification.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void subscribe(lambda updateFunction, Entity en) throws Exception {
+    public void subscribe(Lambda updateFunction, Entity en) throws Exception {
 
         Orion orion = new Orion();
 
-        if (subscriptions.isEmpty()) {
-            orion.createSimpleSubscription(en.getId(), en.getType(), this.port, this.ip, false);
-            subscriptions.put(en.getId(), updateFunction);
-        }
-        else if (!subscriptions.containsKey(en.getId())) {
+        if (!subscriptions.containsKey(en.getId())) {
             orion.createSimpleSubscription(en.getId(), en.getType(), this.port, this.ip, false);
             subscriptions.put(en.getId(), updateFunction);
         }
@@ -94,7 +90,7 @@ public class Subscriptor implements Runnable {
      * @param obj the entity object which have to update.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void subscribeAndListen(lambda updateFunction, Entity obj) throws Exception {
+    public void subscribeAndListen(Lambda updateFunction, Entity obj) throws Exception {
 
         Subscriptor sub = new Subscriptor(this.port, this.ip, this.entityId, this.type, this.server, obj);
         sub.subscribe(updateFunction, this.en);
@@ -143,7 +139,7 @@ public class Subscriptor implements Runnable {
             json = gson.toJson(entities);
             this.en = gson.fromJson(json, this.en.getClass());
 
-            lambda f = subscriptions.get(this.en.getId());
+            Lambda f = subscriptions.get(this.en.getId());
             this.en = f.lambdaUpdate(this.en);
 
         }
@@ -155,7 +151,7 @@ public class Subscriptor implements Runnable {
      *
      */
     @FunctionalInterface
-    public interface lambda{
+    public interface Lambda{
         Entity lambdaUpdate(Entity entity);
     }
 
