@@ -10,7 +10,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -20,7 +22,7 @@ import java.util.Map;
  * @since 1.0
  */
 public class Subscriptor implements Runnable {
-    private Map<String, Lambda> subscriptions = new HashMap<>();
+    private Map<String, List<Lambda>> subscriptions = new HashMap<>();
     private int port;
     private String ip;
     private Entity en;
@@ -71,10 +73,12 @@ public class Subscriptor implements Runnable {
     public void subscribe(Lambda updateFunction, Entity en) throws Exception {
 
         Orion orion = new Orion();
+        List<Lambda> updateFunctionList = new ArrayList<>();
 
-        if (!subscriptions.containsKey(en.getId())) {
+       if (!subscriptions.containsKey(en.getId())) {
             orion.createSimpleSubscription(en.getId(), en.getType(), this.port, this.ip, false);
-            subscriptions.put(en.getId(), updateFunction);
+            updateFunctionList.add(updateFunction);
+            subscriptions.put(en.getId(), updateFunctionList);
         }
         else { // caso o Id já exista no Map, então tem que colocar as funções em uma lista
             subscriptions.get(en.getId());
@@ -139,8 +143,9 @@ public class Subscriptor implements Runnable {
             json = gson.toJson(entities);
             this.en = gson.fromJson(json, this.en.getClass());
 
-            Lambda f = subscriptions.get(this.en.getId());
-            this.en = f.lambdaUpdate(this.en);
+            List<Lambda> updateFunctionList = subscriptions.get(this.en.getId());
+            for (Lambda fList: updateFunctionList)
+                this.en = fList.lambdaUpdate(this.en);
 
         }
     }

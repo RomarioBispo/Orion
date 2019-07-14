@@ -28,9 +28,10 @@ public class Orion<T> {
 
     private String url;
     private String listener;
+
     public static final String ENTITIES_ENDPOINT = "/v2/entities/";
     public static final String ATTRS_ENDPOINT = "/attrs/";
-    public static final String VALUE_ENDPOINT = "/value";
+    public static final String VALUE_ENDPOINT = "/value/";
     public static final String SUBSCRIPTIONS_ENDPOINT = "/v2/subscriptions/";
     public static final String TYPES_ENDPOINT = "/v2/types/";
     public static final String BATCH_ENDPOINT = "/v2/op/update";

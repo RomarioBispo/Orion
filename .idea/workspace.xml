@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38239a97-e8ef-4abd-8163-8c6ca2d91d9a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java" afterDir="false" />
@@ -21,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1455">
-              <caret line="142" column="40" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
+            <state relative-caret-position="-1627">
+              <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -31,10 +28,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java">
+        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+            <state relative-caret-position="-120">
+              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,7 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>subscri</find>
       <find>dados</find>
       <find>555</find>
       <find>updates</find>
@@ -84,6 +80,7 @@
       <find>Subscriptions</find>
       <find>String json = &quot;&quot;</find>
       <find>endpoint</find>
+      <find>/value</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,11 +118,11 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Lamp.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java" />
       </list>
     </option>
   </component>
@@ -186,26 +183,6 @@
               <item name="ufs" type="462c0819:PsiDirectoryNode" />
               <item name="orionframework" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ufs" type="462c0819:PsiDirectoryNode" />
-              <item name="orionframework" type="462c0819:PsiDirectoryNode" />
-              <item name="subscriptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ufs" type="462c0819:PsiDirectoryNode" />
-              <item name="orionframework" type="462c0819:PsiDirectoryNode" />
-              <item name="usersguide" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -218,7 +195,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563030460145" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563112881117" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../RoomManagement" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -297,17 +274,17 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26097366" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23064645" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="SonarLint" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="SonarLint" weight="0.24429968" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" weight="0.2198697" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" visible="true" weight="0.2198697" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -461,13 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/TesteLambdas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Lamp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-599">
@@ -540,16 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -560,20 +520,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/TesteLambdas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="142" column="40" selection-start-line="142" selection-start-column="40" selection-end-line="142" selection-end-column="40" />
+        <state relative-caret-position="75">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        <state relative-caret-position="-1627">
+          <caret line="44" column="8" lean-forward="true" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
