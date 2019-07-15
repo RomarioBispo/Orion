@@ -19,6 +19,7 @@ import java.util.concurrent.Future;
 /**
  * Orion make all NGSIv2 operations by using objects java.
  * Your objective is to let a little bit easier to developer do FIWARE applications using java.
+ *
  * @author Romario Bispo
  * @version %I%, %G%
  * @since 1.0

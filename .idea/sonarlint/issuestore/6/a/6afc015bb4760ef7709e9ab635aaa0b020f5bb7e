@@ -1,0 +1,31 @@
+
+nsquid:CommentedOutCodeLine<"<This block of commented-out lines of code should be removed.(µç‡¥ùÿÿÿÿ8êò·…¿-
+Rsquid:S1481n"6Remove this unused "subscriptionslist" local variable.(·¡¼Ìýÿÿÿÿ
+isquid:S00117p"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÙÃ¬
+asquid:S1854n"ERemove this useless assignment to local variable "subscriptionslist".(·¡¼Ìýÿÿÿÿ
+Rsquid:S1854p";Remove this useless assignment to local variable "GNotify".(ŒÙÃ¬
+ssquid:S1192$"UDefine a constant instead of duplicating this literal "urn:ngsi-ld:Square:1" 3 times.(ùªÍ½8¸¯‚†¿-
+csquid:S1192"GDefine a constant instead of duplicating this literal "Float" 10 times.(¿¾ïÑøÿÿÿÿ
+gsquid:S1192u"KDefine a constant instead of duplicating this literal "172.18.1.1" 4 times.(­†Åâøÿÿÿÿ
+hsquid:UselessImportCheck"8Remove this unused import 'java.util.concurrent.Future'.(á¬øíýÿÿÿÿ8®ÕŸ†¿-
+jsquid:S00114²"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(…î•
+P
+squid:S106 "9Replace this use of System.out or System.err by a logger.(ÀÒÉ’
+^squid:S1192$"GDefine a constant instead of duplicating this literal "Square" 6 times.(ùªÍ½
+nsquid:CommentedOutCodeLineD"<This block of commented-out lines of code should be removed.(âýæÚýÿÿÿÿ8ãÆû…¿-
+hsquid:CommentedOutCodeLineN"<This block of commented-out lines of code should be removed.(ñ…z8‰ùü…¿-
+isquid:CommentedOutCodeLineP"<This block of commented-out lines of code should be removed.(µ…¢–8ªëý…¿-
+U
+squid:S106¯"9Replace this use of System.out or System.err by a logger.(èž÷üÿÿÿÿ
+`squid:S1192™"HDefine a constant instead of duplicating this literal "Integer" 3 times.(š½Äò
+P
+squid:S106©"9Replace this use of System.out or System.err by a logger.(ÀÒÉ’
+isquid:CommentedOutCodeLineI"<This block of commented-out lines of code should be removed.(è…Ûß8­Äý…¿-
+msquid:S1192%"VDefine a constant instead of duplicating this literal "urn:ngsi-ld:Square:2" 12 times.(ë­ñŽ
+Csquid:S1481p",Remove this unused "GNotify" local variable.(ŒÙÃ¬
+U
+squid:S106—"9Replace this use of System.out or System.err by a logger.(åŠ‹Ýþÿÿÿÿ
+T
+squid:S106-"9Replace this use of System.out or System.err by a logger.(î®ß²ùÿÿÿÿ
+U
+squid:S106º"9Replace this use of System.out or System.err by a logger.(Ôè—Þÿÿÿÿÿ
