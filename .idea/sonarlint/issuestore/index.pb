@@ -45,3 +45,9 @@ d
 4src/br/com/ufs/iotaframework/devices/DeviceList.java,7/1/715c1e02b8582f8c8a4c57fc014a686dbf6607db
 [
 +src/br/com/ufs/iotaframework/iota/IoTA.java,d/d/ddabaa025520f95ecf94f38f110714fbb504d490
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+b
+2src/br/com/ufs/iotaframework/usersguide/Guide.java,c/b/cbe73b7180f0ad8c7690f86e0e3409f66821f417
+9
+	Orion.iml,1/8/1853fd4ed380615de6eea02008d7cc5a1bd5820a

@@ -1,12 +1,16 @@
 
-Ÿsquid:S1186‘"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·‹Ÿ8¡Ü¾·¿-
-Ÿsquid:S1186ª"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ş£É 8ú¹Ë·¿-
-¤squid:S1186Y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ö§Àõúÿÿÿÿ8Íì‰·¿-
-Ÿsquid:S1186v"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™¤Ø8ˆÛ¡·¿-
-psquid:S00117ª"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş£É 8ú¹Ë·¿-
-¥squid:S1186†"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İñˆûÿÿÿÿ8¨¢²·¿-
-psquid:S00117‘"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·‹Ÿ8ßßÃ·¿-
-¤squid:S1186K"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ê¹´çúÿÿÿÿ8´áã¶¿-
-Ÿsquid:S1186j"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(šß’ÿ8™’–·¿-
-¥squid:S1186Ÿ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(çÁ§‘ùÿÿÿÿ8ıÊ·¿-
-vsquid:S00117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÁ§‘ùÿÿÿÿ8ıÊ·¿-
+¥squid:S1186¶"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(çÁ§‘ùÿÿÿÿ8ıÊ·¿-
+Ÿsquid:S1186¨"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·‹Ÿ8¡Ü¾·¿-
+vsquid:S00117¶"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÁ§‘ùÿÿÿÿ8ıÊ·¿-
+V
+squid:S106_"9Replace this use of System.out or System.err by a logger.(åŒúõ8¼‰ÂÓ¿-
+V
+squid:S106b"9Replace this use of System.out or System.err by a logger.(øŒ¼Æ8ã¡†½¿-
+ squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(™¤Ø8ˆÛ¡·¿-
+psquid:S00117¨"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·‹Ÿ8ßßÃ·¿-
+¤squid:S1186p"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ö§Àõúÿÿÿÿ8Íì‰·¿-
+¥squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İñˆûÿÿÿÿ8¨¢²·¿-
+ squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(šß’ÿ8™’–·¿-
+Ÿsquid:S1186Á"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ş£É 8ú¹Ë·¿-
+psquid:S00117Á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş£É 8ú¹Ë·¿-
+Ssquid:S1191"5Use classes from the Java API instead of Sun classes.(¢¤ÿ…8İ–®Ô¿-

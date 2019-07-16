@@ -19,6 +19,8 @@ public class Device {
     private String timezone;
     private List<Attribute> attributes;
     private List<StaticAttribute> static_attributes;
+    private List<Command> commands;
+
 
     /**
      * Create a Device object.
@@ -30,7 +32,28 @@ public class Device {
      * @param timezone Not used in this version.
      * @param attributes Mapping for protocol parameters to entity attributes.
      * @param static_attributes Attributes published as defined.
+     * @param commands Attributes working as commands.
      */
+    public Device(String device_id, String protocol, String entity_name, String entity_type, String timezone, List<Attribute> attributes, List<StaticAttribute> static_attributes, List<Command> commands) {
+        this.device_id = device_id;
+        this.protocol = protocol;
+        this.entity_name = entity_name;
+        this.entity_type = entity_type;
+        this.timezone = timezone;
+        this.attributes = attributes;
+        this.static_attributes = static_attributes;
+        this.commands = commands;
+    }
+
+    public Device(String device_id, String protocol, String entity_name, String entity_type, String timezone, List<Attribute> attributes) {
+        this.device_id = device_id;
+        this.protocol = protocol;
+        this.entity_name = entity_name;
+        this.entity_type = entity_type;
+        this.timezone = timezone;
+        this.attributes = attributes;
+    }
+
     public Device(String device_id, String protocol, String entity_name, String entity_type, String timezone, List<Attribute> attributes, List<StaticAttribute> static_attributes) {
         this.device_id = device_id;
         this.protocol = protocol;
@@ -40,6 +63,7 @@ public class Device {
         this.attributes = attributes;
         this.static_attributes = static_attributes;
     }
+
 
     public String getDevice_id() {
         return device_id;
@@ -95,5 +119,12 @@ public class Device {
 
     public void setStatic_attributes(List<StaticAttribute> static_attributes) {
         this.static_attributes = static_attributes;
+    }
+    public List<Command> getCommands() {
+        return commands;
+    }
+
+    public void setCommands(List<Command> commands) {
+        this.commands = commands;
     }
 }

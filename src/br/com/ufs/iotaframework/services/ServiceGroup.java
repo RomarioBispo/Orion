@@ -1,5 +1,6 @@
 package br.com.ufs.iotaframework.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,6 +18,11 @@ public class ServiceGroup {
      * Creates a list from services objects, called service group.
      *
      */
+    public ServiceGroup(List<Service> services) {
+
+            this.services = services;
+    }
+
     public List<Service> getServices() {
         return services;
     }
@@ -25,7 +31,4 @@ public class ServiceGroup {
         this.services = services;
     }
 
-    public ServiceGroup(List<Service> services) {
-        this.services = services;
-    }
 }
