@@ -59,10 +59,19 @@ public class Guide {
         iota.createDevice(devices);
 
         // retrieving the devices
-        iota.retrieveAllDevices();
+        DeviceList dl = iota.retrieveAllDevices();
 
+        Device d = iota.retrieveDevice("device_id");
 
+        d.setEntity_type("entity_type01");
+        iota.updateDevice("device_id", d);
 
+        d = iota.retrieveDevice("device_id");
+
+//        iota.sendMeasure();
+
+        // removing a device is not working
+//        iota.removeDevice("device_id");
 
     }
 }

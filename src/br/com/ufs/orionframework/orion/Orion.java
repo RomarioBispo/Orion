@@ -1,4 +1,5 @@
 package br.com.ufs.orionframework.orion;
+import br.com.ufs.iotaframework.iota.IoTA;
 import br.com.ufs.orionframework.genericnotification.GenericNotification;
 import br.com.ufs.orionframework.server.TCPServer;
 import com.google.gson.Gson;
@@ -15,6 +16,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.logging.Logger;
 
 /**
  * Orion make all NGSIv2 operations by using objects java.
@@ -30,12 +32,14 @@ public class Orion<T> {
     private String url;
     private String listener;
 
-    public static final String ENTITIES_ENDPOINT = "/v2/entities/";
-    public static final String ATTRS_ENDPOINT = "/attrs/";
-    public static final String VALUE_ENDPOINT = "/value/";
-    public static final String SUBSCRIPTIONS_ENDPOINT = "/v2/subscriptions/";
-    public static final String TYPES_ENDPOINT = "/v2/types/";
-    public static final String BATCH_ENDPOINT = "/v2/op/update";
+    private static final String ENTITIES_ENDPOINT = "/v2/entities/";
+    private static final String ATTRS_ENDPOINT = "/attrs/";
+    private static final String VALUE_ENDPOINT = "/value/";
+    private static final String SUBSCRIPTIONS_ENDPOINT = "/v2/subscriptions/";
+    private static final String TYPES_ENDPOINT = "/v2/types/";
+    private static final String BATCH_ENDPOINT = "/v2/op/update";
+    private static final Logger LOGGER = Logger.getLogger(Orion.class.getName());
+
 
     /**
      * Instantiate a Orion object.
@@ -64,7 +68,7 @@ public class Orion<T> {
      * the JSON entity representation format (described in a “JSON Entity Representation” section) on NGSIv2 docs.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void createEntity(Object obj) throws Exception {
+    public void createEntity(Object obj) {
 
         String json;
 
@@ -72,7 +76,12 @@ public class Orion<T> {
         json = gson.toJson(obj);
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + ENTITIES_ENDPOINT, json);
+        try {
+            http.runPostRequest(this.url + ENTITIES_ENDPOINT, json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and the entity was not created, please check your parameters");
+            e.printStackTrace();
+        }
 
     }
 
@@ -83,12 +92,17 @@ public class Orion<T> {
      * @return  An Array with all objects (EntityId and entitytype) registered on orion.
      * the JSON entity representation format (described in a “JSON Entity Representation” section) on NGSIv2 docs.
      */
-    public Entity[] listEntities(String criteria) throws Exception {
+    public Entity[] listEntities(String criteria){
 
-        String json;
+        String json = "";
 
         HttpRequests http = new HttpRequests();
-        json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT);
+        try {
+            json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was possible retrieve the entities, please check your parameters");
+            e.printStackTrace();
+        }
 
         Gson gson = new Gson();
 
@@ -103,14 +117,19 @@ public class Orion<T> {
      * @param  entityId  an identifier from entity
      * @param  obj the object that represents the entity
      * @throws Exception for http requests (bad request, forbidden, etc.)
-     * @return      a object updated from entity
+     * @return a object updated from entity
      */
-    public Object retrieveEntity(String entityId, Object obj) throws Exception {
+    public Object retrieveEntity(String entityId, Object obj){
 
-        String json;
+        String json = "";
 
         HttpRequests http = new HttpRequests();
-        json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId);
+        try {
+            json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and the entity was not retrieved, please check your parameters");
+            e.printStackTrace();
+        }
 
         Gson gson = new Gson();
 
@@ -124,10 +143,15 @@ public class Orion<T> {
      * @param  entityId  Id of the entity to be deleted.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void removeEntity(String entityId) throws Exception {
+    public void removeEntity(String entityId){
 
         HttpRequests http = new HttpRequests();
-        http.runDeleteRequest(this.url + ENTITIES_ENDPOINT + entityId);
+        try {
+            http.runDeleteRequest(this.url + ENTITIES_ENDPOINT + entityId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the entity was not removed, please check your parameters");
+        }
 
     }
 
@@ -142,12 +166,17 @@ public class Orion<T> {
      * @return a object representing the entity
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public Object retrieveEntityAttributes(String entityId, Object obj) throws Exception {
+    public Object retrieveEntityAttributes(String entityId, Object obj){
 
-        String json;
+        String json = "";
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT);
+        try {
+            json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and the entity attributes was not retrieved, please check your parameters");
+            e.printStackTrace();
+        }
 
         Gson gson = new Gson();
 
@@ -164,7 +193,7 @@ public class Orion<T> {
      * @param obj object representing the new attributes for the entity.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void replaceAllEntitiesAttributes(String entityId, Object obj) throws Exception {
+    public void replaceAllEntitiesAttributes(String entityId, Object obj){
 
         String json;
 
@@ -178,7 +207,12 @@ public class Orion<T> {
         json = o.toString();
 
         HttpRequests http = new HttpRequests();
-        http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + "/attrs", json);
+        try {
+            http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + "/attrs", json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and the entity attributes was not replaced, please check your parameters");
+            e.printStackTrace();
+        }
 
     }
 
@@ -191,7 +225,7 @@ public class Orion<T> {
      * @param obj object representing the attributes to append or update
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void updateOrAppendEntityAttributes(String entityId, Object obj) throws Exception {
+    public void updateOrAppendEntityAttributes(String entityId, Object obj){
 
         String json;
 
@@ -205,7 +239,12 @@ public class Orion<T> {
         json = o.toString();
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + ENTITIES_ENDPOINT + entityId + "/attrs", json);
+        try {
+            http.runPostRequest(this.url + ENTITIES_ENDPOINT + entityId + "/attrs", json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and the entity attributes was not updated or appended, please check your parameters");
+            e.printStackTrace();
+        }
 
     }
 
@@ -219,7 +258,7 @@ public class Orion<T> {
      * @param obj an object representing the attributes to update.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void updateExistingEntityAttributes(String entityId, Object obj) throws Exception {
+    public void updateExistingEntityAttributes(String entityId, Object obj){
 
         String json;
 
@@ -233,7 +272,12 @@ public class Orion<T> {
         json = o.toString();
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT, json);
+        try {
+            http.runPostRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT, json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible update existing attributes for the entity, please check your parameters");
+            e.printStackTrace();
+        }
     }
 
 
@@ -246,12 +290,17 @@ public class Orion<T> {
      * @return a object with the attribute data of the attribute.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public Object getAttributeData(String entityId, String attrName, Object obj) throws Exception {
+    public Object getAttributeData(String entityId, String attrName, Object obj){
 
-        String json;
+        String json = "";
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName);
+        try {
+            json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and the attribute data was not retrieved, please check your parameters");
+            e.printStackTrace();
+        }
 
         Gson gson = new Gson();
 
@@ -268,7 +317,7 @@ public class Orion<T> {
      * @param obj object that represents the attribute to update.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void updateAttributeData(String entityId, String attrName, Object obj) throws Exception {
+    public void updateAttributeData(String entityId, String attrName, Object obj){
 
         String json;
 
@@ -276,7 +325,12 @@ public class Orion<T> {
         json = gson.toJson(obj);
 
         HttpRequests http = new HttpRequests();
-        http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName, json);
+        try {
+            http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName, json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and the attribute data was not updated, please check your parameters");
+            e.printStackTrace();
+        }
 
     }
 
@@ -287,10 +341,15 @@ public class Orion<T> {
      * @param attrName Name of the attribute to be retrieved.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void removeSingleAttribute(String entityId, String attrName) throws Exception {
+    public void removeSingleAttribute(String entityId, String attrName){
 
         HttpRequests http = new HttpRequests();
-        http.runDeleteRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName);
+        try {
+            http.runDeleteRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and the attribute was not removed, please check your parameters");
+            e.printStackTrace();
+        }
 
     }
 
@@ -304,12 +363,17 @@ public class Orion<T> {
      * @return value of the given attribute.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public Object getAttributeValue(String entityId, String attrName, Object obj) throws Exception {
+    public Object getAttributeValue(String entityId, String attrName, Object obj){
 
-        String json;
+        String json = "";
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName + VALUE_ENDPOINT);
+        try {
+            json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName + VALUE_ENDPOINT);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and the attribute value was not retrieved, please check your parameters");
+            e.printStackTrace();
+        }
 
         Gson gson = new Gson();
 
@@ -326,7 +390,7 @@ public class Orion<T> {
      * @param obj object that represents the attribute to update.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void updateAttributeValue(String entityId, String attrName, Object obj) throws Exception {
+    public void updateAttributeValue(String entityId, String attrName, Object obj) {
 
         String json;
 
@@ -334,7 +398,12 @@ public class Orion<T> {
         json = gson.toJson(obj);
 
         HttpRequests http = new HttpRequests();
-        http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName + VALUE_ENDPOINT, json);
+        try {
+            http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName + VALUE_ENDPOINT, json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible update the attribute value please check your parameters");
+            e.printStackTrace();
+        }
 
     }
 
@@ -345,12 +414,17 @@ public class Orion<T> {
      * @return a list of entity types object.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public List<Object> listEntityTypes(Object obj) throws Exception {
+    public List<Object> listEntityTypes(Object obj) {
 
-        String json;
+        String json = "";
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + TYPES_ENDPOINT);
+        try {
+            json = http.runGetRequest(this.url + TYPES_ENDPOINT);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible list the entity types, please check your parameters");
+            e.printStackTrace();
+        }
 
         Gson gson = new Gson();
         return (gson.fromJson(json, (Type) obj.getClass()));
@@ -365,12 +439,17 @@ public class Orion<T> {
      * @return information about the given entitytype.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public Object retrieveEntityType(String entitytype, Object obj) throws Exception {
+    public Object retrieveEntityType(String entitytype, Object obj){
 
-        String json;
+        String json = "";
 
         HttpRequests http = new HttpRequests();
-        json = http.runGetRequest(this.url + TYPES_ENDPOINT + entitytype);
+        try {
+            json = http.runGetRequest(this.url + TYPES_ENDPOINT + entitytype);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible retrieve the entity type, please check your parameters");
+            e.printStackTrace();
+        }
 
         Gson gson = new Gson();
         return (gson.fromJson(json, (Type) obj.getClass()));
@@ -381,12 +460,17 @@ public class Orion<T> {
      * @throws  Exception for http requests.
      * @return a list of all the subscriptions present in the system.
      */
-    public Object listSubscriptions() throws Exception {
+    public Object listSubscriptions(){
 
-        String json;
+        String json = "";
 
         HttpRequests http = new HttpRequests();
-        json  = http.runGetRequest(this.url + SUBSCRIPTIONS_ENDPOINT);
+        try {
+            json  = http.runGetRequest(this.url + SUBSCRIPTIONS_ENDPOINT);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible to list subscriptions, please check your parameters");
+            e.printStackTrace();
+        }
 
         Gson gson = new Gson();
 
@@ -402,7 +486,7 @@ public class Orion<T> {
      * @param subscription an given subscription object which represents a subscription on JSON format from Orion.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void createSubscriptions(Subscription subscription) throws Exception {
+    public void createSubscriptions(Subscription subscription){
 
         String json;
 
@@ -410,7 +494,12 @@ public class Orion<T> {
         json = gson.toJson(subscription);
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + SUBSCRIPTIONS_ENDPOINT, json);
+        try {
+            http.runPostRequest(this.url + SUBSCRIPTIONS_ENDPOINT, json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible create the subscription, please check your parameters");
+            e.printStackTrace();
+        }
 
     }
 
@@ -433,10 +522,15 @@ public class Orion<T> {
      * This url contains a Location header which holds the subscription ID: a 24 digit hexadecimal number.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void deleteSubscription(String subscriptionId) throws Exception {
+    public void deleteSubscription(String subscriptionId){
 
         HttpRequests http = new HttpRequests();
-        http.runDeleteRequest(this.url + SUBSCRIPTIONS_ENDPOINT + subscriptionId);
+        try {
+            http.runDeleteRequest(this.url + SUBSCRIPTIONS_ENDPOINT + subscriptionId);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible remove the subscription, please check your parameters");
+            e.printStackTrace();
+        }
 
     }
 
@@ -466,7 +560,7 @@ public class Orion<T> {
      * defined at 2040-04-05T14:00:00Z.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void createSimpleSubscription(String id, String type, int port, String ip, Boolean expires) throws Exception {
+    public void createSimpleSubscription(String id, String type, int port, String ip, Boolean expires){
 
         String json;
 
@@ -498,7 +592,12 @@ public class Orion<T> {
         }
 
         HttpRequests httpRequest = new HttpRequests();
-        httpRequest.runPostRequest(this.url + SUBSCRIPTIONS_ENDPOINT, json);
+        try {
+            httpRequest.runPostRequest(this.url + SUBSCRIPTIONS_ENDPOINT, json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible create the subscription, please check your parameters");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -509,14 +608,20 @@ public class Orion<T> {
      * @return a Future<String> value, to retrieve the entity value, you must use this method and call getSubscriptionUpdate method after.
      * @see #getSubscriptionUpdate
      */
-    public Future<String> subscribeAndListen(String id, String type, int port, String ip) throws Exception {
+    public Future<String> subscribeAndListen(String id, String type, int port, String ip){
 
         Orion orion = new Orion();
         orion.createSimpleSubscription(id, type, port, ip, false);
 
         ExecutorService executor = Executors.newFixedThreadPool(1);
 
-        Future<String> future = executor.submit( new TCPServer(port, ip));
+        Future<String> future = null;
+        try {
+            future = executor.submit( new TCPServer(port, ip));
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible make a subscribe and listen, please check your parameters");
+            e.printStackTrace();
+        }
 
         executor.shutdown();
 
@@ -618,7 +723,7 @@ public class Orion<T> {
      * @throws Exception to http requests.
      * @param batchEntities a batch object containing all entities to be updated on orion.
      */
-    public void batchUpdate(Object batchEntities) throws Exception {
+    public void batchUpdate(Object batchEntities){
 
         String json;
 
@@ -626,7 +731,12 @@ public class Orion<T> {
         json = gson.toJson(batchEntities);
 
         HttpRequests http = new HttpRequests();
-        http.runPostRequest(this.url + BATCH_ENDPOINT,json);
+        try {
+            http.runPostRequest(this.url + BATCH_ENDPOINT,json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible update the entities, please check your parameters");
+            e.printStackTrace();
+        }
 
     }
 

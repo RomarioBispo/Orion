@@ -29,8 +29,6 @@ b
 .src/br/com/ufs/orionframework/orion/Orion.java,1/8/1858fb039e1bfc7db6cdbd6ffd93727729c83a42
 b
 2src/br/com/ufs/iotaframework/services/Service.java,e/2/e2227c1e005a09254377042e2b1f6b3e1d6f981e
-d
-4src/br/com/ufs/iotaframework/devices/ComandList.java,b/9/b9ac6599d86cd8d3dc59a4fb383f150b447316a3
 a
 1src/br/com/ufs/iotaframework/devices/Command.java,3/a/3a03a8f2400d10020797d119a04e104c181fcbfd
 `
@@ -51,3 +49,8 @@ b
 2src/br/com/ufs/iotaframework/usersguide/Guide.java,c/b/cbe73b7180f0ad8c7690f86e0e3409f66821f417
 9
 	Orion.iml,1/8/1853fd4ed380615de6eea02008d7cc5a1bd5820a
+@
+log4j.properties,7/3/7330e4252652b61093498eabc26c3cadee5d89b7
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302

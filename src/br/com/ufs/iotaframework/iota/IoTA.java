@@ -1,5 +1,6 @@
 package br.com.ufs.iotaframework.iota;
 
+import br.com.ufs.iotaframework.devices.Device;
 import br.com.ufs.iotaframework.devices.DeviceList;
 import br.com.ufs.iotaframework.services.Service;
 import br.com.ufs.iotaframework.services.ServiceGroup;
@@ -21,8 +22,8 @@ public class IoTA {
     private String ip;
     private int port;
     private String url;
-    private static final String SERVICES_ENDPOINT = "/iot/services";
-    private static final String DEVICES_ENDPOINT = "/iot/devices";
+    private static final String SERVICES_ENDPOINT = "/iot/services/";
+    private static final String DEVICES_ENDPOINT = "/iot/devices/";
     private static final Logger LOGGER = Logger.getLogger(IoTA.class.getName());
 
     /**
@@ -68,6 +69,7 @@ public class IoTA {
         }
         catch(Exception e) {
           LOGGER.warning("A error may be occurred and the service group was not created, please check your parameters");
+          e.printStackTrace();
         }
     }
 
@@ -93,6 +95,7 @@ public class IoTA {
         }
         catch (Exception e) {
             LOGGER.warning("A error may be occurred on retrieve the services, please check your parameters");
+            e.printStackTrace();
         }
         return (gson.fromJson(json, ServiceGroup.class));
     }
@@ -116,6 +119,7 @@ public class IoTA {
         }
         catch (Exception e) {
             LOGGER.warning("A error may be occurred on retrieve the services, please check your parameters");
+            e.printStackTrace();
         }
         return (gson.fromJson(json, ServiceGroup.class));
     }
@@ -143,6 +147,7 @@ public class IoTA {
             http.runPutRequest(this.url+ SERVICES_ENDPOINT + "?" + "resource=" + resource + "&" + "apikey=" + apikey, json);
         } catch (Exception e) {
             LOGGER.warning("A error may be occurred on update the service, please check your parameters");
+            e.printStackTrace();
         }
 
     }
@@ -166,6 +171,7 @@ public class IoTA {
             http.runDeleteRequest(this.url+ SERVICES_ENDPOINT + "?" + "resource=" + resource + "&" + "apikey=" + apikey);
         } catch (Exception e) {
             LOGGER.warning("A error may be occurred on update the service, please check your parameters");
+            e.printStackTrace();
         }
     }
 
@@ -188,6 +194,7 @@ public class IoTA {
             http.runPostRequest(this.url + DEVICES_ENDPOINT, json);
         } catch (Exception e) {
             LOGGER.warning("A error may be occurred on device creation, please check your parameters");
+            e.printStackTrace();
         }
     }
 
@@ -196,27 +203,46 @@ public class IoTA {
      * retrieve devices previously created.
      *
      * @throws Exception for http requests (bad request, forbidden, etc.)
+     * @return a device list.
      * @see DeviceList
      */
-    public void retrieveAllDevices() {
-        String json;
+    public DeviceList retrieveAllDevices() {
+        String json = "";
+        Gson gson = new Gson();
+
         HttpRequests http = new HttpRequests();
         try {
             json = http.runGetRequest(this.url + DEVICES_ENDPOINT);
         } catch (Exception e) {
             LOGGER.warning("A error may be occurred on retrieving the devices, please check your parameters");
+            e.printStackTrace();
         }
+        return gson.fromJson(json, DeviceList.class);
     }
 
     /**
      * Given a device id, returns a device
      *
      * @param device_id  An id from device.
+     * @return a Device object.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      * @see DeviceList
      */
-    public void retrieveDevice(String device_id) {
+    public Device retrieveDevice(String device_id) {
 
+        String json="";
+
+        Gson gson = new Gson();
+        HttpRequests http = new HttpRequests();
+
+        try {
+            json = http.runGetRequest(this.url + DEVICES_ENDPOINT + device_id);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred on retrieving the device, please check your parameters");
+            e.printStackTrace();
+        }
+
+       return gson.fromJson(json, Device.class);
     }
 
 
@@ -226,11 +252,25 @@ public class IoTA {
      *  except field protocol (this field, if provided it is removed from request).
      *
      * @param device_id  An id from device.
+     * @param device an object representing the update.
      * @throws Exception for http requests (bad request, forbidden, etc.)
      * @see DeviceList
      */
-    public void updretrieveAllDevicesateDevice(String device_id){
+    public void updateDevice(String device_id, Device device){
 
+        String json;
+
+        Gson gson = new Gson();
+        json = gson.toJson(device);
+
+        HttpRequests http = new HttpRequests();
+
+        try {
+            http.runPutRequest(this.url +  DEVICES_ENDPOINT + device_id, json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred on updating the devices, please check your parameters");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -240,11 +280,36 @@ public class IoTA {
      * @throws Exception for http requests (bad request, forbidden, etc.)
      * @see DeviceList
      */
-    public void deleteDevice(String device_id){
-
+    public void removeDevice(String device_id){
+        HttpRequests http = new HttpRequests();
+        try {
+            http.runDeleteRequest(this.url + DEVICES_ENDPOINT + device_id);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred on deleting the devices, please check your parameters");
+            e.printStackTrace();
+        }
     }
 
+    /**
+     * Given a device id, delete a device. If specific device is not found, we work as deleted.
+     *
+     * @param apikey An apikey used for validate the measure was sent.
+     * @param device_id  An id from device.
+     * @param payload a text payload using http ultralight sintax.
+     * @param url a url (ip + port)
+     * @throws Exception for http requests (bad request, forbidden, etc.)
+     * @see DeviceList
+     */
+    public void sendMeasure(String url, String resource, String apikey, String device_id, String payload) {
+        url = "http://" + url + resource + "?" + "k="+apikey + "&i=" + device_id;
 
+        HttpRequests http = new HttpRequests();
+        try {
+            http.runUltralightPostRequest(url, payload);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred on deleting the devices, please check your parameters");
+            e.printStackTrace();
+        }
 
-
+    }
 }
