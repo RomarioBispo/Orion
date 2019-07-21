@@ -2,20 +2,25 @@ package br.com.ufs.orionframework.orion;
 import br.com.ufs.iotaframework.iota.IoTA;
 import br.com.ufs.orionframework.genericnotification.GenericNotification;
 import br.com.ufs.orionframework.server.TCPServer;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import br.com.ufs.orionframework.typeadapter.IntTypeAdapter;
+import com.google.gson.*;
 import br.com.ufs.orionframework.entity.Entity;
 import br.com.ufs.orionframework.httprequests.HttpRequests;
 import br.com.ufs.orionframework.subscription.*;
+import com.google.gson.reflect.TypeToken;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -31,6 +36,7 @@ public class Orion<T> {
 
     private String url;
     private String listener;
+    private Boolean debugMode;
 
     private static final String ENTITIES_ENDPOINT = "/v2/entities/";
     private static final String ATTRS_ENDPOINT = "/attrs/";
@@ -43,13 +49,16 @@ public class Orion<T> {
 
     /**
      * Instantiate a Orion object.
+     * debugMode is an Boolean which tells to enable the debug mode, showing the JSON files sent or received. (Default is false. To enable, set your value)
      *
      * @param url An IP address + Port String from where the Orion is running.
      * @param listener An IP address + Port from where the server is listening the changes that was subscribed.
+     *
      */
     public Orion (String url, String listener) {
         this.url = url;
         this.listener = listener;
+        this.debugMode = false;
     }
 
     /**
@@ -59,6 +68,15 @@ public class Orion<T> {
     public Orion () {
         this.url = "http://localhost:1026";
         this.listener = "http://172.18.1.1:40041";
+        this.debugMode = false;
+    }
+
+    public Boolean getDebugMode() {
+        return debugMode;
+    }
+
+    public void setDebugMode(Boolean debugMode) {
+        this.debugMode = debugMode;
     }
 
     /**
@@ -79,9 +97,11 @@ public class Orion<T> {
         try {
             http.runPostRequest(this.url + ENTITIES_ENDPOINT, json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and the entity was not created, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the entity was not created, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+
+        shoWDebug(json);
 
     }
 
@@ -89,27 +109,43 @@ public class Orion<T> {
      * Retrieves a list of entities that match different criteria
      *
      * @param criteria can be defined by id, entitytype, pattern matching (either id or entitytype).
+     * @param obj an object representing the entity.
      * @return  An Array with all objects (EntityId and entitytype) registered on orion.
      * the JSON entity representation format (described in a “JSON Entity Representation” section) on NGSIv2 docs.
      */
-    public Entity[] listEntities(String criteria){
+    public ArrayList<Object> listEntities(String criteria, Object obj){
 
         String json = "";
 
+        Gson gson = new GsonBuilder().registerTypeAdapter(int.class, new IntTypeAdapter()).create();
+
         HttpRequests http = new HttpRequests();
+        ArrayList<Object> objects = new ArrayList<>();
         try {
-            json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT);
+            if (criteria.isEmpty()){
+                json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT);
+            }else {
+                json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + "?" + criteria);
+            }
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was possible retrieve the entities, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was possible retrieve the entities, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
+
         }
 
-        Gson gson = new Gson();
+        JsonParser jsonParser = new JsonParser();
+        JsonElement element = jsonParser.parse(json);
+        JsonArray jsonArray = element.getAsJsonArray();
 
-        return gson.fromJson(json, Entity[].class);
+        for (int i = 0; i < jsonArray.size(); i++){
+            json = gson.toJson(jsonArray.get(i));
+            objects.add(gson.fromJson(json, (Type) obj.getClass()));
+        }
 
+        shoWDebug(json);
+
+        return objects;
     }
-
 
     /**
      * Given an Id and object that represents the entity required, returns an object updated from Orion.
@@ -127,11 +163,13 @@ public class Orion<T> {
         try {
             json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and the entity was not retrieved, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the entity was not retrieved, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
         Gson gson = new Gson();
+
+        shoWDebug(json);
 
        return (gson.fromJson(json, obj.getClass()));
     }
@@ -149,8 +187,8 @@ public class Orion<T> {
         try {
             http.runDeleteRequest(this.url + ENTITIES_ENDPOINT + entityId);
         } catch (Exception e) {
-            e.printStackTrace();
-            LOGGER.warning("A error may be occurred and the entity was not removed, please check your parameters");
+            LOGGER.warning("A error may be occurred and the entity was not removed, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
     }
@@ -174,12 +212,13 @@ public class Orion<T> {
         try {
             json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and the entity attributes was not retrieved, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the entity attributes was not retrieved, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
         Gson gson = new Gson();
 
+        shoWDebug(json);
 
         return (gson.fromJson(json, obj.getClass()));
     }
@@ -207,12 +246,15 @@ public class Orion<T> {
         json = o.toString();
 
         HttpRequests http = new HttpRequests();
+
         try {
             http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + "/attrs", json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and the entity attributes was not replaced, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the entity attributes was not replaced, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+
+        shoWDebug(json);
 
     }
 
@@ -242,9 +284,11 @@ public class Orion<T> {
         try {
             http.runPostRequest(this.url + ENTITIES_ENDPOINT + entityId + "/attrs", json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and the entity attributes was not updated or appended, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the entity attributes was not updated or appended, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+
+        shoWDebug(json);
 
     }
 
@@ -275,9 +319,11 @@ public class Orion<T> {
         try {
             http.runPostRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT, json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible update existing attributes for the entity, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible update existing attributes for the entity, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+
+        shoWDebug(json);
     }
 
 
@@ -298,11 +344,13 @@ public class Orion<T> {
         try {
             json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and the attribute data was not retrieved, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the attribute data was not retrieved, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
         Gson gson = new Gson();
+
+        shoWDebug(json);
 
         return(gson.fromJson(json, obj.getClass()));
 
@@ -328,9 +376,11 @@ public class Orion<T> {
         try {
             http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName, json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and the attribute data was not updated, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the attribute data was not updated, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+
+        shoWDebug(json);
 
     }
 
@@ -347,8 +397,8 @@ public class Orion<T> {
         try {
             http.runDeleteRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and the attribute was not removed, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the attribute was not removed, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
     }
@@ -371,11 +421,13 @@ public class Orion<T> {
         try {
             json = http.runGetRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName + VALUE_ENDPOINT);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and the attribute value was not retrieved, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and the attribute value was not retrieved, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
         Gson gson = new Gson();
+
+        shoWDebug(json);
 
         return (gson.fromJson(json, obj.getClass()));
 
@@ -401,9 +453,11 @@ public class Orion<T> {
         try {
             http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName + VALUE_ENDPOINT, json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible update the attribute value please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible update the attribute value please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+
+        shoWDebug(json);
 
     }
 
@@ -417,16 +471,17 @@ public class Orion<T> {
     public List<Object> listEntityTypes(Object obj) {
 
         String json = "";
+        Gson gson = new Gson();
 
         HttpRequests http = new HttpRequests();
         try {
             json = http.runGetRequest(this.url + TYPES_ENDPOINT);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible list the entity types, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible list the entity types, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
-        Gson gson = new Gson();
+        shoWDebug(json);
         return (gson.fromJson(json, (Type) obj.getClass()));
 
     }
@@ -442,16 +497,17 @@ public class Orion<T> {
     public Object retrieveEntityType(String entitytype, Object obj){
 
         String json = "";
-
+        Gson gson = new Gson();
         HttpRequests http = new HttpRequests();
+
         try {
             json = http.runGetRequest(this.url + TYPES_ENDPOINT + entitytype);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible retrieve the entity type, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible retrieve the entity type, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
-        Gson gson = new Gson();
+        shoWDebug(json);
         return (gson.fromJson(json, (Type) obj.getClass()));
     }
 
@@ -463,17 +519,17 @@ public class Orion<T> {
     public Object listSubscriptions(){
 
         String json = "";
-
+        Gson gson = new Gson();
         HttpRequests http = new HttpRequests();
+
         try {
             json  = http.runGetRequest(this.url + SUBSCRIPTIONS_ENDPOINT);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible to list subscriptions, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible to list subscriptions, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
-        Gson gson = new Gson();
-
+        shoWDebug(json);
         Subscription [] subs = gson.fromJson(json, Subscription[].class);
 
         return subs;
@@ -489,17 +545,18 @@ public class Orion<T> {
     public void createSubscriptions(Subscription subscription){
 
         String json;
-
         Gson gson = new Gson();
         json = gson.toJson(subscription);
-
         HttpRequests http = new HttpRequests();
+
         try {
             http.runPostRequest(this.url + SUBSCRIPTIONS_ENDPOINT, json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible create the subscription, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible create the subscription, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+
+        shoWDebug(json);
 
     }
 
@@ -528,8 +585,8 @@ public class Orion<T> {
         try {
             http.runDeleteRequest(this.url + SUBSCRIPTIONS_ENDPOINT + subscriptionId);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible remove the subscription, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible remove the subscription, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
     }
@@ -595,9 +652,11 @@ public class Orion<T> {
         try {
             httpRequest.runPostRequest(this.url + SUBSCRIPTIONS_ENDPOINT, json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible create the subscription, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible create the subscription, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+
+        shoWDebug(json);
     }
 
     /**
@@ -619,8 +678,8 @@ public class Orion<T> {
         try {
             future = executor.submit( new TCPServer(port, ip));
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible make a subscribe and listen, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible make a subscribe and listen, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
         executor.shutdown();
@@ -644,6 +703,8 @@ public class Orion<T> {
         GenericNotification notification = gson.fromJson(f.get(), GenericNotification.class);
 
         json = gson.toJson(notification.getData().get(0));
+
+        shoWDebug(json);
 
         return gson.fromJson(json, obj.getClass());
 
@@ -734,10 +795,10 @@ public class Orion<T> {
         try {
             http.runPostRequest(this.url + BATCH_ENDPOINT,json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred and was not possible update the entities, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred and was not possible update the entities, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
-
+        shoWDebug(json);
     }
 
     /**
@@ -759,6 +820,29 @@ public class Orion<T> {
      */
     public Object batchNotify(Object entities) {
         return null;
+    }
+
+    /**
+     * This operation show on console a JSON file to debug purposes.
+     * To use this feature, you only need to set the debugMode attribute to true on orion.
+     * @param json a JSON to be showed on screen, to debug purposes.
+     */
+    public void shoWDebug(String json) {
+        if(this.debugMode)
+            LOGGER.info(json);
+    }
+
+    /**
+     * This operation show on console the stack trace.
+     * To use this feature, you only need to set the debugMode attribute to true on orion.
+     * @param e a exception to show your stack trace on console.
+     *
+     */
+    public void showStackTrace (Exception e){
+        if(this.debugMode){
+            LOGGER.log(Level.INFO, e.getMessage(), e);
+        }
+
     }
 
 }

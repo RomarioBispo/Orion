@@ -1,7 +1,14 @@
 
-Nsquid:S1172ÿ"/Remove this unused method parameter "entities".(á›ìÿ8Éõœ„¿-
-2squid:S2326"T is not used in the class.(¿”ßï
-Bsquid:S1068",Remove this unused "listener" private field.(ë×¿n
-{squid:S1488‰"\Immediately return this expression instead of assigning it to the temporary variable "subs".(ñ€ªƒ8Éõœ„¿-
-Nsquid:S1172Š"/Remove this unused method parameter "entities".(ÆèÇĞ8Éõœ„¿-
-Ysquid:S1172Ä"5Remove this unused method parameter "registrationId".(î¢à¯ıÿÿÿÿ8Éõœ„¿-
+_squid:UselessImportCheck"/Remove this unused import 'org.json.JSONArray'.(¬¸Ê’üÿÿÿÿ8‘ï¢¨À-
+{squid:S1488•"\Immediately return this expression instead of assigning it to the temporary variable "subs".(ñ€ªƒ8ñ“’¢Á-
+nsquid:UselessImportCheck
+">Remove this unused import 'com.google.gson.reflect.TypeToken'.(İªıñøÿÿÿÿ8‘ï¢¨À-
+Ysquid:S1172ê"5Remove this unused method parameter "registrationId".(î¢à¯ıÿÿÿÿ8ñ“’¢Á-
+Nsquid:S1172µ"/Remove this unused method parameter "entities".(ÆèÇĞ8ñ“’¢Á-
+“squid:S1319t"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ä©ìÄıÿÿÿÿ8¹³÷À-
+`squid:UselessImportCheck"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8™ç©§À-
+isquid:UselessImportCheck"?Remove this unused import 'br.com.ufs.iotaframework.iota.IoTA'.(©Â˜n8‹¹öê¿-
+Nsquid:S1172ª"/Remove this unused method parameter "entities".(á›ìÿ8ñ“’¢Á-
+Bsquid:S1068&",Remove this unused "listener" private field.(ë×¿n
+9squid:S2326#"T is not used in the class.(¿”ßï8©ØÏ—À-
+asquid:UselessImportCheck"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8™‡ä¥À-

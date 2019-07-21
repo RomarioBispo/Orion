@@ -7,6 +7,7 @@ import br.com.ufs.iotaframework.services.ServiceGroup;
 import br.com.ufs.orionframework.httprequests.HttpRequests;
 import com.google.gson.Gson;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -22,6 +23,7 @@ public class IoTA {
     private String ip;
     private int port;
     private String url;
+    private Boolean debugMode;
     private static final String SERVICES_ENDPOINT = "/iot/services/";
     private static final String DEVICES_ENDPOINT = "/iot/devices/";
     private static final Logger LOGGER = Logger.getLogger(IoTA.class.getName());
@@ -36,6 +38,15 @@ public class IoTA {
         this.ip = ip;
         this.port = port;
         this.url = "http://" + this.ip + ":" + this.port;
+        this.debugMode = false;
+    }
+
+    public Boolean getDebugMode() {
+        return debugMode;
+    }
+
+    public void setDebugMode(Boolean debugMode) {
+        this.debugMode = debugMode;
     }
 
     public String getIp() {
@@ -68,9 +79,11 @@ public class IoTA {
             http.runPostRequest(this.url + SERVICES_ENDPOINT, json);
         }
         catch(Exception e) {
-          LOGGER.warning("A error may be occurred and the service group was not created, please check your parameters");
-          e.printStackTrace();
+          LOGGER.warning("A error may be occurred and the service group was not created, please please check your parameters or set debugMode to true to more details");
+          showStackTrace(e);
         }
+
+        shoWDebug(json);
     }
 
     /**
@@ -94,9 +107,10 @@ public class IoTA {
             json = http.runGetRequest(this.url + SERVICES_ENDPOINT + "?" + "limit=" + limit + "&offset=" + offset + "&resource=" + resource);
         }
         catch (Exception e) {
-            LOGGER.warning("A error may be occurred on retrieve the services, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on retrieve the services, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+        shoWDebug(json);
         return (gson.fromJson(json, ServiceGroup.class));
     }
 
@@ -118,9 +132,10 @@ public class IoTA {
             json = http.runGetRequest(this.url + SERVICES_ENDPOINT);
         }
         catch (Exception e) {
-            LOGGER.warning("A error may be occurred on retrieve the services, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on retrieve the services, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+        shoWDebug(json);
         return (gson.fromJson(json, ServiceGroup.class));
     }
 
@@ -146,10 +161,11 @@ public class IoTA {
         try {
             http.runPutRequest(this.url+ SERVICES_ENDPOINT + "?" + "resource=" + resource + "&" + "apikey=" + apikey, json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred on update the service, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on update the service, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
+        shoWDebug(json);
     }
 
 
@@ -170,8 +186,8 @@ public class IoTA {
         try {
             http.runDeleteRequest(this.url+ SERVICES_ENDPOINT + "?" + "resource=" + resource + "&" + "apikey=" + apikey);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred on update the service, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on update the service, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
     }
 
@@ -193,9 +209,10 @@ public class IoTA {
         try {
             http.runPostRequest(this.url + DEVICES_ENDPOINT, json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred on device creation, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on device creation, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+        shoWDebug(json);
     }
 
 
@@ -214,9 +231,10 @@ public class IoTA {
         try {
             json = http.runGetRequest(this.url + DEVICES_ENDPOINT);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred on retrieving the devices, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on retrieving the devices, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+        shoWDebug(json);
         return gson.fromJson(json, DeviceList.class);
     }
 
@@ -238,11 +256,12 @@ public class IoTA {
         try {
             json = http.runGetRequest(this.url + DEVICES_ENDPOINT + device_id);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred on retrieving the device, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on retrieving the device, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
 
-       return gson.fromJson(json, Device.class);
+        shoWDebug(json);
+        return gson.fromJson(json, Device.class);
     }
 
 
@@ -268,9 +287,11 @@ public class IoTA {
         try {
             http.runPutRequest(this.url +  DEVICES_ENDPOINT + device_id, json);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred on updating the devices, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on updating the devices, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
+
+        shoWDebug(json);
     }
 
     /**
@@ -285,8 +306,8 @@ public class IoTA {
         try {
             http.runDeleteRequest(this.url + DEVICES_ENDPOINT + device_id);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred on deleting the devices, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on deleting the devices, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
         }
     }
 
@@ -307,8 +328,31 @@ public class IoTA {
         try {
             http.runUltralightPostRequest(url, payload);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred on deleting the devices, please check your parameters");
-            e.printStackTrace();
+            LOGGER.warning("A error may be occurred on deleting the devices, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
+        }
+
+    }
+
+    /**
+     * This operation show on console a JSON file to debug purposes.
+     * To use this feature, you only need to set the debugMode attribute to true on orion.
+     * @param json a JSON to be showed on screen, to debug purposes.
+     */
+    public void shoWDebug(String json) {
+        if(this.debugMode)
+            LOGGER.info(json);
+    }
+
+    /**
+     * This operation show on console the stack trace.
+     * To use this feature, you only need to set the debugMode attribute to true on orion.
+     * @param e a exception to show your stack trace on console.
+     *
+     */
+    public void showStackTrace (Exception e){
+        if(this.debugMode){
+            LOGGER.log(Level.INFO, e.getMessage(), e);
         }
 
     }

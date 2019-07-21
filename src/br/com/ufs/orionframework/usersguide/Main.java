@@ -2,7 +2,7 @@ package br.com.ufs.orionframework.usersguide;
 
 import br.com.ufs.orionframework.batchupdate.BatchUpdate;
 import br.com.ufs.orionframework.entity.Entity;
-import br.com.ufs.orionframework.entitylamp.Attrs;
+import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.genericnotification.GenericNotification;
 import br.com.ufs.orionframework.mytesteentity.MyEntity;
 import br.com.ufs.orionframework.orion.Orion;
@@ -13,7 +13,6 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Future;
 
 public class Main {
 
@@ -142,7 +141,6 @@ public class Main {
 
         Subscriptor subscriptor1 = new Subscriptor(40041, "172.18.1.1", "urn:ngsi-ld:Square:1", "Square", ss, myEntity01);
         subscriptor1.subscribeAndListen(en -> updateEntity((MyEntity) en), myEntity01);
-
         Subscriptor subscriptor2 = new Subscriptor(40041, "172.18.1.1", "urn:ngsi-ld:Square:2", "Square", ss, myEntity02);
         subscriptor2.subscribeAndListen(en -> updateEntity((MyEntity) en), myEntity02);
 
@@ -173,6 +171,10 @@ public class Main {
         orion.updateExistingEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
         myEntity04 = (MyEntity) orion.retrieveEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
         System.out.println(myEntity04.getAttribute3().getType());
+
+        // retrieving entities by type
+        ArrayList<MyEntity> mylist = orion.listEntities("type=Square", myEntity01);
+        System.out.println("Aqui:" + mylist.get(0).getAttribute5().getValue());
 
     }
     public interface lambdaf{

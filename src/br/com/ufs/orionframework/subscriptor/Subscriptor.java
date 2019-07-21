@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Subscriptor make a subscription on Orion and listen notifications.
@@ -29,6 +31,9 @@ public class Subscriptor implements Runnable {
     private String entityId;
     private String type;
     private ServerSocket server;
+    private Boolean debugMode;
+    private static final Logger LOGGER = Logger.getLogger(Subscriptor.class.getName());
+
 
     public String getEntityId() {
         return entityId;
@@ -54,6 +59,14 @@ public class Subscriptor implements Runnable {
         this.en = en;
     }
 
+    public Boolean getDebugMode() {
+        return debugMode;
+    }
+
+    public void setDebugMode(Boolean debugMode) {
+        this.debugMode = debugMode;
+    }
+
     public Subscriptor(int port, String ip, String entityId, String type, ServerSocket server, Entity en) {
         this.port = port;
         this.ip = ip;
@@ -61,6 +74,7 @@ public class Subscriptor implements Runnable {
         this.type = type;
         this.server = server;
         this.en = en;
+        this.debugMode = false;
 
     }
 
@@ -68,9 +82,9 @@ public class Subscriptor implements Runnable {
      * Create a subscription on Orion
      *
      * @param updateFunction a function which does a update when came a notification.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
+     * @param en a entity object representing the entity
      */
-    public void subscribe(Lambda updateFunction, Entity en) throws Exception {
+    public void subscribe(Lambda updateFunction, Entity en) {
 
         Orion orion = new Orion();
         List<Lambda> updateFunctionList = new ArrayList<>();
@@ -88,13 +102,12 @@ public class Subscriptor implements Runnable {
 
     /**
      * Create a subscription on Orion and listen to notifications.
-     * When a notification come, a update function associated with entity is applied to entity values.
+     * When a notification come, aurn:ngsi-ld:Lamp:1 update function associated with entity is applied to entity values.
      *
      * @param updateFunction a function which does a update when came a notification.
      * @param obj the entity object which have to update.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
-    public void subscribeAndListen(Lambda updateFunction, Entity obj) throws Exception {
+    public void subscribeAndListen(Lambda updateFunction, Entity obj) {
 
         Subscriptor sub = new Subscriptor(this.port, this.ip, this.entityId, this.type, this.server, obj);
         sub.subscribe(updateFunction, this.en);
@@ -116,7 +129,7 @@ public class Subscriptor implements Runnable {
         try {
             client = this.server.accept();
         } catch (IOException e) {
-            e.printStackTrace();
+            showStackTrace(e);
         }
 
         BufferedReader in = null;
@@ -124,18 +137,20 @@ public class Subscriptor implements Runnable {
             in = new BufferedReader(
                     new InputStreamReader(client.getInputStream()));
         } catch (IOException e) {
-            e.printStackTrace();
+            showStackTrace(e);
         }
 
         while (true) {
             try {
                 if (!((data = in.readLine()) != null)) break;
             } catch (IOException e) {
-                e.printStackTrace();
+                showStackTrace(e);
             }
             lastLine = data;
         }
 
+        shoWDebug(lastLine);
+        System.out.println(lastLine);
         notification = gson.fromJson(lastLine, GenericNotification.class);
 
         for (Object entities: notification.getData()) {
@@ -146,9 +161,32 @@ public class Subscriptor implements Runnable {
             List<Lambda> updateFunctionList = subscriptions.get(this.en.getId());
             for (Lambda fList: updateFunctionList)
                 this.en = fList.lambdaUpdate(this.en);
-
         }
     }
+
+    /**
+     * This operation show on console a JSON file to debug purposes.
+     * To use this feature, you only need to set the debugMode attribute to true on orion.
+     * @param json a JSON to be showed on screen, to debug purposes.
+     */
+    public void shoWDebug(String json) {
+        if(this.debugMode)
+            LOGGER.info(json);
+    }
+
+    /**
+     * This operation show on console the stack trace.
+     * To use this feature, you only need to set the debugMode attribute to true on orion.
+     * @param e a exception to show your stack trace on console.
+     *
+     */
+    public void showStackTrace (Exception e){
+        if(this.debugMode){
+            LOGGER.log(Level.INFO, e.getMessage(), e);
+        }
+
+    }
+
     /**
      * This functional interface represents a lambda expression.
      * If you want to subscribe and listen, its possible send a function which receive a entity object and returns a entity object

@@ -1,5 +1,7 @@
-package br.com.ufs.orionframework.entitylamp;
+package br.com.ufs.orionframework.entity;
 
+
+import br.com.ufs.orionframework.entitylamp.Lamp;
 
 /**
  * This class is used to help to represent a object java as JSON on a NGSIv2 form.

@@ -1,8 +1,6 @@
 
 b
 2src/br/com/ufs/orionframework/entitylamp/Lamp.java,6/5/65a0b19bb655bec9d902161ae506d8eec01092ff
-c
-3src/br/com/ufs/orionframework/entitylamp/Attrs.java,8/e/8ef4c041a1b46a96502c2ee087227de2d3e4da00
 h
 8src/br/com/ufs/orionframework/entitytype/EntityType.java,f/9/f9f0a7ec86ee9c6eff9bdf9bf1a3c1e52bca6441
 z
@@ -54,3 +52,9 @@ b
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+_
+/src/br/com/ufs/orionframework/entity/Attrs.java,2/6/26afa2517cb424eec5bdcf9aec595cc5f5774628
+h
+8src/br/com/ufs/orionframework/subscription/Entities.java,f/3/f304b3f74a61c8717afa270d470beba7d5fa6516
+m
+=src/br/com/ufs/orionframework/typeadapter/IntTypeAdapter.java,1/c/1c82ecf8424ed00c52573e09e99e338f12e313e7

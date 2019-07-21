@@ -1,7 +1,7 @@
 package br.com.ufs.orionframework.mytesteentity;
 
 import br.com.ufs.orionframework.entity.Entity;
-import br.com.ufs.orionframework.entitylamp.Attrs;
+import br.com.ufs.orionframework.entity.Attrs;
 
 public class MyEntity extends Entity {
     private Attrs attribute1;
