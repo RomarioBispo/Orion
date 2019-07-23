@@ -6,6 +6,7 @@ import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.genericnotification.GenericNotification;
 import br.com.ufs.orionframework.mytesteentity.MyEntity;
 import br.com.ufs.orionframework.orion.Orion;
+import br.com.ufs.orionframework.registrations.Registrations;
 import br.com.ufs.orionframework.subscription.*;
 import br.com.ufs.orionframework.subscriptor.Subscriptor;
 
@@ -175,6 +176,22 @@ public class Main {
         // retrieving entities by type
         ArrayList<MyEntity> mylist = orion.listEntities("type=Square", myEntity01);
         System.out.println("Aqui:" + mylist.get(0).getAttribute5().getValue());
+
+        // using registrations operations
+        List<String> attrs1 = new ArrayList<>();
+        attrs1.add("attribute1");
+        attrs1.add("attribute2");
+
+        orion.createRegistration(myEntity01, attrs1, "http://iot-sensors:3001/iot/Square01");
+
+        List<Registrations> registrationsList = orion.listRegistrations();
+        System.out.println("1: " + registrationsList.get(0).getId());
+
+//        orion.deleteRegistration(registrationsList.get(0).getId());
+
+        Registrations registrations = orion.retrieveRegistration(registrationsList.get(0).getId());
+        System.out.println("2: " + registrations.getId());
+        orion.setDebugMode(true);
 
     }
     public interface lambdaf{

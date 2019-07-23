@@ -1,6 +1,8 @@
 package br.com.ufs.iotaframework.devices;
 
 
+import br.com.ufs.orionframework.entity.Entity;
+
 import java.util.List;
 
 /**
@@ -10,7 +12,7 @@ import java.util.List;
  * @version %I%, %G%
  * @since 1.0
  */
-public class Device {
+public class Device extends Entity {
 
     private String device_id;
     private String protocol;
@@ -35,6 +37,8 @@ public class Device {
      * @param commands Attributes working as commands.
      */
     public Device(String device_id, String protocol, String entity_name, String entity_type, String timezone, List<Attribute> attributes, List<StaticAttribute> static_attributes, List<Command> commands) {
+        this.id = entity_name;
+        this.type = entity_type;
         this.device_id = device_id;
         this.protocol = protocol;
         this.entity_name = entity_name;
@@ -46,6 +50,8 @@ public class Device {
     }
 
     public Device(String device_id, String protocol, String entity_name, String entity_type, String timezone, List<Attribute> attributes) {
+        this.id = entity_name;
+        this.type = entity_type;
         this.device_id = device_id;
         this.protocol = protocol;
         this.entity_name = entity_name;
@@ -55,6 +61,8 @@ public class Device {
     }
 
     public Device(String device_id, String protocol, String entity_name, String entity_type, String timezone, List<Attribute> attributes, List<StaticAttribute> static_attributes) {
+        this.id = entity_name;
+        this.type = entity_type;
         this.device_id = device_id;
         this.protocol = protocol;
         this.entity_name = entity_name;
@@ -126,5 +134,26 @@ public class Device {
 
     public void setCommands(List<Command> commands) {
         this.commands = commands;
+    }
+
+    @Override
+    public String getType() {
+        return this.type;
+    }
+
+    @Override
+    public String getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+
     }
 }

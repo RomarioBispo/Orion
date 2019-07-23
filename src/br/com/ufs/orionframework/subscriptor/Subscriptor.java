@@ -59,6 +59,38 @@ public class Subscriptor implements Runnable {
         this.en = en;
     }
 
+    public Map<String, List<Lambda>> getSubscriptions() {
+        return subscriptions;
+    }
+
+    public void setSubscriptions(Map<String, List<Lambda>> subscriptions) {
+        this.subscriptions = subscriptions;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public ServerSocket getServer() {
+        return server;
+    }
+
+    public void setServer(ServerSocket server) {
+        this.server = server;
+    }
+
     public Boolean getDebugMode() {
         return debugMode;
     }
@@ -66,6 +98,8 @@ public class Subscriptor implements Runnable {
     public void setDebugMode(Boolean debugMode) {
         this.debugMode = debugMode;
     }
+
+
 
     public Subscriptor(int port, String ip, String entityId, String type, ServerSocket server, Entity en) {
         this.port = port;
@@ -89,7 +123,7 @@ public class Subscriptor implements Runnable {
         Orion orion = new Orion();
         List<Lambda> updateFunctionList = new ArrayList<>();
 
-       if (!subscriptions.containsKey(en.getId())) {
+       if (!this.subscriptions.containsKey(en.getId())) {
             orion.createSimpleSubscription(en.getId(), en.getType(), this.port, this.ip, false);
             updateFunctionList.add(updateFunction);
             subscriptions.put(en.getId(), updateFunctionList);

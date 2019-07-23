@@ -58,3 +58,15 @@ h
 8src/br/com/ufs/orionframework/subscription/Entities.java,f/3/f304b3f74a61c8717afa270d470beba7d5fa6516
 m
 =src/br/com/ufs/orionframework/typeadapter/IntTypeAdapter.java,1/c/1c82ecf8424ed00c52573e09e99e338f12e313e7
+m
+=src/br/com/ufs/orionframework/registrations/DataProvided.java,2/9/296d60d3a58d65b508c77f42d695d00604f76056
+i
+9src/br/com/ufs/orionframework/registrations/Entities.java,d/f/df76bf38345c113e11c062fad63f8380f344e94c
+v
+Fsrc/br/com/ufs/orionframework/registrations/ForwardingInformation.java,1/4/1432753ef7580b2d2c3aea99405670b0b1ff7873
+e
+5src/br/com/ufs/orionframework/registrations/Http.java,7/d/7dcdb2a885d85d5a53f728504a8ba640a68e9c24
+i
+9src/br/com/ufs/orionframework/registrations/Provider.java,9/5/95a05ac41065ea1c376a747d37f7ef5987d48a58
+n
+>src/br/com/ufs/orionframework/registrations/Registrations.java,9/6/96869e14fc3f43db170e4baf4ed1275063de6843

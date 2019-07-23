@@ -17,8 +17,7 @@ public class Registrations {
     private ForwardingInformation forwardingInformation;
 
 
-    public Registrations(String id, String description, DataProvided dataProvided, Provider provider, String expires, String status, ForwardingInformation forwardingInformation) {
-        this.id = id;
+    public Registrations(String description, DataProvided dataProvided, Provider provider, String expires, String status, ForwardingInformation forwardingInformation) {
         this.description = description;
         this.dataProvided = dataProvided;
         this.provider = provider;
@@ -27,8 +26,7 @@ public class Registrations {
         this.forwardingInformation = forwardingInformation;
     }
 
-    public Registrations(String id, String description, DataProvided dataProvided, Provider provider) {
-        this.id = id;
+    public Registrations(String description, DataProvided dataProvided, Provider provider) {
         this.description = description;
         this.dataProvided = dataProvided;
         this.provider = provider;

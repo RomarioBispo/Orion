@@ -1,4 +1,7 @@
 package br.com.ufs.orionframework.registrations;
+
+import java.util.List;
+
 /**
  * This class is used to help to represent a registration object as JSON attribute on registration class.
  *

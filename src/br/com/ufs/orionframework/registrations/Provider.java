@@ -12,10 +12,20 @@ package br.com.ufs.orionframework.registrations;
 public class Provider {
     private Http http;
     private String supportedForwardingMode;
+    private Boolean legacyForwarding;
 
-    public Provider(Http http, String supportedForwardingMode) {
+    public Provider(Http http, String supportedForwardingMode, Boolean legacyForwarding) {
         this.http = http;
         this.supportedForwardingMode = supportedForwardingMode;
+        this.legacyForwarding = legacyForwarding;
+    }
+
+    public Boolean getLegacyForwarding() {
+        return legacyForwarding;
+    }
+
+    public void setLegacyForwarding(Boolean legacyForwarding) {
+        this.legacyForwarding = legacyForwarding;
     }
 
     public Http getHttp() {

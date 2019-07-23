@@ -1,14 +1,12 @@
 
-_squid:UselessImportCheck"/Remove this unused import 'org.json.JSONArray'.(¬¸Ê’üÿÿÿÿ8‘ï¢¨À-
-{squid:S1488•"\Immediately return this expression instead of assigning it to the temporary variable "subs".(ñ€ªƒ8ñ“’¢Á-
-nsquid:UselessImportCheck
-">Remove this unused import 'com.google.gson.reflect.TypeToken'.(İªıñøÿÿÿÿ8‘ï¢¨À-
-Ysquid:S1172ê"5Remove this unused method parameter "registrationId".(î¢à¯ıÿÿÿÿ8ñ“’¢Á-
-Nsquid:S1172µ"/Remove this unused method parameter "entities".(ÆèÇĞ8ñ“’¢Á-
-“squid:S1319t"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ä©ìÄıÿÿÿÿ8¹³÷À-
-`squid:UselessImportCheck"0Remove this unused import 'org.json.JSONObject'.(œÖ´üşÿÿÿÿ8™ç©§À-
-isquid:UselessImportCheck"?Remove this unused import 'br.com.ufs.iotaframework.iota.IoTA'.(©Â˜n8‹¹öê¿-
-Nsquid:S1172ª"/Remove this unused method parameter "entities".(á›ìÿ8ñ“’¢Á-
-Bsquid:S1068&",Remove this unused "listener" private field.(ë×¿n
-9squid:S2326#"T is not used in the class.(¿”ßï8©ØÏ—À-
-asquid:UselessImportCheck"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8™‡ä¥À-
+Psquid:S1481ú",Remove this unused "expires" local variable.(ƒˆƒİúÿÿÿÿ8 ÍòûÁ-
+Ysquid:S1854û":Remove this useless assignment to local variable "status".(Øäã¬8Å•²üÁ-
+“squid:S1319u"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ä©ìÄıÿÿÿÿ8 ÍòûÁ-
+_squid:S1854ú";Remove this useless assignment to local variable "expires".(ƒˆƒİúÿÿÿÿ8 ÍòûÁ-
+Nsquid:S1172ô"/Remove this unused method parameter "entities".(ÆèÇĞ8Å•²üÁ-
+osquid:CommentedOutCodeLineı"<This block of commented-out lines of code should be removed.(¯ˆõÿÿÿÿÿ8Å•²üÁ-
+Jsquid:S1481û"+Remove this unused "status" local variable.(Øäã¬8Å•²üÁ-
+Isquid:S1068&",Remove this unused "listener" private field.(ë×¿n8 ÍòûÁ-
+9squid:S2326#"T is not used in the class.(¿”ßï8”Ò²ıÁ-
+Nsquid:S1172é"/Remove this unused method parameter "entities".(á›ìÿ8Å•²üÁ-
+{squid:S1488–"\Immediately return this expression instead of assigning it to the temporary variable "subs".(ñ€ªƒ8 ÍòûÁ-
