@@ -27,6 +27,13 @@ public class Registrations {
         this.forwardingInformation = forwardingInformation;
     }
 
+    public Registrations(String id, String description, DataProvided dataProvided, Provider provider) {
+        this.id = id;
+        this.description = description;
+        this.dataProvided = dataProvided;
+        this.provider = provider;
+    }
+
     public String getId() {
         return this.id;
     }

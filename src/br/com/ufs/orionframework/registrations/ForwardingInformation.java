@@ -16,6 +16,10 @@ public class ForwardingInformation {
     private String LastFailure;
 
 
+    public ForwardingInformation() {
+    }
+
+
     public ForwardingInformation(int timesSent, String lastForwarding, String lastSuccess, String LastFailure) {
         this.timesSent = timesSent;
         this.lastForwarding = lastForwarding;
