@@ -8,6 +8,7 @@ import br.com.ufs.orionframework.orion.Orion;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -32,8 +33,18 @@ public class Subscriptor implements Runnable {
     private String type;
     private ServerSocket server;
     private Boolean debugMode;
+    private Entity model;
+
     private static final Logger LOGGER = Logger.getLogger(Subscriptor.class.getName());
 
+
+    public Entity getModel() {
+        return model;
+    }
+
+    public void setModel(Entity model) {
+        this.model = model;
+    }
 
     public String getEntityId() {
         return entityId;
@@ -124,7 +135,7 @@ public class Subscriptor implements Runnable {
         List<Lambda> updateFunctionList = new ArrayList<>();
 
        if (!this.subscriptions.containsKey(en.getId())) {
-            orion.createSimpleSubscription(en.getId(), en.getType(), this.port, this.ip, false);
+            orion.createSimpleSubscription(".*", en.getType(), this.port, this.ip, false);
             updateFunctionList.add(updateFunction);
             subscriptions.put(en.getId(), updateFunctionList);
         }
@@ -133,21 +144,98 @@ public class Subscriptor implements Runnable {
         }
     }
 
-
     /**
      * Create a subscription on Orion and listen to notifications.
-     * When a notification come, aurn:ngsi-ld:Lamp:1 update function associated with entity is applied to entity values.
+     * When a notification come, a update function associated with entity is applied to entity values.
+     * Notice that method is unblocking using threads.
      *
      * @param updateFunction a function which does a update when came a notification.
      * @param obj the entity object which have to update.
+     * @param model a object representing the Entity.
      */
-    public void subscribeAndListen(Lambda updateFunction, Entity obj) {
+    public void subscribeAndListen(Lambda updateFunction, Entity obj, Entity model) {
 
         Subscriptor sub = new Subscriptor(this.port, this.ip, this.entityId, this.type, this.server, obj);
         sub.subscribe(updateFunction, this.en);
-
+        sub.setModel(model);
         Thread t = new Thread(sub);
         t.start();
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        this.setModel(sub.getModel());
+
+        Gson gson = new Gson();
+        System.out.println("JSON RETORNADO " + gson.toJson(sub.getModel()));
+
+    }
+
+
+    /**
+     * Create a subscription on Orion and listen to notifications.
+     * When a notification come, a update function associated with entity is applied to entity values.
+     * Notice that method is blocking call, so the subscriber will be waiting until came a notification.
+     *
+     * @param updateFunction a function which does a update when came a notification.
+     * @param model a object representing the Entity which want to retrieve.
+     * @return a list of updated entities.
+     */
+    public <T> List<T> subscribeAndListenBlocking(Lambda updateFunction, Entity model){
+
+        subscribe(updateFunction, this.en);
+        this.model = model;
+        String json = "";
+        String data = null;
+        String lastLine = null;
+        Gson gson = new Gson();
+        GenericNotification notification;
+
+        Socket client = null;
+        try {
+            client = this.server.accept();
+        } catch (IOException e) {
+            showStackTrace(e);
+        }
+
+        BufferedReader in = null;
+        try {
+            in = new BufferedReader(
+                    new InputStreamReader(client.getInputStream()));
+        } catch (IOException e) {
+            showStackTrace(e);
+        }
+
+        while (true) {
+            try {
+                if (!((data = in.readLine()) != null)) break;
+            } catch (IOException e) {
+                showStackTrace(e);
+            }
+            lastLine = data;
+        }
+
+        shoWDebug(lastLine);
+
+        notification = gson.fromJson(lastLine, GenericNotification.class);
+
+        List<T> entityListUpdated = new ArrayList<>();
+
+        for (Object entities: notification.getData()) {
+
+            json = gson.toJson(entities);
+
+            this.model = gson.fromJson(json, (Type) this.model.getClass());
+
+            entityListUpdated.add((T) this.model);
+
+            List<Lambda> updateFunctionList = subscriptions.get(this.en.getId());
+            for (Lambda fList: updateFunctionList)
+                this.model = fList.lambdaUpdate(this.model);
+        }
+
+        return entityListUpdated;
     }
 
     @Override
@@ -190,11 +278,12 @@ public class Subscriptor implements Runnable {
         for (Object entities: notification.getData()) {
 
             json = gson.toJson(entities);
-            this.en = gson.fromJson(json, this.en.getClass());
+
+            this.model = gson.fromJson(json, (Type) this.model.getClass());
 
             List<Lambda> updateFunctionList = subscriptions.get(this.en.getId());
             for (Lambda fList: updateFunctionList)
-                this.en = fList.lambdaUpdate(this.en);
+                this.model = fList.lambdaUpdate(this.model);
         }
     }
 
