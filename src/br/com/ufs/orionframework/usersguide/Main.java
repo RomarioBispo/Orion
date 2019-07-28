@@ -141,12 +141,12 @@ public class Main {
         ServerSocket ss = new ServerSocket(40041, 1, InetAddress.getByName("172.18.1.1"));
 
         Subscriptor subscriptor1 = new Subscriptor(40041, "172.18.1.1", "urn:ngsi-ld:Square:1", "Square", ss, myEntity01);
-//        subscriptor1.subscribeAndListen(en -> updateEntity((MyEntity) en), myEntity01, myEntity01);
+        subscriptor1.subscribeAndListen(en -> updateEntity((MyEntity) en), new MyEntity());
 //        System.out.println(subscriptor1.getModel().getId());
         Subscriptor subscriptor2 = new Subscriptor(40041, "172.18.1.1", "urn:ngsi-ld:Square:2", "Square", ss, myEntity02);
-//        subscriptor2.subscribeAndListen(en -> updateEntity((MyEntity) en), myEntity02, myEntity01);
+        subscriptor2.subscribeAndListen(en -> updateEntity((MyEntity) en), new MyEntity());
 
-        subscriptor1.subscribeAndListenBlocking(en -> updateEntity((MyEntity) en), myEntity01);
+//        subscriptor1.subscribeAndListenBlocking(en -> updateEntity((MyEntity) en), myEntity01);
 
         // retrieving the entity from Orion.
         MyEntity myEntity04 = (MyEntity) orion.retrieveEntityAttributes("urn:ngsi-ld:Square:2", myEntity02);
@@ -177,7 +177,7 @@ public class Main {
         System.out.println(myEntity04.getAttribute3().getType());
 
         // retrieving entities by type
-        ArrayList<MyEntity> mylist = orion.listEntities("type=Square", myEntity01);
+        List<MyEntity> mylist = orion.listEntities("type=Square", myEntity01);
         System.out.println("Aqui:" + mylist.get(0).getAttribute5().getValue());
 
         // using registrations operations

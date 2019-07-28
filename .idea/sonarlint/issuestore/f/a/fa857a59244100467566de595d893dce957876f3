@@ -1,13 +1,8 @@
 
-csquid:S2259„"DA "NullPointerException" could be thrown; "client" is nullable here.(É‚êƒ8¶ÓÔ¥Â-
-Hsquid:S1940Ô")Use the opposite operator ("==") instead.(òˆÄç8½”Â°Â-
-_squid:S2259Ô"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8½”Â°Â-
-Hsquid:S1940‹")Use the opposite operator ("==") instead.(òˆÄç8¶ÓÔ¥Â-
-Gsquid:S1148¦"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Æ”ˆ°Â-
-\
-squid:S106«"9Replace this use of System.out or System.err by a logger.(Öïİ‰ûÿÿÿÿ8Ò€Ã¨Â-
-\
-squid:S106“"9Replace this use of System.out or System.err by a logger.(‚—„üÿÿÿÿ8¶ÓÔ¥Â-
-_squid:S2259‹"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8¶ÓÔ¥Â-
-esquid:S2142¥"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8Æ”ˆ°Â-
-csquid:S2259Í"DA "NullPointerException" could be thrown; "client" is nullable here.(É‚êƒ8½”Â°Â-
+_squid:S2259‚"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8¡É›™Ã-
+csquid:S2259Ã"DA "NullPointerException" could be thrown; "client" is nullable here.(É‚êƒ8½”Â°Â-
+Hsquid:S1940‚")Use the opposite operator ("==") instead.(òˆÄç8¶ÓÔ¥Â-
+qsquid:S3776è"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(“–ış8¡É›™Ã-
+csquid:S2259û"DA "NullPointerException" could be thrown; "client" is nullable here.(É‚êƒ8¡É›™Ã-
+_squid:S2259Ê"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8½”Â°Â-
+Hsquid:S1940Ê")Use the opposite operator ("==") instead.(òˆÄç8½”Â°Â-

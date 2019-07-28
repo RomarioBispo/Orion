@@ -20,6 +20,9 @@ public class MyEntity extends Entity {
         this.attribute5 = attribute5;
     }
 
+    public MyEntity() {
+    }
+
     public Attrs getAttribute4() {
         return attribute4;
     }

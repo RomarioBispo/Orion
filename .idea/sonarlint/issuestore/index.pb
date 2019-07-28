@@ -70,3 +70,11 @@ i
 9src/br/com/ufs/orionframework/registrations/Provider.java,9/5/95a05ac41065ea1c376a747d37f7ef5987d48a58
 n
 >src/br/com/ufs/orionframework/registrations/Registrations.java,9/6/96869e14fc3f43db170e4baf4ed1275063de6843
+d
+4src/br/com/ufs/orionframework/subscription/Http.java,9/2/9258ace523ce9ce08b9876e48238025844079c3f
+l
+<src/br/com/ufs/orionframework/subscription/Notification.java,6/7/677e9a3788257451e9fefe6d43c33c8836dc21a9
+g
+7src/br/com/ufs/orionframework/subscription/Subject.java,2/2/22ba5b05440812f77df5162c7258829f3867670f
+l
+<src/br/com/ufs/orionframework/subscription/Subscription.java,d/e/dea60102a105c0090d8a8851901e3be7242ed1f7

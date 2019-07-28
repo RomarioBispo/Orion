@@ -1,12 +1,13 @@
 
+Ysquid:S1854€":Remove this useless assignment to local variable "status".(Øäã¬8Å•²üÁ-
+Fsquid:S1905’"'Remove this unnecessary cast to "List".(÷ƒ–8€—²óÂ-
+osquid:CommentedOutCodeLine‚"<This block of commented-out lines of code should be removed.(¯ˆõÿÿÿÿÿ8Å•²üÁ-
+W
+squid:S106È"9Replace this use of System.out or System.err by a logger.(«ì¨¥8üŠü›Ã-
+{squid:S1488›"\Immediately return this expression instead of assigning it to the temporary variable "subs".(ñ€ªƒ8 ÍòûÁ-
+Nsquid:S1172î"/Remove this unused method parameter "entities".(á›ìÿ8Å•²üÁ-
+Nsquid:S1172ù"/Remove this unused method parameter "entities".(ÆèÇĞ8Å•²üÁ-
+Psquid:S1481ÿ",Remove this unused "expires" local variable.(ƒˆƒİúÿÿÿÿ8 ÍòûÁ-
+Jsquid:S1481€"+Remove this unused "status" local variable.(Øäã¬8Å•²üÁ-
+_squid:S1854ÿ";Remove this useless assignment to local variable "expires".(ƒˆƒİúÿÿÿÿ8 ÍòûÁ-
 Isquid:S1068&",Remove this unused "listener" private field.(ë×¿n8 ÍòûÁ-
-osquid:CommentedOutCodeLineı"<This block of commented-out lines of code should be removed.(¯ˆõÿÿÿÿÿ8Å•²üÁ-
-_squid:S1854ú";Remove this useless assignment to local variable "expires".(ƒˆƒİúÿÿÿÿ8 ÍòûÁ-
-{squid:S1488–"\Immediately return this expression instead of assigning it to the temporary variable "subs".(ñ€ªƒ8 ÍòûÁ-
-Ysquid:S1854û":Remove this useless assignment to local variable "status".(Øäã¬8Å•²üÁ-
-Jsquid:S1481û"+Remove this unused "status" local variable.(Øäã¬8Å•²üÁ-
-Nsquid:S1172é"/Remove this unused method parameter "entities".(á›ìÿ8Å•²üÁ-
-Nsquid:S1172ô"/Remove this unused method parameter "entities".(ÆèÇĞ8Å•²üÁ-
-9squid:S2326#"T is not used in the class.(¿”ßï8”Ò²ıÁ-
-“squid:S1319u"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ä©ìÄıÿÿÿÿ8 ÍòûÁ-
-Psquid:S1481ú",Remove this unused "expires" local variable.(ƒˆƒİúÿÿÿÿ8 ÍòûÁ-

@@ -126,7 +126,7 @@ public class HttpRequests {
         HttpRequestFactory requestFactory =
                 HTTP_TRANSPORT.createRequestFactory(request -> request.setParser(new JsonObjectParser(JSON_FACTORY)));
         GenericUrl operationUrl = new GenericUrl(url);
-        HttpRequest request = requestFactory.buildPostRequest(operationUrl, ByteArrayContent.fromString("Content-Type: text/plain", requestBody));
+        HttpRequest request = requestFactory.buildPostRequest(operationUrl, ByteArrayContent.fromString("text/plain", requestBody));
         HttpHeaders headers = request.getHeaders();
 //        headers.set("fiware-service", "openiot");
 //        headers.set("fiware-servicepath", "/");

@@ -32,7 +32,7 @@ import java.util.logging.Logger;
  * @since 1.0
  */
 
-public class Orion<T> {
+public class Orion {
 
     private String url;
     private String listener;
@@ -103,7 +103,6 @@ public class Orion<T> {
         }
 
         shoWDebug(json);
-
     }
 
     /**
@@ -114,14 +113,14 @@ public class Orion<T> {
      * @return  An Array with all objects (EntityId and entitytype) registered on orion.
      * the JSON entity representation format (described in a “JSON Entity Representation” section) on NGSIv2 docs.
      */
-    public ArrayList<Object> listEntities(String criteria, Object obj){
+    public <T> List<T> listEntities(String criteria, T obj){
 
         String json = "";
 
         Gson gson = new GsonBuilder().registerTypeAdapter(int.class, new IntTypeAdapter()).create();
 
         HttpRequests http = new HttpRequests();
-        ArrayList<Object> objects = new ArrayList<>();
+        List<T> objects = new ArrayList<>();
         try {
             if (criteria.isEmpty()){
                 json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT);
@@ -131,8 +130,9 @@ public class Orion<T> {
         } catch (Exception e) {
             LOGGER.warning("A error may be occurred and was possible retrieve the entities, please check your parameters or set debugMode to true to more details");
             showStackTrace(e);
-
         }
+
+        shoWDebug(json);
 
         JsonParser jsonParser = new JsonParser();
         JsonElement element = jsonParser.parse(json);
@@ -140,12 +140,10 @@ public class Orion<T> {
 
         for (int i = 0; i < jsonArray.size(); i++){
             json = gson.toJson(jsonArray.get(i));
+            shoWDebug(json);
             objects.add(gson.fromJson(json, (Type) obj.getClass()));
         }
-
-        shoWDebug(json);
-
-        return objects;
+        return (List<T>) objects;
     }
 
     /**
@@ -449,6 +447,13 @@ public class Orion<T> {
 
         Gson gson = new Gson();
         json = gson.toJson(obj);
+
+        // remove the type field from payload
+        JsonObject o = new JsonParser().parse(json).getAsJsonObject();
+        o.remove("type");
+        json = o.get("value").toString();
+
+        System.out.println("VALOR: " + json);
 
         HttpRequests http = new HttpRequests();
         try {

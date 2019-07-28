@@ -312,7 +312,7 @@ public class IoTA {
     }
 
     /**
-     * Given a device id, delete a device. If specific device is not found, we work as deleted.
+     * This operation send devices measures.
      *
      * @param apikey An apikey used for validate the measure was sent.
      * @param device_id  An id from device.
@@ -328,9 +328,12 @@ public class IoTA {
         try {
             http.runUltralightPostRequest(url, payload);
         } catch (Exception e) {
-            LOGGER.warning("A error may be occurred on deleting the devices, please please check your parameters or set debugMode to true to more details");
+            LOGGER.warning("A error may be occurred on sending measures, please please check your parameters or set debugMode to true to more details");
             showStackTrace(e);
         }
+
+    }
+    public void objectToPayloadUltralight() {
 
     }
 

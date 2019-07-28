@@ -120,11 +120,14 @@ public class Subscriptor implements Runnable {
         this.server = server;
         this.en = en;
         this.debugMode = false;
+        new Thread(this).start();
 
     }
 
     /**
-     * Create a subscription on Orion
+     * Create a subscription on Orion.
+     * This operation put the <Id, Function> on a Hashmap.
+     * If the id already is in the hashMap, the function is added to list.
      *
      * @param updateFunction a function which does a update when came a notification.
      * @param en a entity object representing the entity
@@ -139,8 +142,10 @@ public class Subscriptor implements Runnable {
             updateFunctionList.add(updateFunction);
             subscriptions.put(en.getId(), updateFunctionList);
         }
-        else { // caso o Id já exista no Map, então tem que colocar as funções em uma lista
-            subscriptions.get(en.getId());
+        else {
+            updateFunctionList = subscriptions.get(en.getId());
+            updateFunctionList.add(updateFunction);
+            subscriptions.put(en.getId(), updateFunctionList);
         }
     }
 
@@ -150,28 +155,13 @@ public class Subscriptor implements Runnable {
      * Notice that method is unblocking using threads.
      *
      * @param updateFunction a function which does a update when came a notification.
-     * @param obj the entity object which have to update.
      * @param model a object representing the Entity.
      */
-    public void subscribeAndListen(Lambda updateFunction, Entity obj, Entity model) {
+    public void subscribeAndListen(Lambda updateFunction,Entity model) {
 
-        Subscriptor sub = new Subscriptor(this.port, this.ip, this.entityId, this.type, this.server, obj);
-        sub.subscribe(updateFunction, this.en);
-        sub.setModel(model);
-        Thread t = new Thread(sub);
-        t.start();
-        try {
-            Thread.sleep(7000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        this.setModel(sub.getModel());
-
-        Gson gson = new Gson();
-        System.out.println("JSON RETORNADO " + gson.toJson(sub.getModel()));
-
+        subscribe(updateFunction, this.en);
+        this.model = model;
     }
-
 
     /**
      * Create a subscription on Orion and listen to notifications.
@@ -240,6 +230,7 @@ public class Subscriptor implements Runnable {
 
     @Override
     public void run() {
+        while(true) {
 
         String json = "";
         String data = null;
@@ -272,7 +263,6 @@ public class Subscriptor implements Runnable {
         }
 
         shoWDebug(lastLine);
-        System.out.println(lastLine);
         notification = gson.fromJson(lastLine, GenericNotification.class);
 
         for (Object entities: notification.getData()) {
@@ -284,6 +274,8 @@ public class Subscriptor implements Runnable {
             List<Lambda> updateFunctionList = subscriptions.get(this.en.getId());
             for (Lambda fList: updateFunctionList)
                 this.model = fList.lambdaUpdate(this.model);
+        }
+
         }
     }
 
