@@ -1,0 +1,38 @@
+
+T
+squid:S106v"9Replace this use of System.out or System.err by a logger.(¬”ãıÿÿÿÿ
+esquid:S00112r"FDefine and throw a dedicated exception instead of using a generic one.(‘¼•À8ñŠ¼ìÃ-
+csquid:CommentedOutCodeLine‹"<This block of commented-out lines of code should be removed.(¼¯ûû
+squid:UselessImportCheck"ORemove this unused import 'com.google.api.client.json.jackson2.JacksonFactory'.(ü¬¶³ÿÿÿÿÿ8÷½ÏíÃ-
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÄÛí¤øÿÿÿÿ
+jsquid:S00112P"FDefine and throw a dedicated exception instead of using a generic one.(Îı¸«üÿÿÿÿ8ñŠ¼ìÃ-
+€squid:UselessImportCheck"PRemove this unused import 'com.google.api.client.http.javanet.NetHttpTransport'.(‰ÉØÒıÿÿÿÿ8÷½ÏíÃ-
+gsquid:CommentedOutCodeLineu"<This block of commented-out lines of code should be removed.(â«Úÿÿÿÿÿ
+O
+squid:S106t"9Replace this use of System.out or System.err by a logger.(‘êû
+O
+squid:S106}"9Replace this use of System.out or System.err by a logger.(¥šë†
+bsquid:CommentedOutCodeLineS"<This block of commented-out lines of code should be removed.(éæ¢Ö
+gsquid:CommentedOutCodeLineQ"<This block of commented-out lines of code should be removed.(ı‚•ïùÿÿÿÿ
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ı‚•ïùÿÿÿÿ
+ksquid:S1192""HDefine a constant instead of duplicating this literal "Integer" 3 times.(´ÑÓŒüÿÿÿÿ8¹Ç»ëÃ-
+esquid:S00112h"FDefine and throw a dedicated exception instead of using a generic one.(ĞêÖæ8ñŠ¼ìÃ-
+hsquid:CommentedOutCodeLine…"<This block of commented-out lines of code should be removed.(ÆÁ¢úşÿÿÿÿ
+jsquid:UselessImportCheck"?Remove this unused import 'com.java.subscription.Subscription'.(Ğ²—ò8ñüËíÃ-
+bsquid:CommentedOutCodeLineY"<This block of commented-out lines of code should be removed.(ÕßĞè
+bsquid:CommentedOutCodeLines"<This block of commented-out lines of code should be removed.(„©±ø
+bsquid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(Ş¥ôö
+gsquid:CommentedOutCodeLine["<This block of commented-out lines of code should be removed.(û™›êûÿÿÿÿ
+bsquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(êğÁÉ
+asquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(˜‹‘
+csquid:CommentedOutCodeLine¨"<This block of commented-out lines of code should be removed.(„©±ø
+\
+squid:S106´"9Replace this use of System.out or System.err by a logger.(ôğıùÿÿÿÿ8ˆ¯ÑìÃ-
+asquid:CommentedOutCodeLineU"<This block of commented-out lines of code should be removed.(²³¡L
+bsquid:CommentedOutCodeLinen"<This block of commented-out lines of code should be removed.(êğÁÉ
+bsquid:CommentedOutCodeLineW"<This block of commented-out lines of code should be removed.(Ø¢³ÿ
+isquid:CommentedOutCodeLine|"<This block of commented-out lines of code should be removed.(Ìü®ê8Š”»ìÃ-
+gsquid:CommentedOutCodeLinei"<This block of commented-out lines of code should be removed.(Ò™æÍøÿÿÿÿ
+ssquid:UselessImportCheck"HRemove this unused import 'com.google.api.client.json.JsonObjectParser'.(êìôü8÷½ÏíÃ-
+nsquid:UselessImportCheck"CRemove this unused import 'com.google.api.client.json.JsonFactory'.(•èí¬8÷½ÏíÃ-
+€squid:UselessImportCheck"URemove this unused import 'br.com.ufs.examples.room.context.accumulator.Accumulator'.(Ÿªôà8ß‡êÃ-

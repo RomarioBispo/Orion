@@ -284,6 +284,7 @@ public class SquareExample {
 
         int quantity = 16;
         // Cria as 15 lâmpadas no orion com os atributos criados acima
+		// posso colocar uma chamada bloqueante esperando a primeira notificação :D
 		List<Device> deviceList = new ArrayList<>();
 		for(int i = 0; i<quantity;i++) {
         	deviceList.add(new Device("lamp"+(i+1),"123456","urn:ngsi-ld:Lamp:"+(i+1),"Lamp","Sergipe/Aracaju", attributeList,staticAttributeList));
@@ -323,10 +324,6 @@ public class SquareExample {
 //        }
     }
 
-    /*
-    * Como vou chamar a função aqui, se a minha lambda exp só aceita um parâmetro ?
-    * As lambdas exp funcionam se o único parâmetro for a entidade e só.
-    * */
 	public static Lamp updateEntity(Lamp l) {
 		if (l.getState().getValue().equals("off")){
 			lampOffFramework(l, previousState, orion);

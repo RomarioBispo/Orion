@@ -1,5 +1,6 @@
 package br.com.ufs.examples.room.context.device;
 
+import br.com.ufs.orionframework.entity.Entity;
 import com.google.api.client.http.*;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
@@ -7,7 +8,7 @@ import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.gson.Gson;
 
-public class AirConditioner {
+public class AirConditioner extends Entity {
     private Device[] devices;
 
     public AirConditioner(String device_id, String entity_name) throws Exception {
@@ -82,6 +83,26 @@ public class AirConditioner {
         headers.set("fiware-servicepath", "/");
 
         return request.execute().parseAsString();
+    }
+
+    @Override
+    public String getType() {
+        return this.type;
+    }
+
+    @Override
+    public String getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
     }
 
     public static class Entity {

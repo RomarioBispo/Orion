@@ -1,0 +1,12 @@
+
+csquid:S00112$"FDefine and throw a dedicated exception instead of using a generic one.(Öìþœûÿÿÿÿ
+isquid:S00117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…¦úš
+Bsquid:S1068"+Remove this unused "devices" private field.(šÏ¨Æ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ï˜Áˆûÿÿÿÿ
+bsquid:CommentedOutCodeLine!"<This block of commented-out lines of code should be removed.(Ø•ûÕ
+isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êü«
+isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êü«
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ìü®ê
+isquid:S00117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªŽ¬’
+]squid:UnusedPrivateMethod$"3Remove this unused private "runPostRequest" method.(Öìþœûÿÿÿÿ
+^squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(êü«

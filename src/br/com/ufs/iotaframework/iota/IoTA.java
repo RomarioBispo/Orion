@@ -41,6 +41,13 @@ public class IoTA {
         this.debugMode = false;
     }
 
+    public IoTA() {
+        this.ip = "localhost";
+        this.port = 4041;
+        this.url = "http://" + this.ip + ":" + this.port;
+        this.debugMode = false;
+    }
+
     public Boolean getDebugMode() {
         return debugMode;
     }
