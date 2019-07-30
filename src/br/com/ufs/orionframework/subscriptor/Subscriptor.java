@@ -126,7 +126,7 @@ public class Subscriptor implements Runnable {
 
     /**
      * Create a subscription on Orion.
-     * This operation put the <Id, Function> on a Hashmap.
+     * This operation put the Id, Function on a Hashmap.
      * If the id already is in the hashMap, the function is added to list.
      *
      * @param updateFunction a function which does a update when came a notification.

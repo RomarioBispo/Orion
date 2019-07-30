@@ -1,29 +1,22 @@
-package com.java.square;
+package br.com.ufs.examples.square.context.square;
 
 import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.entity.Entity;
 
+
+/**
+ * This class is used to concept proof for the Orion Framework.
+ * To this only purpose, the project developed in Mariana Martins undergraduate thesis was used.
+ * Your project was modified to use the framework.
+ *
+ * @author Romario Bispo, Mariana Martins.
+ * @version %I%, %G%
+ * @since 1.0
+ * @see br.com.ufs.examples.square.context.socket.SquareExample
+ * */
+
+
 public class Square extends Entity {
-	
-	/*
-	 * 
-    {
-  "id": "Square01",
-  "type": "Square",
-  "name": {
-    "value": "Praça Oliveira Belo",
-    "type": "Text"
-  },
-  "location": {
-    "value": "-10.936273, -37.061228",
-    "type": "geo:point"
-  },
-  "radius": {
-    "value": 45,
-    "type": "Float"
-  }
-}
-	 */
 
 	private Attrs name;
 	private Attrs location;

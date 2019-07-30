@@ -1,7 +1,18 @@
-package com.java.Lamp;
+package br.com.ufs.examples.square.context.Lamp;
 
 import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.entity.Entity;
+
+/**
+ * This class is used to concept proof for the Orion Framework.
+ * To this only purpose, the project developed in Mariana Martins undergraduate thesis was used.
+ * Your project was modified to use the framework.
+ *
+ * @author Romario Bispo, Mariana Martins.
+ * @version %I%, %G%
+ * @since 1.0
+ * @see br.com.ufs.examples.square.context.socket.SquareExample
+ * */
 
 public class Lamp extends Entity {
 

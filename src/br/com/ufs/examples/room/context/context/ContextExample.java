@@ -14,11 +14,23 @@ import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.orion.Orion;
 import br.com.ufs.orionframework.subscriptor.Subscriptor;
 
-import javax.naming.Context;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.List;
+
+
+
+/**
+ * This class is used to concept proof for the Orion Framework.
+ * To this only purpose, the project developed in Felipe Matheus undergraduate thesis was used.
+ * Your project was modified to use the framework.
+ *
+ * @author Romario Bispo, Felipe Matheus.
+ * @version %I%, %G%
+ * @since 1.0
+ * @see br.com.ufs.examples.room.context.context.ContextExample;
+ * */
 
 public class ContextExample {
 
@@ -108,30 +120,6 @@ public class ContextExample {
             orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(novaTemperatura), "Float"));
         }
     }
-//    public static void manageContextOn (ContextExample context) throws Exception {
-////        if(context.motionDetected != 0 && context.airConditioner.getMode().equals("turbo")) {
-//        if(context.motionDetected != 0 && context.getMode().equals("turbo")) {
-////            context.room.setOccupation(context.room.getOccupation().getValue() + context.motionDetected);
-//            context.setOccupation(context.getOccupation(context).getValue() + context.motionDetected, context);
-////            context.room.setTemperature(context.room.getTemperature().getValue() + (double)context.motionDetected * 0.025);
-//            context.setTemperature(context.getTemperature(context).getValue() + (double)context.motionDetected * 0.025, context);
-//            //System.out.println("Temperatura: "+context.room.getTemperature().getValue() + (double)context.motionDetected * 0.025);
-//        }
-////        else if(context.motionDetected != 0 && context.airConditioner.getMode().equals("normal")) {
-//        else if(context.motionDetected != 0 && context.getMode().equals("normal")) {
-////            context.room.setOccupation(context.room.getOccupation().getValue() - context.motionDetected);
-//            context.setOccupation(context.getOccupation(context).getValue() - context.motionDetected, context);
-//        }
-////        if(context.room.getTemperature().getValue() > context.airConditioner.getTemperature()) {
-//        if(context.getTemperature(context).getValue() > context.getTemperature()) {
-////            context.room.setTemperature(context.room.getTemperature().getValue() - 1);
-//            context.setTemperature(context.getTemperature(context).getValue() - 1, context);
-//        }
-//        else {
-////            context.room.setTemperature(context.room.getTemperature().getValue() + 1);
-//            context.setTemperature(context.getTemperature(context).getValue() + 1, context);
-//        }
-//    }
 
       public static void manageContextOffFramework(AirConditioner airConditioner, Room room, double initialTemperature, Orion orion) {
 
@@ -149,85 +137,29 @@ public class ContextExample {
         }
       }
 
-//    public static void manageContextOff (ContextExample context, double initialTemperature) throws Exception {
-////        if(context.room.getTemperature().getValue() < initialTemperature) {
-//        if(context.getTemperature(context).getValue() < initialTemperature) {
-//            context.setTemperature(context.getTemperature(context).getValue() + 1, context);
-//        }
-//        else {
-////            context.room.setTemperature(context.room.getTemperature().getValue() - 1);
-//            context.setTemperature(context.getTemperature(context).getValue() - 1, context);
-//        }
-//    }
-
     public static void printContext(Room room) {
         room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
         System.out.println("Temperatura: " + room.getTemperature().getValue());
         System.out.println("Ocupacao: " + room.getOccupation().getValue());
     }
-//    public static void printContext(ContextExample context) throws Exception {
-////        System.out.println("Temperatura " + context.room.getTemperature().getValue());
-//        System.out.println("Temperatura " + context.getTemperature(context).getValue());
-////        System.out.println("Ocupacao " + context.room.getOccupation().getValue());
-//        System.out.println("Ocupacao " + context.getOccupation(context).getValue());
-//    }
 
     public static void main(String[] args) throws Exception {
 
         ContextExample contextExample = new ContextExample();
+
+
+        ServerSocket ss = new ServerSocket(40041, 1, InetAddress.getByName("172.18.1.1"));
+        Subscriptor subscriptor = new Subscriptor(40041, "172.18.1.1", ".*", "AirConditioner", ss, new Motion());
+
+        // used to wait first notification from IoT-A.
+        subscriptor.subscribeAndListenBlocking(en -> updateEntity((Motion) en), new Motion());
 
         room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
         initialTemperature = Double.parseDouble(room.getTemperature().getValue());
 
         airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
 
-        ServerSocket ss = new ServerSocket(40041, 1, InetAddress.getByName("172.18.1.1"));
-        Subscriptor subscriptor = new Subscriptor(40041, "172.18.1.1", ".*", "AirConditioner", ss, new Motion());
-
         subscriptor.subscribeAndListen(en -> updateEntity((Motion) en), new Motion());
-
-//        while(true) {
-//            CountNotification countNotification = gson.fromJson(context.accumulator.listen(), CountNotification.class);
-//            for(CountNotification.Data notificationData: countNotification.getData()){
-//                context.motionDetected = notificationData.getCount().getValue();
-//                //System.out.println("Quantidade de pessoas detectadas: \n"+context.motionDetected);
-//            }
-//
-//            // criar um método manageContextOn e managecontextOff
-//            if(context.airConditioner.getState().equals("on")) {
-//                context.setMode();
-////                System.out.println(runGetRequest("http://localhost:1026/v2/entities/"));
-//                //manageContextOn(context);
-//                // Se o Ar-condicionado estiver ligado e chegaram pessoas e seu modo é turbo
-////                if(context.motionDetected != 0 && context.airConditioner.getMode().equals("turbo")) {
-////                    context.room.setOccupation(context.room.getOccupation().getValue() + context.motionDetected);
-////                    context.room.setTemperature(context.room.getTemperature().getValue() + (double)context.motionDetected * 0.025);
-////                    //System.out.println("Temperatura: "+context.room.getTemperature().getValue() + (double)context.motionDetected * 0.025);
-////                }
-////                else if(context.motionDetected != 0 && context.airConditioner.getMode().equals("normal")) {
-////                    context.room.setOccupation(context.room.getOccupation().getValue() - context.motionDetected);
-////                }
-////                if(context.room.getTemperature().getValue() > context.airConditioner.getTemperature()) {
-////                    context.room.setTemperature(context.room.getTemperature().getValue() - 1);
-////                }
-////                else {
-////                    context.room.setTemperature(context.room.getTemperature().getValue() + 1);
-////                }
-//            }
-//            else {
-//                  //manageContextOff(context, initialTemperature);
-////                if(context.room.getTemperature().getValue() < initialTemperature) {
-////                    context.room.setTemperature(context.room.getTemperature().getValue() + 1);
-////                }
-////                else {
-////                    context.room.setTemperature(context.room.getTemperature().getValue() - 1);
-////                }
-//            }
-//            printContext(context);
-//            // criar método print context ou algo do tipo que faz esses prints
-////            System.out.println("Temperatura " + context.room.getTemperature().getValue());
-////            System.out.println("Ocupacao " + context.room.getOccupation().getValue());
-//        }
     }
 
     public static Motion updateEntity(Motion motion) {
@@ -239,5 +171,4 @@ public class ContextExample {
         printContext(room);
         return motion;
     }
-
 }

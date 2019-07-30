@@ -1,8 +1,8 @@
 
-_squid:S2259‚"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8¡É›™Ã-
-csquid:S2259Ã"DA "NullPointerException" could be thrown; "client" is nullable here.(É‚êƒ8½”Â°Â-
-Hsquid:S1940‚")Use the opposite operator ("==") instead.(òˆÄç8¶ÓÔ¥Â-
 csquid:S2259û"DA "NullPointerException" could be thrown; "client" is nullable here.(É‚êƒ8¡É›™Ã-
+csquid:S2259Ã"DA "NullPointerException" could be thrown; "client" is nullable here.(É‚êƒ8½”Â°Â-
+_squid:S2259‚"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8¡É›™Ã-
 _squid:S2259Ê"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8½”Â°Â-
+Hsquid:S1940‚")Use the opposite operator ("==") instead.(òˆÄç8¶ÓÔ¥Â-
 Hsquid:S1940Ê")Use the opposite operator ("==") instead.(òˆÄç8½”Â°Â-
 qsquid:S3776è"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(“–ýþ8¡É›™Ã-

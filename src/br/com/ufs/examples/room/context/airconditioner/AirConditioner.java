@@ -2,6 +2,16 @@ package br.com.ufs.examples.room.context.airconditioner;
 
 import br.com.ufs.orionframework.entity.Attrs;
 
+/**
+ * This class is used to concept proof for the Orion Framework.
+ * To this only purpose, the project developed in Felipe Matheus undergraduate thesis was used.
+ * Your project was modified to use the framework.
+ *
+ * @author Romario Bispo, Felipe Matheus.
+ * @version %I%, %G%
+ * @since 1.0
+ * @see br.com.ufs.examples.room.context.context.ContextExample;
+ */
 public class AirConditioner {
     private Attrs name;
     private Attrs state;

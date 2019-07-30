@@ -24,6 +24,16 @@ public class Device extends Entity {
     private List<Command> commands;
 
 
+
+    /**
+     * Create a Device object. Used to send as parameter when use subscribe and listen.
+     *
+     *
+     */
+    public Device() {
+
+    }
+
     /**
      * Create a Device object.
      *

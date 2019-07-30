@@ -57,11 +57,20 @@ public class IoTA {
     }
 
     public String getIp() {
-        return ip;
+        return this.ip;
     }
 
     public void setIp(String ip) {
         this.ip = ip;
+        this.url = "http://" + this.ip + ":" + this.port;
+    }
+
+    public int getPort() {
+        return this.port;
+    }
+    public void setPort(int port) {
+        this.port = port;
+        this.url = "http://" + this.ip + ":" + this.port;
     }
 
     /**
@@ -317,7 +326,6 @@ public class IoTA {
             showStackTrace(e);
         }
     }
-
     /**
      * This operation send devices measures.
      *

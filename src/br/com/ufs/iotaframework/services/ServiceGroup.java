@@ -1,6 +1,5 @@
 package br.com.ufs.iotaframework.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
