@@ -104,3 +104,9 @@ c
 3src/br/com/ufs/examples/room/context/room/Room.java,d/1/d110bd38413aad84de2208f760dfb28cf497eb9b
 x
 Hsrc/br/com/ufs/examples/room/context/notification/CountNotification.java,2/6/26444f095a168be452e06ea741edb6e0ebfa699a
+g
+7src/br/com/ufs/examples/room/context/motion/Motion.java,8/5/854f38f7c259e67eef48783416e211426336f033
+r
+Bsrc/br/com/ufs/examples/room/simulation/simulation/Simulation.java,5/e/5e0ad21cdadb9fc291589c7265e21c3f79692664
+h
+8src/br/com/ufs/examples/room/simulation/Class/Class.java,a/b/ab02774c5fd4ba083d400c127bbe030e427f9cf7

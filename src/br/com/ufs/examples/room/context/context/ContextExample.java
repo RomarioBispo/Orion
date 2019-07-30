@@ -14,6 +14,7 @@ import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.orion.Orion;
 import br.com.ufs.orionframework.subscriptor.Subscriptor;
 
+import javax.naming.Context;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.util.ArrayList;
@@ -160,6 +161,7 @@ public class ContextExample {
 //    }
 
     public static void printContext(Room room) {
+        room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
         System.out.println("Temperatura: " + room.getTemperature().getValue());
         System.out.println("Ocupacao: " + room.getOccupation().getValue());
     }
@@ -172,8 +174,12 @@ public class ContextExample {
 
     public static void main(String[] args) throws Exception {
 
+        ContextExample contextExample = new ContextExample();
+
         room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
         initialTemperature = Double.parseDouble(room.getTemperature().getValue());
+
+        airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
 
         ServerSocket ss = new ServerSocket(40041, 1, InetAddress.getByName("172.18.1.1"));
         Subscriptor subscriptor = new Subscriptor(40041, "172.18.1.1", ".*", "AirConditioner", ss, new Motion());

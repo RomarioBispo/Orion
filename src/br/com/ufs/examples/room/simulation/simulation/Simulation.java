@@ -12,7 +12,6 @@ public class Simulation {
 
         while(true) {
             System.out.println("Iniciando aula "+ classNumber++);
-
 //            Class classObj = new Class();
             Class classObj = new Class();
             classObj.startClass();
