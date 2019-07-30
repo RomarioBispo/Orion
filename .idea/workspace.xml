@@ -7,146 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38239a97-e8ef-4abd-8163-8c6ca2d91d9a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a4a5b4d38e75e7c559d4dea9f7335f3a5942716" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a4a5b4d38e75e7c559d4dea9f7335f3a5942716" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e0ad21cdadb9fc291589c7265e21c3f79692664" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e0ad21cdadb9fc291589c7265e21c3f79692664" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/ab02774c5fd4ba083d400c127bbe030e427f9cf7" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/ab02774c5fd4ba083d400c127bbe030e427f9cf7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa857a59244100467566de595d893dce957876f3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa857a59244100467566de595d893dce957876f3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/Attribute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/Attribute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/Command.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/Command.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/Device.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/Device.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/DeviceList.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/DeviceList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/StaticAttribute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/StaticAttribute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/devices/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/iota/IoTA.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/iota/IoTA.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/iota/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/iota/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/iota/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/iota/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/services/Service.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/services/Service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/services/ServiceGroup.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/services/ServiceGroup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/services/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/services/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/services/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/services/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/usersguide/Guide.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/usersguide/Guide.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/usersguide/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/usersguide/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/usersguide/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/usersguide/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/batchupdate/BatchUpdate.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/batchupdate/BatchUpdate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/batchupdate/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/batchupdate/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/batchupdate/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/batchupdate/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entity/Entity.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entity/Entity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entity/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entity/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entity/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entity/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitylamp/Attrs.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitylamp/Attrs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitylamp/Lamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitylamp/Lamp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitylamp/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitylamp/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitylamp/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitylamp/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitytype/EntityType.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitytype/EntityType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitytype/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitytype/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitytype/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/entitytype/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/genericnotification/GenericNotification.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/genericnotification/GenericNotification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/genericnotification/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/genericnotification/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/genericnotification/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/genericnotification/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/httprequests/HttpRequests.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/httprequests/HttpRequests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/httprequests/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/httprequests/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/httprequests/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/httprequests/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/mytesteentity/MyEntity.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/mytesteentity/MyEntity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/mytesteentity/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/mytesteentity/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/mytesteentity/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/mytesteentity/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/orion/Orion.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/orion/Orion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/orion/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/orion/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/orion/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/orion/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/server/TCPServer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/server/TCPServer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/server/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/server/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/server/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/server/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Condition.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Condition.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Entities.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Entities.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Http.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Http.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Notification.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Notification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Subject.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Subject.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Subscription.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/Subscription.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscription/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/Subscriptor.Lambda.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/Subscriptor.Lambda.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/Subscriptor.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/Subscriptor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/Main.lambdaf.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/Main.lambdaf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/TesteLambdas.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/TesteLambdas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/TesteLambdas.lambdas.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/TesteLambdas.lambdas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/usersguide/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/docs/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/entity/Entity.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/entity/Entity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/entityLamp/Attrs.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/entityLamp/Attrs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/entityLamp/Lamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/entityLamp/Lamp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/docs/member-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/myTesteEntity/MyEntity.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/myTesteEntity/MyEntity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/docs/type-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/accumulator/Accumulator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/airconditioner/AirConditioner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/airconditioner/AirConditioner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/ContextExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/ContextExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/device/AirConditioner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/device/Device.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/device/MotionSensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/motion/Motion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/motion/Motion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/notification/CountNotification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/room/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/room/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/servicegroup/ServiceGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/subscription/Subscription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/Class/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/Class/Class.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/Lamp/Lamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/Lamp/Lamp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/createdevice/CreateDevice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/notificationresponse/NotificationResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/registration/DataProvided.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/registration/EntitieProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/registration/HttpProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/registration/Provider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/registration/Registration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/responsefromget/ResponseFromGET.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/SquareExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/SquareExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/square/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/square/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/subscription/Subscription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/update/AttributeUpdate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/update/EntitieUpdate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/update/UpdateLuminosity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/sensor/SensorSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/sensor/SensorSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/ultralight/AttrsUltraLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/ultralight/AttrsUltraLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/ultralight/UltraLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/ultralight/UltraLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/ServiceGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/ServiceGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,13 +18,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-1322">
-                <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+              <first_editor relative-caret-position="1365">
+                <caret line="91" selection-start-line="91" selection-end-line="91" />
               </first_editor>
               <second_editor />
             </state>
@@ -243,7 +105,6 @@
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/StaticAttribute.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Command.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/ComandList.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/log4j.properties" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Attrs.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/typeadapter/IntTypeAdapter.java" />
@@ -274,6 +135,7 @@
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/ServiceGroup.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -309,28 +171,20 @@
             <path>
               <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
               <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
               <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
               <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ufs" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Orion_jar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -343,7 +197,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564487157175" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564491147379" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TCC/Aplicações/mariana/App_FINAL" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -478,7 +332,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" visible="true" weight="0.2850163" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" weight="0.055374593" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -499,7 +353,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25250193" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.29289705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -508,7 +362,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" weight="0.32247558" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" visible="true" weight="0.055374593" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1017,8 +871,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-1322">
-            <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <first_editor relative-caret-position="1365">
+            <caret line="91" selection-start-line="91" selection-end-line="91" />
           </first_editor>
           <second_editor />
         </state>
