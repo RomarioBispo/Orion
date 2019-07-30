@@ -1,0 +1,17 @@
+
+isquid:CommentedOutCodeLineL"<This block of commented-out lines of code should be removed.(ŒØ¤Œ8Ÿý×íÃ-
+isquid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(âéÜ˜8Ÿý×íÃ-
+€squid:UselessImportCheck"PRemove this unused import 'com.google.api.client.http.javanet.NetHttpTransport'.(‰ÉØÒýÿÿÿÿ8 éÙíÃ-
+squid:UselessImportCheck
+"ORemove this unused import 'com.google.api.client.json.jackson2.JacksonFactory'.(ü¬¶³ÿÿÿÿÿ8 éÙíÃ-
+csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ÃµÀ®ÿÿÿÿÿ
+nsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(¬¨‚¢ùÿÿÿÿ8Ÿý×íÃ-
+bsquid:UnusedPrivateMethod•"5Remove this unused private "MaxCapacity" constructor.(ÁÍ„8Ÿ³ÑêÃ-
+®%squid:RedundantThrowsDeclarationCheck"qRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from constructor's body.(ÃµÀ®ÿÿÿÿÿ8Ð¹ÒêÃ-
+nsquid:CommentedOutCodeLineQ"<This block of commented-out lines of code should be removed.(ªòøºþÿÿÿÿ8Ÿý×íÃ-
+isquid:CommentedOutCodeLinen"<This block of commented-out lines of code should be removed.(•¡Ú8ó¥ØíÃ-
+ssquid:UselessImportCheck	"HRemove this unused import 'com.google.api.client.json.JsonObjectParser'.(êìôü8 éÙíÃ-
+_squid:UnusedPrivateMethod{".Remove this unused private "Name" constructor.(ô‹ï®ùÿÿÿÿ8ÖãÑêÃ-
+isquid:CommentedOutCodeLineE"<This block of commented-out lines of code should be removed.(™Éò8Ÿý×íÃ-
+isquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(œ¡ß8Ÿý×íÃ-
+nsquid:UselessImportCheck"CRemove this unused import 'com.google.api.client.json.JsonFactory'.(•èí¬8 éÙíÃ-

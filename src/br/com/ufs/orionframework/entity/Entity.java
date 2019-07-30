@@ -1,6 +1,6 @@
 package br.com.ufs.orionframework.entity;
 /**
- * This class is used to help to represent a object java as JSON on a NGSIv2 form.
+ * This abstract class is used to help to represent a object java as JSON on a NGSIv2 form.
  * Any entity defined by developer must extends this class.
  *
  * @author Romario Bispo

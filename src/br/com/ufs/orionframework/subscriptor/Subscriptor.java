@@ -8,10 +8,15 @@ import br.com.ufs.orionframework.orion.Orion;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Subscriptor make a subscription on Orion and listen notifications.
@@ -20,13 +25,26 @@ import java.util.Map;
  * @since 1.0
  */
 public class Subscriptor implements Runnable {
-    private Map<String, lambda> subscriptions = new HashMap<>();
+    private Map<String, List<Lambda>> subscriptions = new HashMap<>();
     private int port;
     private String ip;
     private Entity en;
     private String entityId;
     private String type;
     private ServerSocket server;
+    private Boolean debugMode;
+    private Entity model;
+
+    private static final Logger LOGGER = Logger.getLogger(Subscriptor.class.getName());
+
+
+    public Entity getModel() {
+        return model;
+    }
+
+    public void setModel(Entity model) {
+        this.model = model;
+    }
 
     public String getEntityId() {
         return entityId;
@@ -52,6 +70,48 @@ public class Subscriptor implements Runnable {
         this.en = en;
     }
 
+    public Map<String, List<Lambda>> getSubscriptions() {
+        return subscriptions;
+    }
+
+    public void setSubscriptions(Map<String, List<Lambda>> subscriptions) {
+        this.subscriptions = subscriptions;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public ServerSocket getServer() {
+        return server;
+    }
+
+    public void setServer(ServerSocket server) {
+        this.server = server;
+    }
+
+    public Boolean getDebugMode() {
+        return debugMode;
+    }
+
+    public void setDebugMode(Boolean debugMode) {
+        this.debugMode = debugMode;
+    }
+
+
+
     public Subscriptor(int port, String ip, String entityId, String type, ServerSocket server, Entity en) {
         this.port = port;
         this.ip = ip;
@@ -59,52 +119,118 @@ public class Subscriptor implements Runnable {
         this.type = type;
         this.server = server;
         this.en = en;
+        this.debugMode = false;
+        new Thread(this).start();
 
     }
 
     /**
-     * Create a subscription on Orion
+     * Create a subscription on Orion.
+     * This operation put the Id, Function on a Hashmap.
+     * If the id already is in the hashMap, the function is added to list.
      *
      * @param updateFunction a function which does a update when came a notification.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
+     * @param en a entity object representing the entity
      */
-    public void subscribe(lambda updateFunction, Entity en) throws Exception {
+    public void subscribe(Lambda updateFunction, Entity en) {
 
         Orion orion = new Orion();
+        List<Lambda> updateFunctionList = new ArrayList<>();
 
-        if (subscriptions.isEmpty()) {
-            orion.createSimpleSubscription(en.getId(), en.getType(), this.port, this.ip, false);
-            subscriptions.put(en.getId(), updateFunction);
+       if (!this.subscriptions.containsKey(en.getId())) {
+            orion.createSimpleSubscription(".*", en.getType(), this.port, this.ip, false);
+            updateFunctionList.add(updateFunction);
+            subscriptions.put(en.getId(), updateFunctionList);
         }
-        else if (!subscriptions.containsKey(en.getId())) {
-            orion.createSimpleSubscription(en.getId(), en.getType(), this.port, this.ip, false);
-            subscriptions.put(en.getId(), updateFunction);
-        }
-        else { // caso o Id já exista no Map, então tem que colocar as funções em uma lista
-            subscriptions.get(en.getId());
+        else {
+            updateFunctionList = subscriptions.get(en.getId());
+            updateFunctionList.add(updateFunction);
+            subscriptions.put(en.getId(), updateFunctionList);
         }
     }
-
 
     /**
      * Create a subscription on Orion and listen to notifications.
      * When a notification come, a update function associated with entity is applied to entity values.
+     * Notice that method is unblocking using threads.
      *
      * @param updateFunction a function which does a update when came a notification.
-     * @param obj the entity object which have to update.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
+     * @param model a object representing the Entity.
      */
-    public void subscribeAndListen(lambda updateFunction, Entity obj) throws Exception {
+    public void subscribeAndListen(Lambda updateFunction,Entity model) {
 
-        Subscriptor sub = new Subscriptor(this.port, this.ip, this.entityId, this.type, this.server, obj);
-        sub.subscribe(updateFunction, this.en);
+        subscribe(updateFunction, this.en);
+        this.model = model;
+    }
 
-        Thread t = new Thread(sub);
-        t.start();
+    /**
+     * Create a subscription on Orion and listen to notifications.
+     * When a notification come, a update function associated with entity is applied to entity values.
+     * Notice that method is blocking call, so the subscriber will be waiting until came a notification.
+     *
+     * @param updateFunction a function which does a update when came a notification.
+     * @param model a object representing the Entity which want to retrieve.
+     * @return a list of updated entities.
+     */
+    public <T> List<T> subscribeAndListenBlocking(Lambda updateFunction, Entity model){
+
+        subscribe(updateFunction, this.en);
+        this.model = model;
+        String json = "";
+        String data = null;
+        String lastLine = null;
+        Gson gson = new Gson();
+        GenericNotification notification;
+
+        Socket client = null;
+        try {
+            client = this.server.accept();
+        } catch (IOException e) {
+            showStackTrace(e);
+        }
+
+        BufferedReader in = null;
+        try {
+            in = new BufferedReader(
+                    new InputStreamReader(client.getInputStream()));
+        } catch (IOException e) {
+            showStackTrace(e);
+        }
+
+        while (true) {
+            try {
+                if (!((data = in.readLine()) != null)) break;
+            } catch (IOException e) {
+                showStackTrace(e);
+            }
+            lastLine = data;
+        }
+
+        shoWDebug(lastLine);
+
+        notification = gson.fromJson(lastLine, GenericNotification.class);
+
+        List<T> entityListUpdated = new ArrayList<>();
+
+        for (Object entities: notification.getData()) {
+
+            json = gson.toJson(entities);
+
+            this.model = gson.fromJson(json, (Type) this.model.getClass());
+
+            entityListUpdated.add((T) this.model);
+
+            List<Lambda> updateFunctionList = subscriptions.get(this.en.getId());
+            for (Lambda fList: updateFunctionList)
+                this.model = fList.lambdaUpdate(this.model);
+        }
+
+        return entityListUpdated;
     }
 
     @Override
     public void run() {
+        while(true) {
 
         String json = "";
         String data = null;
@@ -116,7 +242,7 @@ public class Subscriptor implements Runnable {
         try {
             client = this.server.accept();
         } catch (IOException e) {
-            e.printStackTrace();
+            showStackTrace(e);
         }
 
         BufferedReader in = null;
@@ -124,30 +250,58 @@ public class Subscriptor implements Runnable {
             in = new BufferedReader(
                     new InputStreamReader(client.getInputStream()));
         } catch (IOException e) {
-            e.printStackTrace();
+            showStackTrace(e);
         }
 
         while (true) {
             try {
                 if (!((data = in.readLine()) != null)) break;
             } catch (IOException e) {
-                e.printStackTrace();
+                showStackTrace(e);
             }
             lastLine = data;
         }
 
+        shoWDebug(lastLine);
         notification = gson.fromJson(lastLine, GenericNotification.class);
 
         for (Object entities: notification.getData()) {
 
             json = gson.toJson(entities);
-            this.en = gson.fromJson(json, this.en.getClass());
 
-            lambda f = subscriptions.get(this.en.getId());
-            this.en = f.lambdaUpdate(this.en);
+            this.model = gson.fromJson(json, (Type) this.model.getClass());
+
+            List<Lambda> updateFunctionList = subscriptions.get(this.en.getId());
+            for (Lambda fList: updateFunctionList)
+                this.model = fList.lambdaUpdate(this.model);
+        }
 
         }
     }
+
+    /**
+     * This operation show on console a JSON file to debug purposes.
+     * To use this feature, you only need to set the debugMode attribute to true on orion.
+     * @param json a JSON to be showed on screen, to debug purposes.
+     */
+    public void shoWDebug(String json) {
+        if(this.debugMode)
+            LOGGER.info(json);
+    }
+
+    /**
+     * This operation show on console the stack trace.
+     * To use this feature, you only need to set the debugMode attribute to true on orion.
+     * @param e a exception to show your stack trace on console.
+     *
+     */
+    public void showStackTrace (Exception e){
+        if(this.debugMode){
+            LOGGER.log(Level.INFO, e.getMessage(), e);
+        }
+
+    }
+
     /**
      * This functional interface represents a lambda expression.
      * If you want to subscribe and listen, its possible send a function which receive a entity object and returns a entity object
@@ -155,7 +309,7 @@ public class Subscriptor implements Runnable {
      *
      */
     @FunctionalInterface
-    public interface lambda{
+    public interface Lambda{
         Entity lambdaUpdate(Entity entity);
     }
 

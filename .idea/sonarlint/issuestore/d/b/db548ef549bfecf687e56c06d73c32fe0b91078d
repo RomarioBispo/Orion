@@ -1,0 +1,62 @@
+
+£%squid:RedundantThrowsDeclarationCheck‘"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÅÖã¿øÿÿÿÿ
+Fsquid:S1068"*Remove this unused "server" private field.(Û¾¯Éÿÿÿÿÿ
+hsquid:CommentedOutCodeLine¸"<This block of commented-out lines of code should be removed.(€¾üÏþÿÿÿÿ
+hsquid:CommentedOutCodeLine´"<This block of commented-out lines of code should be removed.(±ï”þÿÿÿÿ
+gsquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(‘ÌÞ¦ýÿÿÿÿ
+csquid:CommentedOutCodeLine´"<This block of commented-out lines of code should be removed.(î¯ÔÉ
+gsquid:CommentedOutCodeLiney"<This block of commented-out lines of code should be removed.(à§»Òüÿÿÿÿ
+csquid:CommentedOutCodeLineü"<This block of commented-out lines of code should be removed.(‰ËÁ«
+usquid:S2159§"VRemove this call to "equals"; comparisons between unrelated types always return false.(»Ù½Å8èÂ£ûÃ-
+bsquid:CommentedOutCodeLine{"<This block of commented-out lines of code should be removed.(îÆô½
+^squid:S1192¦"FDefine a constant instead of duplicating this literal "count" 5 times.(žÂ¤Ý
+zsquid:S2159£"VRemove this call to "equals"; comparisons between unrelated types always return false.(Žšê×ÿÿÿÿÿ8èÂ£ûÃ-
+hsquid:CommentedOutCodeLine¾"<This block of commented-out lines of code should be removed.(Ï˜­êüÿÿÿÿ
+csquid:CommentedOutCodeLineã"<This block of commented-out lines of code should be removed.(öÛƒ¬
+T
+squid:S106q"9Replace this use of System.out or System.err by a logger.(¾€ìˆþÿÿÿÿ
+gsquid:S1192 "KDefine a constant instead of duplicating this literal "172.18.1.1" 3 times.(«¸óÙýÿÿÿÿ
+hsquid:CommentedOutCodeLine¶"<This block of commented-out lines of code should be removed.(Ã©ó·ùÿÿÿÿ
+bsquid:CommentedOutCodeLineQ"<This block of commented-out lines of code should be removed.(™†Ç
+U
+squid:S106Î"9Replace this use of System.out or System.err by a logger.(ôðŽýùÿÿÿÿ
+`squid:S1192›"IDefine a constant instead of duplicating this literal "Integer" 13 times.(ÈÂ½d
+T
+squid:S106v"9Replace this use of System.out or System.err by a logger.(éçž¬ùÿÿÿÿ
+T
+squid:S106n"9Replace this use of System.out or System.err by a logger.(éçž¬ùÿÿÿÿ
+bsquid:CommentedOutCodeLineÁ"<This block of commented-out lines of code should be removed.(¥§€c
+hsquid:CommentedOutCodeLine·"<This block of commented-out lines of code should be removed.(·æ…úûÿÿÿÿ
+csquid:CommentedOutCodeLineð"<This block of commented-out lines of code should be removed.(¡ÎÇø
+hsquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(ÔÌÁ¬úÿÿÿÿ
+csquid:CommentedOutCodeLineø"<This block of commented-out lines of code should be removed.(´üŸ
+bsquid:S1192›"KDefine a constant instead of duplicating this literal "luminosity" 7 times.(ÈÂ½d
+{squid:S11493"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(Ôô¡Óüÿÿÿÿ
+\squid:UnusedPrivateMethod$"2Remove this unused private "getByLocation" method.(òœÈ þÿÿÿÿ
+hsquid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+osquid:S00117¢"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¶Þ­þÿÿÿÿ
+hsquid:CommentedOutCodeLine±"<This block of commented-out lines of code should be removed.(ÔÌÁ¬úÿÿÿÿ
+hsquid:CommentedOutCodeLineç"<This block of commented-out lines of code should be removed.(±ï”þÿÿÿÿ
+gsquid:CommentedOutCodeLineD"<This block of commented-out lines of code should be removed.(ðØúôýÿÿÿÿ
+csquid:CommentedOutCodeLineó"<This block of commented-out lines of code should be removed.(ÛýâÌ
+bsquid:CommentedOutCodeLineU"<This block of commented-out lines of code should be removed.(àÎ˜õ
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+T
+squid:S106t"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+hsquid:CommentedOutCodeLine¯"<This block of commented-out lines of code should be removed.(¯Ï¸ªýÿÿÿÿ
+O
+squid:S106<"9Replace this use of System.out or System.err by a logger.(÷åî‘
+gsquid:CommentedOutCodeLineM"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+hsquid:CommentedOutCodeLine€"<This block of commented-out lines of code should be removed.(¹‚½“úÿÿÿÿ
+gsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(Ç¾§ùÿÿÿÿ
+Gsquid:S1172‘"*Remove this unused method parameter "app".(ÅÖã¿øÿÿÿÿ
+]squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Šà²l
+dsquid:S00112‘"FDefine and throw a dedicated exception instead of using a generic one.(ÅÖã¿øÿÿÿÿ
+hsquid:CommentedOutCodeLine“"<This block of commented-out lines of code should be removed.(ÏÜ¼Ëøÿÿÿÿ
+csquid:CommentedOutCodeLine…"<This block of commented-out lines of code should be removed.(ÉÉŠº
+csquid:CommentedOutCodeLine¹"<This block of commented-out lines of code should be removed.(·¼ÖÝ
+hsquid:CommentedOutCodeLine¼"<This block of commented-out lines of code should be removed.(©öž¼ùÿÿÿÿ
+isquid:S00117Ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¸ê1
+hsquid:CommentedOutCodeLineê"<This block of commented-out lines of code should be removed.(·æ…úûÿÿÿÿ
+bsquid:CommentedOutCodeLine»"<This block of commented-out lines of code should be removed.(æžßN
+bsquid:CommentedOutCodeLineK"<This block of commented-out lines of code should be removed.(¨ÈéÚ

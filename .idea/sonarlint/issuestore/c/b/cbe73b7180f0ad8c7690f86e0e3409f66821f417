@@ -1,0 +1,11 @@
+
+nsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(×ñ»‹ıÿÿÿÿ8Á¸ÓÃ-
+Ssquid:S1854E"5Remove this useless assignment to local variable "d".(˜­ãº8™â†ê¿-
+~squid:S1192"[Define a constant instead of duplicating this literal "4jggokgpepnvsb2uv4s40d59ov" 4 times.(ü˜ÖÃûÿÿÿÿ8çÔæŞ¿-
+jsquid:S1192"GDefine a constant instead of duplicating this literal "/iot/d" 4 times.(ü˜ÖÃûÿÿÿÿ8çÔæŞ¿-
+Tsquid:S1854>"6Remove this useless assignment to local variable "dl".(æ»ÿÓ8ã˜‡ê¿-
+Ysquid:S1854"6Remove this useless assignment to local variable "sg".(¾ß‘ùùÿÿÿÿ8Ô¶¢Ş¿-
+Esquid:S1481>"'Remove this unused "dl" local variable.(æ»ÿÓ8ã˜‡ê¿-
+msquid:S11925"JDefine a constant instead of duplicating this literal "device_id" 4 times.(•Õïâøÿÿÿÿ8¥Óç¿-
+hsquid:CommentedOutCodeLineJ"<This block of commented-out lines of code should be removed.(Ç“•&8ü”¸é¿-
+Tsquid:S1854""6Remove this useless assignment to local variable "sg".(é»É8µÄ‚à¿-

@@ -1,0 +1,19 @@
+
+csquid:S00112J"FDefine and throw a dedicated exception instead of using a generic one.(‚¤¨Óþÿÿÿÿ
+zsquid:S1192'"cDefine a constant instead of duplicating this literal "http://localhost:1026/v2/entities/" 3 times.(ØÃÇð
+]squid:UnusedPrivateMethod<"3Remove this unused private "runPostRequest" method.(Öìþœûÿÿÿÿ
+hsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Çú
+hsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Çú
+isquid:S00117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…¦úš
+]squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¡Çú
+csquid:S00112<"FDefine and throw a dedicated exception instead of using a generic one.(Öìþœûÿÿÿÿ
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ø•ûÕ
+isquid:S00117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªŽ¬’
+isquid:S00117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…¦úš
+isquid:S00117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªŽ¬’
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ìü®ê
+Dsquid:S1068m"&Remove this unused "id" private field.(æ¨ç†8ª–¬íÃ-
+Ksquid:S1068n"(Remove this unused "type" private field.(–î†ûÿÿÿÿ8ª–¬íÃ-
+Ksquid:S1068~"(Remove this unused "type" private field.(–î†ûÿÿÿÿ8ª–¬íÃ-
+Lsquid:S1068ˆ"(Remove this unused "type" private field.(–î†ûÿÿÿÿ8ª–¬íÃ-
+Lsquid:S1068’"(Remove this unused "type" private field.(–î†ûÿÿÿÿ8ª–¬íÃ-

@@ -1,0 +1,13 @@
+
+bsquid:CommentedOutCodeLine!"<This block of commented-out lines of code should be removed.(Ø•ûÕ
+isquid:S00117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªŽ¬’
+Bsquid:S1068"+Remove this unused "devices" private field.(šÏ¨Æ
+isquid:S00117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…¦úš
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ï˜Áˆûÿÿÿÿ
+^squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(êü«
+csquid:S00112$"FDefine and throw a dedicated exception instead of using a generic one.(Öìþœûÿÿÿÿ
+isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êü«
+©%squid:RedundantThrowsDeclarationCheck"qRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from constructor's body.(êü«8‚©‰ùÃ-
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ìü®ê
+isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êü«
+]squid:UnusedPrivateMethod$"3Remove this unused private "runPostRequest" method.(Öìþœûÿÿÿÿ

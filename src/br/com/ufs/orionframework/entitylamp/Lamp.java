@@ -1,6 +1,8 @@
 package br.com.ufs.orionframework.entitylamp;
 
 
+import br.com.ufs.orionframework.entity.Attrs;
+
 /**
  * This class is used to help to represent a JSON entity (FIWARE format) as object java.
  * Here, to easy the developer's life. We've made a built-in Lamp entity, defined by: id, entitytype, name, location, radius.

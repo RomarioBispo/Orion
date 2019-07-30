@@ -101,6 +101,7 @@ Following all instruction showed before, you can develop a your own FIWARE app.
 
 * [Intellij](https://www.jetbrains.com/idea/) - The java IDE used.
 * [Maven](https://maven.apache.org/) - Dependency Management.
+* [SonarLint](https://www.sonarlint.org) - Plugin to detect and fix quality issues as writing code.
 
 ## Contributing
 If you wanto to contribute to this project, please contact me. Anyone is welcome to help.
