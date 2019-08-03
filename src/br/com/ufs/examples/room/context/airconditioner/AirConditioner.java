@@ -1,6 +1,7 @@
 package br.com.ufs.examples.room.context.airconditioner;
 
 import br.com.ufs.orionframework.entity.Attrs;
+import br.com.ufs.orionframework.entity.Entity;
 
 /**
  * This class is used to concept proof for the Orion Framework.
@@ -12,7 +13,7 @@ import br.com.ufs.orionframework.entity.Attrs;
  * @since 1.0
  * @see br.com.ufs.examples.room.context.context.ContextExample;
  */
-public class AirConditioner {
+public class AirConditioner extends Entity {
     private Attrs name;
     private Attrs state;
     private Attrs temperature;
@@ -51,4 +52,23 @@ public class AirConditioner {
     }
 
 
+    @Override
+    public String getType() {
+        return this.type;
+    }
+
+    @Override
+    public String getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public void setId(String id) {
+    this.id = id;
+    }
 }

@@ -10,6 +10,7 @@ import br.com.ufs.iotaframework.iota.IoTA;
 import br.com.ufs.iotaframework.services.Service;
 import br.com.ufs.iotaframework.services.ServiceGroup;
 import br.com.ufs.orionframework.entity.Attrs;
+import br.com.ufs.orionframework.entity.Entity;
 import br.com.ufs.orionframework.orion.Orion;
 import br.com.ufs.orionframework.subscriptor.Subscriptor;
 import java.net.*;
@@ -59,9 +60,9 @@ public class SquareExample {
 
 
 	// wait the initial values from IoT-A.
-    public static void initializeLamps(Subscriptor sub, int quantity) throws Exception {
+    public static void initializeLamps(ServerSocket ss, int quantity) throws Exception {
     	for(int i = 0; i < quantity; i++){
-			sub.subscribeAndListen(en -> updateEntity((Lamp) en), new Lamp());
+			String a = orion.listenNotification(ss);
 		}
     }
 
@@ -151,7 +152,8 @@ public class SquareExample {
 		staticAttributeList.add(new StaticAttribute("refSquare", "Relationship", "urn:ngsi-ld:Square:1"));
 
 		ServerSocket ss = new ServerSocket(40041, 1, InetAddress.getByName("172.18.1.1"));
-		Subscriptor subscriptor = new Subscriptor(40041, "172.18.1.1", ".*", "Lamp", ss, new Device());
+
+		initializeLamps(ss, 16);
 
 		int quantity = 16;
 		List<Device> deviceList = new ArrayList<>();
@@ -162,15 +164,15 @@ public class SquareExample {
 		DeviceList devices = new DeviceList(deviceList);
 		iota.createDevice(devices);
 
-		List<Lamp> mylist = orion.listEntities("type=Lamp",new Lamp());
+		Subscriptor subscriptor = new Subscriptor(40041, "172.18.1.1", ".*", "Lamp", ss, deviceList);
 
-		initializeLamps(subscriptor, 16);
+		List<Lamp> mylist = orion.listEntities("type=Lamp", new Lamp());
 
 		for (Lamp aux: mylist) {
 			previousState[Integer.parseInt(aux.getNumber().getValue()) - 1] = aux.getState().getValue();
 		}
 
-		subscriptor.subscribeAndListen(en -> updateEntity((Lamp) en), new Lamp());
+		subscriptor.subscribeAndListen(en -> updateEntity((Lamp) en), new Lamp(), deviceList);
     }
 
 	public static Lamp updateEntity(Lamp l) {

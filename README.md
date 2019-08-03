@@ -91,6 +91,12 @@ It's Strongly recommended you to see:
 - Also, you can visit the fiware [HomePage](https://www.fiware.org/) to see a overview from the platform;
 - The [getting started tutorial](https://fiware-orion.readthedocs.io/en/master/) on Orion is a useful tutorial to understand the platform. You can use this framework to write him;
 - The documentation is available [here](https://frameworkdocs.herokuapp.com/index.html);
+### Running the image
+The Orion.sh file can be used to run (Orion, IoT-A and MobngoDb) at default configuration.
+Run the command at terminal (note: you have to be in the same directory as Orion.sh File): 
+```
+sh Orion.sh
+```
 ## Deployment
 
 Following all instruction showed before, you can develop a your own FIWARE app.
@@ -99,7 +105,12 @@ Following all instruction showed before, you can develop a your own FIWARE app.
 * [Intellij](https://www.jetbrains.com/idea/) - The java IDE used.
 * [Maven](https://maven.apache.org/) - Dependency Management.
 * [SonarLint](https://www.sonarlint.org) - Plugin to detect and fix quality issues as writing code.
-
+## Dependencies
+### Source Dependencies
+- Google Gson 2.8.5;
+- Google http client 1.28.0;
+- Http Client Jackson 1.28.2;
+- jackson Factory;
 ## Contributing
 If you wanto to contribute to this project, please contact me. Anyone is welcome to help.
 ## Versioning

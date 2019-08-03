@@ -107,7 +107,7 @@ public class Main {
         // sending to orion
         orion.createSubscriptions(sub);
 
-        Subscription[] subscriptionslist = (Subscription[]) orion.listSubscriptions();
+        List<Subscription>subscriptionslist = orion.listSubscriptions();
 
         GenericNotification<Entity> GNotify = new GenericNotification<>(batchEntities, "");
 

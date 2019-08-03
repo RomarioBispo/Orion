@@ -51,8 +51,7 @@ public class SensorSimulator {
     	SensorSimulator app = new SensorSimulator();
 
     	IoTA iota = new IoTA("localhost",4041);
-    	iota.setDebugMode(true);
-    	
+
     	try{
     	    Thread.sleep(1000*6);  //testar para definir o tempo em cada ambiente novo
     	}

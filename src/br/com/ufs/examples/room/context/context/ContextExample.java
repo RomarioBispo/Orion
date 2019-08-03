@@ -12,14 +12,14 @@ import br.com.ufs.iotaframework.services.Service;
 import br.com.ufs.iotaframework.services.ServiceGroup;
 import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.orion.Orion;
+import br.com.ufs.orionframework.subscription.Subscription;
 import br.com.ufs.orionframework.subscriptor.Subscriptor;
 
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.List;
-
-
+import java.util.concurrent.TimeUnit;
 
 /**
  * This class is used to concept proof for the Orion Framework.
@@ -38,6 +38,7 @@ public class ContextExample {
     private static IoTA iota = new IoTA();
     private static Room room = new Room();
     private static AirConditioner airConditioner = new AirConditioner();
+    private static Device motion;
     private static double initialTemperature;
 
     private ContextExample() throws Exception {
@@ -48,7 +49,7 @@ public class ContextExample {
         Attrs temperature = new Attrs("35.0","Float");
         Attrs occupation = new Attrs("0", "Integer");
 
-        Room room = new Room ("urn:ngsi-ld:Room:001", "Room", name, maxCapacity, temperature, occupation);
+        Room room = new Room ("urn:ngsi-ld:Room:001", "Room", maxCapacity, name , occupation, temperature);
         orion.createEntity(room);
 
         // creating service group
@@ -69,9 +70,6 @@ public class ContextExample {
 
         List<Device> deviceList = new ArrayList<>();
 
-        // TENHO QUE TROCAR O PROTOCOL PARA IOTA ULTRALIGHT NO DE MARIANA ?????
-        // OLHAR TAMBÉM A CRIAÇÃO DO GRUPO DE SERVICOS, APARENTEMENTE TEM UM ANINHAMENTO DE LISTAS QUE É DESNECESSÁRIO.
-
         deviceList.add(new Device("ac001","123456","urn:ngsi-ld:AC:001",
                 "AirConditioner","America/Belem", attributeList,staticAttributeList));
 
@@ -81,94 +79,105 @@ public class ContextExample {
 
         //Create Device
         List<Attribute> attributeListMotion = new ArrayList<>();
-        attributeList.add(new Attribute("c", "count", "Integer"));
+        attributeListMotion.add(new Attribute("c", "count", "Integer"));
 
         List<Device> deviceListMotion = new ArrayList<>();
-        deviceListMotion.add(new Device("motion001", "123456", "urn:ngsi-ld:Motion:001", "Motion",
-                "America/Belem", attributeListMotion, staticAttributeList));
+        motion = new Device("motion001", "123456", "urn:ngsi-ld:Motion:001", "Motion",
+                "America/Belem", attributeListMotion, staticAttributeList);
 
-        orion.createSimpleSubscription("urn:ngsi-ld:Motion:001", "Room", 40041, "172.18.1.1", false);
+        deviceListMotion.add(motion);
+
+        DeviceList motionDevices = new DeviceList(deviceListMotion);
+
+        iota.createDevice(motionDevices);
+
     }
 
 
-    public static void manageContextOnFramework(Motion motion, AirConditioner airConditioner, Room room, Orion orion) {
+    public static void manageContextOnFramework(Motion motion, Orion orion) {
 
-        int novaOcupacao;
-        double novaTemperatura;
+        int newOccupation;
+        double newTemperature;
 
-        room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
-        airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
-
+        System.out.println("M: "+airConditioner.getMode().getValue() + " | S: " + airConditioner.getState().getValue());
         int motionDetected = Integer.parseInt(motion.getCount().getValue());
+
         if (motionDetected !=0 && airConditioner.getMode().getValue().equals("turbo")){
 
-            novaOcupacao = Integer.parseInt(room.getOccupation().getValue()) + motionDetected;
-            novaTemperatura = Integer.parseInt(room.getTemperature().getValue()) + (double)motionDetected*0.025;
+            System.out.println("Chegaram mais " + motionDetected + " pessoas");
 
-            orion.updateAttributeData(room.getId(), "occupation", new Attrs(String.valueOf(novaOcupacao), "Integer"));
-            orion.updateAttributeData(room.getId(),"temperature", new Attrs(String.valueOf(novaTemperatura),"Float"));
+            newOccupation = Integer.parseInt(room.getOccupation().getValue()) + motionDetected;
+            newTemperature = Double.parseDouble(room.getTemperature().getValue()) + (double) motionDetected*0.025;
+
+            orion.updateAttributeData(room.getId(), "occupation", new Attrs(String.valueOf(newOccupation), "Integer"));
+            orion.updateAttributeData(room.getId(),"temperature", new Attrs(String.valueOf(newTemperature),"Float"));
         }
         else if (motionDetected!=0 && airConditioner.getMode().getValue().equals("normal")) {
-            novaOcupacao = Integer.parseInt(room.getOccupation().getValue()) - motionDetected;
-            orion.updateAttributeData(room.getId(), "temperature", new Attrs (String.valueOf(novaOcupacao), "Integer"));
+            System.out.println("sairam mais " + motionDetected + " pessoas");
+            newOccupation = Integer.parseInt(room.getOccupation().getValue()) - motionDetected;
+            orion.updateAttributeData(room.getId(), "occupation", new Attrs (String.valueOf(newOccupation), "Integer"));
         }
         if (Double.parseDouble(room.getTemperature().getValue()) > Double.parseDouble(airConditioner.getTemperature().getValue())) {
-            novaTemperatura = Double.parseDouble(room.getTemperature().getValue()) - 1;
-            orion.updateAttributeData(room.getId(),"temperature", new Attrs (String.valueOf(novaTemperatura), "Float"));
+            newTemperature = Double.parseDouble(room.getTemperature().getValue()) - 1;
+            orion.updateAttributeData(room.getId(),"temperature", new Attrs (String.valueOf(newTemperature), "Float"));
         }else {
-            novaTemperatura = Double.parseDouble(room.getTemperature().getValue()) - 1;
-            orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(novaTemperatura), "Float"));
+            newTemperature = Double.parseDouble(room.getTemperature().getValue()) + 1;
+            orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(newTemperature), "Float"));
         }
+
     }
 
-      public static void manageContextOffFramework(AirConditioner airConditioner, Room room, double initialTemperature, Orion orion) {
+      public static void manageContextOffFramework(double initialTemperature, Orion orion) {
 
-        room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
-        airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
+        System.out.println("M: "+airConditioner.getMode().getValue() + " | S: " + airConditioner.getState().getValue());
 
         Double roomTemperature = Double.parseDouble(room.getTemperature().getValue());
-        double novaTemperatura;
+        double newTemperature;
         if (roomTemperature < initialTemperature) {
-            novaTemperatura = Double.parseDouble(airConditioner.getTemperature().getValue()) + 1;
-            orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(novaTemperatura), "Float"));
+            newTemperature = Double.parseDouble(airConditioner.getTemperature().getValue()) + 1;
+            orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(newTemperature), "Float"));
         }else {
-            novaTemperatura = Double.parseDouble(airConditioner.getTemperature().getValue()) - 1;
-            orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(novaTemperatura), "Float"));
+            newTemperature = Double.parseDouble(airConditioner.getTemperature().getValue()) - 1;
+            orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(newTemperature), "Float"));
         }
       }
 
-    public static void printContext(Room room) {
+    public static void printContext() {
+
         room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
-        System.out.println("Temperatura: " + room.getTemperature().getValue());
-        System.out.println("Ocupacao: " + room.getOccupation().getValue());
+        System.out.println("T: " + room.getTemperature().getValue() + " | " + "Occ: " + room.getOccupation().getValue());
+
     }
 
     public static void main(String[] args) throws Exception {
 
         ContextExample contextExample = new ContextExample();
 
-
         ServerSocket ss = new ServerSocket(40041, 1, InetAddress.getByName("172.18.1.1"));
-        Subscriptor subscriptor = new Subscriptor(40041, "172.18.1.1", ".*", "AirConditioner", ss, new Motion());
 
-        // used to wait first notification from IoT-A.
-        subscriptor.subscribeAndListenBlocking(en -> updateEntity((Motion) en), new Motion());
+        TimeUnit.SECONDS.sleep(5);
 
         room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
+
         initialTemperature = Double.parseDouble(room.getTemperature().getValue());
 
         airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
 
-        subscriptor.subscribeAndListen(en -> updateEntity((Motion) en), new Motion());
+        Subscriptor subscriptor = new Subscriptor(40041, "172.18.1.1", ss);
+        subscriptor.subscribeAndListen(en -> updateEntity((Motion) en), new Motion(), motion);
     }
 
     public static Motion updateEntity(Motion motion) {
-        if (airConditioner.getState().getValue().equals("on")){
-            manageContextOnFramework(motion, airConditioner, room, orion);
+
+        room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
+        airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
+
+        if (airConditioner.getState().getValue().equals("on")) {
+            manageContextOnFramework(motion, orion);
         }else {
-            manageContextOffFramework(airConditioner, room, initialTemperature, orion);
+            manageContextOffFramework(initialTemperature, orion);
         }
-        printContext(room);
+        printContext();
         return motion;
     }
 }

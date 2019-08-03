@@ -1,7 +1,6 @@
 package br.com.ufs.examples.room.simulation.Class;
 
 import br.com.ufs.iotaframework.iota.IoTA;
-import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.orion.Orion;
 import com.google.api.client.http.*;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -10,8 +9,6 @@ import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
-
-import br.com.ufs.examples.room.context.airconditioner.AirConditioner;
 
 /**
  * This class is used to concept proof for the Orion Framework.
@@ -47,26 +44,18 @@ public class Class {
     }
 
     private void arrivals() throws Exception {
-        double temperature = 35.0;
+
         iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "m|turbo");
 
         int arrived = ThreadLocalRandom.current().nextInt(0, (students+1)/3);
 
-        while(occupation + arrived < students && timeSpent + 15 < duration) {
+        while((occupation + arrived) < students && (timeSpent + 15) < duration){
 
-            iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "c|"+occupation);
+            System.out.println("O sensor detectou a chegada de " + arrived);
+
+            iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "motion001", "c|"+arrived);
 
             occupation += arrived;
-            orion.updateAttributeData("urn:ngsi-ld:Room:001","occupation", new Attrs(String.valueOf(occupation), "Integer"));
-
-            AirConditioner airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
-            if (airConditioner.getMode().equals("turbo")){
-                temperature = temperature + arrived*0.025 - 2;
-                orion.updateAttributeData("urn:ngsi-ld:Room:001","temperature", new Attrs(String.valueOf(temperature), "Float"));
-            }else {
-                temperature = temperature + arrived*0.025 - 1;
-                orion.updateAttributeData("urn:ngsi-ld:Room:001","temperature", new Attrs(String.valueOf(temperature), "Float"));
-            }
 
             TimeUnit.SECONDS.sleep(5);
             timeSpent += 5;
@@ -74,30 +63,34 @@ public class Class {
         }
         System.out.println("Chegaram "+ occupation +" pessoas em "+ timeSpent +" minutos");
     }
+
     private void departures() throws Exception {
+
+        TimeUnit.SECONDS.sleep(5);
 
         iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "m|normal");
 
-        int left = ThreadLocalRandom.current().nextInt(0, occupation+1);
+        int left = ThreadLocalRandom.current().nextInt(0, (occupation/3)+1);
 
         while(occupation - left > 0) {
-            iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "c|"+left);
+
+            iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "motion001", "c|"+left);
 
             occupation -= left;
-            orion.updateAttributeData("urn:ngsi-ld:Room:001","occupation", new Attrs(String.valueOf(occupation), "Integer"));
             timeSpent += 5;
-            TimeUnit.SECONDS.sleep(5);
+
+            TimeUnit.SECONDS.sleep(10);
 
             System.out.println("Sairam "+left+" em 5 minutos");
 
-            left = ThreadLocalRandom.current().nextInt(0, occupation+1);
+            left = ThreadLocalRandom.current().nextInt(0, (occupation/3)+1);
 
             if(timeSpent + 10 >= duration || occupation - left <= 0) {
-                iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "c|"+occupation);
+                System.out.println("O restante de " + occupation + " sairam");
+                iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "motion001", "c|"+occupation);
                 occupation = 0;
-                orion.updateAttributeData("urn:ngsi-ld:Room:001","occupation", new Attrs(String.valueOf(occupation), "Integer"));
                 timeSpent += 5;
-                TimeUnit.SECONDS.sleep(5);
+                TimeUnit.SECONDS.sleep(10);
             }
         }
         System.out.println("Sairam todos em "+ timeSpent +" minutos");
@@ -108,15 +101,15 @@ public class Class {
 
         while(timeSpent < maxTime) {
             timeSpent += 5;
-            iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "c|0");
+            iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "motion001", "c|0");
             TimeUnit.SECONDS.sleep(5);
             System.out.println(timeSpent + " minutos passados");
         }
     }
 
     public void startClass() throws Exception {
-
         System.out.println(students + " alunos sao esperados");
+
         System.out.println("Tempo real da aula: "+ realTime + " minutos");
         iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "s|on");
         System.out.println("Ar condicionado ligado");

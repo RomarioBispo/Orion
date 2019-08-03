@@ -12,7 +12,11 @@ import br.com.ufs.orionframework.subscription.Subscription;
 import br.com.ufs.orionframework.typeadapter.IntTypeAdapter;
 import com.google.gson.*;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.lang.reflect.Type;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -522,7 +526,7 @@ public class Orion {
      * @throws  Exception for http requests.
      * @return a list of all the subscriptions present in the system.
      */
-    public Object listSubscriptions(){
+    public List<Subscription> listSubscriptions(){
 
         String json = "";
         Gson gson = new Gson();
@@ -536,9 +540,8 @@ public class Orion {
         }
 
         shoWDebug(json);
-        Subscription [] subs = gson.fromJson(json, Subscription[].class);
 
-        return subs;
+        return Arrays.asList(gson.fromJson(json, Subscription[].class));
 
     }
 
@@ -652,6 +655,7 @@ public class Orion {
         if (!expires) {
             JsonObject o = new JsonParser().parse(json).getAsJsonObject();
             o.remove("expires");
+            o.remove("throttling");
             json = o.toString();
         }
 
@@ -888,6 +892,28 @@ public class Orion {
      */
     public Object batchNotify(Object entities) {
         return null;
+    }
+
+
+    /**
+     * This operation listen a notification given a server socket.
+     *
+     * @param serverSocket
+     * @return the notification as String format.
+     */
+    public String listenNotification(ServerSocket serverSocket) throws Exception {
+        String data = null;
+        String data2 = null;
+        System.out.println("waiting");
+        Socket client = serverSocket.accept();
+        System.out.println("Connection established");
+
+        BufferedReader in = new BufferedReader( //Faz a leitura do que é enviado
+                new InputStreamReader(client.getInputStream()));
+        while ( (data = in.readLine()) != null ) {
+        	data2 = data;
+        }
+        return data2;
     }
 
     /**

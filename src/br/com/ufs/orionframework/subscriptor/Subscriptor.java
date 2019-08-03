@@ -1,5 +1,6 @@
 package br.com.ufs.orionframework.subscriptor;
 
+import br.com.ufs.iotaframework.devices.Device;
 import br.com.ufs.orionframework.entity.Entity;
 import com.google.gson.Gson;
 import br.com.ufs.orionframework.genericnotification.GenericNotification;
@@ -29,14 +30,24 @@ public class Subscriptor implements Runnable {
     private int port;
     private String ip;
     private Entity en;
+    private List<Entity> entityList;
+    private List<Device> deviceList;
     private String entityId;
     private String type;
+    private Device device;
     private ServerSocket server;
     private Boolean debugMode;
     private Entity model;
 
     private static final Logger LOGGER = Logger.getLogger(Subscriptor.class.getName());
 
+    public List<Entity> getEntityList() {
+        return entityList;
+    }
+
+    public void setEntityList(List<Entity> entityList) {
+        this.entityList = entityList;
+    }
 
     public Entity getModel() {
         return model;
@@ -124,6 +135,40 @@ public class Subscriptor implements Runnable {
 
     }
 
+    public Subscriptor(int port, String ip, String entityId, String type, ServerSocket server, List<Device> deviceList) {
+        this.port = port;
+        this.ip = ip;
+        this.entityId = entityId;
+        this.type = type;
+        this.server = server;
+        this.deviceList = deviceList;
+        this.debugMode = false;
+        new Thread(this).start();
+
+    }
+
+    public Subscriptor(int port, String ip, String entityId, String type, ServerSocket server) {
+        this.port = port;
+        this.ip = ip;
+        this.entityId = entityId;
+        this.type = type;
+        this.server = server;
+        this.deviceList = deviceList;
+        this.debugMode = false;
+        new Thread(this).start();
+
+    }
+
+    public Subscriptor(int port, String ip, ServerSocket server) {
+        this.port = port;
+        this.ip = ip;
+        this.server = server;
+        this.debugMode = false;
+        new Thread(this).start();
+
+    }
+
+
     /**
      * Create a subscription on Orion.
      * This operation put the Id, Function on a Hashmap.
@@ -150,6 +195,59 @@ public class Subscriptor implements Runnable {
     }
 
     /**
+     * Create a subscription on Orion.
+     * This operation put the Id, Function on a Hashmap.
+     * If the id already is in the hashMap, the function is added to list.
+     *
+     * @param updateFunction a function which does a update when came a notification.
+     * @param device a entity object representing the entity
+     */
+    public void subscribe(Lambda updateFunction, Device device) {
+
+        Orion orion = new Orion();
+        List<Lambda> updateFunctionList = new ArrayList<>();
+
+        if (!this.subscriptions.containsKey(device.getEntity_name())) {
+            orion.createSimpleSubscription(".*", device.getEntity_type(), this.port, this.ip, false);
+            updateFunctionList.add(updateFunction);
+            subscriptions.put(device.getEntity_name(), updateFunctionList);
+        }
+        else {
+            updateFunctionList = subscriptions.get(device.getEntity_name());
+            updateFunctionList.add(updateFunction);
+            subscriptions.put(device.getEntity_name(), updateFunctionList);
+        }
+    }
+
+    /**
+     * Create a subscription on Orion.
+     * This operation put the Id, Function on a Hashmap.
+     * If the id already is in the hashMap, the function is added to list.
+     * Note: this method overload subscribe, receiving instead of one single entity to a list of entities
+     *
+     * @param updateFunction a function which does a update when came a notification.
+     * @param deviceList a entity list of object representing the lists
+     * @see #subscribe(Lambda, Entity)
+     */
+    public void subscribe(Lambda updateFunction, List<Device> deviceList) {
+        Orion orion = new Orion();
+
+        for(Device entity: deviceList) {
+            List<Lambda> updateFunctionList = new ArrayList<>();
+            if (!this.subscriptions.containsKey(entity.getEntity_name())) {
+                orion.createSimpleSubscription(".*", entity.getEntity_type(), this.port, this.ip, false);
+                updateFunctionList.add(updateFunction);
+                subscriptions.put(entity.getEntity_name(), updateFunctionList);
+            }
+            else {
+                updateFunctionList = subscriptions.get(entity.getEntity_name());
+                updateFunctionList.add(updateFunction);
+                subscriptions.put(entity.getEntity_name(), updateFunctionList);
+            }
+        }
+    }
+
+    /**
      * Create a subscription on Orion and listen to notifications.
      * When a notification come, a update function associated with entity is applied to entity values.
      * Notice that method is unblocking using threads.
@@ -161,6 +259,35 @@ public class Subscriptor implements Runnable {
 
         subscribe(updateFunction, this.en);
         this.model = model;
+    }
+
+    /**
+     * Create a subscription on Orion and listen to notifications.
+     * When a notification come, a update function associated with entity is applied to entity values.
+     * Notice that method is unblocking using threads.
+     *
+     * @param updateFunction a function which does a update when came a notification.
+     * @param model a object representing the Entity.
+     * @param device a device object which represents the entity.
+     */
+    public void subscribeAndListen(Lambda updateFunction,Entity model, Device device) {
+
+        subscribe(updateFunction, device);
+        this.model = model;
+    }
+
+    /**
+     * Create a subscription on Orion and listen to notifications.
+     * When a notification come, a update function associated with entity is applied to entity values.
+     * Notice that method is unblocking using threads.
+     *
+     * @param updateFunction a function which does a update when came a notification.
+     * @param model a object representing the Entity.
+     */
+    public void subscribeAndListen(Lambda updateFunction,Entity model, List<Device> deviceList) {
+        subscribe(updateFunction, deviceList);
+        this.model = model;
+
     }
 
     /**
@@ -271,11 +398,10 @@ public class Subscriptor implements Runnable {
 
             this.model = gson.fromJson(json, (Type) this.model.getClass());
 
-            List<Lambda> updateFunctionList = subscriptions.get(this.en.getId());
+            List<Lambda> updateFunctionList = subscriptions.get(this.model.getId());
             for (Lambda fList: updateFunctionList)
                 this.model = fList.lambdaUpdate(this.model);
         }
-
         }
     }
 
