@@ -9,12 +9,19 @@ package br.com.ufs.orionframework.subscription;
  * @since 1.0
  */
 public class Subscription {
+    private String id;
     private String description;
     private Subject subject;
     private Condition condition;
     private Notification notification;
     private String expires;
     private int throttling;
+
+
+
+    public Subscription() {
+
+    }
 
     public Subscription(String description, Subject subject, Condition condition, Notification notification, String expires, int throttling) {
         this.description = description;
@@ -25,6 +32,9 @@ public class Subscription {
         this.throttling = throttling;
     }
 
+    public String getId() {
+        return id;
+    }
 
     public Condition getCondition() {
         return condition;

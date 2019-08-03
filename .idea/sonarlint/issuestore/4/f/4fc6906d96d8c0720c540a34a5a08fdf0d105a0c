@@ -1,26 +1,17 @@
 
-osquid:S00117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯€Ü¼øÿÿÿÿ
-Bsquid:S1172"+Remove this unused method parameter "port".(ÌÊ½
-jsquid:S00117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü€ä€
-jsquid:S00117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û¦Îâ
-isquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌÊ½
-bsquid:S2184~"FCast one of the operands of this multiplication operation to a "long".(Îøï§ûÿÿÿÿ
-csquid:S2184œ"FCast one of the operands of this multiplication operation to a "long".(Îøï§ûÿÿÿÿ
-csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(à¾Ùşÿÿÿÿ
+nsquid:S00117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á£›¤ıÿÿÿÿ
+isquid:S00117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û¦Îâ
+isquid:S00117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü€ä€
+^squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¥±ğö
+bsquid:S2184B"FCast one of the operands of this multiplication operation to a "long".(Îøï§ûÿÿÿÿ
+bsquid:S2184\"FCast one of the operands of this multiplication operation to a "long".(Îøï§ûÿÿÿÿ
+bsquid:S21848"FCast one of the operands of this multiplication operation to a "long".(¿†–£ÿÿÿÿÿ
+Fsquid:S14813"(Remove this unused "app" local variable.(†±ì¦8é–”Ä-
 T
-squid:S106^"9Replace this use of System.out or System.err by a logger.(«óé§ıÿÿÿÿ
-Fsquid:S2093"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
-ksquid:S1192_"ODefine a constant instead of duplicating this literal "localhost:7896" 3 times.(üœ÷Óşÿÿÿÿ
-bsquid:CommentedOutCodeLineU"<This block of commented-out lines of code should be removed.(şğç®
-:squid:S1148<"#Use a logger to log this exception.(òçøì
-bsquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(ˆÈ´Ë
-osquid:S00117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á£›¤ıÿÿÿÿ
-:squid:S11485"#Use a logger to log this exception.(òçøì
-hsquid:CommentedOutCodeLine“"<This block of commented-out lines of code should be removed.(ã Ÿûùÿÿÿÿ
-wsquid:S1192_"[Define a constant instead of duplicating this literal "4jggokgpepnvsb2uv4s40d59ov" 3 times.(üœ÷Óşÿÿÿÿ
-csquid:S1192_"GDefine a constant instead of duplicating this literal "/iot/d" 3 times.(üœ÷Óşÿÿÿÿ
-Bsquid:S1172N"+Remove this unused method parameter "port".(šöŸ
-hsquid:CommentedOutCodeLine˜"<This block of commented-out lines of code should be removed.(ã Ÿûùÿÿÿÿ
-^squid:S00112N"FDefine and throw a dedicated exception instead of using a generic one.(šöŸ
-bsquid:S2184t"FCast one of the operands of this multiplication operation to a "long".(¿†–£ÿÿÿÿÿ
-bsquid:S2184c"FCast one of the operands of this multiplication operation to a "long".(‹À¦™úÿÿÿÿ
+squid:S106%"9Replace this use of System.out or System.err by a logger.(«óé§ıÿÿÿÿ
+ksquid:S1192&"ODefine a constant instead of duplicating this literal "localhost:7896" 3 times.(üœ÷Óşÿÿÿÿ
+csquid:S1192&"GDefine a constant instead of duplicating this literal "/iot/d" 3 times.(üœ÷Óşÿÿÿÿ
+Usquid:S18543"7Remove this useless assignment to local variable "app".(†±ì¦8é–”Ä-
+wsquid:S1192&"[Define a constant instead of duplicating this literal "4jggokgpepnvsb2uv4s40d59ov" 3 times.(üœ÷Óşÿÿÿÿ
+nsquid:S00117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯€Ü¼øÿÿÿÿ
+bsquid:S2184("FCast one of the operands of this multiplication operation to a "long".(‹À¦™úÿÿÿÿ

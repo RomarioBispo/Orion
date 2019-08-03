@@ -1,13 +1,18 @@
 
-osquid:CommentedOutCodeLine‚"<This block of commented-out lines of code should be removed.(¯ˆŽõÿÿÿÿÿ8Å•²üÁ-
-_squid:S1854ÿ";Remove this useless assignment to local variable "expires".(ƒˆƒÝúÿÿÿÿ8 ÍòûÁ-
-Psquid:S1481ÿ",Remove this unused "expires" local variable.(ƒˆƒÝúÿÿÿÿ8 ÍòûÁ-
-Ysquid:S1854€":Remove this useless assignment to local variable "status".(Øäã¬8Å•²üÁ-
-Fsquid:S1905’"'Remove this unnecessary cast to "List".(÷ƒ–8€—²óÂ-
-Nsquid:S1172ù"/Remove this unused method parameter "entities".(ÆèÇÐ8Å•²üÁ-
-{squid:S1488›"\Immediately return this expression instead of assigning it to the temporary variable "subs".(ñ€ªƒ8 ÍòûÁ-
-Jsquid:S1481€"+Remove this unused "status" local variable.(Øäã¬8Å•²üÁ-
-Nsquid:S1172î"/Remove this unused method parameter "entities".(á›ìÿ8Å•²üÁ-
+\
+squid:S106Œ"9Replace this use of System.out or System.err by a logger.(´ÎœŒøÿÿÿÿ8ÒŸõæÄ-
 W
-squid:S106È"9Replace this use of System.out or System.err by a logger.(«ì¨¥8üŠü›Ã-
-Isquid:S1068&",Remove this unused "listener" private field.(ë×¿n8 ÍòûÁ-
+squid:S106Ì"9Replace this use of System.out or System.err by a logger.(«ì¨¥8³Ì„æÄ-
+ksquid:S00112‰"FDefine and throw a dedicated exception instead of using a generic one.(Œú™Àÿÿÿÿÿ8³Ì„æÄ-
+osquid:CommentedOutCodeLine‡"<This block of commented-out lines of code should be removed.(¯ˆŽõÿÿÿÿÿ8³Ì„æÄ-
+Jsquid:S1481…"+Remove this unused "status" local variable.(Øäã¬8³Ì„æÄ-
+{squid:S1488Ÿ"\Immediately return this expression instead of assigning it to the temporary variable "subs".(ñ€ªƒ8³Ì„æÄ-
+_squid:S1854„";Remove this useless assignment to local variable "expires".(ƒˆƒÝúÿÿÿÿ8 ÍòûÁ-
+Isquid:S1068*",Remove this unused "listener" private field.(ë×¿n8³Ì„æÄ-
+Nsquid:S1172ó"/Remove this unused method parameter "entities".(á›ìÿ8³Ì„æÄ-
+Psquid:S1481„",Remove this unused "expires" local variable.(ƒˆƒÝúÿÿÿÿ8 ÍòûÁ-
+W
+squid:S106Ž"9Replace this use of System.out or System.err by a logger.(ö¥û©8ÒŸõæÄ-
+Nsquid:S1172þ"/Remove this unused method parameter "entities".(ÆèÇÐ8³Ì„æÄ-
+Fsquid:S1905–"'Remove this unnecessary cast to "List".(÷ƒ–8³Ì„æÄ-
+Ysquid:S1854…":Remove this useless assignment to local variable "status".(Øäã¬8³Ì„æÄ-

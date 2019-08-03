@@ -1,51 +1,37 @@
 
-ksquid:S1192["HDefine a constant instead of duplicating this literal "Integer" 3 times.(íûÓúÿÿÿÿ8»£ĞıÃ-
-nsquid:CommentedOutCodeLine#"<This block of commented-out lines of code should be removed.(ãğ­Âûÿÿÿÿ8á‘ıÃ-
-nsquid:CommentedOutCodeLine/"<This block of commented-out lines of code should be removed.(¬¨‚¢ùÿÿÿÿ8à—™ıÃ-
-W
-squid:S106¢"9Replace this use of System.out or System.err by a logger.(¸ûÉ‘8÷´ÎüÃ-
-esquid:S00112M"FDefine and throw a dedicated exception instead of using a generic one.(Ş¸ÍÕ8÷´ÎüÃ-
-\
-squid:S106Œ"9Replace this use of System.out or System.err by a logger.(–—¾„ÿÿÿÿÿ8÷´ÎüÃ-
-nsquid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(ƒÁ ğûÿÿÿÿ8ÃÆ™ıÃ-
-esquid:S1192$"GDefine a constant instead of duplicating this literal "ac001" 10 times.(Ôı¾«8ş¨ıÃ-
-nsquid:CommentedOutCodeLineo"<This block of commented-out lines of code should be removed.(ÿ½î­øÿÿÿÿ8¸€‡ıÃ-
-esquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(öÑ·˜8ÇîÒüÃ-
-zsquid:S1192$"\Define a constant instead of duplicating this literal "6NUB3eD0YERJml1btYssPOa1qY" 10 times.(Ôı¾«8ş¨ıÃ-
-jsquid:CommentedOutCodeLine¬"<This block of commented-out lines of code should be removed.(„¹ñÒ8²·•ıÃ-
-~squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(›´ğµùÿÿÿÿ8÷´ÎüÃ-
-jsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(¬¬¹8¡æòüÃ-
-U
-squid:S106k"9Replace this use of System.out or System.err by a logger.(ã¸z8÷´ÎüÃ-
-ksquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(‚â¾İùÿÿÿÿ8ÇîÒüÃ-
-isquid:CommentedOutCodeLine–"<This block of commented-out lines of code should be removed.(†ô§I8¿»“ıÃ-
-nsquid:S1192$"PDefine a constant instead of duplicating this literal "localhost:7896" 10 times.(Ôı¾«8ş¨ıÃ-
-osquid:CommentedOutCodeLine‘"<This block of commented-out lines of code should be removed.(ÿ½î­øÿÿÿÿ8»—’ıÃ-
-\
-squid:S106±"9Replace this use of System.out or System.err by a logger.(ÀÈúÍÿÿÿÿÿ8÷´ÎüÃ-
-osquid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.( ¹ñûşÿÿÿÿ8ú«ŒıÃ-
-W
-squid:S106˜"9Replace this use of System.out or System.err by a logger.(¼õæ«8÷´ÎüÃ-
-nsquid:CommentedOutCodeLineu"<This block of commented-out lines of code should be removed.(ßõğõùÿÿÿÿ8š×ŠıÃ-
-fsquid:S1192k"IDefine a constant instead of duplicating this literal " minutos" 3 times.(ã¸z8÷´ÎüÃ-
-nsquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(¡ƒ‰Šşÿÿÿÿ8ÃÆ™ıÃ-
-nsquid:CommentedOutCodeLine?"<This block of commented-out lines of code should be removed.(Ÿ”ª¤úÿÿÿÿ8ÃÆ™ıÃ-
-xsquid:S1192["UDefine a constant instead of duplicating this literal "urn:ngsi-ld:Room:001" 5 times.(íûÓúÿÿÿÿ8ÔñÅıÃ-
-isquid:CommentedOutCodeLineB"<This block of commented-out lines of code should be removed.(ÚÏÇœ8ÃÆ™ıÃ-
-nsquid:CommentedOutCodeLineV"<This block of commented-out lines of code should be removed.( ¹ñûşÿÿÿÿ8 ó„ıÃ-
-\
-squid:S106­"9Replace this use of System.out or System.err by a logger.(úÆş¦ùÿÿÿÿ8÷´ÎüÃ-
-tsquid:S2159^"VRemove this call to "equals"; comparisons between unrelated types always return false.(¤ˆªß8úãÌıÃ-
-gsquid:S1192$"IDefine a constant instead of duplicating this literal "/iot/d/" 10 times.(Ôı¾«8ş¨ıÃ-
-nsquid:S1192["KDefine a constant instead of duplicating this literal "occupation" 3 times.(íûÓúÿÿÿÿ8»£ĞıÃ-
-esquid:S00112m"FDefine and throw a dedicated exception instead of using a generic one.(ÅÄŞ8ÇîÒüÃ-
-Usquid:S1068"2Remove this unused "requestFactory" private field.(—ª¡«ùÿÿÿÿ8ÇîÒüÃ-
-\
-squid:S106Ÿ"9Replace this use of System.out or System.err by a logger.(—ñûöüÿÿÿÿ8÷´ÎüÃ-
+Usquid:S1068#"2Remove this unused "requestFactory" private field.(—ª¡«ùÿÿÿÿ8ÇîÒüÃ-
+esquid:S00112("FDefine and throw a dedicated exception instead of using a generic one.(öÑ·˜8ÇîÒüÃ-
 V
-squid:S106~"9Replace this use of System.out or System.err by a logger.(ÄŞşİ8÷´ÎüÃ-
-W
-squid:S106"9Replace this use of System.out or System.err by a logger.(»¼ı×8÷´ÎüÃ-
-isquid:CommentedOutCodeLineO"<This block of commented-out lines of code should be removed.(­İğë8Û‚„ıÃ-
-isquid:CommentedOutCodeLine*"<This block of commented-out lines of code should be removed.(™Éò8à—™ıÃ-
-nsquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(¿œíïøÿÿÿÿ8×‘ÃıÃ-
+squid:S106m"9Replace this use of System.out or System.err by a logger.(¼õæ«8¡äÃúÄ-
+jsquid:S00112f"FDefine and throw a dedicated exception instead of using a generic one.(‚â¾İùÿÿÿÿ8ÇîÒüÃ-
+U
+squid:S106C"9Replace this use of System.out or System.err by a logger.(ã¸z8÷´ÎüÃ-
+\
+squid:S106„"9Replace this use of System.out or System.err by a logger.(ÀÈúÍÿÿÿÿÿ8¡äÃúÄ-
+zsquid:S1192-"\Define a constant instead of duplicating this literal "6NUB3eD0YERJml1btYssPOa1qY" 10 times.(Ôı¾«8ş¨ıÃ-
+[
+squid:S1069"9Replace this use of System.out or System.err by a logger.(€ìÉûÿÿÿÿ8©îÔ‘Å-
+hsquid:S1192;"JDefine a constant instead of duplicating this literal "motion001" 4 times.(²Ÿ¹8ÑÙÓîÄ-
+dsquid:S1192-"FDefine a constant instead of duplicating this literal "ac001" 6 times.(Ôı¾«8ş¨ıÃ-
+†squid:UselessImportCheck"[Remove this unused import 'br.com.ufs.examples.room.context.airconditioner.AirConditioner'.(•»ûì8†ğüñÄ-
+\
+squid:S106€"9Replace this use of System.out or System.err by a logger.(úÆş¦ùÿÿÿÿ8¡äÃúÄ-
+fsquid:S1192C"IDefine a constant instead of duplicating this literal " minutos" 3 times.(ã¸z8÷´ÎüÃ-
+~squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(›´ğµùÿÿÿÿ8÷´ÎüÃ-
+nsquid:S1192-"PDefine a constant instead of duplicating this literal "localhost:7896" 10 times.(Ôı¾«8ş¨ıÃ-
+[
+squid:S106\"9Replace this use of System.out or System.err by a logger.(ã¼Û­şÿÿÿÿ8Ö¸§‘Å-
+V
+squid:S106v"9Replace this use of System.out or System.err by a logger.(¸ûÉ‘8¡äÃúÄ-
+[
+squid:S106c"9Replace this use of System.out or System.err by a logger.(–—¾„ÿÿÿÿÿ8÷´ÎüÃ-
+V
+squid:S106r"9Replace this use of System.out or System.err by a logger.(»¼ı×8¡äÃúÄ-
+[
+squid:S106t"9Replace this use of System.out or System.err by a logger.(—ñûöüÿÿÿÿ8¡äÃúÄ-
+ssquid:UselessImportCheck"CRemove this unused import 'br.com.ufs.orionframework.entity.Attrs'.(È±Éşÿÿÿÿ8Š¶›ùÄ-
+gsquid:S1192-"IDefine a constant instead of duplicating this literal "/iot/d/" 10 times.(Ôı¾«8ş¨ıÃ-
+esquid:S00112F"FDefine and throw a dedicated exception instead of using a generic one.(ÅÄŞ8ÇîÒüÃ-
+V
+squid:S106W"9Replace this use of System.out or System.err by a logger.(ÄŞşİ8÷´ÎüÃ-
+esquid:S001121"FDefine and throw a dedicated exception instead of using a generic one.(Ş¸ÍÕ8÷´ÎüÃ-

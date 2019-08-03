@@ -26,7 +26,7 @@ public class Simulation {
             Class classObj = new Class();
             classObj.startClass();
 
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(8);
         }
     }
 }

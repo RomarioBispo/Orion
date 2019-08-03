@@ -52,6 +52,10 @@ public class IoTA {
         return debugMode;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
     public void setDebugMode(Boolean debugMode) {
         this.debugMode = debugMode;
     }
@@ -326,6 +330,7 @@ public class IoTA {
             showStackTrace(e);
         }
     }
+
     /**
      * This operation send devices measures.
      *
@@ -338,6 +343,9 @@ public class IoTA {
      */
     public void sendMeasure(String url, String resource, String apikey, String device_id, String payload) {
         url = "http://" + url + resource + "?" + "k="+apikey + "&i=" + device_id;
+
+        shoWDebug(url);
+        shoWDebug(payload);
 
         HttpRequests http = new HttpRequests();
         try {
