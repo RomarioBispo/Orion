@@ -21,10 +21,10 @@ public class SensorSimulator {
     
     public static void initializeLamps(IoTA iota) throws Exception {
     	int idLampada = 1;
-     	for(int i = 0; i<4;i++) {
+     	for(int i = 0; i<3;i++) {
      		double loc1 = -10.936173-0.000072*i;
      		
-     		for(int j = 0; j<4;j++, idLampada++) {
+     		for(int j = 0; j<5;j++, idLampada++) {
      			double loc2 = -37.061368+0.000072*j;
      			AttrsUltraLight[] condicoesIniciais = {new AttrsUltraLight("l","2"), //luminosity = 2
 						new AttrsUltraLight("s","on"),								 //state = on
@@ -33,7 +33,6 @@ public class SensorSimulator {
 						new AttrsUltraLight("n",String.valueOf(idLampada))};         //número da Lâmpada ("id")
      			
      			UltraLight ultralight = new UltraLight(condicoesIniciais);
-
      			System.out.println("Initialize Lamps Ultralight: \n"+UltraLight.toStringMsg(ultralight));
      			iota.sendMeasure("localhost:7896","/iot/d","4jggokgpepnvsb2uv4s40d59ov","lamp"+idLampada,UltraLight.toStringMsg(ultralight));
      			try{
@@ -87,14 +86,15 @@ public class SensorSimulator {
     		else {
 				iota.sendMeasure("localhost:7896","/iot/d","4jggokgpepnvsb2uv4s40d59ov","lamp"+randomNum, UltraLight.toStringMsg(ultralight_on));
     		}
-    		
-    		try{
-        	    Thread.sleep(1000*7); //testar para definir o tempo em cada ambiente novo
+
+			System.out.println("Lamp"+randomNum + " | " + "S: " + (randomOff ? "off": "on"));
+			try{
+        	    Thread.sleep(7000); //testar para definir o tempo em cada ambiente novo
         	}
         	catch(InterruptedException ex){
         	    Thread.currentThread().interrupt();
         	}
-    	}
+		}
     	    	
     }
 
