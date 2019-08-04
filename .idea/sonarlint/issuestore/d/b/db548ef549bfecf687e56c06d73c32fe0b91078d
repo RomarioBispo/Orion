@@ -1,21 +1,22 @@
 
-hsquid:S00117e"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¸ê1
-T
-squid:S1062"9Replace this use of System.out or System.err by a logger.(éç¬ùÿÿÿÿ
-]squid:S1192S"FDefine a constant instead of duplicating this literal "count" 5 times.(Â¤İ
-Ssquid:S1854A"5Remove this useless assignment to local variable "a".(ğ‡´Ã8«ÿòæÄ-
 osquid:UselessImportCheck"DRemove this unused import 'br.com.ufs.orionframework.entity.Entity'.(âïğÔ8³œŸèÄ-
-T
-squid:S1068"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
-ysquid:S2159P"VRemove this call to "equals"; comparisons between unrelated types always return false.(šê×ÿÿÿÿÿ8ÌÔèåÄ-
-Dsquid:S1481A"&Remove this unused "a" local variable.(ğ‡´Ã8«ÿòæÄ-
-_squid:S1192H"IDefine a constant instead of duplicating this literal "Integer" 13 times.(ÈÂ½d
-T
-squid:S1065"9Replace this use of System.out or System.err by a logger.(¾€ìˆşÿÿÿÿ
-T
-squid:S106:"9Replace this use of System.out or System.err by a logger.(éç¬ùÿÿÿÿ
-tsquid:S2159T"VRemove this call to "equals"; comparisons between unrelated types always return false.(»Ù½Å8ÌÔèåÄ-
+[
+squid:S106C"9Replace this use of System.out or System.err by a logger.(ÍÌşÿÿÿÿ8ŸÖ ¿Å-
+nsquid:S1192D"KDefine a constant instead of duplicating this literal "172.18.1.1" 3 times.(ÍÈ¯Üşÿÿÿÿ8€¼Å-
+]squid:S1192c"FDefine a constant instead of duplicating this literal "count" 5 times.(Â¤İ
 \
-squid:S106¹"9Replace this use of System.out or System.err by a logger.(ôğıùÿÿÿÿ8Öã¼éÄ-
-nsquid:S00117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¶Ş­şÿÿÿÿ
-asquid:S1192H"KDefine a constant instead of duplicating this literal "luminosity" 7 times.(ÈÂ½d
+squid:S106Å"9Replace this use of System.out or System.err by a logger.(ôğıùÿÿÿÿ8»»ŠæÅ-
+nsquid:S00117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¶Ş­şÿÿÿÿ
+hsquid:S00117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¸ê1
+T
+squid:S1064"9Replace this use of System.out or System.err by a logger.(éç¬ùÿÿÿÿ
+T
+squid:S106:"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
+_squid:S1192X"IDefine a constant instead of duplicating this literal "Integer" 13 times.(ÈÂ½d
+T
+squid:S106<"9Replace this use of System.out or System.err by a logger.(éç¬ùÿÿÿÿ
+asquid:S1192X"KDefine a constant instead of duplicating this literal "luminosity" 7 times.(ÈÂ½d
+T
+squid:S1067"9Replace this use of System.out or System.err by a logger.(¾€ìˆşÿÿÿÿ
+V
+squid:S106P"9Replace this use of System.out or System.err by a logger.(º„›8Æ¢¿Å-

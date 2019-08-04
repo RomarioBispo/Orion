@@ -12,6 +12,7 @@ import br.com.ufs.iotaframework.services.ServiceGroup;
 import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.entity.Entity;
 import br.com.ufs.orionframework.orion.Orion;
+import br.com.ufs.orionframework.subscription.Subscription;
 import br.com.ufs.orionframework.subscriptor.Subscriptor;
 import java.net.*;
 import java.util.ArrayList;
@@ -33,13 +34,14 @@ import java.util.regex.Pattern;
 
 public class SquareExample {
 
-	private static String [] previousState = new String[16];
 	private static Orion orion = new Orion();
+	private static int quantity = 15;
+	private static String [] previousState = new String[quantity+1];
 
-	  public static void printLampsFramework() {
+	public static void printLampsFramework() {
 		List<Lamp> lampList = orion.listEntities("type=Lamp", new Lamp());
 		int k = 0;
-		String [] l = new String[16];
+		String [] l = new String[quantity];
 		  for (Lamp lamp: lampList){
 			  Pattern p = Pattern.compile("\\d+");
 			  Matcher m = p.matcher(lamp.getId());
@@ -48,8 +50,8 @@ public class SquareExample {
 			  }
 		  }
 		  System.out.println("------------------------");
-		  for (int i = 0; i< 4; i++) {
-			for (int j = 0; j < 4; j++) {
+		  for (int i = 0; i< 3; i++) {
+			for (int j = 0; j < 5; j++) {
 				System.out.print(l[k] + "  ");
 				k++;
 			}
@@ -60,15 +62,29 @@ public class SquareExample {
 
 
 	// wait the initial values from IoT-A.
-    public static void initializeLamps(ServerSocket ss, int quantity) throws Exception {
-    	for(int i = 0; i < quantity; i++){
-			String a = orion.listenNotification(ss);
+    public static void initializeLamps(ServerSocket ss) throws Exception {
+	  	// listen the firsts initial conditions, creating a subscription, when read the first notification for the lamps, exclude the subscriptions.
+	  	System.out.println("Initializing lamps");
+		orion.createSimpleSubscription(".*", "Lamp", 40041, "172.18.1.1", false);
+
+	  	List<Subscription> subscriptionList = orion.listSubscriptions();
+
+    	for(int i = 0; i < quantity + 1; i++){
+    		orion.listenNotification(ss);
 		}
+
+    	for (Subscription sub: subscriptionList) {
+			orion.deleteSubscription(sub.getId());
+		}
+
+    	System.out.println("Lamps initialized");
+
     }
 
     public static void lampOffFramework(Lamp lamp, String[] previousState, Orion orion ) {
 
-    	if (!lamp.getState().getValue().equals(previousState[Integer.parseInt(lamp.getNumber().getValue()) - 1])){
+    	if (!lamp.getState().getValue().equals(previousState[Integer.parseInt(lamp.getNumber().getValue())])){
+
     		orion.updateAttributeData(lamp.getId(),"luminosity", new Attrs("0","Integer"));
 
     		// equivalente ao getbylocation
@@ -77,11 +93,11 @@ public class SquareExample {
 
     		for (Lamp lamps : lampList) {
     			int count_int = Integer.parseInt(lamps.getCount().getValue()) + 1;
-    			if (lamps.getState().equals("off") && !lamps.getId().equals(lamp.getId())){
+    			if (lamps.getState().getValue().equals("off") && !lamps.getId().equals(lamp.getId())){
     				//equivalente ao updateluminositycount
 					orion.updateAttributeData(lamps.getId(), "luminosity", new Attrs("0", "Integer"));
 					orion.updateAttributeData(lamps.getId(), "count", new Attrs(String.valueOf(count_int),"Integer"));
-				} else if (lamps.getState().equals("on")) {
+				} else if (lamps.getState().getValue().equals("on")) {
 					//equivalente ao updateluminositycount
     				orion.updateAttributeData(lamps.getId(), "luminosity", new Attrs("3","Integer"));
 					orion.updateAttributeData(lamps.getId(), "count", new Attrs(String.valueOf(count_int),"Integer"));
@@ -91,7 +107,7 @@ public class SquareExample {
 	}
 
     public static void lampOnFramework(Lamp lamp, String[] previousState, Orion orion) {
-    	if (!lamp.getState().getValue().equals(previousState[Integer.parseInt(lamp.getNumber().getValue()) - 1])) {
+    	if (!lamp.getState().getValue().equals(previousState[Integer.parseInt(lamp.getNumber().getValue())])) {
 			// equivalente ao getbylocation
 			List<Lamp> lampList = orion.listEntities("type=Lamp&georel=near;maxDistance:9&geometry=point&coords="+
 					lamp.getLocation().getValue(),lamp);
@@ -153,9 +169,6 @@ public class SquareExample {
 
 		ServerSocket ss = new ServerSocket(40041, 1, InetAddress.getByName("172.18.1.1"));
 
-		initializeLamps(ss, 16);
-
-		int quantity = 16;
 		List<Device> deviceList = new ArrayList<>();
 		for(int i = 0; i<quantity;i++) {
 			deviceList.add(new Device("lamp"+(i+1),"123456","urn:ngsi-ld:Lamp:"+(i+1),"Lamp","Sergipe/Aracaju", attributeList,staticAttributeList));
@@ -164,25 +177,31 @@ public class SquareExample {
 		DeviceList devices = new DeviceList(deviceList);
 		iota.createDevice(devices);
 
-		Subscriptor subscriptor = new Subscriptor(40041, "172.18.1.1", ".*", "Lamp", ss, deviceList);
+		initializeLamps(ss);
+
+		Subscriptor subscriptor = new Subscriptor(40041, "172.18.1.1", ss, deviceList);
 
 		List<Lamp> mylist = orion.listEntities("type=Lamp", new Lamp());
 
 		for (Lamp aux: mylist) {
-			previousState[Integer.parseInt(aux.getNumber().getValue()) - 1] = aux.getState().getValue();
+			previousState[Integer.parseInt(aux.getNumber().getValue())] = aux.getState().getValue();
 		}
+		List<String> conditionsList = new ArrayList<>();
+		conditionsList.add("state");
+		subscriptor.subscribeAndListen(en -> updateEntity((Lamp) en), new Lamp(), conditionsList, deviceList);
 
-		subscriptor.subscribeAndListen(en -> updateEntity((Lamp) en), new Lamp(), deviceList);
     }
 
 	public static Lamp updateEntity(Lamp l) {
+
+		System.out.println("***"+l.getId() +" "+ l.getState().getValue()+"***");
+
 		if (l.getState().getValue().equals("off")){
 			lampOffFramework(l, previousState, orion);
 		}else {
 			lampOnFramework(l, previousState, orion);
 		}
-		previousState[Integer.parseInt(l.getNumber().getValue()) - 1] = l.getState().getValue();
-		System.out.println("***"+l.getId() +" "+ l.getState().getValue()+"***");
+		previousState[Integer.parseInt(l.getNumber().getValue())] = l.getState().getValue();
 		printLampsFramework();
 		return l;
 	}

@@ -1,18 +1,18 @@
 
-\
-squid:S106Œ"9Replace this use of System.out or System.err by a logger.(´ÎœŒøÿÿÿÿ8ÒŸõæÄ-
 W
-squid:S106Ì"9Replace this use of System.out or System.err by a logger.(«ì¨¥8³Ì„æÄ-
-ksquid:S00112‰"FDefine and throw a dedicated exception instead of using a generic one.(Œú™Àÿÿÿÿÿ8³Ì„æÄ-
-osquid:CommentedOutCodeLine‡"<This block of commented-out lines of code should be removed.(¯ˆŽõÿÿÿÿÿ8³Ì„æÄ-
-Jsquid:S1481…"+Remove this unused "status" local variable.(Øäã¬8³Ì„æÄ-
-{squid:S1488Ÿ"\Immediately return this expression instead of assigning it to the temporary variable "subs".(ñ€ªƒ8³Ì„æÄ-
-_squid:S1854„";Remove this useless assignment to local variable "expires".(ƒˆƒÝúÿÿÿÿ8 ÍòûÁ-
-Isquid:S1068*",Remove this unused "listener" private field.(ë×¿n8³Ì„æÄ-
-Nsquid:S1172ó"/Remove this unused method parameter "entities".(á›ìÿ8³Ì„æÄ-
-Psquid:S1481„",Remove this unused "expires" local variable.(ƒˆƒÝúÿÿÿÿ8 ÍòûÁ-
-W
-squid:S106Ž"9Replace this use of System.out or System.err by a logger.(ö¥û©8ÒŸõæÄ-
-Nsquid:S1172þ"/Remove this unused method parameter "entities".(ÆèÇÐ8³Ì„æÄ-
+squid:S106ï"9Replace this use of System.out or System.err by a logger.(øŒ¼Æ8þæâçÅ-
+osquid:CommentedOutCodeLineá"<This block of commented-out lines of code should be removed.(´ãÿÉÿÿÿÿÿ8«ÔÝçÅ-
+Nsquid:S1172ß"/Remove this unused method parameter "entities".(ÆèÇÐ8³Ì„æÄ-
+_squid:S1854å";Remove this useless assignment to local variable "expires".(ƒˆƒÝúÿÿÿÿ8 ÍòûÁ-
 Fsquid:S1905–"'Remove this unnecessary cast to "List".(÷ƒ–8³Ì„æÄ-
-Ysquid:S1854…":Remove this useless assignment to local variable "status".(Øäã¬8³Ì„æÄ-
+Jsquid:S1481æ"+Remove this unused "status" local variable.(Øäã¬8³Ì„æÄ-
+Isquid:S1068*",Remove this unused "listener" private field.(ë×¿n8³Ì„æÄ-
+osquid:CommentedOutCodeLineè"<This block of commented-out lines of code should be removed.(¯ˆŽõÿÿÿÿÿ8³Ì„æÄ-
+Ysquid:S1854æ":Remove this useless assignment to local variable "status".(Øäã¬8³Ì„æÄ-
+W
+squid:S106ò"9Replace this use of System.out or System.err by a logger.(«ì¨¥8³Ì„æÄ-
+Psquid:S1481å",Remove this unused "expires" local variable.(ƒˆƒÝúÿÿÿÿ8 ÍòûÁ-
+ksquid:S00112ê"FDefine and throw a dedicated exception instead of using a generic one.(Œú™Àÿÿÿÿÿ8³Ì„æÄ-
+Nsquid:S1172Ô"/Remove this unused method parameter "entities".(á›ìÿ8³Ì„æÄ-
+ësquid:S1192Ú"ÌDefine a constant instead of duplicating this literal "A error may be occurred and was not possible create the subscription, please check your parameters or set debugMode to true to more details" 3 times.( ã£i8ƒÕúæÅ-
+Fsquid:S1905¼"'Remove this unnecessary cast to "List".(÷ƒ–8ìÚÊ»Å-

@@ -150,6 +150,44 @@ public class Orion {
         return (List<T>) objects;
     }
 
+
+    /**
+     * Retrieves a list of entities without consider any criteria.
+     *
+     * @param obj an object representing the entity.
+     * @return  An Array with all objects (EntityId and entitytype) registered on orion.
+     * the JSON entity representation format (described in a “JSON Entity Representation” section) on NGSIv2 docs.
+     */
+    public <T> List<T> listEntities(T obj){
+
+        String json = "";
+
+        Gson gson = new GsonBuilder().registerTypeAdapter(int.class, new IntTypeAdapter()).create();
+
+        HttpRequests http = new HttpRequests();
+        List<T> objects = new ArrayList<>();
+
+        try {
+            json  = http.runGetRequest(this.url + ENTITIES_ENDPOINT);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was possible retrieve the entities, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
+        }
+
+        shoWDebug(json);
+
+        JsonParser jsonParser = new JsonParser();
+        JsonElement element = jsonParser.parse(json);
+        JsonArray jsonArray = element.getAsJsonArray();
+
+        for (int i = 0; i < jsonArray.size(); i++){
+            json = gson.toJson(jsonArray.get(i));
+            shoWDebug(json);
+            objects.add(gson.fromJson(json, (Type) obj.getClass()));
+        }
+        return (List<T>) objects;
+    }
+
     /**
      * Given an Id and object that represents the entity required, returns an object updated from Orion.
      *
@@ -195,7 +233,6 @@ public class Orion {
         }
 
     }
-
 
     /**
      * similar to retrieve the whole entity. this operation must return only one entity element.
@@ -290,12 +327,9 @@ public class Orion {
             LOGGER.warning("A error may be occurred and the entity attributes was not updated or appended, please check your parameters or set debugMode to true to more details");
             showStackTrace(e);
         }
-
         shoWDebug(json);
 
     }
-
-
 
     /**
      * The entity attributes are updated with the ones in the object.
@@ -652,7 +686,67 @@ public class Orion {
         Gson gson = new Gson();
         json = gson.toJson(sub);
 
-        if (!expires) {
+        if (!expires) { // removing the expires and throttling fields, this means that subscription will not expire, and will not discard notifications.
+            JsonObject o = new JsonParser().parse(json).getAsJsonObject();
+            o.remove("expires");
+            o.remove("throttling");
+            json = o.toString();
+        }
+
+        HttpRequests httpRequest = new HttpRequests();
+        try {
+            httpRequest.runPostRequest(this.url + SUBSCRIPTIONS_ENDPOINT, json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible create the subscription, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
+        }
+
+        shoWDebug(json);
+    }
+
+
+    /**
+     * this operation create a simple subscription on orion.
+     * this subscription reacts (trigger notifications) to a attribute list
+     * this subscription expires at 2040-04-05T14:00:00Z.
+     *
+     * @param id an given id from entity. (can be a regex)
+     * @param type an given type from entity.
+     * @param port an given port from where the server is listening the notifications.
+     * @param ip an given ip from where the server is running.
+     * @param expires an given boolean, if false, the subscription has not expires time, if true, has expire time
+     * defined at 2040-04-05T14:00:00Z.
+     * @param conditionsList
+     * @throws Exception for http requests (bad request, forbidden, etc.)
+     */
+    public void createSimpleSubscription(String id, String type, int port, String ip, List<String> conditionsList,  Boolean expires){
+
+        String json;
+
+        br.com.ufs.orionframework.subscription.Entities entities = new br.com.ufs.orionframework.subscription.Entities(id,type);
+
+        List<br.com.ufs.orionframework.subscription.Entities> entitiesList = new ArrayList<>();
+        entitiesList.add(entities);
+
+        Subject subject = new Subject(entitiesList);
+
+//        List<String> conditions = new ArrayList<>();
+        Condition condition = new Condition(conditionsList);
+
+        List<String> attrs = new ArrayList<>();
+
+        br.com.ufs.orionframework.subscription.Http http = new br.com.ufs.orionframework.subscription.Http("http://" + ip + ":" + port);
+
+        Notification notification = new Notification(http, attrs);
+
+        Subscription sub = new Subscription("A generic subscription",subject, condition,
+                notification, "2040-04-05T14:00:00Z", 0);
+
+        Gson gson = new Gson();
+        json = gson.toJson(sub);
+        System.out.println(json);
+
+        if (!expires) { // removing the expires and throttling fields, this means that subscription will not expire, and will not discard notifications.
             JsonObject o = new JsonParser().parse(json).getAsJsonObject();
             o.remove("expires");
             o.remove("throttling");
@@ -904,11 +998,9 @@ public class Orion {
     public String listenNotification(ServerSocket serverSocket) throws Exception {
         String data = null;
         String data2 = null;
-        System.out.println("waiting");
         Socket client = serverSocket.accept();
-        System.out.println("Connection established");
 
-        BufferedReader in = new BufferedReader( //Faz a leitura do que é enviado
+        BufferedReader in = new BufferedReader(
                 new InputStreamReader(client.getInputStream()));
         while ( (data = in.readLine()) != null ) {
         	data2 = data;
