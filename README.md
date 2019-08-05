@@ -97,6 +97,7 @@ Run the command at terminal (note: you have to be in the same directory as Orion
 ```
 sh Orion.sh
 ```
+Note: Remember to modify the docker-compose.yml file directory in Orion.sh file. The yml file is in root on the repo.
 ## Deployment
 
 Following all instruction showed before, you can develop a your own FIWARE app.

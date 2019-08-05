@@ -1,12 +1,12 @@
 
+qsquid:S3776¡"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(“–ýþ8¡Òã¹Å-
+_squid:S2259»"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8¡Òã¹Å-
+Hsquid:S1068%"*Remove this unused "device" private field.(ð¸€ô8ï¥Ú¹Å-
 Hsquid:S1940ƒ")Use the opposite operator ("==") instead.(òˆÄç8¡Òã¹Å-
 csquid:S2259´"DA "NullPointerException" could be thrown; "client" is nullable here.(É‚êƒ8¡Òã¹Å-
-osquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(ï‘Ã»ýÿÿÿÿ8³Ø¤çÅ-
-qsquid:S3776¡"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(“–ýþ8¡Òã¹Å-
 Qsquid:S1068"".Remove this unused "deviceList" private field.(à×›Ñüÿÿÿÿ8Í÷ø»Å-
-osquid:CommentedOutCodeLineø"<This block of commented-out lines of code should be removed.(ï‘Ã»ýÿÿÿÿ8ÛÊžÉÅ-
-Hsquid:S1068%"*Remove this unused "device" private field.(ð¸€ô8ï¥Ú¹Å-
 _squid:S2259ƒ"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8¡Òã¹Å-
-Hsquid:S1940»")Use the opposite operator ("==") instead.(òˆÄç8¡Òã¹Å-
-_squid:S2259»"@A "NullPointerException" could be thrown; "in" is nullable here.(òˆÄç8¡Òã¹Å-
+osquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(ï‘Ã»ýÿÿÿÿ8³Ø¤çÅ-
 csquid:S2259ü"DA "NullPointerException" could be thrown; "client" is nullable here.(É‚êƒ8¡Òã¹Å-
+osquid:CommentedOutCodeLineø"<This block of commented-out lines of code should be removed.(ï‘Ã»ýÿÿÿÿ8ÛÊžÉÅ-
+Hsquid:S1940»")Use the opposite operator ("==") instead.(òˆÄç8¡Òã¹Å-

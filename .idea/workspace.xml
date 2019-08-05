@@ -10,25 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38239a97-e8ef-4abd-8163-8c6ca2d91d9a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f7c8b28fbb15533d4f38da75fefb1b46c79af9e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f7c8b28fbb15533d4f38da75fefb1b46c79af9e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/1432753ef7580b2d2c3aea99405670b0b1ff7873" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/1432753ef7580b2d2c3aea99405670b0b1ff7873" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/1858fb039e1bfc7db6cdbd6ffd93727729c83a42" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/1858fb039e1bfc7db6cdbd6ffd93727729c83a42" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a4a5b4d38e75e7c559d4dea9f7335f3a5942716" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a4a5b4d38e75e7c559d4dea9f7335f3a5942716" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1dad229b9b8a1b40e8836198060673cdec1d65f6" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1dad229b9b8a1b40e8836198060673cdec1d65f6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4fc6906d96d8c0720c540a34a5a08fdf0d105a0c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4fc6906d96d8c0720c540a34a5a08fdf0d105a0c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/667a552091f6399670bd8bd4a8a3c17f9eca52c4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/667a552091f6399670bd8bd4a8a3c17f9eca52c4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c5bff60050fbda3e3411e465ecc96cc50b06a38" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c5bff60050fbda3e3411e465ecc96cc50b06a38" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db548ef549bfecf687e56c06d73c32fe0b91078d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db548ef549bfecf687e56c06d73c32fe0b91078d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/ddabaa025520f95ecf94f38f110714fbb504d490" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/ddabaa025520f95ecf94f38f110714fbb504d490" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e2227c1e005a09254377042e2b1f6b3e1d6f981e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e2227c1e005a09254377042e2b1f6b3e1d6f981e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/ebc55f4b6fbbc682d06c2d8dc4f2dcfd752f2a59" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/ebc55f4b6fbbc682d06c2d8dc4f2dcfd752f2a59" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa857a59244100467566de595d893dce957876f3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa857a59244100467566de595d893dce957876f3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Attrs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Attrs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entitytype/EntityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entitytype/EntityType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/genericnotification/GenericNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/genericnotification/GenericNotification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/httprequests/HttpRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/httprequests/HttpRequests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/DataProvided.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/DataProvided.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Entities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Entities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/ForwardingInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/ForwardingInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Provider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Registrations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Registrations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,26 +39,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/ContextExample.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="163" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="248">
+                <caret line="99" column="104" selection-start-line="99" selection-start-column="104" selection-end-line="99" selection-end-column="104" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -145,7 +130,6 @@
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/square/Square.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/Lamp/Lamp.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/ServiceGroup.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/MyServerSocket.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/airconditioner/AirConditioner.java" />
@@ -171,6 +155,7 @@
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Registrations.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subscription.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -194,6 +179,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -202,56 +188,10 @@
               <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
               <item name="Orion" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ufs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ufs" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Orion" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="br" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ufs" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="room" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -259,7 +199,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565004342753" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565006054755" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TCC/Aplicações/mariana backup/TCC/TCC/application" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -389,8 +329,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49866667" visible="true" weight="0.3471668" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49866667" weight="0.3527534" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -399,7 +340,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50265956" side_tool="true" weight="0.3471668" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" weight="0.62540716" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" weight="0.06188925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27850163" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -455,30 +396,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="130">
-            <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/Integer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="331" selection-start-line="331" selection-end-line="331" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/Context.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="103" column="104" lean-forward="true" selection-start-line="103" selection-start-column="81" selection-end-line="103" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/Thread.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -999,23 +916,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/ContextExample.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="163" />
+        <state relative-caret-position="329">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/ContextExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="119">
+          <caret line="162" selection-start-line="162" selection-end-line="163" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Orion.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Orion.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="248">
+            <caret line="99" column="104" selection-start-line="99" selection-start-column="104" selection-end-line="99" selection-end-column="104" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

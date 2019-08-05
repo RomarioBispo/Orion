@@ -1,10 +1,10 @@
 
-ssquid:S4144Ÿ"VUpdate this method so that its implementation is not identical to "listen" on line 72.(â¼»¼úÿÿÿÿ
-msquid:S2095d"QUse try-with-resources or close this "ServerSocketChannel" in a "finally" clause.(áÆ¢Éùÿÿÿÿ
-]squid:S2095a"FUse try-with-resources or close this "Selector" in a "finally" clause.(¦ŒÝ¦
+csquid:S00112$"FDefine and throw a dedicated exception instead of using a generic one.(Åü³íýÿÿÿÿ
 O
 squid:S106›"9Replace this use of System.out or System.err by a logger.(ƒÚáB
-Isquid:S1481n"-Remove this unused "selectKy" local variable.(¢²å½úÿÿÿÿ
-csquid:S00112$"FDefine and throw a dedicated exception instead of using a generic one.(Åü³íýÿÿÿÿ
+msquid:S2095d"QUse try-with-resources or close this "ServerSocketChannel" in a "finally" clause.(áÆ¢Éùÿÿÿÿ
 ^squid:S00112H"FDefine and throw a dedicated exception instead of using a generic one.(¼Ô®š
+ssquid:S4144Ÿ"VUpdate this method so that its implementation is not identical to "listen" on line 72.(â¼»¼úÿÿÿÿ
+Isquid:S1481n"-Remove this unused "selectKy" local variable.(¢²å½úÿÿÿÿ
+]squid:S2095a"FUse try-with-resources or close this "Selector" in a "finally" clause.(¦ŒÝ¦
 Xsquid:S1854n"<Remove this useless assignment to local variable "selectKy".(¢²å½úÿÿÿÿ
