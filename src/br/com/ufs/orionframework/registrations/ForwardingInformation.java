@@ -19,7 +19,14 @@ public class ForwardingInformation {
     public ForwardingInformation() {
     }
 
-
+    /**
+     * This constructor creates a forwarding information object representing the JSON on a NGSIv2 format.
+     *
+     * @param timesSent not editable, only present in GET operations): Number of request forwardings sent due to this registration.
+     * @param lastForwarding (not editable, only present in GET operations): Last forwarding timestamp in ISO8601 format.
+     * @param lastSuccess  (not editable, only present in GET operations): Last failure timestamp in ISO8601 format. Not present if registration has never had a problem with forwarding.
+     * @param LastFailure (not editable, only present in GET operations): Timestamp in ISO8601 format for last successful request forwarding. Not present if registration has never had a successful notification.
+     */
     public ForwardingInformation(int timesSent, String lastForwarding, String lastSuccess, String LastFailure) {
         this.timesSent = timesSent;
         this.lastForwarding = lastForwarding;

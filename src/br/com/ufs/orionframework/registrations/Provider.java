@@ -14,6 +14,13 @@ public class Provider {
     private String supportedForwardingMode;
     private Boolean legacyForwarding;
 
+    /**
+     * This constructor creates a provider object represented by a JSON in a NGSIv2 format.
+     *
+     * @param http
+     * @param supportedForwardingMode
+     * @param legacyForwarding
+     */
     public Provider(Http http, String supportedForwardingMode, Boolean legacyForwarding) {
         this.http = http;
         this.supportedForwardingMode = supportedForwardingMode;

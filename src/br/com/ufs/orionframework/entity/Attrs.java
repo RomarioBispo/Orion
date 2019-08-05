@@ -4,9 +4,9 @@ package br.com.ufs.orionframework.entity;
 import br.com.ufs.orionframework.entitylamp.Lamp;
 
 /**
- * This class is used to help to represent a object java as JSON on a NGSIv2 form.
+ * This class is used to help to represent a entity attribute as java object representing the JSON on a NGSIv2 form.
  *
- * @author Mariana Martins
+ * @author Mariana Martins, Romario Bispo
  * @version %I%, %G%
  * @since 1.0
  * @see Lamp

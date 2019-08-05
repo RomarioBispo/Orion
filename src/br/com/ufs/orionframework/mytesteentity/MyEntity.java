@@ -3,6 +3,11 @@ package br.com.ufs.orionframework.mytesteentity;
 import br.com.ufs.orionframework.entity.Entity;
 import br.com.ufs.orionframework.entity.Attrs;
 
+/**
+ * This class is used to show a instance how to use the framework, notice that the class MyEntity is extending the Entity
+ * which is strongly recommended.
+ */
+
 public class MyEntity extends Entity {
     private Attrs attribute1;
     private Attrs attribute2;

@@ -12,6 +12,12 @@ public class Entities {
     private String id;
     private String type;
 
+    /**
+     * This constructor creates a entities object as a JSON represented on NGSIv2 form.
+     *
+     * @param id Id or pattern of the affected entities. Both cannot be used at the same time, but one of them must be present.
+     * @param type Type or pattern of the affected entities.
+     */
     public Entities(String id, String type) {
         this.id = id;
         this.type = type;

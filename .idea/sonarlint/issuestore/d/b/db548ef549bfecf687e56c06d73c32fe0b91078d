@@ -1,22 +1,22 @@
 
-osquid:UselessImportCheck"DRemove this unused import 'br.com.ufs.orionframework.entity.Entity'.(âïğÔ8³œŸèÄ-
-[
-squid:S106C"9Replace this use of System.out or System.err by a logger.(ÍÌşÿÿÿÿ8ŸÖ ¿Å-
-nsquid:S1192D"KDefine a constant instead of duplicating this literal "172.18.1.1" 3 times.(ÍÈ¯Üşÿÿÿÿ8€¼Å-
-]squid:S1192c"FDefine a constant instead of duplicating this literal "count" 5 times.(Â¤İ
-\
-squid:S106Å"9Replace this use of System.out or System.err by a logger.(ôğıùÿÿÿÿ8»»ŠæÅ-
-nsquid:S00117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¶Ş­şÿÿÿÿ
-hsquid:S00117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¸ê1
 T
 squid:S1064"9Replace this use of System.out or System.err by a logger.(éç¬ùÿÿÿÿ
-T
-squid:S106:"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
-_squid:S1192X"IDefine a constant instead of duplicating this literal "Integer" 13 times.(ÈÂ½d
+[
+squid:S106C"9Replace this use of System.out or System.err by a logger.(ÍÌşÿÿÿÿ8ŸÖ ¿Å-
 T
 squid:S106<"9Replace this use of System.out or System.err by a logger.(éç¬ùÿÿÿÿ
-asquid:S1192X"KDefine a constant instead of duplicating this literal "luminosity" 7 times.(ÈÂ½d
+osquid:UselessImportCheck"DRemove this unused import 'br.com.ufs.orionframework.entity.Entity'.(âïğÔ8³œŸèÄ-
+\
+squid:S106Å"9Replace this use of System.out or System.err by a logger.(ôğıùÿÿÿÿ8»»ŠæÅ-
+]squid:S1192c"FDefine a constant instead of duplicating this literal "count" 5 times.(Â¤İ
+T
+squid:S106:"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ
 T
 squid:S1067"9Replace this use of System.out or System.err by a logger.(¾€ìˆşÿÿÿÿ
+hsquid:S00117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¸ê1
 V
 squid:S106P"9Replace this use of System.out or System.err by a logger.(º„›8Æ¢¿Å-
+nsquid:S1192D"KDefine a constant instead of duplicating this literal "172.18.1.1" 3 times.(ÍÈ¯Üşÿÿÿÿ8€¼Å-
+asquid:S1192X"KDefine a constant instead of duplicating this literal "luminosity" 7 times.(ÈÂ½d
+nsquid:S00117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¶Ş­şÿÿÿÿ
+_squid:S1192X"IDefine a constant instead of duplicating this literal "Integer" 13 times.(ÈÂ½d

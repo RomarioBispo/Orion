@@ -23,6 +23,15 @@ public class Subscription {
 
     }
 
+    /**
+     *
+     * @param description A free text used by the client to describe the subscription.
+     * @param subject An object that describes the subject of the subscription.
+     * @param condition Condition to trigger notifications.
+     * @param notification An object that describes the notification to send when the subscription is triggered.
+     * @param expires Subscription expiration date in ISO8601 format.
+     * @param throttling Minimal period of time in seconds which must elapse between two consecutive notifications.
+     */
     public Subscription(String description, Subject subject, Condition condition, Notification notification, String expires, int throttling) {
         this.description = description;
         this.subject = subject;

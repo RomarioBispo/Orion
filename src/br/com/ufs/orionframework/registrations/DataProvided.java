@@ -14,7 +14,12 @@ public class DataProvided {
     private List<Entities> entities;
     private List<String> attrs;
 
-
+    /**
+     * This constructor creates a data provided object as a JSON represented on NGSIv2 form.
+     *
+     * @param entities A list of entity objects.
+     * @param attrs List of attributes to be provided.
+     */
     public DataProvided(List<Entities> entities, List<String> attrs) {
         this.entities = entities;
         this.attrs = attrs;

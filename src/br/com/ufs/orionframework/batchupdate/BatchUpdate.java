@@ -15,6 +15,12 @@ public class BatchUpdate {
     private String actionType;
     private List<Entity> entities;
 
+    /**
+     * This constructor instantiate a batch update object with a given list of entities.
+     * Here, we set up a actionType field as "append" maps to POST /v2/entities (if the entity does not already exist) or POST /v2/entities/<id>/attrs
+     * (if the entity already exists).
+     * @param entities
+     */
     public BatchUpdate(List<Entity> entities) {
         this.actionType = "append";
         this.entities = entities;

@@ -16,7 +16,6 @@ public class Registrations {
     private String status;
     private ForwardingInformation forwardingInformation;
 
-
     public Registrations(String description, DataProvided dataProvided, Provider provider, String expires, String status, ForwardingInformation forwardingInformation) {
         this.description = description;
         this.dataProvided = dataProvided;

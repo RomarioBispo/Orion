@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 /**
  * IoTA covers IoT-Agent operations provisioning.
- * Your objective is to let a little bit easier to developer do FIWARE applications using java.
+ * Your objective is to let a bit easier to developer do FIWARE applications using java.
  *
  * @author Romario Bispo
  * @version %I%, %G%
@@ -161,7 +161,7 @@ public class IoTA {
 
 
     /**
-     * If you want modify only a field, you can do it.
+     * If you want modify only a field, it's allowed.
      * You cannot modify an element into an array field, but whole array. ("/*" is not allowed).
      *
      * @param apikey If you don't specify, apikey=" " is applied.

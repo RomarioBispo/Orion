@@ -39,7 +39,6 @@ import java.util.logging.Logger;
 public class Orion {
 
     private String url;
-    private String listener;
     private Boolean debugMode;
 
     private static final String ENTITIES_ENDPOINT = "/v2/entities/";
@@ -57,12 +56,10 @@ public class Orion {
      * debugMode is an Boolean which tells to enable the debug mode, showing the JSON files sent or received. (Default is false. To enable, set your value)
      *
      * @param url An IP address + Port String from where the Orion is running.
-     * @param listener An IP address + Port from where the server is listening the changes that was subscribed.
      *
      */
-    public Orion (String url, String listener) {
+    public Orion (String url) {
         this.url = url;
-        this.listener = listener;
         this.debugMode = false;
     }
 
@@ -72,7 +69,6 @@ public class Orion {
      */
     public Orion () {
         this.url = "http://localhost:1026";
-        this.listener = "http://172.18.1.1:40041";
         this.debugMode = false;
     }
 
@@ -189,11 +185,10 @@ public class Orion {
     }
 
     /**
-     * Given an Id and object that represents the entity required, returns an object updated from Orion.
+     * Given an Id and object that represents the entity required, returns an object persisted from Orion.
      *
      * @param  entityId  an identifier from entity
      * @param  obj the object that represents the entity
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      * @return a object updated from entity
      */
     public Object retrieveEntity(String entityId, Object obj){
@@ -217,7 +212,7 @@ public class Orion {
 
 
     /**
-     * Delete the entity given id of the entity.
+     * Delete the entity given the id of the entity.
      *
      * @param  entityId  Id of the entity to be deleted.
      * @throws Exception for http requests (bad request, forbidden, etc.)
@@ -240,9 +235,8 @@ public class Orion {
      *
      * @param  entityId  Id of the entity to be retrieved
      * @param  obj the object that represents the entity
-     * @see #retrieveEntity(String, Object)
      * @return a object representing the entity
-     * @throws Exception for http requests (bad request, forbidden, etc.)
+     * @see #retrieveEntity(String, Object)
      */
     public Object retrieveEntityAttributes(String entityId, Object obj){
 
@@ -268,9 +262,8 @@ public class Orion {
      * Replace attributes for the entity, given your id and object representing the new attributes.
      * Change id and entitytype for entity is not allowed.
      *
-     * @param  entityId  Id of the entity to be retrieved
+     * @param  entityId  Id of the entity to be replaced.
      * @param obj object representing the new attributes for the entity.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void replaceAllEntitiesAttributes(String entityId, Object obj){
 
@@ -303,9 +296,8 @@ public class Orion {
      * the entity attributes are updated (if they previously exist) or appended
      * (if they don’t previously exist) with the ones in the payload.
      *
-     * @param  entityId  Id of the entity to be retrieved
+     * @param  entityId  Id of the entity to be updated
      * @param obj object representing the attributes to append or update
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void updateOrAppendEntityAttributes(String entityId, Object obj){
 
@@ -335,9 +327,8 @@ public class Orion {
      * The entity attributes are updated with the ones in the object.
      * The attributes must already exists before send this update.
      *
-     * @param  entityId  Id of the entity to be retrieved
+     * @param  entityId  Id of the entity to be updated
      * @param obj an object representing the attributes to update.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void updateExistingEntityAttributes(String entityId, Object obj){
 
@@ -371,7 +362,6 @@ public class Orion {
      * @param attrName Name of the attribute to be retrieved.
      * @param obj object that represents the attribute
      * @return a object with the attribute data of the attribute.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public Object getAttributeData(String entityId, String attrName, Object obj){
 
@@ -397,10 +387,9 @@ public class Orion {
     /**
      * Replace previous attribute data by the one in the object.
      *
-     * @param  entityId  Id of the entity to be retrieved
-     * @param attrName Name of the attribute to be retrieved.
+     * @param  entityId  Id of the entity to be updated
+     * @param attrName Name of the attribute to be updated.
      * @param obj object that represents the attribute to update.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void updateAttributeData(String entityId, String attrName, Object obj){
 
@@ -424,9 +413,8 @@ public class Orion {
     /**
      * Removes an entity attribute.
      *
-     * @param  entityId  Id of the entity to be retrieved
-     * @param attrName Name of the attribute to be retrieved.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
+     * @param  entityId  Id of the entity to be removed.
+     * @param attrName Name of the attribute to be removed.
      */
     public void removeSingleAttribute(String entityId, String attrName){
 
@@ -448,7 +436,6 @@ public class Orion {
      * @param attrName Name of the attribute to be retrieved.
      * @param obj object that represents the attribute to update.
      * @return value of the given attribute.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public Object getAttributeValue(String entityId, String attrName, Object obj){
 
@@ -472,12 +459,11 @@ public class Orion {
 
 
     /**
-     * given a object representing a new attribute, this operation turn it a new attribute value.
+     * given a object representing a new attribute, this operation update the value on orion.
      *
-     * @param  entityId  Id of the entity to be retrieved
-     * @param attrName Name of the attribute to be retrieved.
+     * @param  entityId  Id of the entity to be updated
+     * @param attrName Name of the attribute to be updated.
      * @param obj object that represents the attribute to update.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void updateAttributeValue(String entityId, String attrName, Object obj) {
 
@@ -508,9 +494,8 @@ public class Orion {
     /**
      * this operation return the entity types from Orion.
      *
-     * @param obj object that represents the attribute to update.
+     * @param obj object that represents the attribute to retrieve.
      * @return a list of entity types object.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public List<Object> listEntityTypes(Object obj) {
 
@@ -533,10 +518,9 @@ public class Orion {
     /**
      * this operation return information about entity types from Orion.
      *
-     * @param entitytype a type for the entity.
-     * @param obj object that represents the attribute to update.
-     * @return information about the given entitytype.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
+     * @param entitytype a type for the entity to be retrieved.
+     * @param obj object that represents the type to be retrieved.
+     * @return a object containing the information about the given entitytype.
      */
     public Object retrieveEntityType(String entitytype, Object obj){
 
@@ -556,9 +540,9 @@ public class Orion {
     }
 
     /**
-     * this operation returns a list of all the subscriptions present in the system.
-     * @throws  Exception for http requests.
-     * @return a list of all the subscriptions present in the system.
+     * this operation returns a list of all the subscriptions persisted on orion.
+     *
+     * @return a list of all the subscriptions present on orion.
      */
     public List<Subscription> listSubscriptions(){
 
@@ -583,7 +567,6 @@ public class Orion {
      * this operation creates a new subscription on Orion.
      *
      * @param subscription an given subscription object which represents a subscription on JSON format from Orion.
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void createSubscriptions(Subscription subscription){
 
@@ -604,7 +587,8 @@ public class Orion {
     }
 
     /**
-     * this operation returns a subscription given the subscriptionId
+     * this operation returns a subscription given the subscriptionId.
+     * Note: this operation is not implemented yet.
      *
      * @param subscriptionId an given id from subscription.
      * @return a subscription that has the subscriptionId given.
@@ -620,6 +604,8 @@ public class Orion {
      *
      * @param subscriptionId When a subscription is created, a message is received on url defined on subscription
      * This url contains a Location header which holds the subscription ID: a 24 digit hexadecimal number.
+     * Using the subscriptionId, the subscription can be undone (removed) from orion.
+     *
      * @throws Exception for http requests (bad request, forbidden, etc.)
      */
     public void deleteSubscription(String subscriptionId){
@@ -650,7 +636,8 @@ public class Orion {
     /**
      * this operation create a simple subscription on orion.
      * this subscription reacts (trigger notifications) to any changes on attributes.
-     * this subscription expires at 2040-04-05T14:00:00Z.
+     * this subscription expires at 2040-04-05T14:00:00Z. otherwise, if expires is true,
+     * the subscription will not have expire date.
      *
      * @param id an given id from entity. (can be a regex)
      * @param type an given type from entity.
@@ -707,7 +694,7 @@ public class Orion {
 
     /**
      * this operation create a simple subscription on orion.
-     * this subscription reacts (trigger notifications) to a attribute list
+     * this subscription reacts (trigger notifications) to a given attribute list.
      * this subscription expires at 2040-04-05T14:00:00Z.
      *
      * @param id an given id from entity. (can be a regex)
@@ -716,8 +703,8 @@ public class Orion {
      * @param ip an given ip from where the server is running.
      * @param expires an given boolean, if false, the subscription has not expires time, if true, has expire time
      * defined at 2040-04-05T14:00:00Z.
-     * @param conditionsList
-     * @throws Exception for http requests (bad request, forbidden, etc.)
+     * @param conditionsList a list of conditions to be fired when a change occur.
+     *
      */
     public void createSimpleSubscription(String id, String type, int port, String ip, List<String> conditionsList,  Boolean expires){
 
@@ -990,7 +977,8 @@ public class Orion {
 
 
     /**
-     * This operation listen a notification given a server socket.
+     * This operation listen a single notification which you have subscribed before given a server socket
+     * where the listener is running.
      *
      * @param serverSocket
      * @return the notification as String format.

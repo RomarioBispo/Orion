@@ -128,8 +128,6 @@ public class HttpRequests {
         GenericUrl operationUrl = new GenericUrl(url);
         HttpRequest request = requestFactory.buildPostRequest(operationUrl, ByteArrayContent.fromString("text/plain", requestBody));
         HttpHeaders headers = request.getHeaders();
-//        headers.set("fiware-service", "openiot");
-//        headers.set("fiware-servicepath", "/");
 
         request.execute().parseAsString();
     }

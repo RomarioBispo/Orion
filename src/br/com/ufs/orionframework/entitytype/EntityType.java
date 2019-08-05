@@ -3,7 +3,7 @@ package br.com.ufs.orionframework.entitytype;
 import br.com.ufs.orionframework.entity.Attrs;
 
 /**
- * This class is used to help to represent a object java as JSON on a NGSIv2 form.
+ * This class is used to help to represent a entity Type as java object representing the JSON on a NGSIv2 form.
  *
  * @author Romario Bispo
  * @version %I%, %G%

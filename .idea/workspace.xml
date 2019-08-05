@@ -11,27 +11,24 @@
   <component name="ChangeListManager">
     <list default="true" id="38239a97-e8ef-4abd-8163-8c6ca2d91d9a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/1858fb039e1bfc7db6cdbd6ffd93727729c83a42" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/8/1858fb039e1bfc7db6cdbd6ffd93727729c83a42" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a4a5b4d38e75e7c559d4dea9f7335f3a5942716" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a4a5b4d38e75e7c559d4dea9f7335f3a5942716" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4fc6906d96d8c0720c540a34a5a08fdf0d105a0c" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4fc6906d96d8c0720c540a34a5a08fdf0d105a0c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6afc015bb4760ef7709e9ab635aaa0b020f5bb7e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6afc015bb4760ef7709e9ab635aaa0b020f5bb7e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/ab02774c5fd4ba083d400c127bbe030e427f9cf7" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/ab02774c5fd4ba083d400c127bbe030e427f9cf7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db548ef549bfecf687e56c06d73c32fe0b91078d" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db548ef549bfecf687e56c06d73c32fe0b91078d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa857a59244100467566de595d893dce957876f3" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/fa857a59244100467566de595d893dce957876f3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/iota/IoTA.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/iotaframework/iota/IoTA.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/orion/Orion.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/orion/Orion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/Subscriptor.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/br/com/ufs/orionframework/subscriptor/Subscriptor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/SquareExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/SquareExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/sensor/SensorSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/sensor/SensorSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Attrs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Attrs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entitytype/EntityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/entitytype/EntityType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/genericnotification/GenericNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/genericnotification/GenericNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/httprequests/HttpRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/httprequests/HttpRequests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/DataProvided.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/DataProvided.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Entities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Entities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/ForwardingInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/ForwardingInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Provider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Registrations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Registrations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subscription.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,21 +41,12 @@
     <favorites_list name="Orion" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/SquareExample.java">
+        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/ContextExample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/sensor/SensorSimulator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+            <state relative-caret-position="59">
+              <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="163" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,14 +55,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java">
+        <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
-              <caret line="952" column="48" selection-start-line="952" selection-start-column="35" selection-end-line="952" selection-end-column="48" />
+            <state relative-caret-position="367">
+              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#21819#21820#0" expanded="true" />
-                <element signature="e#21846#21847#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,7 +80,6 @@
     <findStrings>
       <find>20</find>
       <find>subscriptor:</find>
-      <find>createSimple</find>
       <find>Temperatura</find>
       <find>http</find>
       <find>imeUnit.SECONDS.sleep(</find>
@@ -122,6 +107,7 @@
       <find>createSimpleSubscription</find>
       <find>create</find>
       <find>getState()</find>
+      <find>createSimple</find>
     </findStrings>
     <replaceStrings>
       <replace>showStackTrace(e);</replace>
@@ -134,18 +120,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/entityLamp/Lamp.java" />
-        <option value="$PROJECT_DIR$/src/entityLamp/Attrs.java" />
-        <option value="$PROJECT_DIR$/src/entity/Entity.java" />
-        <option value="$PROJECT_DIR$/src/server/TCPServer.java" />
         <option value="$PROJECT_DIR$/src/TesteLambdas.java" />
         <option value="$PROJECT_DIR$/src/orion/Orion.java" />
         <option value="$PROJECT_DIR$/src/subscriptor/Subscriptor.java" />
         <option value="$PROJECT_DIR$/src/com/java/orionFramework/batchUpdate/BatchUpdate.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Lamp.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/Service.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Devices.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/DeviceList.java" />
@@ -154,14 +133,8 @@
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Command.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/ComandList.java" />
         <option value="$PROJECT_DIR$/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Attrs.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/typeadapter/IntTypeAdapter.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/DataProvided.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Provider.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Registrations.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/usersguide/Guide.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/httprequests/HttpRequests.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/device/AirConditioner.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/Context.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Device.java" />
@@ -173,18 +146,31 @@
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/Lamp/Lamp.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/ServiceGroup.java" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/MyServerSocket.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/airconditioner/AirConditioner.java" />
-        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subscription.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/usersguide/Main.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/ContextExample.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/Class/Class.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/sensor/SensorSimulator.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/SquareExample.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Attrs.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Lamp.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/entitytype/EntityType.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/genericnotification/GenericNotification.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/httprequests/HttpRequests.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java" />
         <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/DataProvided.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Entities.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/ForwardingInformation.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Provider.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Registrations.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subscription.java" />
+        <option value="$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java" />
       </list>
     </option>
   </component>
@@ -208,7 +194,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -250,7 +235,7 @@
               <item name="br" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="ufs" type="462c0819:PsiDirectoryNode" />
-              <item name="orionframework" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Orion" type="b2602c69:ProjectViewProjectNode" />
@@ -259,13 +244,14 @@
               <item name="br" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="ufs" type="462c0819:PsiDirectoryNode" />
-              <item name="orionframework" type="462c0819:PsiDirectoryNode" />
-              <item name="orion" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="room" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -273,7 +259,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564933890831" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565004342753" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../TCC/Aplicações/mariana backup/TCC/TCC/application" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -309,7 +295,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SensorSimulator">
+  <component name="RunManager" selected="Application.Simulation">
     <configuration name="ContextExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.ufs.examples.room.context.context.ContextExample" />
       <module name="Orion" />
@@ -371,10 +357,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SensorSimulator" />
-        <item itemvalue="Application.SquareExample" />
         <item itemvalue="Application.Simulation" />
         <item itemvalue="Application.ContextExample" />
+        <item itemvalue="Application.SensorSimulator" />
+        <item itemvalue="Application.SquareExample" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -403,9 +389,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49866667" weight="0.3471668" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49866667" visible="true" weight="0.3471668" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -414,7 +399,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50265956" side_tool="true" weight="0.3471668" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960095" visible="true" weight="0.5635179" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960095" weight="0.62540716" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27850163" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -465,163 +450,11 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout-to-restore>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java</url>
-          <line>452</line>
-          <properties />
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java</url>
-          <line>460</line>
-          <properties />
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/DataProvided.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Lamp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/httprequests/HttpRequests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="131" column="49" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Http.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="e#383#384#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="e#470#471#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Notification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/accumulator/Accumulator.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/notification/CountNotification.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/device/AirConditioner.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/device/Device.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/device/MotionSensor.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/context/createdevice/CreateDevice.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/context/notificationresponse/NotificationResponse.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/ultralight/AttrsUltraLight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/ultralight/UltraLight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Attribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/StaticAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/ServiceGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/usersguide/Guide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -639,13 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/DeviceList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/Context.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
@@ -653,37 +479,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="229" selection-start-line="229" selection-end-line="229" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Device.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/lang/Thread.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="223" selection-start-line="223" selection-end-line="223" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Attrs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -775,26 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/ContextExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1522">
-          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="163" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/context/square/Square.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -805,51 +584,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Entities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subscription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="e#955#956#0" expanded="true" />
-            <element signature="e#980#981#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Condition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="275" column="21" selection-start-line="275" selection-start-column="21" selection-end-line="275" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1642#1643#0" expanded="true" />
-            <element signature="e#1673#1674#0" expanded="true" />
-            <element signature="e#1721#1722#0" expanded="true" />
-            <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#1792#1793#0" expanded="true" />
-            <element signature="e#1819#1820#0" expanded="true" />
-            <element signature="e#1859#1860#0" expanded="true" />
-            <element signature="e#1891#1892#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/context/Lamp/Lamp.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -865,16 +601,387 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/SquareExample.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/batchupdate/BatchUpdate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entity/Attrs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="93" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entitylamp/Lamp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/entitytype/EntityType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="88" selection-start-line="5" selection-start-column="88" selection-end-line="5" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/genericnotification/GenericNotification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding>
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#826#827#0" expanded="true" />
+            <element signature="e#867#868#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#964#965#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/httprequests/HttpRequests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="129" column="51" selection-start-line="129" selection-start-column="51" selection-end-line="129" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/mytesteentity/MyEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-787">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+            <element signature="e#1060#1061#0" expanded="true" />
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1155#1156#0" expanded="true" />
+            <element signature="e#1191#1192#0" expanded="true" />
+            <element signature="e#1224#1225#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1319#1320#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="e#1578#1579#0" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1655#1656#0" expanded="true" />
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#1728#1729#0" expanded="true" />
+            <element signature="e#1782#1783#0" expanded="true" />
+            <element signature="e#1814#1815#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/ForwardingInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1110#1111#0" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+            <element signature="e#1299#1300#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#1399#1400#0" expanded="true" />
+            <element signature="e#1437#1438#0" expanded="true" />
+            <element signature="e#1476#1477#0" expanded="true" />
+            <element signature="e#1530#1531#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Entities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/DataProvided.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Http.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Registrations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#1351#1352#0" expanded="true" />
+            <element signature="e#1387#1388#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
+            <element signature="e#1592#1593#0" expanded="true" />
+            <element signature="e#1637#1638#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1739#1740#0" expanded="true" />
+            <element signature="e#1787#1788#0" expanded="true" />
+            <element signature="e#1824#1825#0" expanded="true" />
+            <element signature="e#1860#1861#0" expanded="true" />
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#1950#1951#0" expanded="true" />
+            <element signature="e#1984#1985#0" expanded="true" />
+            <element signature="e#2019#2020#0" expanded="true" />
+            <element signature="e#2065#2066#0" expanded="true" />
+            <element signature="e#2103#2104#0" expanded="true" />
+            <element signature="e#2136#2137#0" expanded="true" />
+            <element signature="e#2170#2171#0" expanded="true" />
+            <element signature="e#2214#2215#0" expanded="true" />
+            <element signature="e#2250#2251#0" expanded="true" />
+            <element signature="e#2313#2314#0" expanded="true" />
+            <element signature="e#2362#2363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/registrations/Provider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="91" selection-start-line="17" selection-start-column="91" selection-end-line="17" selection-end-column="91" />
+          <folding>
+            <element signature="e#771#772#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#931#932#0" expanded="true" />
+            <element signature="e#960#961#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Entities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Http.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Notification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Subscription.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-487">
+          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+          <folding>
+            <element signature="e#1125#1126#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1189#1190#0" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1316#1317#0" expanded="true" />
+            <element signature="e#1361#1362#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1458#1459#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1540#1541#0" expanded="true" />
+            <element signature="e#1570#1571#0" expanded="true" />
+            <element signature="e#1616#1617#0" expanded="true" />
+            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#1688#1689#0" expanded="true" />
+            <element signature="e#1721#1722#0" expanded="true" />
+            <element signature="e#1770#1771#0" expanded="true" />
+            <element signature="e#1814#1815#0" expanded="true" />
+            <element signature="e#1852#1853#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1940#1941#0" expanded="true" />
+            <element signature="e#1986#1987#0" expanded="true" />
+            <element signature="e#2021#2022#0" expanded="true" />
+            <element signature="e#2051#2052#0" expanded="true" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2136#2137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscription/Condition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/server/TCPServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1568">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/subscriptor/Subscriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3645">
+          <caret line="275" column="21" selection-start-line="275" selection-start-column="21" selection-end-line="275" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#1673#1674#0" expanded="true" />
+            <element signature="e#1721#1722#0" expanded="true" />
+            <element signature="e#1761#1762#0" expanded="true" />
+            <element signature="e#1792#1793#0" expanded="true" />
+            <element signature="e#1819#1820#0" expanded="true" />
+            <element signature="e#1859#1860#0" expanded="true" />
+            <element signature="e#1891#1892#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/typeadapter/IntTypeAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Attribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/DeviceList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/devices/StaticAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/iota/IoTA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2872">
+          <caret line="163" column="53" selection-start-line="163" selection-start-column="53" selection-end-line="163" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/ServiceGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/iotaframework/services/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9015">
+          <caret line="649" column="28" selection-start-line="649" selection-start-column="28" selection-end-line="649" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/simulation/sensor/SensorSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="-218">
           <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -882,14 +989,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/orionframework/orion/Orion.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/square/context/socket/SquareExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="952" column="48" selection-start-line="952" selection-start-column="35" selection-end-line="952" selection-end-column="48" />
+        <state relative-caret-position="653">
+          <caret line="170" lean-forward="true" selection-start-line="170" selection-end-line="170" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#21819#21820#0" expanded="true" />
-            <element signature="e#21846#21847#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/context/context/ContextExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="163" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/ufs/examples/room/simulation/simulation/Simulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
