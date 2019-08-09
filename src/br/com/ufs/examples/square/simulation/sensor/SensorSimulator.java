@@ -34,7 +34,7 @@ public class SensorSimulator {
      			
      			UltraLight ultralight = new UltraLight(condicoesIniciais);
      			System.out.println("Initialize Lamps Ultralight: \n"+UltraLight.toStringMsg(ultralight));
-     			iota.sendMeasure("localhost:7896","/iot/d","4jggokgpepnvsb2uv4s40d59ov","lamp"+idLampada,UltraLight.toStringMsg(ultralight));
+     			iota.sendMeasure("lamp"+idLampada,UltraLight.toStringMsg(ultralight));
      			try{
      	    	    Thread.sleep(1000*5);
      	    	}
@@ -49,9 +49,9 @@ public class SensorSimulator {
 
     	SensorSimulator app = new SensorSimulator();
 
-    	IoTA iota = new IoTA("localhost",4041);
+    	IoTA iota = new IoTA("localhost", 4041, "localhost:7896", "/iot/d/","4jggokgpepnvsb2uv4s40d59ov");
 
-    	try{
+		try{
     	    Thread.sleep(1000*6);  //testar para definir o tempo em cada ambiente novo
     	}
     	catch(InterruptedException ex){
@@ -81,10 +81,10 @@ public class SensorSimulator {
     		int randomNum = ThreadLocalRandom.current().nextInt(1, quantity+1);
     		boolean randomOff = ThreadLocalRandom.current().nextBoolean();
     		if(randomOff) {
-				iota.sendMeasure("localhost:7896","/iot/d","4jggokgpepnvsb2uv4s40d59ov","lamp"+randomNum, UltraLight.toStringMsg(ultralight_off));
+				iota.sendMeasure("lamp"+randomNum, UltraLight.toStringMsg(ultralight_off));
     		}
     		else {
-				iota.sendMeasure("localhost:7896","/iot/d","4jggokgpepnvsb2uv4s40d59ov","lamp"+randomNum, UltraLight.toStringMsg(ultralight_on));
+    			iota.sendMeasure("lamp"+randomNum, UltraLight.toStringMsg(ultralight_on));
     		}
 
 			System.out.println("Lamp"+randomNum + " | " + "S: " + (randomOff ? "off": "on"));

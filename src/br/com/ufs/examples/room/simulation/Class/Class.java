@@ -31,7 +31,7 @@ public class Class {
     private static final JsonFactory JSON_FACTORY = new JacksonFactory();
     private static final HttpRequestFactory requestFactory =
             HTTP_TRANSPORT.createRequestFactory(request -> request.setParser(new JsonObjectParser(JSON_FACTORY)));
-    private static IoTA iota = new IoTA();
+    private static IoTA iota = new IoTA("localhost", 4041, "localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY");
     private static Orion orion = new Orion();
 
     public Class() throws Exception {
@@ -39,22 +39,19 @@ public class Class {
         this.occupation = 0;
         this.realTime = ThreadLocalRandom.current().nextInt(30, duration - 10);
         timeSpent = 0;
-        iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "s|off|t|20.0|m|normal");
-
+        iota.sendMeasure("ac001", "s|off|t|20.0|m|normal");
     }
 
     private void arrivals() throws Exception {
 
-        iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "m|turbo");
-
+        iota.sendMeasure("ac001", "m|turbo");
         int arrived = ThreadLocalRandom.current().nextInt(0, (students+1)/3);
 
         while((occupation + arrived) < students && (timeSpent + 15) < duration){
 
             System.out.println("O sensor detectou a chegada de " + arrived);
 
-            iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "motion001", "c|"+arrived);
-
+            iota.sendMeasure("motion001", "c|"+arrived);
             occupation += arrived;
 
             TimeUnit.SECONDS.sleep(5);
@@ -68,14 +65,12 @@ public class Class {
 
         TimeUnit.SECONDS.sleep(5);
 
-        iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "m|normal");
-
+        iota.sendMeasure("ac001", "m|normal");
         int left = ThreadLocalRandom.current().nextInt(0, (occupation/3)+1);
 
         while(occupation - left > 0) {
 
-            iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "motion001", "c|"+left);
-
+            iota.sendMeasure("motion001", "c|"+left);
             occupation -= left;
             timeSpent += 5;
 
@@ -87,7 +82,7 @@ public class Class {
 
             if(timeSpent + 10 >= duration || occupation - left <= 0) {
                 System.out.println("O restante de " + occupation + " sairam");
-                iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "motion001", "c|"+occupation);
+                iota.sendMeasure("motion001", "c|"+occupation);
                 occupation = 0;
                 timeSpent += 5;
                 TimeUnit.SECONDS.sleep(10);
@@ -97,11 +92,10 @@ public class Class {
     }
 
     private void idleTime(int maxTime) throws Exception {
-        iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "m|normal");
-
+        iota.sendMeasure("ac001", "m|normal");
         while(timeSpent < maxTime) {
             timeSpent += 5;
-            iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "motion001", "c|0");
+            iota.sendMeasure("motion001", "c|0");
             TimeUnit.SECONDS.sleep(5);
             System.out.println(timeSpent + " minutos passados");
         }
@@ -111,7 +105,7 @@ public class Class {
         System.out.println(students + " alunos sao esperados");
 
         System.out.println("Tempo real da aula: "+ realTime + " minutos");
-        iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "s|on");
+        iota.sendMeasure("ac001", "s|on");
         System.out.println("Ar condicionado ligado");
 
         arrivals();
@@ -121,7 +115,7 @@ public class Class {
         if(occupation > 0)
             departures();
 
-        iota.sendMeasure("localhost:7896", "/iot/d/","6NUB3eD0YERJml1btYssPOa1qY", "ac001", "s|off");
+        iota.sendMeasure("ac001", "s|off");
         System.out.println("Ar condicionado desligado");
 
         idleTime(duration);

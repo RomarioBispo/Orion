@@ -477,8 +477,6 @@ public class Orion {
         o.remove("type");
         json = o.get("value").toString();
 
-        System.out.println("VALOR: " + json);
-
         HttpRequests http = new HttpRequests();
         try {
             http.runPutRequest(this.url + ENTITIES_ENDPOINT + entityId + ATTRS_ENDPOINT + attrName + VALUE_ENDPOINT, json);
@@ -731,7 +729,6 @@ public class Orion {
 
         Gson gson = new Gson();
         json = gson.toJson(sub);
-        System.out.println(json);
 
         if (!expires) { // removing the expires and throttling fields, this means that subscription will not expire, and will not discard notifications.
             JsonObject o = new JsonParser().parse(json).getAsJsonObject();

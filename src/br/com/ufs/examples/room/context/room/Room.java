@@ -2,6 +2,7 @@ package br.com.ufs.examples.room.context.room;
 
 import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.entity.Entity;
+import br.com.ufs.orionframework.orion.Orion;
 
 /**
  * This class is used to concept proof for the Orion Framework.
@@ -19,6 +20,7 @@ public class Room extends Entity {
     private Attrs name;
     private Attrs occupation;
     private Attrs temperature;
+    private Orion orion;
 
     public Room () {
 
@@ -32,36 +34,52 @@ public class Room extends Entity {
         this.temperature = temperature;
     }
 
-    public Attrs getMaxCapacity() {
-        return maxCapacity;
+    public Orion getOrion() {
+        return orion;
     }
 
-    public void setMaxCapacity(Attrs maxCapacity) {
-        this.maxCapacity = maxCapacity;
+    public void setOrion(Orion orion) {
+        this.orion = orion;
     }
 
-    public Attrs getName() {
-        return name;
+    public int getMaxCapacity() {
+        return Integer.parseInt(maxCapacity.getValue());
     }
 
-    public void setName(Attrs name) {
-        this.name = name;
+    public void setMaxCapacity(int maxCapacity) {
+
+        this.maxCapacity.setValue(String.valueOf(maxCapacity));
+        orion.updateAttributeData(this.id,"maxCapacity", new Attrs(String.valueOf(maxCapacity),"Integer"));
+
     }
 
-    public Attrs getOccupation() {
-        return occupation;
+    public String getName() {
+        return name.getValue();
     }
 
-    public void setOccupation(Attrs occupation) {
-        this.occupation = occupation;
+    public void setName(String name) {
+        this.name.setValue(name);
+        orion.updateAttributeData(this.id,"name", new Attrs(name,"Text"));
+
     }
 
-    public Attrs getTemperature() {
-        return temperature;
+    public int getOccupation() {
+        return Integer.parseInt(occupation.getValue());
     }
 
-    public void setTemperature(Attrs temperature) {
-        this.temperature = temperature;
+    public void setOccupation(int occupation) {
+        this.occupation.setValue(String.valueOf(occupation));
+        orion.updateAttributeData(this.id,"occupation", new Attrs(String.valueOf(occupation),"Integer"));
+    }
+
+    public Double getTemperature() {
+        return Double.parseDouble(this.temperature.getValue());
+    }
+
+    public void setTemperature(Double temperature) {
+        this.temperature.setValue(String.valueOf(temperature));
+        orion.updateAttributeData(this.id,"temperature", new Attrs(String.valueOf(temperature),"Float"));
+
     }
 
     @Override

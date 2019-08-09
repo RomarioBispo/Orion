@@ -16,12 +16,11 @@ public class Command {
      * Attributes working as commands.
      *
      * @param name command identifier
-     * @param type  It must be 'command'.Command representation depends on protocol.
      */
 
-    public Command(String name, String type) {
+    public Command(String name) {
         this.name = name;
-        this.type = type;
+        this.type = "command";
     }
 
     public String getName() {
@@ -34,9 +33,5 @@ public class Command {
 
     public String getType() {
         return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 }

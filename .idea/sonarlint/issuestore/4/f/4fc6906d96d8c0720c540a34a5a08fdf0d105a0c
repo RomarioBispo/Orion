@@ -1,18 +1,17 @@
 
-Usquid:S18542"7Remove this useless assignment to local variable "app".(†±ì¦8»Ì¾Å-
-nsquid:S00117G"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á£›¤ıÿÿÿÿ
-psquid:S00117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü€ä€8»Ì¾Å-
-ksquid:S1192%"ODefine a constant instead of duplicating this literal "localhost:7896" 3 times.(üœ÷Óşÿÿÿÿ
-isquid:S2184A"FCast one of the operands of this multiplication operation to a "long".(Îøï§ûÿÿÿÿ8»Ì¾Å-
-wsquid:S1192%"[Define a constant instead of duplicating this literal "4jggokgpepnvsb2uv4s40d59ov" 3 times.(üœ÷Óşÿÿÿÿ
-Fsquid:S14812"(Remove this unused "app" local variable.(†±ì¦8»Ì¾Å-
 nsquid:S00117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯€Ü¼øÿÿÿÿ
-isquid:S21847"FCast one of the operands of this multiplication operation to a "long".(¿†–£ÿÿÿÿÿ8»Ì¾Å-
-isquid:S2184'"FCast one of the operands of this multiplication operation to a "long".(‹À¦™úÿÿÿÿ8»Ì¾Å-
-^squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¥±ğö
-csquid:S1192%"GDefine a constant instead of duplicating this literal "/iot/d" 3 times.(üœ÷Óşÿÿÿÿ
+psquid:S00117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û¦Îâ8»Ì¾Å-
 [
-squid:S106Z"9Replace this use of System.out or System.err by a logger.(üö†Üşÿÿÿÿ8ë¨èÅ-
+squid:S106\"9Replace this use of System.out or System.err by a logger.(üö†Üşÿÿÿÿ8ë¨èÅ-
+isquid:S2184A"FCast one of the operands of this multiplication operation to a "long".(Îøï§ûÿÿÿÿ8»Ì¾Å-
+isquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(ß¥î8åí­¡Ç-
 T
 squid:S106$"9Replace this use of System.out or System.err by a logger.(«óé§ıÿÿÿÿ
-psquid:S00117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û¦Îâ8»Ì¾Å-
+psquid:S00117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü€ä€8»Ì¾Å-
+Fsquid:S14812"(Remove this unused "app" local variable.(†±ì¦8»Ì¾Å-
+isquid:CommentedOutCodeLineY"<This block of commented-out lines of code should be removed.(òÉşà8¢Ğ­¡Ç-
+isquid:S2184'"FCast one of the operands of this multiplication operation to a "long".(‹À¦™úÿÿÿÿ8»Ì¾Å-
+isquid:S21847"FCast one of the operands of this multiplication operation to a "long".(¿†–£ÿÿÿÿÿ8»Ì¾Å-
+Usquid:S18542"7Remove this useless assignment to local variable "app".(†±ì¦8»Ì¾Å-
+nsquid:S00117G"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á£›¤ıÿÿÿÿ
+^squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¥±ğö

@@ -90,8 +90,6 @@ i
 9src/br/com/ufs/examples/room/context/context/Context.java,0/f/0fff4f810cc91a952c0e48aa40f13e60964492b4
 p
 @src/br/com/ufs/examples/room/context/context/ContextExample.java,1/a/1a4a5b4d38e75e7c559d4dea9f7335f3a5942716
-w
-Gsrc/br/com/ufs/examples/room/context/airconditioner/AirConditioner.java,e/8/e87e7758e1ef1534b5793cf7de4b2b64383f2607
 c
 3src/br/com/ufs/examples/room/context/room/Room.java,d/1/d110bd38413aad84de2208f760dfb28cf497eb9b
 g
@@ -102,7 +100,11 @@ h
 8src/br/com/ufs/examples/room/simulation/Class/Class.java,a/b/ab02774c5fd4ba083d400c127bbe030e427f9cf7
 q
 Asrc/br/com/ufs/examples/square/context/socket/MyServerSocket.java,a/c/accb9ad3005dcb4313d139a0540954173146ee62
-e
-5src/br/com/ufs/examples/square/context/Lamp/Lamp.java,3/9/395e22a8d96bd72fc8f8bc1719b342890e0eec8e
 i
 9src/br/com/ufs/examples/square/context/square/Square.java,9/a/9ab3b8e0b5fa78f776d1e91e194302dc8a1737ea
+8
+Orion.sh,5/4/54ca0aadc0654371e8b3cb6cb3ff4d757337868c
+w
+Gsrc/br/com/ufs/builtindevices/hybrid/airconditioner/AirConditioner.java,c/d/cdc65f96c65dd0de126f7fe832438a68c8fe5419
+c
+3src/br/com/ufs/builtindevices/hybrid/Lamp/Lamp.java,3/8/3815ae239531c02c352a1f127faf0a30342840fe

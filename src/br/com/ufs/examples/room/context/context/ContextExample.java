@@ -1,7 +1,7 @@
 package br.com.ufs.examples.room.context.context;
 
-import br.com.ufs.examples.room.context.airconditioner.AirConditioner;
-import br.com.ufs.examples.room.context.motion.Motion;
+import br.com.ufs.builtindevices.hybrid.airconditioner.AirConditioner;
+import br.com.ufs.builtindevices.sensor.motion.Motion;
 import br.com.ufs.examples.room.context.room.Room;
 import br.com.ufs.iotaframework.devices.Attribute;
 import br.com.ufs.iotaframework.devices.Device;
@@ -12,7 +12,6 @@ import br.com.ufs.iotaframework.services.Service;
 import br.com.ufs.iotaframework.services.ServiceGroup;
 import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.orion.Orion;
-import br.com.ufs.orionframework.subscription.Subscription;
 import br.com.ufs.orionframework.subscriptor.Subscriptor;
 
 import java.net.InetAddress;
@@ -93,59 +92,59 @@ public class ContextExample {
 
     }
 
-
-    public static void manageContextOnFramework(Motion motion, Orion orion) {
+    public static void manageContextOnFramework(Motion motion) {
 
         int newOccupation;
         double newTemperature;
 
-        System.out.println("M: "+airConditioner.getMode().getValue() + " | S: " + airConditioner.getState().getValue());
-        int motionDetected = Integer.parseInt(motion.getCount().getValue());
+        System.out.println("M: "+airConditioner.getMode() + " | S: " + airConditioner.getState());
+        int motionDetected = motion.getCount();
 
-        if (motionDetected !=0 && airConditioner.getMode().getValue().equals("turbo")){
+        if (motionDetected !=0 && airConditioner.getMode().equals("turbo")){
 
             System.out.println("Chegaram mais " + motionDetected + " pessoas");
 
-            newOccupation = Integer.parseInt(room.getOccupation().getValue()) + motionDetected;
-            newTemperature = Double.parseDouble(room.getTemperature().getValue()) + (double) motionDetected*0.025;
+            newOccupation = room.getOccupation() + motionDetected;
+            newTemperature = room.getTemperature() + (double) motionDetected*0.025;
 
-            orion.updateAttributeData(room.getId(), "occupation", new Attrs(String.valueOf(newOccupation), "Integer"));
-            orion.updateAttributeData(room.getId(),"temperature", new Attrs(String.valueOf(newTemperature),"Float"));
+            room.setOccupation(newOccupation);
+            room.setTemperature(newTemperature);
         }
-        else if (motionDetected!=0 && airConditioner.getMode().getValue().equals("normal")) {
+        else if (motionDetected!=0 && airConditioner.getMode().equals("normal")) {
             System.out.println("sairam mais " + motionDetected + " pessoas");
-            newOccupation = Integer.parseInt(room.getOccupation().getValue()) - motionDetected;
-            orion.updateAttributeData(room.getId(), "occupation", new Attrs (String.valueOf(newOccupation), "Integer"));
+            newOccupation = room.getOccupation() - motionDetected;
+            room.setOccupation(newOccupation);
+
         }
-        if (Double.parseDouble(room.getTemperature().getValue()) > Double.parseDouble(airConditioner.getTemperature().getValue())) {
-            newTemperature = Double.parseDouble(room.getTemperature().getValue()) - 1;
-            orion.updateAttributeData(room.getId(),"temperature", new Attrs (String.valueOf(newTemperature), "Float"));
+        if (room.getTemperature() > airConditioner.getTemperature()){
+            newTemperature = room.getTemperature() - 1;
+            room.setTemperature(newTemperature);
         }else {
-            newTemperature = Double.parseDouble(room.getTemperature().getValue()) + 1;
-            orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(newTemperature), "Float"));
+            newTemperature = room.getTemperature() + 1;
+            room.setTemperature(newTemperature);
         }
 
     }
 
-      public static void manageContextOffFramework(double initialTemperature, Orion orion) {
+      public static void manageContextOffFramework(double initialTemperature) {
 
-        System.out.println("M: "+airConditioner.getMode().getValue() + " | S: " + airConditioner.getState().getValue());
+        System.out.println("M: "+airConditioner.getMode() + " | S: " + airConditioner.getState());
 
-        Double roomTemperature = Double.parseDouble(room.getTemperature().getValue());
-        double newTemperature;
+        Double roomTemperature = room.getTemperature();
+        Double newTemperature;
         if (roomTemperature < initialTemperature) {
-            newTemperature = Double.parseDouble(airConditioner.getTemperature().getValue()) + 1;
-            orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(newTemperature), "Float"));
+            newTemperature = airConditioner.getTemperature() + 1;
+            room.setTemperature(newTemperature);
         }else {
-            newTemperature = Double.parseDouble(airConditioner.getTemperature().getValue()) - 1;
-            orion.updateAttributeData(room.getId(), "temperature", new Attrs(String.valueOf(newTemperature), "Float"));
+            newTemperature = airConditioner.getTemperature() - 1;
+            room.setTemperature(newTemperature);
         }
       }
 
     public static void printContext() {
 
         room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
-        System.out.println("T: " + room.getTemperature().getValue() + " | " + "Occ: " + room.getOccupation().getValue());
+        System.out.println("T: " + room.getTemperature() + " | " + "Occ: " + room.getOccupation());
 
     }
 
@@ -159,7 +158,7 @@ public class ContextExample {
 
         room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
 
-        initialTemperature = Double.parseDouble(room.getTemperature().getValue());
+        initialTemperature = room.getTemperature();
 
         airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
 
@@ -170,12 +169,15 @@ public class ContextExample {
     public static Motion updateEntity(Motion motion) {
 
         room = (Room) orion.retrieveEntity("urn:ngsi-ld:Room:001", new Room());
-        airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
+        room.setOrion(orion);
 
-        if (airConditioner.getState().getValue().equals("on")) {
-            manageContextOnFramework(motion, orion);
+        airConditioner = (AirConditioner) orion.retrieveEntity("urn:ngsi-ld:AC:001", new AirConditioner());
+        airConditioner.setOrion(orion);
+
+        if (airConditioner.getState().equals("on")) {
+            manageContextOnFramework(motion);
         }else {
-            manageContextOffFramework(initialTemperature, orion);
+            manageContextOffFramework(initialTemperature);
         }
         printContext();
         return motion;

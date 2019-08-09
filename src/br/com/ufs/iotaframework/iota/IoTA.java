@@ -24,6 +24,9 @@ public class IoTA {
     private int port;
     private String url;
     private Boolean debugMode;
+    private String device_url;
+    private String resource;
+    private String apikey;
     private static final String SERVICES_ENDPOINT = "/iot/services/";
     private static final String DEVICES_ENDPOINT = "/iot/devices/";
     private static final Logger LOGGER = Logger.getLogger(IoTA.class.getName());
@@ -37,6 +40,24 @@ public class IoTA {
     public IoTA(String ip, int port) {
         this.ip = ip;
         this.port = port;
+        this.url = "http://" + this.ip + ":" + this.port;
+        this.debugMode = false;
+    }
+
+    /**
+     *
+     * @param ip ip An IP address from where the IoTA is running.
+     * @param port port An port from where the IoTA is running.
+     * @param device_url a url where the measures are sended.
+     * @param resource the resource endpoint.
+     * @param apikey the apikey for authenticate measures sended.
+     */
+    public IoTA(String ip, int port, String device_url, String resource, String apikey) {
+        this.ip = ip;
+        this.port = port;
+        this.device_url = device_url;
+        this.resource = resource;
+        this.apikey = apikey;
         this.url = "http://" + this.ip + ":" + this.port;
         this.debugMode = false;
     }
@@ -75,6 +96,30 @@ public class IoTA {
     public void setPort(int port) {
         this.port = port;
         this.url = "http://" + this.ip + ":" + this.port;
+    }
+
+    public String getDevice_url() {
+        return device_url;
+    }
+
+    public void setDevice_url(String device_url) {
+        this.device_url = device_url;
+    }
+
+    public String getResource() {
+        return resource;
+    }
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
+
+    public String getApikey() {
+        return apikey;
+    }
+
+    public void setApikey(String apikey) {
+        this.apikey = apikey;
     }
 
     /**
@@ -354,6 +399,32 @@ public class IoTA {
             LOGGER.warning("A error may be occurred on sending measures, please please check your parameters or set debugMode to true to more details");
             showStackTrace(e);
         }
+
+    }
+
+
+    /**
+     * This operation send devices measures.
+     *
+     * @param device_id An id from device.
+     * @param payload a text payload using http ultralight sintax.
+     */
+    public void sendMeasure(String device_id, String payload) {
+        String url = "http://" + device_url + resource + "?" + "k="+apikey + "&i=" + device_id;
+
+        shoWDebug(url);
+        shoWDebug(payload);
+
+        HttpRequests http = new HttpRequests();
+        try {
+            http.runUltralightPostRequest(url, payload);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred on sending measures, please please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
+        }
+
+    }
+    public void sendCommand() {
 
     }
     public void objectToPayloadUltralight() {

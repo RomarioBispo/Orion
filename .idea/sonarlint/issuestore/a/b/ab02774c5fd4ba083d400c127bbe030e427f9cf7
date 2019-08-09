@@ -1,35 +1,42 @@
 
-[
-squid:S106`"9Replace this use of System.out or System.err by a logger.(–—¾„ÿÿÿÿÿ8÷´ÎüÃ-
-jsquid:S00112c"FDefine and throw a dedicated exception instead of using a generic one.(‚â¾İùÿÿÿÿ8ÇîÒüÃ-
-[
-squid:S106Y"9Replace this use of System.out or System.err by a logger.(ã¼Û­şÿÿÿÿ8Ö¸§‘Å-
-[
-squid:S1066"9Replace this use of System.out or System.err by a logger.(€ìÉûÿÿÿÿ8©îÔ‘Å-
-~squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(›´ğµùÿÿÿÿ8÷´ÎüÃ-
-hsquid:S11928"JDefine a constant instead of duplicating this literal "motion001" 4 times.(²Ÿ¹8ÑÙÓîÄ-
-V
-squid:S106o"9Replace this use of System.out or System.err by a logger.(»¼ı×8¡äÃúÄ-
 \
-squid:S106"9Replace this use of System.out or System.err by a logger.(ÀÈúÍÿÿÿÿÿ8¡äÃúÄ-
+squid:S106"9Replace this use of System.out or System.err by a logger.(úÆş¦ùÿÿÿÿ8¡äÃúÄ-
 Usquid:S1068 "2Remove this unused "requestFactory" private field.(—ª¡«ùÿÿÿÿ8ÇîÒüÃ-
+V
+squid:S106q"9Replace this use of System.out or System.err by a logger.(»¼ı×8¡äÃúÄ-
+hsquid:S11929"JDefine a constant instead of duplicating this literal "motion001" 4 times.(÷ÚË¯8ÑÙÓîÄ-
+isquid:CommentedOutCodeLinei"<This block of commented-out lines of code should be removed.(šôæ8ì“¡Ç-
+nsquid:CommentedOutCodeLineM"<This block of commented-out lines of code should be removed.(Ñèì‚üÿÿÿÿ8™Ö¡Ç-
 U
 squid:S106@"9Replace this use of System.out or System.err by a logger.(ã¸z8÷´ÎüÃ-
+fsquid:S1192@"IDefine a constant instead of duplicating this literal " minutos" 3 times.(ã¸z8÷´ÎüÃ-
 [
-squid:S106q"9Replace this use of System.out or System.err by a logger.(—ñûöüÿÿÿÿ8¡äÃúÄ-
+squid:S106a"9Replace this use of System.out or System.err by a logger.(–—¾„ÿÿÿÿÿ8÷´ÎüÃ-
+[
+squid:S1066"9Replace this use of System.out or System.err by a logger.(€ìÉûÿÿÿÿ8©îÔ‘Å-
+nsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(öº–®ıÿÿÿÿ8ÈåŒ¡Ç-
+isquid:CommentedOutCodeLine*"<This block of commented-out lines of code should be removed.(”ø•¶8Š‰¡Ç-
 esquid:S00112."FDefine and throw a dedicated exception instead of using a generic one.(Ş¸ÍÕ8÷´ÎüÃ-
-nsquid:S1192*"PDefine a constant instead of duplicating this literal "localhost:7896" 10 times.(Ôı¾«8ş¨ıÃ-
-esquid:S00112%"FDefine and throw a dedicated exception instead of using a generic one.(öÑ·˜8ÇîÒüÃ-
+isquid:CommentedOutCodeLineZ"<This block of commented-out lines of code should be removed.(›Şö8Èì¡Ç-
+nsquid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(ÊôœÁúÿÿÿÿ8¾‹¡Ç-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ú¶É8ğÜ•¡Ç-
+~squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(›´ğµùÿÿÿÿ8÷´ÎüÃ-
+\
+squid:S106…"9Replace this use of System.out or System.err by a logger.(ÀÈúÍÿÿÿÿÿ8¡äÃúÄ-
+nsquid:CommentedOutCodeLinee"<This block of commented-out lines of code should be removed.(öº–®ıÿÿÿÿ8…ı’¡Ç-
+nsquid:CommentedOutCodeLine0"<This block of commented-out lines of code should be removed.(†ª¥Ÿûÿÿÿÿ8ÏÂŠ¡Ç-
+jsquid:S00112d"FDefine and throw a dedicated exception instead of using a generic one.(‚â¾İùÿÿÿÿ8ÇîÒüÃ-
 V
-squid:S106j"9Replace this use of System.out or System.err by a logger.(¼õæ«8¡äÃúÄ-
-gsquid:S1192*"IDefine a constant instead of duplicating this literal "/iot/d/" 10 times.(Ôı¾«8ş¨ıÃ-
+squid:S106v"9Replace this use of System.out or System.err by a logger.(¸ûÉ‘8¡äÃúÄ-
+isquid:S1192+"FDefine a constant instead of duplicating this literal "ac001" 6 times.(­ªÛ‹üÿÿÿÿ8ş¨ıÃ-
+[
+squid:S106s"9Replace this use of System.out or System.err by a logger.(—ñûöüÿÿÿÿ8¡äÃúÄ-
+nsquid:CommentedOutCodeLinet"<This block of commented-out lines of code should be removed.(ı™ñÇúÿÿÿÿ8Òê”¡Ç-
 esquid:S00112C"FDefine and throw a dedicated exception instead of using a generic one.(ÅÄŞ8ÇîÒüÃ-
+esquid:S00112%"FDefine and throw a dedicated exception instead of using a generic one.(öÑ·˜8ÇîÒüÃ-
+[
+squid:S106Y"9Replace this use of System.out or System.err by a logger.(ã¼Û­şÿÿÿÿ8Ö¸§‘Å-
 V
 squid:S106T"9Replace this use of System.out or System.err by a logger.(ÄŞşİ8÷´ÎüÃ-
-fsquid:S1192@"IDefine a constant instead of duplicating this literal " minutos" 3 times.(ã¸z8÷´ÎüÃ-
 V
-squid:S106s"9Replace this use of System.out or System.err by a logger.(¸ûÉ‘8¡äÃúÄ-
-dsquid:S1192*"FDefine a constant instead of duplicating this literal "ac001" 6 times.(Ôı¾«8ş¨ıÃ-
-[
-squid:S106}"9Replace this use of System.out or System.err by a logger.(úÆş¦ùÿÿÿÿ8¡äÃúÄ-
-zsquid:S1192*"\Define a constant instead of duplicating this literal "6NUB3eD0YERJml1btYssPOa1qY" 10 times.(Ôı¾«8ş¨ıÃ-
+squid:S106l"9Replace this use of System.out or System.err by a logger.(¼õæ«8¡äÃúÄ-

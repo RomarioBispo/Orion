@@ -1,7 +1,8 @@
-package br.com.ufs.examples.room.context.motion;
+package br.com.ufs.builtindevices.sensor.motion;
 
 import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.entity.Entity;
+import br.com.ufs.orionframework.orion.Orion;
 
 
 /**
@@ -17,6 +18,23 @@ import br.com.ufs.orionframework.entity.Entity;
 
 public class Motion extends Entity {
     private Attrs count;
+    private Orion orion;
+
+    public Motion() {
+
+    }
+
+    public Motion (Orion orion) {
+        this.orion = orion;
+    }
+
+    public Orion getOrion() {
+        return orion;
+    }
+
+    public void setOrion(Orion orion) {
+        this.orion = orion;
+    }
 
     @Override
     public String getType() {
@@ -38,11 +56,12 @@ public class Motion extends Entity {
         this.id = id;
     }
 
-    public Attrs getCount() {
-        return count;
+    public int getCount() {
+        return Integer.parseInt(count.getValue());
     }
 
-    public void setCount(Attrs count) {
-        this.count = count;
+    public void setCount(int count) {
+        this.count.setValue(String.valueOf(count));
+        orion.updateAttributeData(this.id, "count", new Attrs(String.valueOf(count),"Integer"));
     }
 }

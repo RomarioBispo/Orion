@@ -46,7 +46,7 @@ public class Guide {
         staticAttributeList.add(staticAttribute);
 
         List<Command> commandList = new ArrayList<>();
-        Command command = new Command("ring", "command");
+        Command command = new Command("ring");
         commandList.add(command);
 
         List<Device> deviceList = new ArrayList<>();

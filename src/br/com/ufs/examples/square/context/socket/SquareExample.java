@@ -1,6 +1,6 @@
 package br.com.ufs.examples.square.context.socket;
 
-import br.com.ufs.examples.square.context.Lamp.Lamp;
+import br.com.ufs.builtindevices.hybrid.Lamp.Lamp;
 import br.com.ufs.examples.square.context.square.Square;
 import br.com.ufs.iotaframework.devices.Attribute;
 import br.com.ufs.iotaframework.devices.Device;
@@ -10,7 +10,6 @@ import br.com.ufs.iotaframework.iota.IoTA;
 import br.com.ufs.iotaframework.services.Service;
 import br.com.ufs.iotaframework.services.ServiceGroup;
 import br.com.ufs.orionframework.entity.Attrs;
-import br.com.ufs.orionframework.entity.Entity;
 import br.com.ufs.orionframework.orion.Orion;
 import br.com.ufs.orionframework.subscription.Subscription;
 import br.com.ufs.orionframework.subscriptor.Subscriptor;
@@ -46,7 +45,7 @@ public class SquareExample {
 			  Pattern p = Pattern.compile("\\d+");
 			  Matcher m = p.matcher(lamp.getId());
 			  while(m.find()) {
-				  l[Integer.parseInt(m.group())-1] = lamp.getLuminosity().getValue();
+				  l[Integer.parseInt(m.group())-1] = String.valueOf(lamp.getLuminosity());
 			  }
 		  }
 		  System.out.println("------------------------");
@@ -81,60 +80,62 @@ public class SquareExample {
 
     }
 
-    public static void lampOffFramework(Lamp lamp, String[] previousState, Orion orion ) {
+    public static void lampOffFramework(Lamp lamp, String[] previousState) {
 
-    	if (!lamp.getState().getValue().equals(previousState[Integer.parseInt(lamp.getNumber().getValue())])){
+    	if (!lamp.getState().equals(previousState[lamp.getNumber()])){
 
-    		orion.updateAttributeData(lamp.getId(),"luminosity", new Attrs("0","Integer"));
-
+            lamp.setLuminosity(0);
     		// equivalente ao getbylocation
     		List<Lamp> lampList = orion.listEntities("type=Lamp&georel=near;maxDistance:9&geometry=point&coords="+
-			lamp.getLocation().getValue(), lamp);
+			lamp.getLocation(), lamp);
 
     		for (Lamp lamps : lampList) {
-    			int count_int = Integer.parseInt(lamps.getCount().getValue()) + 1;
-    			if (lamps.getState().getValue().equals("off") && !lamps.getId().equals(lamp.getId())){
+                lamps.setOrion(orion);
+                int count_int = lamps.getCount() + 1;
+    			if (lamps.getState().equals("off") && !lamps.getId().equals(lamp.getId())){
     				//equivalente ao updateluminositycount
-					orion.updateAttributeData(lamps.getId(), "luminosity", new Attrs("0", "Integer"));
-					orion.updateAttributeData(lamps.getId(), "count", new Attrs(String.valueOf(count_int),"Integer"));
-				} else if (lamps.getState().getValue().equals("on")) {
+					lamps.setLuminosity(0);
+					lamps.setCount(count_int);
+				} else if (lamps.getState().equals("on")) {
 					//equivalente ao updateluminositycount
-    				orion.updateAttributeData(lamps.getId(), "luminosity", new Attrs("3","Integer"));
-					orion.updateAttributeData(lamps.getId(), "count", new Attrs(String.valueOf(count_int),"Integer"));
+    				lamps.setLuminosity(3);
+					lamps.setCount(2);
 				}
 			}
 		}
 	}
 
-    public static void lampOnFramework(Lamp lamp, String[] previousState, Orion orion) {
-    	if (!lamp.getState().getValue().equals(previousState[Integer.parseInt(lamp.getNumber().getValue())])) {
+    public static void lampOnFramework(Lamp lamp, String[] previousState) {
+    	if (!lamp.getState().equals(previousState[lamp.getNumber()])) {
 			// equivalente ao getbylocation
 			List<Lamp> lampList = orion.listEntities("type=Lamp&georel=near;maxDistance:9&geometry=point&coords="+
-					lamp.getLocation().getValue(),lamp);
+					lamp.getLocation(),lamp);
 
 			for (Lamp lamps: lampList){
+			    lamps.setOrion(orion);
 				if (!lamps.getId().equals(lamp.getId())){
-					int count_int = Integer.parseInt(lamps.getCount().getValue()) - 1;
+					int count_int = lamps.getCount() - 1;
 
-					if (count_int == 0 && lamps.getState().getValue().equals("on")) {
-						orion.updateAttributeData(lamps.getId(), "count", new Attrs(String.valueOf(count_int),"Integer"));
-						orion.updateAttributeData(lamps.getId(), "luminosity", new Attrs("2","Integer"));
+					if (count_int == 0 && lamps.getState().equals("on")) {
+						lamps.setLuminosity(2);
+						lamps.setCount(count_int);
 					} else {
-						orion.updateAttributeData(lamps.getId(), "luminosity", new Attrs(lamps.getLuminosity().getValue(),"Integer"));
-						orion.updateAttributeData(lamps.getId(), "count", new Attrs(String.valueOf(count_int),"Integer"));
+
+						lamps.setLuminosity(lamps.getLuminosity());
+						lamps.setCount(count_int);
 					}
 				}
 			}
 
-			String luminosity;
+			int luminosity;
 			//Se uma lampada volta pra ON mas tem uma OFF no raio
-			if(!lamp.getCount().getValue().equals("0")){
-				luminosity = "3";
+			if(lamp.getCount() != 0){
+				luminosity = 3;
 			}else {
-				luminosity = "2";
+				luminosity = 2;
 			}
 				//Se uma lampada volta pra ON e não tem uma OFF no raio
-			orion.updateAttributeData(lamp.getId(), "luminosity", new Attrs(luminosity, "Integer"));
+			lamp.setLuminosity(luminosity);
 
 		}
 	}
@@ -184,7 +185,7 @@ public class SquareExample {
 		List<Lamp> mylist = orion.listEntities("type=Lamp", new Lamp());
 
 		for (Lamp aux: mylist) {
-			previousState[Integer.parseInt(aux.getNumber().getValue())] = aux.getState().getValue();
+			previousState[aux.getNumber()] = aux.getState();
 		}
 		List<String> conditionsList = new ArrayList<>();
 		conditionsList.add("state");
@@ -194,14 +195,15 @@ public class SquareExample {
 
 	public static Lamp updateEntity(Lamp l) {
 
-		System.out.println("***"+l.getId() +" "+ l.getState().getValue()+"***");
+	    l.setOrion(orion);
+		System.out.println("***"+l.getId() +" "+ l.getState()+"***");
 
-		if (l.getState().getValue().equals("off")){
-			lampOffFramework(l, previousState, orion);
+		if (l.getState().equals("off")){
+			lampOffFramework(l, previousState);
 		}else {
-			lampOnFramework(l, previousState, orion);
+			lampOnFramework(l, previousState);
 		}
-		previousState[Integer.parseInt(l.getNumber().getValue())] = l.getState().getValue();
+		previousState[l.getNumber()] = l.getState();
 		printLampsFramework();
 		return l;
 	}

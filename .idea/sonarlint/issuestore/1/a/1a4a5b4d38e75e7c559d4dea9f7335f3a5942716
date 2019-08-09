@@ -1,22 +1,25 @@
 
+ksquid:S1192/"HDefine a constant instead of duplicating this literal "Integer" 3 times.(´ÑÓŒüÿÿÿÿ8¹Ç»ëÃ-
+isquid:S2095£"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(Ó€ë„8¬ç·¸Å-
+isquid:CommentedOutCodeLine}"<This block of commented-out lines of code should be removed.(ãÞ•™8øÜ™ Ç-
+asquid:HiddenFieldCheck3"8Rename "room" which hides the field declared at line 38.(£µÅù8ŸÖúúÃ-
+Wsquid:S1481¡"3Remove this unused "contextExample" local variable.(ñðÊÀÿÿÿÿÿ8Ø¤ÂüÄ-
+fsquid:S1854¡"BRemove this useless assignment to local variable "contextExample".(ñðÊÀÿÿÿÿÿ8Ø¤ÂüÄ-
+nsquid:CommentedOutCodeLineo"<This block of commented-out lines of code should be removed.(½ëº×þÿÿÿÿ8¢ë§ Ç-
+jsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ãÞ•™8ÁÀ˜ Ç-
 [
-squid:S106f"9Replace this use of System.out or System.err by a logger.(öˆÐÙüÿÿÿÿ8Ø¤ÂüÄ-
-asquid:HiddenFieldCheck4"8Rename "room" which hides the field declared at line 39.(£µÅù8ŸÖúúÃ-
-[
-squid:S106k"9Replace this use of System.out or System.err by a logger.(þì§ýÿÿÿÿ8êƒêÅ-
-osquid:S1192@"LDefine a constant instead of duplicating this literal "temperature" 6 times.(’ÂÌÿþÿÿÿÿ8ù³ŒúÃ-
-ksquid:S11920"HDefine a constant instead of duplicating this literal "Integer" 5 times.(´ÑÓŒüÿÿÿÿ8¹Ç»ëÃ-
-psquid:S1192I"SDefine a constant instead of duplicating this literal "urn:ngsi-ld:AC:001" 3 times.(¾êíE8ßú¼Å-
-Wsquid:S1481š"3Remove this unused "contextExample" local variable.(ñðÊÀÿÿÿÿÿ8Ø¤ÂüÄ-
-@squid:S3010U"#Remove this assignment of "motion".(Úü°^8¦àõêÄ-
-dsquid:S11921"FDefine a constant instead of duplicating this literal "Float" 7 times.(—®ÍÏ8ŒÔîùÃ-
-fsquid:S1854š"BRemove this useless assignment to local variable "contextExample".(ñðÊÀÿÿÿÿÿ8Ø¤ÂüÄ-
-isquid:S2095œ"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(Ó€ë„8¬ç·¸Å-
-ssquid:S11924"UDefine a constant instead of duplicating this literal "urn:ngsi-ld:Room:001" 5 times.(£µÅù8ºÐì÷Ã-
-\
-squid:S106„"9Replace this use of System.out or System.err by a logger.(öˆÐÙüÿÿÿÿ8ºÂÚ¢Å-
-\
-squid:S106”"9Replace this use of System.out or System.err by a logger.(ƒü¤­þÿÿÿÿ8“ûÄåÄ-
-{squid:UselessImportCheck"PRemove this unused import 'br.com.ufs.orionframework.subscription.Subscription'.(Î“üŽ8Ôâã¸Å-
+squid:S106e"9Replace this use of System.out or System.err by a logger.(èÃ¥¾øÿÿÿÿ8Ø¤ÂüÄ-
+ssquid:S11923"UDefine a constant instead of duplicating this literal "urn:ngsi-ld:Room:001" 5 times.(£µÅù8ºÐì÷Ã-
+psquid:S1192H"SDefine a constant instead of duplicating this literal "urn:ngsi-ld:AC:001" 3 times.(¾êíE8ßú¼Å-
+jsquid:CommentedOutCodeLine“"<This block of commented-out lines of code should be removed.(ãÞ•™8ñÞ Ç-
+@squid:S3010T"#Remove this assignment of "motion".(Úü°^8¦àõêÄ-
 V
-squid:S106t"9Replace this use of System.out or System.err by a logger.(êÓå®8»ªêÅ-
+squid:S106u"9Replace this use of System.out or System.err by a logger.(êÓå®8»ªêÅ-
+\
+squid:S106‰"9Replace this use of System.out or System.err by a logger.(èÃ¥¾øÿÿÿÿ8ºÂÚ¢Å-
+nsquid:CommentedOutCodeLinew"<This block of commented-out lines of code should be removed.(½ëº×þÿÿÿÿ8»‚š Ç-
+jsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ãÞ•™8Éç‘ Ç-
+[
+squid:S106j"9Replace this use of System.out or System.err by a logger.(þì§ýÿÿÿÿ8êƒêÅ-
+\
+squid:S106›"9Replace this use of System.out or System.err by a logger.(ÿ·‘Æÿÿÿÿÿ8“ûÄåÄ-
