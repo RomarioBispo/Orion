@@ -1,17 +1,15 @@
 
-nsquid:S00117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯€Ü¼øÿÿÿÿ
-psquid:S00117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û¦Îâ8»Ì¾Å-
-[
-squid:S106\"9Replace this use of System.out or System.err by a logger.(üö†Üşÿÿÿÿ8ë¨èÅ-
-isquid:S2184A"FCast one of the operands of this multiplication operation to a "long".(Îøï§ûÿÿÿÿ8»Ì¾Å-
-isquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(ß¥î8åí­¡Ç-
+nsquid:S00117G"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á£›¤ıÿÿÿÿ
+Fsquid:S14812"(Remove this unused "app" local variable.(†±ì¦8»Ì¾Å-
 T
 squid:S106$"9Replace this use of System.out or System.err by a logger.(«óé§ıÿÿÿÿ
+nsquid:S00117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯€Ü¼øÿÿÿÿ
+psquid:S00117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û¦Îâ8»Ì¾Å-
 psquid:S00117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü€ä€8»Ì¾Å-
-Fsquid:S14812"(Remove this unused "app" local variable.(†±ì¦8»Ì¾Å-
-isquid:CommentedOutCodeLineY"<This block of commented-out lines of code should be removed.(òÉşà8¢Ğ­¡Ç-
-isquid:S2184'"FCast one of the operands of this multiplication operation to a "long".(‹À¦™úÿÿÿÿ8»Ì¾Å-
-isquid:S21847"FCast one of the operands of this multiplication operation to a "long".(¿†–£ÿÿÿÿÿ8»Ì¾Å-
+[
+squid:S106Z"9Replace this use of System.out or System.err by a logger.(üö†Üşÿÿÿÿ8ë¨èÅ-
 Usquid:S18542"7Remove this useless assignment to local variable "app".(†±ì¦8»Ì¾Å-
-nsquid:S00117G"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á£›¤ıÿÿÿÿ
+isquid:S21847"FCast one of the operands of this multiplication operation to a "long".(¿†–£ÿÿÿÿÿ8»Ì¾Å-
 ^squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¥±ğö
+isquid:S2184'"FCast one of the operands of this multiplication operation to a "long".(‹À¦™úÿÿÿÿ8»Ì¾Å-
+isquid:S2184A"FCast one of the operands of this multiplication operation to a "long".(Îøï§ûÿÿÿÿ8»Ì¾Å-

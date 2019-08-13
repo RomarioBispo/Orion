@@ -1,11 +1,14 @@
 
-Tsquid:S1854""6Remove this useless assignment to local variable "sg".(é»É8µÄ‚à¿-
-Tsquid:S1854>"6Remove this useless assignment to local variable "dl".(æ»ÿÓ8ã˜‡ê¿-
-Ysquid:S1854"6Remove this useless assignment to local variable "sg".(¾ß‘ùùÿÿÿÿ8Ô¶¢Þ¿-
-Ssquid:S1854E"5Remove this useless assignment to local variable "d".(˜­ãº8™â†ê¿-
-jsquid:S1192"GDefine a constant instead of duplicating this literal "/iot/d" 4 times.(ü˜ÖÃûÿÿÿÿ8çÔæÞ¿-
-~squid:S1192"[Define a constant instead of duplicating this literal "4jggokgpepnvsb2uv4s40d59ov" 4 times.(ü˜ÖÃûÿÿÿÿ8çÔæÞ¿-
-Esquid:S1481>"'Remove this unused "dl" local variable.(æ»ÿÓ8ã˜‡ê¿-
-nsquid:CommentedOutCodeLineG"<This block of commented-out lines of code should be removed.(×ñ»‹ýÿÿÿÿ8Á¸ÓžÃ-
-hsquid:CommentedOutCodeLineJ"<This block of commented-out lines of code should be removed.(Ç“•&8ü”¸é¿-
-msquid:S11925"JDefine a constant instead of duplicating this literal "device_id" 4 times.(•Õïâøÿÿÿÿ8¥Óç¿-
+xsquid:S1192:"UDefine a constant instead of duplicating this literal "urn:ngsi-ld:Bell:001" 4 times.(¼Ž×Êúÿÿÿÿ8ë©ÃÛÇ-
+Csquid:S1481R"&Remove this unused "b" local variable.(÷¸i8žðÃÛÇ-
+Ysquid:S1854"6Remove this useless assignment to local variable "sg".(¾ß‘ùùÿÿÿÿ8Ô¶¢Þ¿-
+Rsquid:S1854W"5Remove this useless assignment to local variable "d".(¨áô(8¡ß½ÛÇ-
+Tsquid:S1854%"6Remove this useless assignment to local variable "sg".(é»É8µÄ‚à¿-
+Esquid:S1481M"'Remove this unused "dl" local variable.(æ»ÿÓ8ÉãýÇÇ-
+~squid:S1192"[Define a constant instead of duplicating this literal "4jggokgpepnvsb2uv4s40d59ov" 4 times.(ü˜ÖÃûÿÿÿÿ8çÔæÞ¿-
+jsquid:S1192"GDefine a constant instead of duplicating this literal "/iot/d" 4 times.(ü˜ÖÃûÿÿÿÿ8çÔæÞ¿-
+Tsquid:S1854M"6Remove this useless assignment to local variable "dl".(æ»ÿÓ8ÉãýÇÇ-
+ksquid:S1192:"HDefine a constant instead of duplicating this literal "bell001" 4 times.(¼Ž×Êúÿÿÿÿ8ˆ£ŠÛÇ-
+hsquid:CommentedOutCodeLine\"<This block of commented-out lines of code should be removed.(Ç“•&8ü”¸é¿-
+Rsquid:S1854R"5Remove this useless assignment to local variable "b".(÷¸i8žðÃÛÇ-
+nsquid:CommentedOutCodeLineY"<This block of commented-out lines of code should be removed.(×ñ»‹ýÿÿÿÿ8Á¸ÓžÃ-

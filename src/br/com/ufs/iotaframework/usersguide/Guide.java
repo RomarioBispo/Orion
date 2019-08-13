@@ -1,11 +1,14 @@
 package br.com.ufs.iotaframework.usersguide;
 
+import br.com.ufs.builtindevices.actuator.bell.Bell;
 import br.com.ufs.iotaframework.devices.*;
 import br.com.ufs.iotaframework.iota.IoTA;
 import br.com.ufs.iotaframework.services.Service;
 import br.com.ufs.iotaframework.services.ServiceGroup;
+import br.com.ufs.orionframework.orion.Orion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Guide {
@@ -38,8 +41,10 @@ public class Guide {
 
         // creating a device
         List<Attribute> attributeList = new ArrayList<>();
-        Attribute attribute = new Attribute("source_data","attr_name","int");
-        attributeList.add(attribute);
+        Attribute attr1 = new Attribute("a","attr1","int");
+        Attribute state = new Attribute("s","state","Text");
+        attributeList.add(attr1);
+        attributeList.add(state);
 
         List<StaticAttribute> staticAttributeList = new ArrayList<>();
         StaticAttribute staticAttribute = new StaticAttribute("refStore", "Relationship", "urn:ngsi-ld:Store:002");
@@ -50,23 +55,36 @@ public class Guide {
         commandList.add(command);
 
         List<Device> deviceList = new ArrayList<>();
-        Device device =  new Device("device_id", "12345", "entity_name",
-                "entity_type", "America/Santiago",attributeList, staticAttributeList, commandList
+        Device device =  new Device("bell001", "urn:ngsi-ld:Bell:001",
+                "Bell", "PDI-IoTA-UltraLight", "HTTP", "http://iot-sensors:3001/iot/bell001", attributeList, staticAttributeList, commandList
         );
         deviceList.add(device);
         DeviceList devices = new DeviceList(deviceList);
 
         iota.createDevice(devices);
 
+        Orion orion = new Orion();
+
+        String[] attrs = {"ring"};
+
+        orion.createRegistration("urn:ngsi-ld:Bell:001", "Bell", Arrays.asList(attrs), "http://orion:1026/v1");
+
+        orion.setDebugMode(true);
+        iota.setDebugMode(true);
+        TestComand testComand = new TestComand(new OnCommand(""));
+        orion.updateExistingEntityAttributes("urn:ngsi-ld:Bell:001", testComand);
         // retrieving the devices
         DeviceList dl = iota.retrieveAllDevices();
 
-        Device d = iota.retrieveDevice("device_id");
+        Device d = iota.retrieveDevice("bell001");
+        iota.setDebugMode(false);
 
-        d.setEntity_type("entity_type01");
-        iota.updateDevice("device_id", d);
+        Bell b = (Bell) orion.retrieveEntity("urn:ngsi-ld:Bell:001", new Bell());
 
-        d = iota.retrieveDevice("device_id");
+        d.setEntity_type("Bell");
+        iota.updateDevice("bell001", d);
+
+        d = iota.retrieveDevice("bell001");
 
 //        iota.sendMeasure();
 

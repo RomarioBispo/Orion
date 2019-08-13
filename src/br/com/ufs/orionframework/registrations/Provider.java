@@ -27,6 +27,11 @@ public class Provider {
         this.legacyForwarding = legacyForwarding;
     }
 
+    public Provider(Http http, Boolean legacyForwarding) {
+        this.http = http;
+        this.legacyForwarding = legacyForwarding;
+    }
+
     public Boolean getLegacyForwarding() {
         return legacyForwarding;
     }

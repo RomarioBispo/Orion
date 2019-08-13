@@ -383,7 +383,6 @@ public class IoTA {
      * @param device_id  An id from device.
      * @param payload a text payload using http ultralight sintax.
      * @param url a url (ip + port)
-     * @throws Exception for http requests (bad request, forbidden, etc.)
      * @see DeviceList
      */
     public void sendMeasure(String url, String resource, String apikey, String device_id, String payload) {
@@ -399,7 +398,6 @@ public class IoTA {
             LOGGER.warning("A error may be occurred on sending measures, please please check your parameters or set debugMode to true to more details");
             showStackTrace(e);
         }
-
     }
 
 
@@ -418,14 +416,12 @@ public class IoTA {
         HttpRequests http = new HttpRequests();
         try {
             http.runUltralightPostRequest(url, payload);
-        } catch (Exception e) {
+        }catch (Exception e) {
             LOGGER.warning("A error may be occurred on sending measures, please please check your parameters or set debugMode to true to more details");
             showStackTrace(e);
         }
-
     }
     public void sendCommand() {
-
     }
     public void objectToPayloadUltralight() {
 
@@ -451,6 +447,5 @@ public class IoTA {
         if(this.debugMode){
             LOGGER.log(Level.INFO, e.getMessage(), e);
         }
-
     }
 }

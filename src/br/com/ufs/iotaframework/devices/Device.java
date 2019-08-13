@@ -15,9 +15,11 @@ import java.util.List;
 public class Device extends Entity {
 
     private String device_id;
-    private String protocol;
     private String entity_name;
     private String entity_type;
+    private String protocol;
+    private String transport;
+    private String endpoint;
     private String timezone;
     private List<Attribute> attributes;
     private List<StaticAttribute> static_attributes;
@@ -32,6 +34,30 @@ public class Device extends Entity {
      */
     public Device() {
 
+    }
+
+    /**
+     *
+     * @param device_id Unique identifier into a service.
+     * @param entity_name Entity name used for entity publication (overload default).
+     * @param entity_type Entity type used for entity publication (overload entity_type defined in service).
+     * @param protocol Protocol assigned to device.
+     * @param transport defines the communications protocol to be used.
+     * @param endpoint holds the location where the IoT Agent needs to send the UltraLight command
+     * @param attributes Mapping for protocol parameters to entity attributes.
+     * @param static_attributes Attributes published as defined.
+     * @param commands Attributes working as commands.
+     */
+    public Device(String device_id, String entity_name, String entity_type, String protocol, String transport, String endpoint, List<Attribute> attributes, List<StaticAttribute> static_attributes, List<Command> commands) {
+        this.device_id = device_id;
+        this.entity_name = entity_name;
+        this.entity_type = entity_type;
+        this.protocol = protocol;
+        this.transport = transport;
+        this.endpoint = endpoint;
+        this.attributes = attributes;
+        this.static_attributes = static_attributes;
+        this.commands = commands;
     }
 
     /**

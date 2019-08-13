@@ -1,6 +1,8 @@
 package br.com.ufs.builtindevices.actuator.bell;
 
+import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.entity.Entity;
+import br.com.ufs.orionframework.orion.Orion;
 
 /**
  * This class is a representation of a bell actuator.
@@ -12,6 +14,29 @@ import br.com.ufs.orionframework.entity.Entity;
  * @see
  */
 public class Bell extends Entity {
+    private Attrs state;
+    private Orion orion;
+
+    public Bell() {
+    }
+
+    public Orion getOrion() {
+        return orion;
+    }
+
+    public void setOrion(Orion orion) {
+        this.orion = orion;
+    }
+
+    public String getState() {
+        return state.getValue();
+    }
+
+    public void setState(String state) {
+        this.state.setValue(state);
+        orion.updateAttributeData(this.id, "state", new Attrs(state, "Text"));
+
+    }
 
     @Override
     public String getType() {

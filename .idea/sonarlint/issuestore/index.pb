@@ -92,8 +92,6 @@ p
 @src/br/com/ufs/examples/room/context/context/ContextExample.java,1/a/1a4a5b4d38e75e7c559d4dea9f7335f3a5942716
 c
 3src/br/com/ufs/examples/room/context/room/Room.java,d/1/d110bd38413aad84de2208f760dfb28cf497eb9b
-g
-7src/br/com/ufs/examples/room/context/motion/Motion.java,8/5/854f38f7c259e67eef48783416e211426336f033
 r
 Bsrc/br/com/ufs/examples/room/simulation/simulation/Simulation.java,5/e/5e0ad21cdadb9fc291589c7265e21c3f79692664
 h
@@ -108,3 +106,13 @@ w
 Gsrc/br/com/ufs/builtindevices/hybrid/airconditioner/AirConditioner.java,c/d/cdc65f96c65dd0de126f7fe832438a68c8fe5419
 c
 3src/br/com/ufs/builtindevices/hybrid/Lamp/Lamp.java,3/8/3815ae239531c02c352a1f127faf0a30342840fe
+g
+7src/br/com/ufs/builtindevices/sensor/motion/Motion.java,8/5/85bee288d8eba6348cc6dbdb6c850473b0a6610c
+e
+5src/br/com/ufs/builtindevices/actuator/bell/Bell.java,e/2/e23d5fea811ab8ba4d7ff1d6118bf4090c1b0ad6
+c
+3src/br/com/ufs/builtindevices/hybrid/door/Door.java,b/3/b34a48ea945732c686b77e95721a8955f05191f3
+f
+6src/br/com/ufs/iotaframework/usersguide/OnCommand.java,e/1/e1c1373a9f2d720727317607f1895c7ea187c298
+g
+7src/br/com/ufs/iotaframework/usersguide/TestComand.java,5/e/5e113958d70e1c1848be6bd2d6322f3763cb7f67

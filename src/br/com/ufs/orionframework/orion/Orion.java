@@ -342,6 +342,7 @@ public class Orion {
         o.remove("type");
 
         json = o.toString();
+        shoWDebug(json);
 
         HttpRequests http = new HttpRequests();
         try {
@@ -351,7 +352,6 @@ public class Orion {
             showStackTrace(e);
         }
 
-        shoWDebug(json);
     }
 
 
@@ -850,6 +850,43 @@ public class Orion {
         String status = "active";
 
         // Registrations registrations = new Registrations(registrationId, description, dataProvided, provider, expires, status, new ForwardingInformation());
+        Registrations registrations = new Registrations(description, dataProvided, provider);
+
+        Gson gson = new Gson();
+        String json = gson.toJson(registrations);
+
+        HttpRequests httpRequests = new HttpRequests();
+        try {
+            httpRequests.runPostRequest(this.url + REGISTRATIONS_ENDPOINT, json);
+        } catch (Exception e) {
+            LOGGER.warning("A error may be occurred and was not possible create the registrations, please check your parameters or set debugMode to true to more details");
+            showStackTrace(e);
+        }
+        shoWDebug(json);
+    }
+
+
+    /**
+     *  this operation creates a new context provider registration.
+     *  Typically used for binding context sources as providers of certain data.
+     *
+     * @param id a entity id which you want to make a registration
+     * @param type a entity type which you want to make a registration
+     * @param attrs a attributes list
+     * @param providerUrl a url from the provider
+     */
+    public void createRegistration(String id, String type, List<String> attrs, String providerUrl) {
+
+        String description = "A generic " + type + " Context Source";
+
+        List<Entities> entityList = new ArrayList<>();
+        Entities entities = new Entities(id, type);
+        entityList.add(entities);
+        DataProvided dataProvided = new DataProvided(entityList, attrs);
+
+        Http http = new Http(providerUrl);
+        Provider provider = new Provider(http, true);
+
         Registrations registrations = new Registrations(description, dataProvided, provider);
 
         Gson gson = new Gson();
