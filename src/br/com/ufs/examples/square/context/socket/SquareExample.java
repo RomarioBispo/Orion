@@ -34,7 +34,9 @@ import java.util.regex.Pattern;
 public class SquareExample {
 
 	private static Orion orion = new Orion();
-	private static int quantity = 15;
+    private static IoTA iota = new IoTA("localhost", 4041, "localhost:7896", "/iot/d/","4jggokgpepnvsb2uv4s40d59ov");
+    private static int quantity = 15;
+
 	private static String [] previousState = new String[quantity+1];
 
 	public static void printLampsFramework() {
@@ -84,22 +86,21 @@ public class SquareExample {
 
     	if (!lamp.getState().equals(previousState[lamp.getNumber()])){
 
-            lamp.setLuminosity(0);
+            lamp.setLuminosity(0, iota);
     		// equivalente ao getbylocation
     		List<Lamp> lampList = orion.listEntities("type=Lamp&georel=near;maxDistance:9&geometry=point&coords="+
 			lamp.getLocation(), lamp);
 
     		for (Lamp lamps : lampList) {
-                lamps.setOrion(orion);
                 int count_int = lamps.getCount() + 1;
     			if (lamps.getState().equals("off") && !lamps.getId().equals(lamp.getId())){
     				//equivalente ao updateluminositycount
-					lamps.setLuminosity(0);
-					lamps.setCount(count_int);
+					lamps.setLuminosity(0, iota);
+					lamps.setCount(count_int, iota);
 				} else if (lamps.getState().equals("on")) {
 					//equivalente ao updateluminositycount
-    				lamps.setLuminosity(3);
-					lamps.setCount(2);
+    				lamps.setLuminosity(3, iota);
+					lamps.setCount(2, iota);
 				}
 			}
 		}
@@ -112,17 +113,16 @@ public class SquareExample {
 					lamp.getLocation(),lamp);
 
 			for (Lamp lamps: lampList){
-			    lamps.setOrion(orion);
 				if (!lamps.getId().equals(lamp.getId())){
 					int count_int = lamps.getCount() - 1;
 
 					if (count_int == 0 && lamps.getState().equals("on")) {
-						lamps.setLuminosity(2);
-						lamps.setCount(count_int);
+						lamps.setLuminosity(2, iota);
+						lamps.setCount(count_int, iota);
 					} else {
 
-						lamps.setLuminosity(lamps.getLuminosity());
-						lamps.setCount(count_int);
+						lamps.setLuminosity(lamps.getLuminosity(), iota);
+						lamps.setCount(count_int, iota);
 					}
 				}
 			}
@@ -135,7 +135,7 @@ public class SquareExample {
 				luminosity = 2;
 			}
 				//Se uma lampada volta pra ON e não tem uma OFF no raio
-			lamp.setLuminosity(luminosity);
+			lamp.setLuminosity(luminosity, iota);
 
 		}
 	}
@@ -150,7 +150,6 @@ public class SquareExample {
 		orion.createEntity(square01);
 
 		// criando service group
-    	IoTA iota = new IoTA("localhost", 4041);
 		Service service = new Service("4jggokgpepnvsb2uv4s40d59ov","","http://orion:1026","Thing","/iot/d");
 		List<Service> serviceList = new ArrayList<>();
 		serviceList.add(service);
@@ -195,7 +194,6 @@ public class SquareExample {
 
 	public static Lamp updateEntity(Lamp l) {
 
-	    l.setOrion(orion);
 		System.out.println("***"+l.getId() +" "+ l.getState()+"***");
 
 		if (l.getState().equals("off")){

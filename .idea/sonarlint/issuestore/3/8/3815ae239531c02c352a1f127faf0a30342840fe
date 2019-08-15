@@ -1,3 +1,3 @@
 
+ƒsquid:UselessImportCheck"XRemove this unused import 'br.com.ufs.examples.square.simulation.ultralight.UltraLight'.(ñ™ÉÖ8¢‹èúÈ-
 wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ã§£¿üÿÿÿÿ
-fsquid:S1192I"HDefine a constant instead of duplicating this literal "Integer" 3 times.(À¾Ïâ8»€˜±Ç-

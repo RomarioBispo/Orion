@@ -1,19 +1,19 @@
 
-V
-squid:S106r"9Replace this use of System.out or System.err by a logger.(êÓå®8»ªêÅ-
+isquid:S2095›"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(Ó€ë„8¬ç·¸Å-
 @squid:S3010T"#Remove this assignment of "motion".(Úü°^8¦àõêÄ-
-ssquid:S11923"UDefine a constant instead of duplicating this literal "urn:ngsi-ld:Room:001" 5 times.(£µÅù8ºĞì÷Ã-
-[
-squid:S106i"9Replace this use of System.out or System.err by a logger.(şì§ıÿÿÿÿ8êƒêÅ-
-psquid:S1192H"SDefine a constant instead of duplicating this literal "urn:ngsi-ld:AC:001" 3 times.(¾êíE8ßú¼Å-
-[
-squid:S106d"9Replace this use of System.out or System.err by a logger.(èÃ¥¾øÿÿÿÿ8Ø¤ÂüÄ-
 \
 squid:S106“"9Replace this use of System.out or System.err by a logger.(ÿ·‘Æÿÿÿÿÿ8“ûÄåÄ-
-isquid:S2095›"JUse try-with-resources or close this "ServerSocket" in a "finally" clause.(Ó€ë„8¬ç·¸Å-
-Wsquid:S1481™"3Remove this unused "contextExample" local variable.(ñğÊÀÿÿÿÿÿ8Ø¤ÂüÄ-
+asquid:HiddenFieldCheck3"8Rename "room" which hides the field declared at line 38.(£µÅù8ŸÖúúÃ-
 fsquid:S1854™"BRemove this useless assignment to local variable "contextExample".(ñğÊÀÿÿÿÿÿ8Ø¤ÂüÄ-
+psquid:S1192H"SDefine a constant instead of duplicating this literal "urn:ngsi-ld:AC:001" 3 times.(¾êíE8ßú¼Å-
 \
 squid:S106ƒ"9Replace this use of System.out or System.err by a logger.(èÃ¥¾øÿÿÿÿ8ºÂÚ¢Å-
-asquid:HiddenFieldCheck3"8Rename "room" which hides the field declared at line 38.(£µÅù8ŸÖúúÃ-
 ksquid:S1192/"HDefine a constant instead of duplicating this literal "Integer" 3 times.(´ÑÓŒüÿÿÿÿ8¹Ç»ëÃ-
+V
+squid:S106r"9Replace this use of System.out or System.err by a logger.(êÓå®8»ªêÅ-
+ssquid:S11923"UDefine a constant instead of duplicating this literal "urn:ngsi-ld:Room:001" 5 times.(£µÅù8ºĞì÷Ã-
+[
+squid:S106d"9Replace this use of System.out or System.err by a logger.(èÃ¥¾øÿÿÿÿ8Ø¤ÂüÄ-
+[
+squid:S106i"9Replace this use of System.out or System.err by a logger.(şì§ıÿÿÿÿ8êƒêÅ-
+Wsquid:S1481™"3Remove this unused "contextExample" local variable.(ñğÊÀÿÿÿÿÿ8Ø¤ÂüÄ-

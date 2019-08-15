@@ -1,8 +1,8 @@
 package br.com.ufs.builtindevices.hybrid.Lamp;
 
+import br.com.ufs.iotaframework.iota.IoTA;
 import br.com.ufs.orionframework.entity.Attrs;
 import br.com.ufs.orionframework.entity.Entity;
-import br.com.ufs.orionframework.orion.Orion;
 
 /**
  * This class is used to concept proof for the Orion Framework.
@@ -16,13 +16,11 @@ import br.com.ufs.orionframework.orion.Orion;
  * */
 
 public class Lamp extends Entity {
-
     private Attrs state;
     private Attrs luminosity;
     private Attrs location;
     private Attrs count;
     private Attrs number;
-    private Orion orion = new Orion();
 
     public Lamp(String id, String type, Attrs state, Attrs luminosity, Attrs location, Attrs count, Attrs number) {
 
@@ -38,39 +36,30 @@ public class Lamp extends Entity {
     public Lamp() {
     }
 
-    public Lamp(Attrs state, Attrs luminosity, Attrs location, Attrs count, Attrs number, Orion orion) {
+    public Lamp(Attrs state, Attrs luminosity, Attrs location, Attrs count, Attrs number) {
         this.state = state;
         this.luminosity = luminosity;
         this.location = location;
         this.count = count;
         this.number = number;
-        this.orion = orion;
-    }
-
-    public Orion getOrion() {
-        return orion;
-    }
-
-    public void setOrion(Orion orion) {
-        this.orion = orion;
     }
 
     public String getState() {
         return this.state.getValue();
     }
 
-    public void setState(String state) {
+    public void setState(String state, IoTA iota) {
         this.state.setValue(state);
-        orion.updateAttributeData(this.id, "state", new Attrs(state, "Text"));
+        iota.sendMeasure("lamp"+number.getValue(), "s|"+state);
     }
 
     public int getLuminosity() {
         return Integer.parseInt(luminosity.getValue());
     }
 
-    public void setLuminosity(int luminosity) {
+    public void setLuminosity(int luminosity, IoTA iota) {
         this.luminosity.setValue(String.valueOf(luminosity));
-        orion.updateAttributeData(this.id, "luminosity", new Attrs(String.valueOf(luminosity),"Integer"));
+        iota.sendMeasure("lamp"+number.getValue(), "l|"+luminosity);
 
     }
 
@@ -78,19 +67,19 @@ public class Lamp extends Entity {
         return this.location.getValue();
     }
 
-    public void setLocation(String location) {
+    public void setLocation(String location, IoTA iota) {
 
         this.location.setValue(location);
-        orion.updateAttributeData(this.id, "location", new Attrs(location,"geo:point"));
+        iota.sendMeasure("lamp"+number.getValue(), "lo|"+location);
     }
 
     public int getCount() {
         return Integer.parseInt(count.getValue());
     }
 
-    public void setCount(int count) {
+    public void setCount(int count, IoTA iota) {
         this.count.setValue(String.valueOf(count));
-        orion.updateAttributeData(this.id, "count", new Attrs(String.valueOf(count),"Integer"));
+        iota.sendMeasure("lamp"+number.getValue(), "c|"+count);
 
     }
 
@@ -98,9 +87,9 @@ public class Lamp extends Entity {
         return Integer.parseInt(number.getValue());
     }
 
-    public void setNumber(int number) {
+    public void setNumber(int number, IoTA iota) {
         this.number.setValue(String.valueOf(number));
-        orion.updateAttributeData(this.id, "number", new Attrs(String.valueOf(number),"Integer"));
+        iota.sendMeasure("lamp"+this.number.getValue(), "n|"+number);
 
     }
 
